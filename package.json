@@ -1,0 +1,38 @@
+{
+  "name": "coloxo-ui",
+  "private": true,
+  "version": "1.0.4",
+  "description": "Premium Coloxo UI — React component library, CLI, and open registry",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter @coloxo/ui build && pnpm --filter @coloxo/cli build",
+    "build:ui": "pnpm --filter @coloxo/ui build",
+    "build:cli": "pnpm --filter @coloxo/cli build",
+    "pack:check": "pnpm --filter @coloxo/ui pack --dry-run && pnpm --filter @coloxo/cli pack --dry-run",
+    "test": "pnpm --filter @coloxo/ui test",
+    "test:cli": "pnpm --filter @coloxo/cli test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean",
+    "registry:build": "tsx scripts/build-registry.ts",
+    "registry:validate": "tsx scripts/validate-registry.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
+  },
+  "license": "MIT",
+  "author": "Coloxo Labs",
+  "homepage": "https://ui.coloxolabs.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coloxo-Labs/coloxo-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Coloxo-Labs/coloxo-ui/issues"
+  }
+}

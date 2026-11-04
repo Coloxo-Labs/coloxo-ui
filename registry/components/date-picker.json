@@ -1,0 +1,108 @@
+{
+  "name": "DatePicker",
+  "slug": "date-picker",
+  "type": "registry:ui",
+  "category": "Date & File",
+  "description": "Date, range, and time pickers with calendar panels.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/date-picker.tsx",
+          "target": "date-picker.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icons",
+        "form-field",
+        "icon",
+        "button"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/DatePicker/CalendarPanel.tsx",
+          "target": "date-picker/calendar-panel.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/ClearControl.tsx",
+          "target": "date-picker/clear-control.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/CustomPanels.tsx",
+          "target": "date-picker/custom-panels.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/DatePicker.module.css",
+          "target": "date-picker/date-picker.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/DatePicker.tsx",
+          "target": "date-picker/date-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/PickerFooter.tsx",
+          "target": "date-picker/picker-footer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/RangePicker.tsx",
+          "target": "date-picker/range-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/TimePanel.tsx",
+          "target": "date-picker/time-panel.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/TimePicker.tsx",
+          "target": "date-picker/time-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/index.ts",
+          "target": "date-picker/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/types.ts",
+          "target": "date-picker/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DatePicker/utils.ts",
+          "target": "date-picker/utils.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "date-fns",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icon",
+        "button",
+        "picker-field",
+        "styles",
+        "theme",
+        "icons"
+      ],
+      "cssImports": [
+        "react-day-picker/style.css"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "OrbitingPlanets",
+  "slug": "orbiting-planets",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Luminous ice-cyan orbital system on native WebGL — soft bloom halos, additive orbit ribbons, pastel spheres with depth occlusion. Transparent by default; static CSS fallback when WebGL is unavailable. No Three.js.",
+  "status": "stable",
+  "version": "1.1.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.tsx",
+      "target": "orbiting-planets/orbiting-planets.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.module.css",
+      "target": "orbiting-planets/orbiting-planets.module.css"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/orbitingPlanetsEngine.ts",
+      "target": "orbiting-planets/orbiting-planets-engine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/sphereGeometry.ts",
+      "target": "orbiting-planets/sphere-geometry.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/orbitingPlanetsFallback.ts",
+      "target": "orbiting-planets/orbiting-planets-fallback.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/sphereVert.ts",
+      "target": "orbiting-planets/shaders/sphere-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/sphereFrag.ts",
+      "target": "orbiting-planets/shaders/sphere-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/orbitVert.ts",
+      "target": "orbiting-planets/shaders/orbit-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/orbitFrag.ts",
+      "target": "orbiting-planets/shaders/orbit-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/ribbonVert.ts",
+      "target": "orbiting-planets/shaders/ribbon-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/ribbonFrag.ts",
+      "target": "orbiting-planets/shaders/ribbon-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/glowQuadVert.ts",
+      "target": "orbiting-planets/shaders/glow-quad-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/glowQuadFrag.ts",
+      "target": "orbiting-planets/shaders/glow-quad-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/sparkleVert.ts",
+      "target": "orbiting-planets/shaders/sparkle-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/sparkleFrag.ts",
+      "target": "orbiting-planets/shaders/sparkle-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/shaders/bloomBlur.ts",
+      "target": "orbiting-planets/shaders/bloom-blur.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/types.ts",
+      "target": "orbiting-planets/types.ts"
+    },
+    {
+      "path": "packages/ui/src/components/OrbitingPlanets/index.ts",
+      "target": "orbiting-planets/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": ["utils", "styles", "theme"],
+  "providers": ["theme"],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion. touch-action: pan-y preserves scroll when parallax is enabled."
+  },
+  "docs": {
+    "usage": "<OrbitingPlanets>\n  <HeroContent />\n</OrbitingPlanets>"
+  }
+}

@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cx-space-4);
+  padding: var(--cx-space-2) var(--cx-space-4);
+  background: var(--cx-color-bg-brand-primary);
+  border-bottom: 1px solid var(--cx-color-border-brand);
+  color: var(--cx-color-text-brand-secondary);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.trailing {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+}

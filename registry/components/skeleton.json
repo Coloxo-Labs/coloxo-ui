@@ -1,0 +1,55 @@
+{
+  "name": "Skeleton",
+  "slug": "skeleton",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Loading placeholder skeleton shapes.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "styles",
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/skeleton.tsx",
+          "target": "skeleton.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Skeleton/Skeleton.module.css",
+          "target": "skeleton/skeleton.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Skeleton/Skeleton.tsx",
+          "target": "skeleton/skeleton.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Skeleton/index.ts",
+          "target": "skeleton/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

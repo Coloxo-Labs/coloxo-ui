@@ -1,0 +1,49 @@
+{
+  "name": "EmptyState",
+  "slug": "empty-state",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Empty collection placeholder with actions.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/empty-state.tsx",
+          "target": "empty-state.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/EmptyState/EmptyState.module.css",
+          "target": "empty-state/empty-state.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/EmptyState/EmptyState.tsx",
+          "target": "empty-state/empty-state.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/EmptyState/index.ts",
+          "target": "empty-state/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

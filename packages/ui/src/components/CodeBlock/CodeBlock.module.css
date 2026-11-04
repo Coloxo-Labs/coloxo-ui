@@ -1,0 +1,431 @@
+/* ------------------------------------------------------------------ *
+ * Code-specific palette. Light is the default; dark applies when
+ *  - theme="dark"
+ *  - theme="system" and an ancestor has [data-cx-theme="dark"]
+ *  - variant="terminal"
+ * ------------------------------------------------------------------ */
+.root {
+  --cx-code-bg: var(--cx-neutral-50);
+  --cx-code-fg: var(--cx-neutral-800);
+  --cx-code-border: var(--cx-neutral-200);
+  --cx-code-header-bg: var(--cx-neutral-100);
+  --cx-code-line-number: var(--cx-neutral-400);
+  --cx-code-comment: var(--cx-neutral-500);
+  --cx-code-keyword: var(--cx-brand-600);
+  --cx-code-string: var(--cx-green-700);
+  --cx-code-function: var(--cx-indigo-700);
+  --cx-code-number: var(--cx-orange-700);
+  --cx-code-type: var(--cx-purple-700);
+  --cx-code-operator: var(--cx-neutral-500);
+  --cx-code-highlight: color-mix(in srgb, var(--cx-brand-500) 9%, transparent);
+  --cx-code-muted: var(--cx-neutral-500);
+  --cx-code-property: var(--cx-slate-700);
+  --cx-code-variable: var(--cx-neutral-900);
+  --cx-code-constant: var(--cx-orange-700);
+  --cx-code-tag: var(--cx-brand-700);
+  --cx-code-attribute: var(--cx-purple-700);
+  --cx-code-selector: var(--cx-brand-700);
+  --cx-code-punctuation: var(--cx-neutral-500);
+  --cx-code-focus-ring: var(--cx-color-focus-ring, var(--cx-brand-500));
+
+  --cx-code-font-size: var(--cx-text-sm, 0.875rem);
+  --cx-code-line-height: 1.65;
+  --cx-code-pad-x: var(--cx-space-4, 1rem);
+  --cx-code-pad-y: var(--cx-space-4, 1rem);
+}
+
+.root[data-cx-code-theme="dark"],
+.root[data-variant="terminal"],
+:global([data-cx-theme="dark"]) .root[data-cx-code-theme="system"] {
+  --cx-code-bg: var(--cx-neutral-950);
+  --cx-code-fg: var(--cx-neutral-200);
+  --cx-code-border: var(--cx-neutral-800);
+  --cx-code-header-bg: var(--cx-neutral-900);
+  --cx-code-line-number: var(--cx-neutral-600);
+  --cx-code-comment: var(--cx-neutral-400);
+  --cx-code-keyword: var(--cx-brand-300);
+  --cx-code-string: var(--cx-green-300);
+  --cx-code-function: var(--cx-indigo-200);
+  --cx-code-number: var(--cx-orange-200);
+  --cx-code-type: var(--cx-purple-200);
+  --cx-code-operator: var(--cx-neutral-400);
+  --cx-code-highlight: color-mix(in srgb, var(--cx-brand-400) 16%, transparent);
+  --cx-code-muted: var(--cx-neutral-400);
+  --cx-code-property: var(--cx-slate-300);
+  --cx-code-variable: var(--cx-neutral-100);
+  --cx-code-constant: var(--cx-orange-200);
+  --cx-code-tag: var(--cx-brand-300);
+  --cx-code-attribute: var(--cx-purple-200);
+  --cx-code-selector: var(--cx-brand-300);
+  --cx-code-punctuation: var(--cx-neutral-400);
+  --cx-code-focus-ring: var(--cx-brand-400);
+}
+
+/* ------------------------------------------------------------------ *
+ * Container
+ * ------------------------------------------------------------------ */
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--cx-code-border);
+  border-radius: var(--cx-radius-lg);
+  background: var(--cx-code-bg);
+  color: var(--cx-code-fg);
+  font-family: var(--cx-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+}
+
+.default {
+  box-shadow: var(--cx-shadow-xs);
+}
+
+.minimal .header {
+  background: transparent;
+  border-bottom-color: transparent;
+  padding-bottom: 0;
+}
+
+.compact {
+  --cx-code-font-size: var(--cx-text-xs, 0.75rem);
+  --cx-code-line-height: 1.55;
+  --cx-code-pad-x: var(--cx-space-3, 0.75rem);
+  --cx-code-pad-y: var(--cx-space-3, 0.75rem);
+  border-radius: var(--cx-radius-md);
+}
+
+.compact .header {
+  padding: var(--cx-space-1) var(--cx-space-3);
+}
+
+.borderless {
+  border-color: transparent;
+}
+
+.borderless .header {
+  border-bottom-color: transparent;
+}
+
+.elevated {
+  box-shadow: var(--cx-shadow-md);
+}
+
+.terminal {
+  border-radius: var(--cx-radius-xl);
+  box-shadow: var(--cx-shadow-md);
+}
+
+/* ------------------------------------------------------------------ *
+ * Header
+ * ------------------------------------------------------------------ */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cx-space-3);
+  min-height: 2.5rem;
+  padding: var(--cx-space-1) var(--cx-space-3) var(--cx-space-1) var(--cx-space-4);
+  border-bottom: 1px solid var(--cx-code-border);
+  background: var(--cx-code-header-bg);
+  font-family: var(--cx-font-body, system-ui, sans-serif);
+  font-size: var(--cx-text-xs, 0.75rem);
+  line-height: 1.4;
+}
+
+.headerStart,
+.headerEnd {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+  min-width: 0;
+}
+
+.headerStart {
+  flex: 1;
+}
+
+.headerEnd {
+  flex-shrink: 0;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 0.375rem;
+  margin-right: var(--cx-space-1);
+}
+
+.dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--cx-code-line-number);
+  opacity: 0.55;
+}
+
+.label {
+  color: var(--cx-code-fg);
+  font-weight: var(--cx-font-weight-medium, 500);
+}
+
+.filename {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--cx-code-muted);
+  font-family: var(--cx-font-mono, ui-monospace, monospace);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.separator {
+  color: var(--cx-code-line-number);
+}
+
+.language {
+  color: var(--cx-code-muted);
+  font-weight: var(--cx-font-weight-medium, 500);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ *
+ * Buttons (copy / expand)
+ * ------------------------------------------------------------------ */
+.copyButton,
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-space-1);
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--cx-radius-md);
+  background: transparent;
+  color: var(--cx-code-muted);
+  font: inherit;
+  font-family: var(--cx-font-body, system-ui, sans-serif);
+  font-size: var(--cx-text-xs, 0.75rem);
+  font-weight: var(--cx-font-weight-medium, 500);
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    color var(--cx-duration-fast, 100ms) var(--cx-ease-out, ease-out),
+    background-color var(--cx-duration-fast, 100ms) var(--cx-ease-out, ease-out);
+}
+
+.copyButton {
+  padding: 0.25rem 0.5rem;
+}
+
+.copyButton:hover,
+.toggle:hover {
+  background: color-mix(in srgb, var(--cx-code-fg) 8%, transparent);
+  color: var(--cx-code-fg);
+}
+
+.copyButton:focus-visible,
+.toggle:focus-visible,
+.pre:focus-visible {
+  outline: 2px solid var(--cx-code-focus-ring);
+  outline-offset: 2px;
+}
+
+.pre:focus-visible {
+  outline-offset: -2px;
+}
+
+.copyButton[data-copied="true"] {
+  color: var(--cx-code-string);
+}
+
+.copyIcon {
+  display: inline-flex;
+  font-size: 0.95rem;
+}
+
+.floatingCopy {
+  position: absolute;
+  top: var(--cx-space-2);
+  right: var(--cx-space-2);
+  z-index: 1;
+  background: var(--cx-code-bg);
+  border-color: var(--cx-code-border);
+}
+
+.toggleBar {
+  display: flex;
+  justify-content: center;
+  padding: var(--cx-space-1) var(--cx-space-2);
+  border-top: 1px solid var(--cx-code-border);
+  background: var(--cx-code-header-bg);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ *
+ * Code area
+ * ------------------------------------------------------------------ */
+.pre {
+  flex: 1;
+  margin: 0;
+  padding: var(--cx-code-pad-y) 0;
+  overflow: auto;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--cx-code-font-size);
+  line-height: var(--cx-code-line-height);
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -webkit-text-size-adjust: 100%;
+}
+
+.preCollapsed {
+  overflow-y: hidden;
+}
+
+.wrap {
+  overflow-x: hidden;
+}
+
+.code {
+  display: block;
+  min-width: max-content;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--cx-code-fg);
+  white-space: pre;
+}
+
+.wrap .code {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
+
+.line {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(1em * var(--cx-code-line-height));
+  padding: 0 var(--cx-code-pad-x);
+  transition: opacity var(--cx-duration-fast, 100ms) var(--cx-ease-out, ease-out);
+}
+
+.wrap .line {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.line[data-highlighted="true"] {
+  background: var(--cx-code-highlight);
+  box-shadow: inset 2px 0 0 var(--cx-code-keyword);
+}
+
+.line[data-dimmed="true"] {
+  opacity: 0.45;
+}
+
+.lineNumber {
+  flex-shrink: 0;
+  min-width: calc(var(--cx-code-ln-digits, 1) * 1ch);
+  margin-right: var(--cx-code-pad-x);
+  color: var(--cx-code-line-number);
+  text-align: right;
+  user-select: none;
+  -webkit-user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.lineContent {
+  flex: 1 1 0;
+  min-width: 0;
+  white-space: pre;
+}
+
+.wrap .lineContent {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ------------------------------------------------------------------ *
+ * Tokens
+ * ------------------------------------------------------------------ */
+.keyword {
+  color: var(--cx-code-keyword);
+}
+
+.function {
+  color: var(--cx-code-function);
+}
+
+.variable {
+  color: var(--cx-code-variable);
+}
+
+.string {
+  color: var(--cx-code-string);
+}
+
+.number {
+  color: var(--cx-code-number);
+}
+
+.comment {
+  color: var(--cx-code-comment);
+  font-style: italic;
+}
+
+.operator {
+  color: var(--cx-code-operator);
+}
+
+.punctuation {
+  color: var(--cx-code-punctuation);
+}
+
+.property {
+  color: var(--cx-code-property);
+}
+
+.type {
+  color: var(--cx-code-type);
+}
+
+.constant,
+.boolean {
+  color: var(--cx-code-constant);
+}
+
+.tag {
+  color: var(--cx-code-tag);
+}
+
+.attribute {
+  color: var(--cx-code-attribute);
+}
+
+.selector {
+  color: var(--cx-code-selector);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copyButton,
+  .toggle,
+  .line {
+    transition: none;
+  }
+}

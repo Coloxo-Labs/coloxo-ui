@@ -1,0 +1,20 @@
+.root {
+  display: block;
+  animation: cx-spin 0.7s linear infinite;
+}
+
+.track {
+  opacity: 0.25;
+}
+
+.head {
+  opacity: 1;
+}
+
+.sm { width: 0.875rem; height: 0.875rem; }
+.md { width: 1rem; height: 1rem; }
+.lg { width: 1.25rem; height: 1.25rem; }
+
+@keyframes cx-spin {
+  to { transform: rotate(360deg); }
+}

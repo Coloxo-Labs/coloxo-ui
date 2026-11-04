@@ -1,0 +1,88 @@
+/* Shared Untitled-style recipes. Import once via ThemeProvider / index. */
+
+.cx-focusable:focus {
+  outline: none;
+}
+
+.cx-focusable:focus-visible {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.cx-focusable[data-invalid]:focus-visible,
+.cx-focusable[aria-invalid="true"]:focus-visible {
+  outline-color: var(--cx-color-focus-ring-error);
+}
+
+.cx-disabled,
+.cx-disabled:disabled,
+[data-disabled].cx-disabled {
+  background: var(--cx-color-bg-disabled-subtle);
+  border-color: var(--cx-color-border-disabled);
+  color: var(--cx-color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cx-control {
+  background: var(--cx-color-bg-primary);
+  border: 1px solid var(--cx-color-border-primary);
+  border-radius: var(--cx-radius-lg);
+  box-shadow: var(--cx-shadow-xs);
+  color: var(--cx-color-text-primary);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  transition:
+    color var(--cx-duration-fast) var(--cx-ease-linear),
+    background-color var(--cx-duration-fast) var(--cx-ease-linear),
+    border-color var(--cx-duration-fast) var(--cx-ease-linear),
+    box-shadow var(--cx-duration-fast) var(--cx-ease-linear);
+}
+
+.cx-control:focus,
+.cx-control:focus-visible,
+.cx-control:focus-within {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 2px;
+  border-color: var(--cx-color-border-brand);
+}
+
+.cx-control[data-invalid],
+.cx-control[aria-invalid="true"] {
+  border-color: var(--cx-color-border-error);
+}
+
+.cx-control[data-invalid]:focus,
+.cx-control[data-invalid]:focus-visible,
+.cx-control[data-invalid]:focus-within,
+.cx-control[aria-invalid="true"]:focus,
+.cx-control[aria-invalid="true"]:focus-visible,
+.cx-control[aria-invalid="true"]:focus-within {
+  outline-color: var(--cx-color-focus-ring-error);
+  border-color: var(--cx-color-border-error);
+}
+
+.cx-control:disabled,
+.cx-control[data-disabled] {
+  background: var(--cx-color-bg-disabled-subtle);
+  border-color: var(--cx-color-border-disabled);
+  color: var(--cx-color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cx-truncate {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cx-affordance {
+  color: var(--cx-color-fg-quaternary);
+}
+
+.cx-affordance:hover {
+  color: var(--cx-color-fg-quaternary-hover);
+}

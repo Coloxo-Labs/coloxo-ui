@@ -1,0 +1,36 @@
+{
+  "name": "Styles",
+  "slug": "styles",
+  "type": "registry:style",
+  "description": "Coloxo design tokens and shared CSS primitives (--cx-* variables).",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [],
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/coloxo-theme.css",
+          "target": "coloxo-theme.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/styles/tokens.css",
+          "target": "coloxo-tokens.css"
+        },
+        {
+          "path": "packages/ui/src/styles/primitives.css",
+          "target": "coloxo-primitives.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    }
+  }
+}

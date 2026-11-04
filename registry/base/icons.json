@@ -1,0 +1,318 @@
+{
+  "name": "Icons",
+  "slug": "icons",
+  "type": "registry:lib",
+  "description": "Self-contained Lucide-derived SVG icons used by Coloxo UI chrome. No react-icons or lucide-react dependency.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/icons/arrow-down-icon.tsx",
+          "target": "icons/arrow-down-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/arrow-up-icon.tsx",
+          "target": "icons/arrow-up-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/calendar-icon.tsx",
+          "target": "icons/calendar-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/check-icon.tsx",
+          "target": "icons/check-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevron-down-icon.tsx",
+          "target": "icons/chevron-down-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevron-left-icon.tsx",
+          "target": "icons/chevron-left-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevron-right-icon.tsx",
+          "target": "icons/chevron-right-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevron-up-icon.tsx",
+          "target": "icons/chevron-up-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevrons-left-icon.tsx",
+          "target": "icons/chevrons-left-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/chevrons-right-icon.tsx",
+          "target": "icons/chevrons-right-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/circle-alert-icon.tsx",
+          "target": "icons/circle-alert-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/circle-check-icon.tsx",
+          "target": "icons/circle-check-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/circle-help-icon.tsx",
+          "target": "icons/circle-help-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/circle-xicon.tsx",
+          "target": "icons/circle-xicon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/clock-icon.tsx",
+          "target": "icons/clock-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/columns3icon.tsx",
+          "target": "icons/columns3icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/copy-icon.tsx",
+          "target": "icons/copy-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/eye-icon.tsx",
+          "target": "icons/eye-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/eye-off-icon.tsx",
+          "target": "icons/eye-off-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/funnel-icon.tsx",
+          "target": "icons/funnel-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/info-icon.tsx",
+          "target": "icons/info-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/layout-grid-icon.tsx",
+          "target": "icons/layout-grid-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/mail-icon.tsx",
+          "target": "icons/mail-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/menu-icon.tsx",
+          "target": "icons/menu-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/minus-icon.tsx",
+          "target": "icons/minus-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/NOTICE",
+          "target": "icons/NOTICE"
+        },
+        {
+          "path": "registry/styles/icons/pipette-icon.tsx",
+          "target": "icons/pipette-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/plus-icon.tsx",
+          "target": "icons/plus-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/search-icon.tsx",
+          "target": "icons/search-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/table-icon.tsx",
+          "target": "icons/table-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/trash2icon.tsx",
+          "target": "icons/trash2icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/triangle-alert-icon.tsx",
+          "target": "icons/triangle-alert-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/upload-icon.tsx",
+          "target": "icons/upload-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/user-icon.tsx",
+          "target": "icons/user-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/xicon.tsx",
+          "target": "icons/xicon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/create-icon.tsx",
+          "target": "icons/create-icon.tsx"
+        },
+        {
+          "path": "registry/styles/icons/index.ts",
+          "target": "icons/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/icons/ArrowDownIcon.tsx",
+          "target": "icons/arrow-down-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ArrowUpIcon.tsx",
+          "target": "icons/arrow-up-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CalendarIcon.tsx",
+          "target": "icons/calendar-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CheckIcon.tsx",
+          "target": "icons/check-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronDownIcon.tsx",
+          "target": "icons/chevron-down-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronLeftIcon.tsx",
+          "target": "icons/chevron-left-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronRightIcon.tsx",
+          "target": "icons/chevron-right-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronUpIcon.tsx",
+          "target": "icons/chevron-up-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronsLeftIcon.tsx",
+          "target": "icons/chevrons-left-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ChevronsRightIcon.tsx",
+          "target": "icons/chevrons-right-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CircleAlertIcon.tsx",
+          "target": "icons/circle-alert-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CircleCheckIcon.tsx",
+          "target": "icons/circle-check-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CircleHelpIcon.tsx",
+          "target": "icons/circle-help-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CircleXIcon.tsx",
+          "target": "icons/circle-xicon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/ClockIcon.tsx",
+          "target": "icons/clock-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/Columns3Icon.tsx",
+          "target": "icons/columns3icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/CopyIcon.tsx",
+          "target": "icons/copy-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/EyeIcon.tsx",
+          "target": "icons/eye-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/EyeOffIcon.tsx",
+          "target": "icons/eye-off-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/FunnelIcon.tsx",
+          "target": "icons/funnel-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/InfoIcon.tsx",
+          "target": "icons/info-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/LayoutGridIcon.tsx",
+          "target": "icons/layout-grid-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/MailIcon.tsx",
+          "target": "icons/mail-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/MenuIcon.tsx",
+          "target": "icons/menu-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/MinusIcon.tsx",
+          "target": "icons/minus-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/NOTICE",
+          "target": "icons/NOTICE"
+        },
+        {
+          "path": "packages/ui/src/icons/PipetteIcon.tsx",
+          "target": "icons/pipette-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/PlusIcon.tsx",
+          "target": "icons/plus-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/SearchIcon.tsx",
+          "target": "icons/search-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/TableIcon.tsx",
+          "target": "icons/table-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/Trash2Icon.tsx",
+          "target": "icons/trash2icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/TriangleAlertIcon.tsx",
+          "target": "icons/triangle-alert-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/UploadIcon.tsx",
+          "target": "icons/upload-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/UserIcon.tsx",
+          "target": "icons/user-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/XIcon.tsx",
+          "target": "icons/xicon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/createIcon.tsx",
+          "target": "icons/create-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/icons/index.ts",
+          "target": "icons/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    }
+  }
+}

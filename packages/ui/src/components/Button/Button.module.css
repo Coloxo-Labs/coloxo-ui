@@ -1,0 +1,77 @@
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.spinner {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.loading {
+  pointer-events: none;
+}
+
+.linkBase {
+  height: auto;
+  min-height: 0;
+  padding: 0.125rem 0;
+  border: none;
+  border-radius: var(--cx-radius-sm);
+  box-shadow: none;
+  gap: var(--cx-space-1);
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+}
+
+.linkColor {
+  background: transparent;
+  color: var(--cx-brand-700);
+}
+
+.linkColor:hover:not(:disabled) {
+  color: var(--cx-brand-800);
+}
+
+.linkColor:active:not(:disabled) {
+  color: var(--cx-brand-900);
+}
+
+.linkGray {
+  background: transparent;
+  color: var(--cx-slate-600);
+}
+
+.linkGray:hover:not(:disabled) {
+  color: var(--cx-slate-700);
+}
+
+.linkGray:active:not(:disabled) {
+  color: var(--cx-slate-800);
+}
+
+:global([data-cx-theme="dark"]) .linkGray {
+  color: var(--cx-color-text-tertiary);
+}
+
+:global([data-cx-theme="dark"]) .linkGray:hover:not(:disabled) {
+  color: var(--cx-color-text-tertiary-hover);
+}
+
+.linkColor:disabled,
+.linkGray:disabled {
+  background: transparent;
+  border-color: transparent;
+  color: var(--cx-slate-400);
+  box-shadow: none;
+}
+
+:global([data-cx-theme="dark"]) .linkColor:disabled,
+:global([data-cx-theme="dark"]) .linkGray:disabled {
+  color: var(--cx-color-fg-disabled);
+}

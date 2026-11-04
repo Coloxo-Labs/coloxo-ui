@@ -1,0 +1,51 @@
+{
+  "name": "FeaturedIcon",
+  "slug": "featured-icon",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Decorative icon in a colored container.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/featured-icon.tsx",
+          "target": "featured-icon.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/FeaturedIcon/FeaturedIcon.module.css",
+          "target": "featured-icon/featured-icon.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FeaturedIcon/FeaturedIcon.tsx",
+          "target": "featured-icon/featured-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FeaturedIcon/index.ts",
+          "target": "featured-icon/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

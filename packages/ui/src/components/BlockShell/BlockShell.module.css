@@ -1,0 +1,44 @@
+.shell {
+  /* Rhythm shared by all blocks. */
+  --blk-gap: 16px;
+  --blk-pad: 24px;
+  --blk-radius: 14px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: var(--blk-pad);
+  color: var(--cx-color-text-primary);
+  background: var(--cx-color-bg-primary);
+  font-family: var(--cx-font-sans, ui-sans-serif, system-ui, sans-serif);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bare {
+  padding: 0;
+}
+
+.shell *,
+.shell *::before,
+.shell *::after {
+  box-sizing: border-box;
+}
+
+/* Tighter rhythm on phone widths. Type size is never reduced to force a fit. */
+@media (max-width: 520px) {
+  .shell {
+    --blk-gap: 12px;
+    --blk-pad: 16px;
+    --blk-radius: 12px;
+  }
+}
+
+.shell :where(h1, h2, h3, h4, p, ul, ol) {
+  margin: 0;
+}
+
+.shell :where(ul, ol) {
+  padding: 0;
+  list-style: none;
+}

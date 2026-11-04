@@ -1,0 +1,80 @@
+{
+  "name": "Input",
+  "slug": "input",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Text input with label, hint, error, icons, and size variants.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "styles",
+    "theme",
+    "form-control",
+    "form-field",
+    "icon",
+    "tooltip",
+    "icons"
+  ],
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Labelled via FormField; errors use aria-invalid and role=alert."
+  },
+  "docs": {
+    "usage": "<Input label=\"Email\" placeholder=\"you@company.com\" />"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/input.tsx",
+          "target": "input.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Input/Input.tsx",
+          "target": "input/input.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Input/Input.module.css",
+          "target": "input/input.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Input/InputGroup.tsx",
+          "target": "input/input-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Input/InputGroup.module.css",
+          "target": "input/input-group.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Input/index.ts",
+          "target": "input/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "form-control",
+        "form-field",
+        "icon",
+        "tooltip",
+        "icons"
+      ]
+    }
+  }
+}

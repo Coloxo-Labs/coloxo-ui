@@ -1,0 +1,54 @@
+import type { ColoxoConfig } from "../project/config.js";
+import type { RegistryClient } from "./client.js";
+import { DEFAULT_REGISTRY_URL } from "./defaults.js";
+import { LocalRegistryClient } from "./local.js";
+import { RemoteRegistryClient } from "./remote.js";
+
+function isRemoteUrl(value: string): boolean {
+  return value.startsWith("http://") || value.startsWith("https://");
+}
+
+export async function createRegistryClient(options: {
+  cwd: string;
+  config?: ColoxoConfig;
+  registryFlag?: string;
+  /** When true, fall back to the public registry URL if no local registry is found. */
+  preferRemoteDefault?: boolean;
+}): Promise<RegistryClient> {
+  const envDir = process.env.COLOXO_REGISTRY_DIR ?? process.env.COLOXO_REGISTRY_PATH;
+  const contentBase =
+    process.env.COLOXO_REGISTRY_CONTENT_BASE ?? options.config?.registryContentBase;
+  const candidates = [
+    options.registryFlag,
+    envDir,
+    options.config?.registry,
+  ].filter((v): v is string => Boolean(v));
+
+  for (const candidate of candidates) {
+    if (isRemoteUrl(candidate)) {
+      return new RemoteRegistryClient(candidate, contentBase);
+    }
+  }
+
+  const localPath = candidates.find((c) => !isRemoteUrl(c));
+  const local = await LocalRegistryClient.create({
+    cwd: options.cwd,
+    registryPath: localPath,
+    envRegistryDir: envDir,
+  });
+
+  if (local) return local;
+
+  if (options.preferRemoteDefault || process.env.COLOXO_USE_DEFAULT_REGISTRY === "1") {
+    return new RemoteRegistryClient(DEFAULT_REGISTRY_URL, contentBase);
+  }
+
+  // No local registry configured: use the public GitHub registry.
+  if (!localPath && !envDir && !options.config?.registry) {
+    return new RemoteRegistryClient(DEFAULT_REGISTRY_URL, contentBase);
+  }
+
+  throw new Error(
+    "Could not find a Coloxo registry. Set COLOXO_REGISTRY_DIR, use --registry <path|url>, or configure coloxo.json.",
+  );
+}

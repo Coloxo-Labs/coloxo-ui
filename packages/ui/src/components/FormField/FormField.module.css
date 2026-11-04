@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--cx-space-1-5);
+  width: 100%;
+  font-family: var(--cx-font-body);
+}
+
+.description {
+  margin: 0;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+}
+
+.error {
+  margin: 0;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-error-primary);
+}

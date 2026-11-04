@@ -1,0 +1,125 @@
+.root {
+  display: block;
+  background: var(--cx-divider-color, var(--cx-color-border-secondary));
+  border: none;
+  flex-shrink: 0;
+}
+
+.root[data-orientation="horizontal"],
+.labeledLine {
+  height: var(--cx-divider-width, 1px);
+  width: 100%;
+}
+
+/* Figma inline specimen: 1×20px hairline, vertically centered in utility bars */
+.vertical,
+.root[data-orientation="vertical"] {
+  width: var(--cx-divider-width, 1px);
+  height: var(--cx-divider-vertical-size, 1.25rem);
+  align-self: center;
+}
+
+/* Optional: stretch to flex cross-axis (tall toolbars / stat columns) */
+.verticalStretch,
+.root[data-orientation="vertical"].verticalStretch {
+  height: auto;
+  align-self: stretch;
+  min-height: var(--cx-divider-vertical-size, 1.25rem);
+}
+
+.subtle,
+.subtle .labeledLine,
+.subtle.root {
+  background: var(
+    --cx-divider-color-subtle,
+    color-mix(in srgb, var(--cx-color-border-secondary) 55%, transparent)
+  );
+}
+
+.spacingBlock-compact {
+  margin-block: var(--cx-divider-spacing-compact, 0.5rem);
+}
+
+.spacingBlock-default {
+  margin-block: var(--cx-divider-spacing, 1rem);
+}
+
+.spacingBlock-relaxed {
+  margin-block: var(--cx-divider-spacing-relaxed, 2rem);
+}
+
+/* Vertical: Figma “8px / 12px” and “16px / 24px” use the larger inline gap */
+.spacingInline-compact {
+  margin-inline: var(--cx-divider-spacing-compact-inline, 0.75rem);
+}
+
+.spacingInline-default {
+  margin-inline: var(--cx-divider-spacing-inline, 1.5rem);
+}
+
+.spacingInline-relaxed {
+  margin-inline: var(--cx-divider-spacing-relaxed, 2rem);
+}
+
+.inset[data-orientation="horizontal"],
+.inset.labeled,
+.root.inset[data-orientation="horizontal"] {
+  margin-inline: var(--cx-divider-inset, 1rem);
+  width: auto;
+}
+
+.inset[data-orientation="vertical"],
+.root.inset[data-orientation="vertical"] {
+  margin-block: var(--cx-divider-inset, 1rem);
+}
+
+.labeled {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-divider-label-gap, 0.75rem);
+  width: 100%;
+}
+
+.labeledLine {
+  flex: 1 1 0;
+  min-width: 0;
+  display: block;
+}
+
+.label {
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-xs);
+  line-height: var(--cx-text-xs-lh);
+  font-weight: var(--cx-font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cx-color-text-tertiary);
+  white-space: nowrap;
+}
+
+:global([data-cx-theme="dark"]) .root,
+:global([data-cx-theme="dark"]) .labeledLine {
+  background: color-mix(in srgb, var(--cx-slate-500, #64748b) 35%, transparent);
+}
+
+:global([data-cx-theme="dark"]) .subtle,
+:global([data-cx-theme="dark"]) .subtle .labeledLine,
+:global([data-cx-theme="dark"]) .subtle.root {
+  background: color-mix(in srgb, var(--cx-slate-500, #64748b) 22%, transparent);
+}
+
+:global([data-cx-theme="dark"]) .label {
+  color: var(--cx-slate-400, var(--cx-color-text-quaternary));
+}
+
+@media (forced-colors: active) {
+  .root,
+  .labeledLine {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .label {
+    color: CanvasText;
+  }
+}

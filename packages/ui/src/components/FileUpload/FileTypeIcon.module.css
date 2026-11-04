@@ -1,0 +1,59 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: var(--cx-radius-md);
+  background: var(--cx-color-bg-secondary);
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-secondary);
+  overflow: hidden;
+  font-family: var(--cx-font-body);
+}
+
+.fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent var(--cx-color-bg-primary) transparent transparent;
+  filter: drop-shadow(-1px 1px 0 rgb(var(--cx-alpha-black) / 0.06));
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 4px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: var(--cx-font-weight-semibold);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--cx-color-text-white);
+  background: var(--cx-neutral-500);
+}
+
+/* Tones */
+.empty .label { background: var(--cx-neutral-500); }
+.pdf .label { background: var(--cx-red-600); }
+.doc .label { background: var(--cx-blue-600); }
+.xls .label { background: var(--cx-green-600); }
+.img .label { background: var(--cx-brand-600); }
+.video .label { background: var(--cx-indigo-700); }
+.audio .label { background: var(--cx-purple-700); }
+.zip .label { background: var(--cx-yellow-600); }
+.code .label { background: var(--cx-blue-700); }
+.txt .label { background: var(--cx-neutral-600); }
+
+.solid.pdf { background: var(--cx-red-50); box-shadow: inset 0 0 0 1px var(--cx-red-200); }
+.solid.doc { background: var(--cx-blue-50); box-shadow: inset 0 0 0 1px var(--cx-blue-200); }
+.solid.xls { background: var(--cx-green-50); box-shadow: inset 0 0 0 1px var(--cx-green-200); }
+.solid.img { background: var(--cx-brand-50); box-shadow: inset 0 0 0 1px var(--cx-brand-200); }
+.solid.video { background: var(--cx-indigo-50); box-shadow: inset 0 0 0 1px var(--cx-indigo-200); }
+.solid.code { background: var(--cx-blue-50); }

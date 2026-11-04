@@ -1,0 +1,45 @@
+{
+  "name": "Chart Tooltip",
+  "slug": "chart-tooltip",
+  "type": "registry:ui",
+  "category": "Chart",
+  "description": "Shared theme-aware details for bar and pie chart marks on hover and keyboard focus.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/chart-tooltip.tsx",
+          "target": "chart-tooltip.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/ChartTooltip/ChartTooltip.tsx",
+          "target": "chart-tooltip/ChartTooltip.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ChartTooltip/ChartTooltip.module.css",
+          "target": "chart-tooltip/ChartTooltip.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/ChartTooltip/index.ts",
+          "target": "chart-tooltip/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "styles"
+      ]
+    }
+  }
+}

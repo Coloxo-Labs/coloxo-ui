@@ -1,0 +1,60 @@
+{
+  "name": "Slider",
+  "slug": "slider",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Accessible numeric slider with single-value, range, vertical, and size variants.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Label each thumb; supports arrow keys, Home, End, and page increments."
+  },
+  "docs": {
+    "usage": "<Slider defaultValue={[50]} aria-label=\"Volume\" />"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/slider.tsx",
+          "target": "slider.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Slider/Slider.tsx",
+          "target": "slider/slider.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Slider/Slider.module.css",
+          "target": "slider/slider.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Slider/index.ts",
+          "target": "slider/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

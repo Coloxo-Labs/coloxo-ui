@@ -1,0 +1,62 @@
+{
+  "name": "Badge",
+  "slug": "badge",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Status and label badges with color and type variants.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "styles",
+    "theme",
+    "icons"
+  ],
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "aria": true
+  },
+  "docs": {
+    "usage": "<Badge type=\"pill-color\" color=\"brand\">New</Badge>"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/badge.tsx",
+          "target": "badge.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Badge/Badge.tsx",
+          "target": "badge/badge.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Badge/Badge.module.css",
+          "target": "badge/badge.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Badge/index.ts",
+          "target": "badge/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "IconButton",
+  "slug": "icon-button",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Icon-only button with tooltip, loading, and variant styles.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/icon-button.tsx",
+          "target": "icon-button.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "form-control",
+        "tooltip"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/IconButton/IconButton.module.css",
+          "target": "icon-button/icon-button.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/IconButton/IconButton.tsx",
+          "target": "icon-button/icon-button.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/IconButton/index.ts",
+          "target": "icon-button/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "form-control",
+        "button-variants",
+        "styles",
+        "theme",
+        "tooltip"
+      ]
+    }
+  }
+}

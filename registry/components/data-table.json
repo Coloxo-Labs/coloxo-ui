@@ -1,0 +1,94 @@
+{
+  "name": "DataTable",
+  "slug": "data-table",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Data grid with sorting, filtering, and pagination.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/data-table.tsx",
+          "target": "data-table.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icons",
+        "button",
+        "empty-state",
+        "pagination"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/DataTable/Body.tsx",
+          "target": "data-table/body.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/DataTable.module.css",
+          "target": "data-table/data-table.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/DataTable.tsx",
+          "target": "data-table/data-table.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/Grid.tsx",
+          "target": "data-table/grid.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/Toolbar.tsx",
+          "target": "data-table/toolbar.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/filters.ts",
+          "target": "data-table/filters.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/index.ts",
+          "target": "data-table/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/mapColumns.ts",
+          "target": "data-table/map-columns.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/query.ts",
+          "target": "data-table/query.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/types.ts",
+          "target": "data-table/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/DataTable/url.ts",
+          "target": "data-table/url.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "empty-state",
+        "pagination",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  }
+}

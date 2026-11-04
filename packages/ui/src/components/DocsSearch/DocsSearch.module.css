@@ -1,0 +1,104 @@
+.root {
+  position: relative;
+  width: 100%;
+  font-family: var(--cx-font-body);
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0 var(--cx-space-3);
+  font-size: var(--cx-text-sm);
+}
+
+.hasHotkey {
+  padding-right: 3.25rem;
+}
+
+.leadingIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-right: var(--cx-space-2);
+  color: var(--cx-color-fg-quaternary);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: var(--cx-space-2) 0;
+  border: none;
+  background: transparent;
+  color: var(--cx-color-text-primary);
+  font: inherit;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--cx-color-text-placeholder);
+}
+
+.hotkey {
+  position: absolute;
+  right: var(--cx-space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--cx-space-1));
+  left: 0;
+  right: 0;
+  z-index: var(--cx-z-dropdown, 50);
+  margin: 0;
+  padding: var(--cx-space-1);
+  list-style: none;
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-lg);
+  background: var(--cx-color-bg-primary);
+  box-shadow: var(--cx-shadow-lg);
+  max-height: 16rem;
+  overflow: auto;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  width: 100%;
+  margin: 0;
+  padding: var(--cx-space-2) var(--cx-space-2-5);
+  border: none;
+  border-radius: var(--cx-radius-md);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.option:hover {
+  background: var(--cx-color-bg-primary-hover);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.optionLabel {
+  font-size: var(--cx-text-sm);
+  font-weight: var(--cx-font-weight-medium);
+  color: var(--cx-color-text-primary);
+}
+
+.optionDescription {
+  font-size: var(--cx-text-xs);
+  color: var(--cx-color-text-tertiary);
+}

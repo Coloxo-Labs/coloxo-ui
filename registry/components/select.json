@@ -1,0 +1,66 @@
+{
+  "name": "Select",
+  "slug": "select",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Single and multi-select with search, groups, and form field integration.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/select.tsx",
+          "target": "select.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "@radix-ui/react-select"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icon",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Select/Select.module.css",
+          "target": "select/select.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Select/Select.tsx",
+          "target": "select/select.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Select/index.ts",
+          "target": "select/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-select",
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icon",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

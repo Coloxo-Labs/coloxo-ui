@@ -1,0 +1,54 @@
+{
+  "name": "WaveBackground",
+  "slug": "wave-background",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Interactive 3D-looking wave surface on native WebGL — GPU-displaced mesh with pointer ripples, Canvas 2D / static fallbacks, no Three.js. Fills any container and stays behind children; transparent by default so the parent owns the background.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/WaveBackground/WaveBackground.tsx",
+      "target": "wave-background/wave-background.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/WaveBackground.module.css",
+      "target": "wave-background/wave-background.module.css"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/waveEngine.ts",
+      "target": "wave-background/wave-engine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/waveFallback.ts",
+      "target": "wave-background/wave-fallback.ts"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/shaders/waveVert.ts",
+      "target": "wave-background/shaders/wave-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/shaders/waveFrag.ts",
+      "target": "wave-background/shaders/wave-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/types.ts",
+      "target": "wave-background/types.ts"
+    },
+    {
+      "path": "packages/ui/src/components/WaveBackground/index.ts",
+      "target": "wave-background/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": ["utils", "styles", "theme"],
+  "providers": ["theme"],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled (static frame, no pointer deformation). touch-action: pan-y avoids blocking vertical scroll."
+  },
+  "docs": {
+    "usage": "<WaveBackground colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\"]}>\n  <HeroContent />\n</WaveBackground>"
+  }
+}

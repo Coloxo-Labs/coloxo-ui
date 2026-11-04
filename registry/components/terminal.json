@@ -1,0 +1,74 @@
+{
+  "name": "Terminal",
+  "slug": "terminal",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Visual terminal/console session for documentation — prompts, commands, output, cursor, and chrome. Display-only; does not execute shell commands.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Copy button with polite live region; prompts and cursor are presentational and excluded from clipboard payload."
+  },
+  "docs": {
+    "usage": "<Terminal shell=\"bash\" commands={[{ command: \"npx coloxo add terminal\" }]} showCopyButton />"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/terminal.tsx",
+          "target": "terminal.tsx"
+        },
+        {
+          "path": "registry/styles/terminal-shells.ts",
+          "target": "terminal-shells.ts"
+        },
+        {
+          "path": "registry/styles/terminal-types.ts",
+          "target": "terminal-types.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Terminal/Terminal.tsx",
+          "target": "terminal/terminal.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Terminal/Terminal.module.css",
+          "target": "terminal/terminal.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Terminal/index.ts",
+          "target": "terminal/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Terminal/types.ts",
+          "target": "terminal/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Terminal/shells.ts",
+          "target": "terminal/shells.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

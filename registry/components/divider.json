@@ -1,0 +1,53 @@
+{
+  "name": "Divider",
+  "slug": "divider",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Horizontal or vertical content separator.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/divider.tsx",
+          "target": "divider.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Divider/Divider.module.css",
+          "target": "divider/divider.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Divider/Divider.tsx",
+          "target": "divider/divider.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Divider/index.ts",
+          "target": "divider/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

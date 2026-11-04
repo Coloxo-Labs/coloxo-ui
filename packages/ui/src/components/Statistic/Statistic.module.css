@@ -1,0 +1,81 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-2);
+  font-family: var(--cx-font-body);
+  min-width: 0;
+}
+
+.iconRow {
+  margin-bottom: var(--cx-space-1);
+}
+
+.icon {
+  color: var(--cx-color-fg-brand-primary);
+}
+
+.label {
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+  font-weight: var(--cx-font-weight-medium);
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--cx-space-1);
+  min-width: 0;
+}
+
+.value {
+  font-size: var(--cx-display-md);
+  line-height: var(--cx-display-md-lh);
+  letter-spacing: var(--cx-display-md-ls);
+  font-weight: var(--cx-font-weight-semibold);
+  color: var(--cx-color-text-primary);
+}
+
+.root[data-size="sm"] {
+  gap: var(--cx-space-1);
+}
+
+.root[data-size="sm"] .value {
+  font-size: var(--cx-display-sm);
+  line-height: var(--cx-display-sm-lh);
+  letter-spacing: var(--cx-display-sm-ls);
+}
+
+.root[data-size="sm"] .affix {
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}
+
+.root[data-size="sm"] .trendRow {
+  margin-top: var(--cx-space-1);
+}
+
+.affix {
+  font-size: var(--cx-text-lg);
+  line-height: var(--cx-text-lg-lh);
+  font-weight: var(--cx-font-weight-medium);
+  color: var(--cx-color-text-tertiary);
+}
+
+.trendRow {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+  margin-top: var(--cx-space-2);
+  flex-wrap: wrap;
+}
+
+.trendBadge {
+  gap: var(--cx-space-1);
+}
+
+.description {
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+}

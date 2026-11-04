@@ -1,0 +1,72 @@
+.wrap {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 8rem;
+  padding: 12px 14px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: var(--cx-text-md-lh);
+  outline: none;
+  box-shadow: none;
+  border-radius: inherit;
+  resize: vertical;
+}
+
+.hasTrailingIcon {
+  padding-inline-end: 2.5rem;
+}
+
+.textarea::placeholder {
+  color: var(--cx-color-text-placeholder);
+}
+
+.textarea:disabled {
+  cursor: not-allowed;
+}
+
+.none {
+  resize: none;
+}
+
+.vertical {
+  resize: vertical;
+}
+
+.horizontal {
+  resize: horizontal;
+}
+
+.both {
+  resize: both;
+}
+
+.invalidIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  color: var(--cx-color-fg-error-secondary);
+  pointer-events: none;
+  z-index: 1;
+  line-height: 0;
+}
+
+.count {
+  align-self: flex-end;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+}
+
+.countInvalid {
+  color: var(--cx-color-text-error-primary);
+}

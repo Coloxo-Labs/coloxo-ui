@@ -1,0 +1,57 @@
+{
+  "name": "DocsHeader",
+  "slug": "docs-header",
+  "type": "registry:ui",
+  "category": "Navigation",
+  "description": "Documentation site header with navigation.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/docs-header.tsx",
+          "target": "docs-header.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "dropdown",
+        "icon",
+        "icon-button",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/DocsHeader/DocsHeader.module.css",
+          "target": "docs-header/docs-header.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/DocsHeader/DocsHeader.tsx",
+          "target": "docs-header/docs-header.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/DocsHeader/index.ts",
+          "target": "docs-header/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "dropdown",
+        "icon",
+        "icon-button",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

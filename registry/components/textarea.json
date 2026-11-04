@@ -1,0 +1,58 @@
+{
+  "name": "Textarea",
+  "slug": "textarea",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Multiline text input with validation states.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/textarea.tsx",
+          "target": "textarea.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Textarea/Textarea.module.css",
+          "target": "textarea/textarea.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Textarea/Textarea.tsx",
+          "target": "textarea/textarea.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Textarea/index.ts",
+          "target": "textarea/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

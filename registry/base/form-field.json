@@ -1,0 +1,49 @@
+{
+  "name": "FormField",
+  "slug": "form-field",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Label, description, and error chrome around form controls.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "aria": true,
+    "notes": "Errors use role=alert; description/error ids via fieldDescribedBy."
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/form-field.tsx",
+          "target": "form-field.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "label"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/FormField/FormField.tsx",
+          "target": "form-field/form-field.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FormField/FormField.module.css",
+          "target": "form-field/form-field.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FormField/index.ts",
+          "target": "form-field/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "label"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Utils",
+  "slug": "utils",
+  "type": "registry:lib",
+  "description": "Shared utilities: cx (clsx wrapper), useId, useControllableState.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [
+    "clsx"
+  ],
+  "registryDependencies": [],
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/utils.ts",
+          "target": "utils/utils.ts"
+        },
+        {
+          "path": "registry/styles/utils-index.ts",
+          "target": "utils/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/utils/cx.ts",
+          "target": "cx.ts"
+        },
+        {
+          "path": "packages/ui/src/utils/useId.ts",
+          "target": "use-id.ts"
+        },
+        {
+          "path": "packages/ui/src/utils/useControllableState.ts",
+          "target": "use-controllable-state.ts"
+        },
+        {
+          "path": "packages/cli/templates/utils-index.ts",
+          "target": "index.ts"
+        }
+      ],
+      "dependencies": [
+        "clsx"
+      ],
+      "registryDependencies": []
+    }
+  }
+}

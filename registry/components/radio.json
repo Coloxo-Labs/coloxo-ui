@@ -1,0 +1,60 @@
+{
+  "name": "Radio",
+  "slug": "radio",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Radio group for single selection.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/radio.tsx",
+          "target": "radio.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-radio-group"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Radio/Radio.module.css",
+          "target": "radio/radio.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Radio/Radio.tsx",
+          "target": "radio/radio.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Radio/index.ts",
+          "target": "radio/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-radio-group"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

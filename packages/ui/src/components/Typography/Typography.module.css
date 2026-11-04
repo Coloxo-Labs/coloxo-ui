@@ -1,0 +1,189 @@
+.text,
+.heading {
+  font-family: var(--cx-font-body);
+  margin: 0;
+}
+
+.text {
+  color: var(--cx-color-text-primary);
+  font-weight: var(--cx-font-weight-regular);
+}
+
+/* ---- Variants ----------------------------------------------------------- */
+
+.body {
+  color: var(--cx-color-text-primary);
+  font-weight: var(--cx-font-weight-regular);
+}
+
+.caption {
+  color: var(--cx-slate-500, var(--cx-color-text-quaternary));
+  font-weight: var(--cx-font-weight-regular);
+}
+
+.overline {
+  color: var(--cx-slate-500, var(--cx-color-text-quaternary));
+  font-weight: var(--cx-font-weight-bold);
+  font-size: var(--cx-text-xs);
+  line-height: var(--cx-text-xs-lh);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.code {
+  display: inline;
+  font-family: var(--cx-font-mono);
+  font-size: 0.875em;
+  font-weight: var(--cx-font-weight-regular);
+  color: var(--cx-color-text-secondary);
+  background: var(--cx-slate-100, var(--cx-color-bg-secondary));
+  border: 1px solid var(--cx-slate-200, var(--cx-color-border-secondary));
+  border-radius: 4px;
+  padding: 0.125rem 0.375rem;
+}
+
+:global([data-cx-theme="dark"]) .caption {
+  color: var(--cx-slate-400, var(--cx-color-text-quaternary));
+}
+
+:global([data-cx-theme="dark"]) .overline {
+  color: var(--cx-brand-400, var(--cx-color-text-brand-tertiary));
+}
+
+:global([data-cx-theme="dark"]) .code {
+  color: var(--cx-brand-200, var(--cx-color-text-brand-secondary));
+  background: var(--cx-slate-800, var(--cx-color-bg-secondary));
+  border-color: var(--cx-slate-700, var(--cx-color-border-secondary));
+}
+
+/* ---- Size scale (locked LH ratios from Text.json) ----------------------- */
+
+.size-xs {
+  font-size: var(--cx-text-xs);
+  line-height: var(--cx-text-xs-lh);
+}
+
+.size-sm {
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+}
+
+.size-md {
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}
+
+.size-lg {
+  font-size: var(--cx-text-lg);
+  line-height: var(--cx-text-lg-lh);
+}
+
+/* Overline keeps its own type scale unless size is set via size-* after */
+.overline.size-xs,
+.overline.size-sm,
+.overline.size-md,
+.overline.size-lg {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---- Weight / color overrides ------------------------------------------- */
+
+.weightRegular {
+  font-weight: var(--cx-font-weight-regular);
+}
+
+.weightMedium {
+  font-weight: var(--cx-font-weight-medium);
+}
+
+.weightSemibold {
+  font-weight: var(--cx-font-weight-semibold);
+}
+
+.weightBold {
+  font-weight: var(--cx-font-weight-bold);
+}
+
+.colorPrimary {
+  color: var(--cx-color-text-primary);
+}
+
+.colorSecondary {
+  color: var(--cx-color-text-secondary);
+}
+
+.colorTertiary {
+  color: var(--cx-color-text-tertiary);
+}
+
+.colorQuaternary {
+  color: var(--cx-color-text-quaternary);
+}
+
+.colorBrand {
+  color: var(--cx-color-text-brand-tertiary);
+}
+
+.colorError {
+  color: var(--cx-color-text-error-primary);
+}
+
+.colorSuccess {
+  color: var(--cx-color-text-success-primary);
+}
+
+.colorWarning {
+  color: var(--cx-color-text-warning-primary);
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+/* ---- Heading (Heading.json scale) --------------------------------------- */
+
+.heading {
+  font-family: var(--cx-font-display, var(--cx-font-body));
+  color: var(--cx-color-text-primary);
+  font-weight: var(--cx-heading-font-weight, var(--cx-font-weight-semibold));
+  letter-spacing: var(--cx-heading-tracking, 0);
+  margin: 0;
+}
+
+.heading-sm {
+  font-size: var(--cx-heading-sm);
+  line-height: var(--cx-heading-sm-lh);
+}
+
+.heading-md {
+  font-size: var(--cx-heading-md);
+  line-height: var(--cx-heading-md-lh);
+}
+
+.heading-lg {
+  font-size: var(--cx-heading-lg);
+  line-height: var(--cx-heading-lg-lh);
+}
+
+.heading-xl {
+  font-size: var(--cx-heading-xl);
+  line-height: var(--cx-heading-xl-lh);
+}
+
+.heading-2xl {
+  font-size: var(--cx-heading-2xl);
+  line-height: var(--cx-heading-2xl-lh);
+}
+
+.trackingNormal {
+  letter-spacing: 0;
+}
+
+.trackingTight {
+  letter-spacing: var(--cx-heading-tracking-tight, -0.02em);
+}
+
+.trackingTighter {
+  letter-spacing: var(--cx-heading-tracking-tighter, -0.045em);
+}

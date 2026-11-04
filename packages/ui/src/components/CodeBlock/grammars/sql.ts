@@ -1,0 +1,39 @@
+import { wordRegex, type Grammar } from "../tokens";
+
+const KEYWORDS = [
+  "SELECT", "FROM", "WHERE", "AND", "OR", "NOT", "IN", "IS", "LIKE", "ILIKE", "BETWEEN", "EXISTS",
+  "INSERT", "INTO", "VALUES", "UPDATE", "SET", "DELETE", "CREATE", "ALTER", "DROP", "TABLE", "VIEW",
+  "INDEX", "UNIQUE", "PRIMARY", "KEY", "FOREIGN", "REFERENCES", "CONSTRAINT", "DEFAULT", "CHECK",
+  "ADD", "COLUMN", "JOIN", "INNER", "LEFT", "RIGHT", "FULL", "OUTER", "CROSS", "NATURAL", "ON",
+  "USING", "GROUP", "BY", "ORDER", "HAVING", "LIMIT", "OFFSET", "DISTINCT", "AS", "UNION", "ALL",
+  "INTERSECT", "EXCEPT", "CASE", "WHEN", "THEN", "ELSE", "END", "ASC", "DESC", "WITH", "RECURSIVE",
+  "RETURNING", "BEGIN", "COMMIT", "ROLLBACK", "TRANSACTION", "IF", "CASCADE", "RESTRICT",
+  "TRUNCATE", "GRANT", "REVOKE", "DATABASE", "SCHEMA", "TRIGGER", "FUNCTION", "PROCEDURE",
+  "RETURNS", "REPLACE", "TEMPORARY", "TEMP", "OVER", "PARTITION", "ANY", "SOME", "ESCAPE", "FETCH",
+  "FIRST", "NEXT", "ROWS", "ONLY", "LATERAL", "EXPLAIN", "ANALYZE", "VACUUM",
+];
+
+const TYPES = [
+  "INT", "INTEGER", "BIGINT", "SMALLINT", "TINYINT", "SERIAL", "BIGSERIAL", "DECIMAL", "NUMERIC",
+  "FLOAT", "REAL", "DOUBLE", "PRECISION", "BOOLEAN", "BOOL", "CHAR", "VARCHAR", "TEXT", "DATE",
+  "TIME", "TIMESTAMP", "TIMESTAMPTZ", "INTERVAL", "UUID", "JSON", "JSONB", "BLOB", "BYTEA", "ENUM",
+  "ARRAY",
+];
+
+export const sqlGrammar: Grammar = {
+  rules: [
+    { type: "comment", pattern: /--.*/ },
+    { type: "comment", pattern: /\/\*/, end: /\*\// },
+    { type: "string", pattern: /'(?:[^']|'')*(?:'|$)/ },
+    { type: "property", pattern: /"[^"]*(?:"|$)|`[^`]*(?:`|$)/ },
+    { type: "variable", pattern: /(?<![:\w]):[A-Za-z_]\w*|@@?[A-Za-z_]\w*|\$\d+/ },
+    { type: "number", pattern: /(?<![\w.])\d+(?:\.\d+)?(?![\w])/ },
+    { type: "boolean", pattern: wordRegex(["TRUE", "FALSE"], "i") },
+    { type: "constant", pattern: wordRegex(["NULL"], "i") },
+    { type: "type", pattern: wordRegex(TYPES, "i") },
+    { type: "keyword", pattern: wordRegex(KEYWORDS, "i") },
+    { type: "function", pattern: /[A-Za-z_]\w*(?=\s*\()/ },
+    { type: "operator", pattern: /<>|<=|>=|!=|::|\|\||[=<>+\-*/%]/ },
+    { type: "punctuation", pattern: /[(),;.]/ },
+  ],
+};

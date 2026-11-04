@@ -1,0 +1,67 @@
+{
+  "name": "Notification",
+  "slug": "notification",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Toast notifications with progress and actions.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme",
+    "notification"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/notification.tsx",
+          "target": "notification.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-toast"
+      ],
+      "registryDependencies": [
+        "utils",
+        "avatar",
+        "featured-icon",
+        "icon-button",
+        "progress-bar",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Notification/Notification.module.css",
+          "target": "notification/notification.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Notification/Notification.tsx",
+          "target": "notification/notification.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Notification/index.ts",
+          "target": "notification/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-toast"
+      ],
+      "registryDependencies": [
+        "utils",
+        "avatar",
+        "featured-icon",
+        "icon-button",
+        "progress-bar",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

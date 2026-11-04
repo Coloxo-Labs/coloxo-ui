@@ -1,0 +1,54 @@
+{
+  "name": "Vortex",
+  "slug": "vortex",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Premium GPU spiral particles with soft persistence trails on native WebGL — fills any container, stays behind children, transparent by default. Canvas 2D fallback when WebGL is unavailable. No Three.js or particle libraries.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Vortex/Vortex.tsx",
+      "target": "vortex/vortex.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/Vortex.module.css",
+      "target": "vortex/vortex.module.css"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/vortexEngine.ts",
+      "target": "vortex/vortex-engine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/shaders/vortexVert.ts",
+      "target": "vortex/shaders/vortex-vert.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/shaders/vortexFrag.ts",
+      "target": "vortex/shaders/vortex-frag.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/shaders/fadeShaders.ts",
+      "target": "vortex/shaders/fade-shaders.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/types.ts",
+      "target": "vortex/types.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Vortex/index.ts",
+      "target": "vortex/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": ["utils", "styles", "theme"],
+  "providers": ["theme"],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled (static frame, no loop)."
+  },
+  "docs": {
+    "usage": "<Vortex colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\", \"#EC4899\"]}>\n  <HeroContent />\n</Vortex>"
+  }
+}

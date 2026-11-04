@@ -1,0 +1,38 @@
+.root {
+  display: inline-flex;
+  padding: 0.125rem;
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-md);
+  background: var(--cx-color-bg-secondary);
+}
+
+.option {
+  margin: 0;
+  padding: var(--cx-space-1) var(--cx-space-2);
+  border: none;
+  border-radius: calc(var(--cx-radius-md) - 2px);
+  background: transparent;
+  color: var(--cx-color-text-secondary);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-xs);
+  font-weight: var(--cx-font-weight-medium);
+  cursor: pointer;
+  transition:
+    background-color var(--cx-duration-fast) var(--cx-ease-linear),
+    color var(--cx-duration-fast) var(--cx-ease-linear);
+}
+
+.option:hover:not(.optionActive) {
+  background: var(--cx-color-bg-primary-hover);
+  color: var(--cx-color-text-primary);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.optionActive {
+  background: var(--cx-color-bg-brand-solid);
+  color: var(--cx-color-text-primary-on-brand);
+}

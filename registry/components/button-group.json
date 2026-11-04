@@ -1,0 +1,51 @@
+{
+  "name": "ButtonGroup",
+  "slug": "button-group",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Grouped button layout.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/button-group.tsx",
+          "target": "button-group.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "button"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/ButtonGroup/ButtonGroup.module.css",
+          "target": "button-group/button-group.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/ButtonGroup/ButtonGroup.tsx",
+          "target": "button-group/button-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ButtonGroup/index.ts",
+          "target": "button-group/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

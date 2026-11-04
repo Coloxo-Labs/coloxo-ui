@@ -1,0 +1,55 @@
+{
+  "name": "Button",
+  "slug": "button",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Primary interactive button with variants, sizes, loading, and icon slots.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/button.tsx",
+          "target": "button.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Button/Button.tsx",
+          "target": "button/button.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Button/Button.module.css",
+          "target": "button/button.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Button/index.ts",
+          "target": "button/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "form-control",
+        "button-variants",
+        "styles",
+        "theme"
+      ]
+    }
+  },
+  "providers": ["theme"],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Native button semantics; loading exposes aria-busy."
+  },
+  "docs": {
+    "usage": "<Button variant=\"primary\">Save</Button>"
+  }
+}

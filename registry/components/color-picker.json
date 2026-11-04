@@ -1,0 +1,80 @@
+{
+  "name": "ColorPicker",
+  "slug": "color-picker",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Solid and gradient color pickers.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/color-picker.tsx",
+          "target": "color-picker.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icons",
+        "form-field",
+        "icon"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/ColorPicker/ColorParts.tsx",
+          "target": "color-picker/color-parts.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/ColorPicker.module.css",
+          "target": "color-picker/color-picker.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/ColorPicker.tsx",
+          "target": "color-picker/color-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/GradientPicker.tsx",
+          "target": "color-picker/gradient-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/gradient.ts",
+          "target": "color-picker/gradient.ts"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/index.ts",
+          "target": "color-picker/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/ColorPicker/presets.ts",
+          "target": "color-picker/presets.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "picker-field",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  }
+}

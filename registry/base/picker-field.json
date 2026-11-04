@@ -1,0 +1,28 @@
+{
+  "name": "Picker Field",
+  "slug": "picker-field",
+  "type": "registry:lib",
+  "description": "Shared picker field shell, aria helpers, and open state for date/time/color pickers.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/_internal/picker/PickerField.tsx",
+          "target": "picker-field/picker-field.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/picker/usePickerOpen.ts",
+          "target": "picker-field/use-picker-open.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/picker/index.ts",
+          "target": "picker-field/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": ["utils", "form-field"]
+    }
+  }
+}

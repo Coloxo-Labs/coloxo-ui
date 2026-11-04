@@ -1,0 +1,59 @@
+{
+  "name": "Toggle",
+  "slug": "toggle",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Toggle button and toggle group.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/toggle.tsx",
+          "target": "toggle.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-toggle",
+        "@radix-ui/react-toggle-group"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Toggle/Toggle.module.css",
+          "target": "toggle/toggle.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Toggle/Toggle.tsx",
+          "target": "toggle/toggle.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Toggle/ToggleGroup.tsx",
+          "target": "toggle/toggle-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Toggle/index.ts",
+          "target": "toggle/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-toggle",
+        "@radix-ui/react-toggle-group"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.root {
+  padding: 0;
+}
+
+.xs { width: var(--cx-control-height-xs); }
+.sm { width: var(--cx-control-height-sm); }
+.md { width: var(--cx-control-height-md); }
+.lg { width: var(--cx-control-height-lg); }
+.xl { width: var(--cx-control-height-xl); }
+
+.circle {
+  border-radius: var(--cx-radius-full);
+}
+
+.tertiaryIcon {
+  color: var(--cx-color-fg-quaternary);
+}
+
+.tertiaryIcon:hover:not(:disabled) {
+  color: var(--cx-color-fg-quaternary-hover);
+}
+
+.tooltip {
+  z-index: var(--cx-z-tooltip);
+  background: var(--cx-color-bg-primary-solid);
+  color: var(--cx-color-text-white);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-xs);
+  font-weight: var(--cx-font-weight-semibold);
+  line-height: var(--cx-text-xs-lh);
+  padding: var(--cx-space-2) var(--cx-space-3);
+  border-radius: var(--cx-radius-md);
+  box-shadow: var(--cx-shadow-lg);
+  max-width: 20rem;
+}

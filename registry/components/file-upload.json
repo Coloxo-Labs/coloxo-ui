@@ -1,0 +1,76 @@
+{
+  "name": "FileUpload",
+  "slug": "file-upload",
+  "type": "registry:ui",
+  "category": "Date & File",
+  "description": "Drag-and-drop file upload with file list.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/file-upload.tsx",
+          "target": "file-upload.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icons",
+        "form-field",
+        "icon",
+        "featured-icon"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/FileUpload/FileListItem.module.css",
+          "target": "file-upload/file-list-item.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/FileListItem.tsx",
+          "target": "file-upload/file-list-item.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/FileTypeIcon.module.css",
+          "target": "file-upload/file-type-icon.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/FileTypeIcon.tsx",
+          "target": "file-upload/file-type-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/FileUpload.module.css",
+          "target": "file-upload/file-upload.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/FileUpload.tsx",
+          "target": "file-upload/file-upload.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FileUpload/index.ts",
+          "target": "file-upload/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icon",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  }
+}

@@ -1,0 +1,175 @@
+.root {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: var(--cx-radius-lg);
+  background: var(--cx-color-bg-primary);
+  box-shadow: var(--cx-shadow-xs);
+  transition: box-shadow var(--cx-duration-fast) var(--cx-ease-linear);
+}
+
+/* Full-perimeter ring above leading/trailing addons */
+.root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-primary);
+  transition: box-shadow var(--cx-duration-fast) var(--cx-ease-linear);
+  z-index: 3;
+}
+
+.hasLeading:focus-within::after,
+.hasTrailing:focus-within::after,
+.root:focus-within::after {
+  box-shadow: inset 0 0 0 2px var(--cx-color-border-brand);
+}
+
+.invalid::after {
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-error-subtle);
+}
+
+.invalid:focus-within::after {
+  box-shadow: inset 0 0 0 2px var(--cx-color-border-error);
+}
+
+.sm {
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  min-height: var(--cx-control-height-sm);
+}
+
+.md {
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  min-height: var(--cx-control-height-md);
+}
+
+.lg {
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  min-height: var(--cx-control-height-lg);
+}
+
+.leadingAddon,
+.trailingAddon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+}
+
+.leadingText {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--cx-color-text-tertiary);
+  padding-left: var(--cx-space-3);
+  padding-right: var(--cx-space-1-5);
+  white-space: nowrap;
+}
+
+.md .leadingText {
+  padding-right: var(--cx-space-2);
+}
+
+.lg .leadingText {
+  padding-left: var(--cx-space-3-5);
+  padding-right: var(--cx-space-2);
+}
+
+.inputSlot {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+
+.inputSlot > * {
+  width: 100%;
+}
+
+/* Flatten child Input ring when grouped — group ::after owns the ring */
+.hasLeading .inputSlot > *,
+.hasTrailing .inputSlot > * {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hasLeading .inputSlot > *::after,
+.hasTrailing .inputSlot > *::after {
+  display: none;
+}
+
+.hasLeading:not(.hasTrailing) .inputSlot > * {
+  border-top-right-radius: var(--cx-radius-lg);
+  border-bottom-right-radius: var(--cx-radius-lg);
+}
+
+.hasTrailing:not(.hasLeading) .inputSlot > * {
+  border-top-left-radius: var(--cx-radius-lg);
+  border-bottom-left-radius: var(--cx-radius-lg);
+}
+
+/* Divider between addon and field (under the shared focus ring) */
+.hasLeading .leadingAddon {
+  border-right: 1px solid var(--cx-color-border-primary);
+}
+
+.hasTrailing .trailingAddon {
+  border-left: 1px solid var(--cx-color-border-primary);
+}
+
+.hasLeading:focus-within .leadingAddon {
+  border-right-color: var(--cx-color-border-brand);
+}
+
+.hasTrailing:focus-within .trailingAddon {
+  border-left-color: var(--cx-color-border-brand);
+}
+
+.invalid.hasLeading .leadingAddon {
+  border-right-color: var(--cx-color-border-error-subtle);
+}
+
+.invalid.hasTrailing .trailingAddon {
+  border-left-color: var(--cx-color-border-error-subtle);
+}
+
+.invalid.hasLeading:focus-within .leadingAddon,
+.invalid.hasTrailing:focus-within .trailingAddon {
+  border-right-color: var(--cx-color-border-error);
+  border-left-color: var(--cx-color-border-error);
+}
+
+.prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-space-1);
+  padding: var(--cx-space-2) var(--cx-space-3);
+  color: var(--cx-color-text-tertiary);
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  /* No own ring — InputGroup ::after draws the full perimeter */
+  box-shadow: none;
+}
+
+.prefixLeading {
+  border-radius: var(--cx-radius-lg) 0 0 var(--cx-radius-lg);
+}
+
+.prefixTrailing {
+  border-radius: 0 var(--cx-radius-lg) var(--cx-radius-lg) 0;
+}
+
+.prefixDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

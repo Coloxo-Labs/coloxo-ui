@@ -1,0 +1,41 @@
+{
+  "name": "Theme",
+  "slug": "theme",
+  "type": "registry:theme",
+  "description": "ThemeProvider for light/dark/system via data-cx-theme and design tokens.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [
+    "styles",
+    "utils"
+  ],
+  "providers": [
+    "theme"
+  ],
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/theme-provider.tsx",
+          "target": "theme-provider.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/theme/ThemeProvider.tsx",
+          "target": "theme/theme-provider.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "styles",
+        "utils"
+      ]
+    }
+  }
+}

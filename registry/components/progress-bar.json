@@ -1,0 +1,49 @@
+{
+  "name": "ProgressBar",
+  "slug": "progress-bar",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Linear progress indicator.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/progress-bar.tsx",
+          "target": "progress-bar.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/ProgressBar/ProgressBar.module.css",
+          "target": "progress-bar/progress-bar.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/ProgressBar/ProgressBar.tsx",
+          "target": "progress-bar/progress-bar.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/ProgressBar/index.ts",
+          "target": "progress-bar/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "FluidBackground",
+  "slug": "fluid-background",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Lightweight pointer-driven iridescent liquid-ink trails using native Canvas 2D — fills any container, stays behind children, transparent by default so the parent owns the background, stops rendering when idle.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/FluidBackground/FluidBackground.tsx",
+      "target": "fluid-background/fluid-background.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/FluidBackground/FluidBackground.module.css",
+      "target": "fluid-background/fluid-background.module.css"
+    },
+    {
+      "path": "packages/ui/src/components/FluidBackground/fluidEngine.ts",
+      "target": "fluid-background/fluidEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/FluidBackground/types.ts",
+      "target": "fluid-background/types.ts"
+    },
+    {
+      "path": "packages/ui/src/components/FluidBackground/index.ts",
+      "target": "fluid-background/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": ["utils", "styles", "theme"],
+  "providers": ["theme"],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<FluidBackground colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\", \"#EC4899\"]}>\n  <HeroContent />\n</FluidBackground>"
+  }
+}

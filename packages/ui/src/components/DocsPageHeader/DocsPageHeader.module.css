@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-4);
+  font-family: var(--cx-font-body);
+}
+
+.breadcrumb {
+  min-width: 0;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cx-space-4);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cx-space-3);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--cx-font-display, var(--cx-font-body));
+  font-size: var(--cx-text-display-xs, var(--cx-text-xl));
+  line-height: var(--cx-text-display-xs-lh, 1.25);
+  font-weight: var(--cx-font-weight-semibold);
+  color: var(--cx-color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cx-space-2);
+}
+
+.description {
+  margin: var(--cx-space-2) 0 0;
+  max-width: 42rem;
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  color: var(--cx-color-text-tertiary);
+}
+
+.actions {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--cx-space-2);
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Card",
+  "slug": "card",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Content card container.",
+  "status": "stable",
+  "version": "1.0.0",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "styles",
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/card.tsx",
+          "target": "card.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Card/Card.module.css",
+          "target": "card/card.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Card/Card.tsx",
+          "target": "card/card.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Card/index.ts",
+          "target": "card/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

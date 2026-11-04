@@ -1,0 +1,56 @@
+{
+  "name": "Tabs",
+  "slug": "tabs",
+  "type": "registry:ui",
+  "category": "Navigation",
+  "description": "Tabbed navigation and content panels.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/tabs.tsx",
+          "target": "tabs.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Tabs/Tabs.module.css",
+          "target": "tabs/tabs.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Tabs/Tabs.tsx",
+          "target": "tabs/tabs.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Tabs/index.ts",
+          "target": "tabs/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

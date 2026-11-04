@@ -1,0 +1,60 @@
+{
+  "name": "Input OTP",
+  "slug": "input-otp",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Separate verification code slots with sizes, paste support, and one-time-code autofill.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "One labelled native input supports keyboard editing, paste, and one-time-code autofill."
+  },
+  "docs": {
+    "usage": "<InputOTP maxLength={6} aria-label=\"Verification code\"><InputOTPGroup>{[0, 1, 2, 3, 4, 5].map(index => <InputOTPSlot key={index} index={index} />)}</InputOTPGroup></InputOTP>"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/input-otp.tsx",
+          "target": "input-otp.tsx"
+        }
+      ],
+      "dependencies": [
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/InputOTP/InputOTP.tsx",
+          "target": "input-otp/input-otp.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/InputOTP/InputOTP.module.css",
+          "target": "input-otp/input-otp.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/InputOTP/index.ts",
+          "target": "input-otp/index.ts"
+        }
+      ],
+      "dependencies": [
+        "input-otp@^1.5.0"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

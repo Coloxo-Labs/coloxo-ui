@@ -1,0 +1,37 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+}
+
+.item {
+  margin-left: -0.5rem;
+  border-radius: var(--cx-radius-full);
+  /* Stack ring so avatars separate cleanly on white/colored surfaces */
+  box-shadow: 0 0 0 1.5px var(--cx-color-bg-primary);
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.overflow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -0.5rem;
+  border-radius: var(--cx-radius-full);
+  background: var(--cx-color-bg-secondary);
+  color: var(--cx-color-text-secondary);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-xs);
+  line-height: var(--cx-text-xs-lh);
+  font-weight: var(--cx-font-weight-semibold);
+  box-shadow: 0 0 0 1.5px var(--cx-color-bg-primary);
+}
+
+.xs { width: 1.5rem; height: 1.5rem; }
+.sm { width: 2rem; height: 2rem; }
+.md { width: 2.5rem; height: 2.5rem; }
+.lg { width: 3rem; height: 3rem; }
+.xl { width: 3.5rem; height: 3.5rem; }
+.size2xl { width: 4rem; height: 4rem; }

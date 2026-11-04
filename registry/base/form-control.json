@@ -1,0 +1,48 @@
+{
+  "name": "Form Control",
+  "slug": "form-control",
+  "type": "registry:lib",
+  "description": "Shared form control surface CSS, size helpers, and Spinner.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/form-control.tsx",
+          "target": "form-control/form-control.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/_internal/Control.module.css",
+          "target": "form-control/control.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/controlSize.ts",
+          "target": "form-control/control-size.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/Spinner.tsx",
+          "target": "form-control/spinner.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/Spinner.module.css",
+          "target": "form-control/spinner.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon"
+      ]
+    }
+  }
+}

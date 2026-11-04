@@ -1,0 +1,370 @@
+.host {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--cx-z-notification);
+}
+
+/* Custom getContainer: position relative to the host element, not the viewport. */
+.hostContained {
+  position: absolute;
+}
+
+.viewport {
+  position: fixed;
+  z-index: var(--cx-z-notification);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-2);
+  width: min(31.5rem, calc(100vw - 2rem));
+  outline: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.viewportContained {
+  position: absolute;
+  width: min(22rem, calc(100% - 2rem));
+  max-height: calc(100% - 1.5rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.viewport > * {
+  pointer-events: auto;
+}
+
+.viewport:has(.rootLayoutImage) {
+  width: min(34rem, calc(100vw - 2rem));
+}
+
+.viewportContained:has(.rootLayoutImage) {
+  width: min(24rem, calc(100% - 2rem));
+}
+
+.viewportTop {
+  top: var(--cx-notification-offset-top, 24px);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: auto;
+  right: auto;
+}
+
+.viewportTopLeft {
+  top: var(--cx-notification-offset-top, 24px);
+  left: var(--cx-space-4);
+  bottom: auto;
+  right: auto;
+}
+
+.viewportTopRight {
+  top: var(--cx-notification-offset-top, 24px);
+  right: var(--cx-space-4);
+  bottom: auto;
+  left: auto;
+}
+
+.viewportBottom {
+  bottom: var(--cx-notification-offset-bottom, 24px);
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  right: auto;
+  flex-direction: column-reverse;
+}
+
+.viewportBottomLeft {
+  bottom: var(--cx-notification-offset-bottom, 24px);
+  left: var(--cx-space-4);
+  top: auto;
+  right: auto;
+  flex-direction: column-reverse;
+}
+
+.viewportBottomRight {
+  bottom: var(--cx-notification-offset-bottom, 24px);
+  right: var(--cx-space-4);
+  top: auto;
+  left: auto;
+  flex-direction: column-reverse;
+}
+
+.viewportStacked {
+  gap: 0;
+}
+
+.viewportStacked:hover .stackedBehind,
+.viewportStacked:focus-within .stackedBehind {
+  transform: none;
+  opacity: 1;
+  margin-block: var(--cx-space-1);
+}
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cx-space-3);
+  background: var(--cx-color-bg-primary);
+  color: var(--cx-color-text-primary);
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-xl);
+  box-shadow: var(--cx-shadow-lg);
+  padding: var(--cx-space-4);
+  font-family: var(--cx-font-body);
+  overflow: hidden;
+  width: 100%;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease,
+    margin 200ms ease;
+}
+
+/* Coloxo spring enter/exit — CSS only, no animation library. */
+.animated[data-state="open"] {
+  transform-origin: center top;
+  animation: cx-notification-in 380ms cubic-bezier(0.22, 1.2, 0.36, 1) backwards;
+  animation-delay: var(--cx-notification-anim-delay, 0ms);
+}
+
+.viewportBottom .animated[data-state="open"],
+.viewportBottomLeft .animated[data-state="open"],
+.viewportBottomRight .animated[data-state="open"] {
+  transform-origin: center bottom;
+}
+
+.animated[data-state="closed"] {
+  transform-origin: center top;
+  animation: cx-notification-out 200ms ease-in forwards;
+}
+
+.viewportBottom .animated[data-state="closed"],
+.viewportBottomLeft .animated[data-state="closed"],
+.viewportBottomRight .animated[data-state="closed"] {
+  transform-origin: center bottom;
+}
+
+.animated[data-swipe="move"] {
+  animation: none;
+  transform: translateX(var(--radix-toast-swipe-move-x, 0));
+  transition: none;
+}
+
+.animated[data-swipe="cancel"] {
+  animation: none;
+  transform: translateX(0);
+  transition: transform 200ms ease;
+}
+
+.animated[data-swipe="end"] {
+  animation: cx-notification-swipe-out 120ms ease-out forwards;
+}
+
+@keyframes cx-notification-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cx-notification-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes cx-notification-swipe-out {
+  to {
+    opacity: 0;
+    transform: translateX(var(--radix-toast-swipe-end-x, 100%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated[data-state="open"],
+  .animated[data-state="closed"],
+  .animated[data-swipe="end"] {
+    animation-duration: 1ms;
+    animation-delay: 0ms !important;
+  }
+}
+
+.stackedItem {
+  transform-origin: center top;
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    margin 220ms ease;
+}
+
+.viewportBottom .stackedItem,
+.viewportBottomLeft .stackedItem,
+.viewportBottomRight .stackedItem {
+  transform-origin: center bottom;
+}
+
+.stackedBehind {
+  transform: translateY(var(--cx-notification-stack-offset, 0)) scale(var(--cx-notification-stack-scale, 1));
+  opacity: 0.88;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.avatar {
+  flex-shrink: 0;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.leadingMedia {
+  flex-shrink: 0;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.thumb {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--cx-radius-lg);
+  object-fit: cover;
+  display: block;
+}
+
+.contentProgress {
+  margin-top: var(--cx-space-3);
+}
+
+.section {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.title {
+  font-size: var(--cx-text-sm);
+  font-weight: var(--cx-font-weight-semibold);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-primary);
+  margin: 0;
+}
+
+.description {
+  margin: var(--cx-space-1) 0 0;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--cx-space-2);
+  margin-top: var(--cx-space-3);
+}
+
+.action {
+  border: none;
+  background: none;
+  color: var(--cx-color-text-brand-secondary);
+  font: inherit;
+  font-weight: var(--cx-font-weight-semibold);
+  font-size: var(--cx-text-sm);
+  cursor: pointer;
+  padding: 0;
+  margin-top: var(--cx-space-2);
+  align-self: flex-start;
+}
+
+.action:hover {
+  color: var(--cx-color-text-brand-secondary-hover);
+}
+
+.close {
+  flex-shrink: 0;
+  margin-inline-start: auto;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--cx-color-bg-brand-solid), var(--cx-color-fg-brand-primary));
+  animation-name: cx-notification-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.root:hover .progress[data-pause-on-hover="true"],
+.root:focus-within .progress[data-pause-on-hover="true"] {
+  animation-play-state: paused;
+}
+
+@keyframes cx-notification-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.rtl .progress {
+  transform-origin: right center;
+}
+
+@media (max-width: 640px) {
+  .viewportTopLeft,
+  .viewportTopRight,
+  .viewportBottomLeft,
+  .viewportBottomRight,
+  .viewportTop,
+  .viewportBottom {
+    left: var(--cx-space-3);
+    right: var(--cx-space-3);
+    width: auto;
+    transform: none;
+  }
+
+  .viewportTop,
+  .viewportTopLeft,
+  .viewportTopRight {
+    top: var(--cx-notification-offset-top, 16px);
+  }
+
+  .viewportBottom,
+  .viewportBottomLeft,
+  .viewportBottomRight {
+    bottom: var(--cx-notification-offset-bottom, 16px);
+  }
+}
+
+.success .iconContainer { color: var(--cx-color-success); }
+.error .iconContainer { color: var(--cx-color-error); }
+.warning .iconContainer { color: var(--cx-color-warning); }
+.info .iconContainer { color: var(--cx-color-info); }

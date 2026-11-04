@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--cx-space-2);
+  padding: var(--cx-space-8) var(--cx-space-4);
+  font-family: var(--cx-font-body);
+}
+
+.icon {
+  color: var(--cx-color-fg-quaternary);
+  background: var(--cx-color-bg-secondary);
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-full);
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--cx-space-1);
+}
+
+.title {
+  font-size: var(--cx-text-lg);
+  font-weight: var(--cx-font-weight-semibold);
+  color: var(--cx-color-text-primary);
+}
+
+.description {
+  margin: 0;
+  max-width: 28rem;
+  font-size: var(--cx-text-sm);
+  color: var(--cx-color-text-tertiary);
+  line-height: var(--cx-text-md-lh);
+}

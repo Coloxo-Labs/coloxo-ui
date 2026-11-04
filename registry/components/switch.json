@@ -1,0 +1,60 @@
+{
+  "name": "Switch",
+  "slug": "switch",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Toggle switch control.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/switch.tsx",
+          "target": "switch.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Switch/Switch.module.css",
+          "target": "switch/switch.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Switch/Switch.tsx",
+          "target": "switch/switch.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Switch/index.ts",
+          "target": "switch/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

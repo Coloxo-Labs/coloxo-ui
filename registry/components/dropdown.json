@@ -1,0 +1,56 @@
+{
+  "name": "Dropdown",
+  "slug": "dropdown",
+  "type": "registry:ui",
+  "category": "Navigation",
+  "description": "Dropdown menu with items and shortcuts.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/dropdown.tsx",
+          "target": "dropdown.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Dropdown/Dropdown.module.css",
+          "target": "dropdown/dropdown.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Dropdown/Dropdown.tsx",
+          "target": "dropdown/dropdown.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Dropdown/index.ts",
+          "target": "dropdown/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

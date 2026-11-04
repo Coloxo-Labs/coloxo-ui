@@ -1,0 +1,112 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sm { width: 2rem; height: 2rem; }
+.md { width: 2.5rem; height: 2.5rem; }
+.lg { width: 3rem; height: 3rem; }
+.xl { width: 3.5rem; height: 3.5rem; }
+
+.lightCircle {
+  border-radius: var(--cx-radius-full);
+}
+
+.darkCircle {
+  border-radius: var(--cx-radius-full);
+  color: var(--cx-color-fg-white);
+}
+
+.modern {
+  background: var(--cx-color-bg-primary);
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-lg);
+  box-shadow: var(--cx-shadow-xs);
+  color: var(--cx-color-fg-secondary);
+}
+
+.modernNeue {
+  background: var(--cx-color-bg-primary);
+  border-radius: var(--cx-radius-xl);
+  box-shadow: var(--cx-shadow-lg), 0 0 0 1px rgb(var(--cx-alpha-black) / 0.06) inset;
+  color: var(--cx-color-fg-secondary);
+}
+
+.outline {
+  border-radius: var(--cx-radius-full);
+  position: relative;
+}
+
+.outline::before,
+.outline::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 1px solid currentColor;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.outline::after {
+  inset: -8px;
+  opacity: 0.06;
+}
+
+.colorBrand.lightCircle,
+.colorBrand.outline {
+  background: var(--cx-color-bg-brand-primary);
+  color: var(--cx-color-fg-brand-primary);
+}
+
+.colorBrand.darkCircle {
+  background: var(--cx-color-bg-brand-solid);
+}
+
+.colorGray.lightCircle,
+.colorGray.outline {
+  background: var(--cx-color-bg-secondary);
+  color: var(--cx-color-fg-secondary);
+}
+
+.colorGray.darkCircle {
+  background: var(--cx-color-bg-secondary-solid);
+}
+
+.colorError.lightCircle,
+.colorError.outline {
+  background: var(--cx-color-bg-error-primary);
+  color: var(--cx-color-fg-error-primary);
+}
+
+.colorError.darkCircle {
+  background: var(--cx-color-bg-error-solid);
+}
+
+.colorWarning.lightCircle,
+.colorWarning.outline {
+  background: var(--cx-color-bg-warning-primary);
+  color: var(--cx-color-fg-warning-primary);
+}
+
+.colorWarning.darkCircle {
+  background: var(--cx-color-bg-warning-solid);
+}
+
+.colorSuccess.lightCircle,
+.colorSuccess.outline {
+  background: var(--cx-color-bg-success-primary);
+  color: var(--cx-color-fg-success-primary);
+}
+
+.colorSuccess.darkCircle {
+  background: var(--cx-color-bg-success-solid);
+}
+
+.modern.sm,
+.modern.md { border-radius: var(--cx-radius-lg); }
+.modern.lg { border-radius: 0.625rem; }
+.modern.xl { border-radius: var(--cx-radius-xl); }

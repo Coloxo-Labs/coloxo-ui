@@ -1,0 +1,102 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-1);
+  font-family: var(--cx-font-body);
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cx-space-2);
+}
+
+.box {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+  border: 1px solid var(--cx-color-border-primary);
+  border-radius: var(--cx-radius-md);
+  background: var(--cx-color-bg-primary);
+  color: var(--cx-color-text-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.box:hover:not(:disabled):not([data-state="checked"]):not([data-state="indeterminate"]) {
+  background: var(--cx-color-bg-brand-primary);
+  border-color: var(--cx-color-border-brand);
+}
+
+.box:focus {
+  outline: none;
+}
+
+.box:focus-visible {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.box[data-state="checked"],
+.box[data-state="indeterminate"] {
+  background: var(--cx-color-bg-brand-solid);
+  border-color: var(--cx-color-bg-brand-solid);
+}
+
+.box[data-state="checked"]:hover:not(:disabled),
+.box[data-state="indeterminate"]:hover:not(:disabled) {
+  background: var(--cx-color-bg-brand-solid-hover);
+  border-color: var(--cx-color-bg-brand-solid-hover);
+}
+
+.box:disabled {
+  background: var(--cx-color-bg-disabled-subtle);
+  border-color: var(--cx-color-border-disabled);
+  cursor: not-allowed;
+  color: var(--cx-color-fg-disabled);
+}
+
+.invalid {
+  border-color: var(--cx-color-border-error);
+}
+
+.indicator {
+  display: inline-flex;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--cx-text-sm);
+  font-weight: var(--cx-font-weight-medium);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-secondary);
+  cursor: pointer;
+}
+
+.required {
+  color: var(--cx-color-text-error-primary);
+  margin-left: 2px;
+}
+
+.description {
+  margin: 0;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  color: var(--cx-color-text-tertiary);
+}
+
+.error {
+  margin: 0 0 0 calc(1.25rem + var(--cx-space-2));
+  font-size: var(--cx-text-sm);
+  color: var(--cx-color-text-error-primary);
+}

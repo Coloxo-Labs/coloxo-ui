@@ -1,0 +1,589 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+  padding: 0 var(--cx-space-3);
+  text-align: left;
+  cursor: pointer;
+  color: var(--cx-color-text-primary);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.trigger[data-size="sm"],
+.rangeRoot[data-size="sm"] {
+  height: var(--cx-control-height-sm);
+  min-height: var(--cx-control-height-sm);
+  padding: 0 var(--cx-space-3);
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+  gap: var(--cx-space-1-5);
+}
+
+.trigger[data-size="md"],
+.rangeRoot[data-size="md"] {
+  height: var(--cx-control-height-md);
+  min-height: var(--cx-control-height-md);
+  padding: 0 var(--cx-space-3);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}
+
+.trigger[data-size="lg"],
+.rangeRoot[data-size="lg"] {
+  height: var(--cx-control-height-lg);
+  min-height: var(--cx-control-height-lg);
+  padding: 0 var(--cx-space-3-5);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  gap: var(--cx-space-2-5);
+}
+
+.trigger > :global([aria-hidden="true"]),
+.rangeRoot > :global([aria-hidden="true"]) {
+  color: var(--cx-color-fg-quaternary);
+}
+
+.triggerMultiple {
+  height: auto;
+  flex-wrap: wrap;
+  min-height: var(--cx-control-height-md);
+}
+
+.triggerMultiple[data-size="sm"] {
+  min-height: var(--cx-control-height-sm);
+  height: auto;
+}
+
+.triggerMultiple[data-size="md"] {
+  min-height: var(--cx-control-height-md);
+  height: auto;
+}
+
+.triggerMultiple[data-size="lg"] {
+  min-height: var(--cx-control-height-lg);
+  height: auto;
+}
+
+.placeholder {
+  color: var(--cx-color-text-placeholder);
+}
+
+.clear {
+  margin-left: auto;
+  display: inline-flex;
+  color: var(--cx-color-fg-quaternary);
+  flex-shrink: 0;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cx-space-1);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--cx-space-2);
+  border-radius: var(--cx-radius-sm);
+  background: var(--cx-color-bg-brand-primary);
+  color: var(--cx-color-text-brand-secondary);
+  font-size: var(--cx-text-xs);
+  line-height: 1.5;
+}
+
+.trigger[data-size="lg"] .chip {
+  font-size: var(--cx-text-sm);
+}
+
+.panel {
+  z-index: var(--cx-z-dropdown);
+  background: var(--cx-color-bg-primary);
+  border: 1px solid var(--cx-color-border-secondary);
+  border-radius: var(--cx-radius-md);
+  box-shadow: var(--cx-shadow-lg);
+  padding: var(--cx-space-2) var(--cx-space-3);
+  font-family: var(--cx-font-body);
+  max-width: min(100vw - 1rem, 56rem);
+  max-height: min(90vh, 40rem);
+  overflow: auto;
+}
+
+.panelBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-2);
+}
+
+.panelWithTime {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: flex-start;
+  /* Shared row metrics so calendar weeks and time options share the same rhythm */
+  --picker-nav-h: 1.75rem;
+  --picker-weekday-h: 1.25rem;
+  --picker-day-h: 1.375rem;
+  --picker-weeks: 6;
+}
+
+.rangeWithTime {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--cx-space-2);
+  align-items: flex-start;
+  --picker-nav-h: 1.75rem;
+  --picker-weekday-h: 1.25rem;
+  --picker-day-h: 1.375rem;
+  --picker-weeks: 6;
+}
+
+.rangeSide {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex: 1 1 16rem;
+  min-width: 0;
+  --picker-nav-h: 1.75rem;
+  --picker-weekday-h: 1.25rem;
+  --picker-day-h: 1.375rem;
+  --picker-weeks: 6;
+}
+
+.rangeSide + .rangeSide {
+  border-left: 1px solid var(--cx-color-border-secondary);
+  padding-left: var(--cx-space-2);
+}
+
+.rangeSide .calendar {
+  flex: 0 0 auto;
+}
+
+.rangeSide .timePanel {
+  flex: 0 0 auto;
+}
+
+.panelWithTime > .calendar {
+  flex: 0 0 auto;
+  padding-right: var(--cx-space-2);
+}
+
+.panelFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cx-space-2);
+  padding-top: var(--cx-space-2);
+  border-top: 1px solid var(--cx-color-border-secondary);
+}
+
+.calendar {
+  color: var(--cx-color-text-primary);
+  font-size: var(--cx-text-xs);
+  --picker-nav-h: 1.75rem;
+  --picker-weekday-h: 1.25rem;
+  --picker-day-h: 1.375rem;
+  --picker-weeks: 6;
+}
+
+.calendar:global(.rdp-root),
+.calendar :global(.rdp-root) {
+  --rdp-accent-color: var(--cx-color-bg-brand-solid);
+  --rdp-accent-background-color: var(--cx-color-bg-brand-primary);
+  --rdp-nav-height: var(--picker-nav-h, 2rem);
+  --rdp-months-gap: 0.75rem;
+  --rdp-weekday-padding: 0;
+  --rdp-day-height: var(--picker-day-h, 1.5rem);
+  --rdp-day-width: var(--picker-day-h, 1.5rem);
+  --rdp-day_button-height: var(--picker-day-h, 1.5rem);
+  --rdp-day_button-width: var(--picker-day-h, 1.5rem);
+  --rdp-day_button-border-radius: 999px;
+  --rdp-day_button-border: none;
+  --rdp-selected-border: none;
+  --rdp-range_middle-background-color: var(--cx-color-bg-brand-primary);
+  --rdp-range_start-date-background-color: var(--cx-color-bg-brand-solid);
+  --rdp-range_end-date-background-color: var(--cx-color-bg-brand-solid);
+  --rdp-nav_button-height: 1.25rem;
+  --rdp-nav_button-width: 1.25rem;
+}
+
+.calendar :global(.rdp-months) {
+  gap: var(--rdp-months-gap);
+}
+
+.calendar :global(.rdp-month) {
+  gap: 0;
+}
+
+.calendar :global(.rdp-month_caption) {
+  font-weight: var(--cx-font-weight-semibold);
+  font-size: var(--cx-text-xs);
+  margin: 0;
+  padding: 0;
+  height: var(--picker-nav-h, 1.75rem);
+  line-height: var(--picker-nav-h, 1.75rem);
+}
+
+.calendar :global(.rdp-nav) {
+  height: var(--picker-nav-h, 1.75rem);
+}
+
+.calendar :global(.rdp-month_grid) {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: max-content;
+}
+
+.calendar :global(.rdp-weekdays) {
+  margin: 0;
+  height: var(--picker-weekday-h, 1.25rem);
+}
+
+.calendar :global(.rdp-weekday) {
+  font-size: 0.625rem;
+  color: var(--cx-color-text-tertiary);
+  font-weight: var(--cx-font-weight-medium);
+  height: var(--picker-weekday-h, 1.25rem);
+  width: var(--picker-day-h, 1.375rem);
+  padding: 0 !important;
+  opacity: 1;
+  vertical-align: middle;
+  line-height: var(--picker-weekday-h, 1.25rem);
+}
+
+.calendar :global(.rdp-week_number),
+.calendar :global(.rdp-week_number_header) {
+  width: var(--picker-day-h, 1.375rem);
+  height: var(--picker-day-h, 1.375rem);
+  font-size: 0.625rem;
+  padding: 0;
+  opacity: 1;
+  color: var(--cx-color-text-tertiary);
+  vertical-align: middle;
+}
+
+.calendar :global(.rdp-week) {
+  margin: 0;
+  height: var(--picker-day-h, 1.375rem);
+}
+
+.calendar :global(.rdp-day) {
+  padding: 0;
+  width: var(--picker-day-h, 1.375rem);
+  height: var(--picker-day-h, 1.375rem);
+  vertical-align: middle;
+}
+
+.calendar :global(.rdp-day_button) {
+  margin: 0;
+  font-size: var(--cx-text-xs);
+  line-height: 1;
+  padding: 0;
+  width: var(--picker-day-h, 1.375rem);
+  height: var(--picker-day-h, 1.375rem);
+  border: none;
+}
+
+.calendar :global(.rdp-button_previous),
+.calendar :global(.rdp-button_next) {
+  color: var(--cx-color-text-secondary);
+}
+
+.calendar :global(.rdp-button_previous:hover),
+.calendar :global(.rdp-button_next:hover) {
+  background: var(--cx-color-bg-secondary);
+}
+
+.calendar :global(.rdp-today:not(.rdp-selected)) :global(.rdp-day_button) {
+  color: var(--cx-color-bg-brand-solid);
+  font-weight: var(--cx-font-weight-semibold);
+  box-shadow: inset 0 0 0 1px var(--cx-color-bg-brand-solid);
+}
+
+.calendar :global(.rdp-selected) {
+  font-size: inherit;
+  font-weight: var(--cx-font-weight-semibold);
+}
+
+.calendar :global(.rdp-selected .rdp-day_button) {
+  background: var(--cx-color-bg-brand-solid);
+  color: var(--cx-color-text-white);
+  border: none;
+  border-radius: 999px;
+  font-size: var(--cx-text-xs);
+}
+
+.calendar :global(.rdp-day_button:focus-visible) {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 1px;
+}
+
+.calendar :global(.rdp-range_middle .rdp-day_button) {
+  background: var(--cx-color-bg-brand-primary);
+  color: var(--cx-color-text-primary);
+  border-radius: 0;
+}
+
+.calendar :global(.rdp-range_start .rdp-day_button),
+.calendar :global(.rdp-range_end .rdp-day_button) {
+  border-radius: 999px;
+}
+
+.rangeRoot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+  padding: 0 var(--cx-space-3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rangeDisabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.rangeInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: var(--cx-color-text-primary);
+  font: inherit;
+}
+
+.rangeSeparator {
+  color: var(--cx-color-text-tertiary);
+  flex-shrink: 0;
+  font-size: var(--cx-text-sm);
+}
+
+.timePanel {
+  --picker-nav-h: 1.75rem;
+  --picker-weekday-h: 1.25rem;
+  --picker-day-h: 1.375rem;
+  --picker-weeks: 6;
+  /* Small top inset only — not full month-caption height */
+  --picker-time-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: var(--cx-space-1);
+  height: calc(
+    var(--picker-time-top) + var(--picker-weekday-h) + (var(--picker-weeks) * var(--picker-day-h))
+  );
+  box-sizing: border-box;
+}
+
+.timePanelSpacer {
+  flex: 0 0 var(--picker-time-top);
+  height: var(--picker-time-top);
+  width: 100%;
+}
+
+.timePanelColumns {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: calc(var(--picker-weekday-h) + (var(--picker-weeks) * var(--picker-day-h)));
+  border-left: 1px solid var(--cx-color-border-secondary);
+  padding-left: var(--cx-space-2);
+}
+
+.timeColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 2rem;
+  height: 100%;
+}
+
+.timeColumnHeader {
+  text-align: center;
+  font-size: 0.625rem;
+  color: var(--cx-color-text-tertiary);
+  padding: 0;
+  margin: 0;
+  font-weight: var(--cx-font-weight-medium);
+  flex: 0 0 var(--picker-weekday-h);
+  height: var(--picker-weekday-h);
+  line-height: var(--picker-weekday-h);
+}
+
+.timeColumnList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 calc(var(--picker-weeks) * var(--picker-day-h));
+  height: calc(var(--picker-weeks) * var(--picker-day-h));
+  max-height: calc(var(--picker-weeks) * var(--picker-day-h));
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.timeColumnList > li {
+  margin: 0;
+  padding: 0;
+  height: var(--picker-day-h);
+  line-height: 0;
+}
+
+.timeOption {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--cx-radius-sm);
+  cursor: pointer;
+  font-size: var(--cx-text-xs);
+  height: var(--picker-day-h);
+  min-height: var(--picker-day-h);
+  line-height: 1;
+  color: var(--cx-color-text-primary);
+  box-sizing: border-box;
+}
+
+.timeOption:hover {
+  background: var(--cx-color-bg-secondary);
+}
+
+.timeOptionSelected {
+  background: var(--cx-color-bg-brand-solid);
+  color: var(--cx-color-text-white);
+}
+
+.timeOptionSelected:hover {
+  background: var(--cx-color-bg-brand-solid);
+}
+
+.customPanel {
+  --picker-nav-h: 1.75rem;
+  --picker-day-h: 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: calc(7 * var(--picker-day-h));
+  min-width: calc(7 * var(--picker-day-h));
+  box-sizing: border-box;
+}
+
+.panelNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cx-space-1);
+  height: var(--picker-nav-h);
+  flex-shrink: 0;
+}
+
+.panelNavLabel {
+  font-weight: var(--cx-font-weight-semibold);
+  font-size: var(--cx-text-xs);
+  line-height: 1;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: var(--cx-radius-sm);
+  background: transparent;
+  color: var(--cx-color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+}
+
+.navButton:hover {
+  background: var(--cx-color-bg-secondary);
+}
+
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+}
+
+.gridCell {
+  border: none;
+  border-radius: var(--cx-radius-sm);
+  padding: 0;
+  min-height: 2rem;
+  height: 2rem;
+  background: transparent;
+  cursor: pointer;
+  font-size: var(--cx-text-xs);
+  line-height: 1;
+  color: var(--cx-color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridCell:hover {
+  background: var(--cx-color-bg-secondary);
+}
+
+.gridCellSelected {
+  background: var(--cx-color-bg-brand-solid);
+  color: var(--cx-color-text-white);
+}
+
+.gridCellSelected:hover {
+  background: var(--cx-color-bg-brand-solid);
+}
+
+.gridCellMuted {
+  color: var(--cx-color-text-quaternary);
+}
+
+@media (max-width: 720px) {
+  .rangeWithTime {
+    flex-direction: column;
+  }
+
+  .rangeSide + .rangeSide {
+    border-left: none;
+    border-top: 1px solid var(--cx-color-border-secondary);
+    padding-left: 0;
+    padding-top: var(--cx-space-2);
+  }
+
+  .panelWithTime {
+    flex-direction: column;
+  }
+
+  .timePanel {
+    margin-left: 0;
+    padding-top: var(--cx-space-2);
+  }
+
+  .timePanelColumns {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .calendar :global(.rdp-months) {
+    flex-direction: column;
+  }
+}

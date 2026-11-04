@@ -1,0 +1,51 @@
+{
+  "name": "AvatarGroup",
+  "slug": "avatar-group",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Stacked avatar group.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/avatar-group.tsx",
+          "target": "avatar-group.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "avatar"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/AvatarGroup/AvatarGroup.module.css",
+          "target": "avatar-group/avatar-group.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/AvatarGroup/AvatarGroup.tsx",
+          "target": "avatar-group/avatar-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/AvatarGroup/index.ts",
+          "target": "avatar-group/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "avatar",
+        "styles",
+        "theme"
+      ]
+    }
+  }
+}

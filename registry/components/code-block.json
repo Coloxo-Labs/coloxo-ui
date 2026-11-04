@@ -1,0 +1,178 @@
+{
+  "name": "CodeBlock",
+  "slug": "code-block",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Self-contained code display with built-in syntax highlighting — no Prism, Shiki, or Highlight.js.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Copy button with polite live region; line numbers excluded from clipboard."
+  },
+  "docs": {
+    "usage": "<CodeBlock language=\"typescript\" showLineNumbers code={code} />"
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/code-block.tsx",
+          "target": "code-block.tsx"
+        },
+        {
+          "path": "registry/styles/code-block-bash.ts",
+          "target": "code-block-bash.ts"
+        },
+        {
+          "path": "registry/styles/code-block-css.ts",
+          "target": "code-block-css.ts"
+        },
+        {
+          "path": "registry/styles/code-block-grammars.ts",
+          "target": "code-block-grammars.ts"
+        },
+        {
+          "path": "registry/styles/code-block-html.ts",
+          "target": "code-block-html.ts"
+        },
+        {
+          "path": "registry/styles/code-block-json.ts",
+          "target": "code-block-json.ts"
+        },
+        {
+          "path": "registry/styles/code-block-languages.ts",
+          "target": "code-block-languages.ts"
+        },
+        {
+          "path": "registry/styles/code-block-markdown.ts",
+          "target": "code-block-markdown.ts"
+        },
+        {
+          "path": "registry/styles/code-block-plaintext.ts",
+          "target": "code-block-plaintext.ts"
+        },
+        {
+          "path": "registry/styles/code-block-python.ts",
+          "target": "code-block-python.ts"
+        },
+        {
+          "path": "registry/styles/code-block-sql.ts",
+          "target": "code-block-sql.ts"
+        },
+        {
+          "path": "registry/styles/code-block-tokenize.ts",
+          "target": "code-block-tokenize.ts"
+        },
+        {
+          "path": "registry/styles/code-block-tokens.ts",
+          "target": "code-block-tokens.ts"
+        },
+        {
+          "path": "registry/styles/code-block-types.ts",
+          "target": "code-block-types.ts"
+        },
+        {
+          "path": "registry/styles/code-block-typescript.ts",
+          "target": "code-block-typescript.ts"
+        },
+        {
+          "path": "registry/styles/code-block-yaml.ts",
+          "target": "code-block-yaml.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/CodeBlock/CodeBlock.tsx",
+          "target": "code-block/code-block.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/CodeBlock.module.css",
+          "target": "code-block/code-block.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/index.ts",
+          "target": "code-block/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/types.ts",
+          "target": "code-block/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/tokens.ts",
+          "target": "code-block/tokens.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/tokenize.ts",
+          "target": "code-block/tokenize.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/languages.ts",
+          "target": "code-block/languages.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/index.ts",
+          "target": "code-block/grammars/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/typescript.ts",
+          "target": "code-block/grammars/typescript.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/json.ts",
+          "target": "code-block/grammars/json.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/css.ts",
+          "target": "code-block/grammars/css.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/html.ts",
+          "target": "code-block/grammars/html.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/bash.ts",
+          "target": "code-block/grammars/bash.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/sql.ts",
+          "target": "code-block/grammars/sql.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/python.ts",
+          "target": "code-block/grammars/python.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/yaml.ts",
+          "target": "code-block/grammars/yaml.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/markdown.ts",
+          "target": "code-block/grammars/markdown.ts"
+        },
+        {
+          "path": "packages/ui/src/components/CodeBlock/grammars/plaintext.ts",
+          "target": "code-block/grammars/plaintext.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

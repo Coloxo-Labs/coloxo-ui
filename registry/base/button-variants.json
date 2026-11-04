@@ -1,0 +1,20 @@
+{
+  "name": "Button Variants",
+  "slug": "button-variants",
+  "type": "registry:lib",
+  "description": "Shared button variant and size CSS module for Button and IconButton.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/_internal/buttonVariants.module.css",
+          "target": "button-variants/button-variants.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": ["styles", "theme"]
+    }
+  }
+}

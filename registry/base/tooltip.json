@@ -1,0 +1,51 @@
+{
+  "name": "Tooltip",
+  "slug": "tooltip",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Radix-based tooltip for short helper text.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/tooltip.tsx",
+          "target": "tooltip.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Tooltip/Tooltip.tsx",
+          "target": "tooltip/tooltip.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Tooltip/Tooltip.module.css",
+          "target": "tooltip/tooltip.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Tooltip/index.ts",
+          "target": "tooltip/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    }
+  }
+}

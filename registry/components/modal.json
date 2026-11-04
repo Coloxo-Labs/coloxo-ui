@@ -1,0 +1,60 @@
+{
+  "name": "Modal",
+  "slug": "modal",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Accessible dialog modal built on Radix Dialog.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/modal.tsx",
+          "target": "modal.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon-button",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Modal/Modal.module.css",
+          "target": "modal/modal.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Modal/Modal.tsx",
+          "target": "modal/modal.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Modal/index.ts",
+          "target": "modal/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon-button",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

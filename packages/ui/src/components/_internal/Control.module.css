@@ -1,0 +1,92 @@
+/* Untitled UI input surface: inset ring via ::after so trailing icons/addons
+   never cover the active brand border (Coloxo blue). */
+
+.surface {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: var(--cx-radius-lg);
+  background: var(--cx-color-bg-primary);
+  color: var(--cx-color-text-primary);
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+  box-shadow: var(--cx-shadow-xs);
+  transition:
+    box-shadow var(--cx-duration-fast) var(--cx-ease-linear),
+    background-color var(--cx-duration-fast) var(--cx-ease-linear),
+    opacity var(--cx-duration-fast) var(--cx-ease-linear);
+}
+
+/* Ring overlay sits above trailing icons / suffixes */
+.surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-primary);
+  transition: box-shadow var(--cx-duration-fast) var(--cx-ease-linear);
+  z-index: 2;
+}
+
+.surface::placeholder {
+  color: var(--cx-color-text-placeholder);
+}
+
+.surface:focus,
+.surface:focus-visible,
+.surface:focus-within {
+  outline: none;
+}
+
+.surface:focus::after,
+.surface:focus-visible::after,
+.surface:focus-within::after {
+  box-shadow: inset 0 0 0 2px var(--cx-color-border-brand);
+}
+
+.invalid::after {
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-error-subtle);
+}
+
+.invalid:focus::after,
+.invalid:focus-visible::after,
+.invalid:focus-within::after {
+  box-shadow: inset 0 0 0 2px var(--cx-color-border-error);
+}
+
+.disabled,
+.surface:disabled,
+.surface[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.readOnly {
+  background: var(--cx-color-bg-secondary);
+  color: var(--cx-color-text-secondary);
+}
+
+.readOnly::after {
+  box-shadow: inset 0 0 0 1px var(--cx-color-border-primary);
+}
+
+.sm {
+  min-height: var(--cx-control-height-sm);
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+}
+
+.md {
+  min-height: var(--cx-control-height-md);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}
+
+.lg {
+  min-height: var(--cx-control-height-lg);
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}

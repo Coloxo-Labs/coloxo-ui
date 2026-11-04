@@ -1,0 +1,60 @@
+{
+  "name": "Drawer",
+  "slug": "drawer",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Slide-over panel dialog.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/drawer.tsx",
+          "target": "drawer.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon-button",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Drawer/Drawer.module.css",
+          "target": "drawer/drawer.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Drawer/Drawer.tsx",
+          "target": "drawer/drawer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Drawer/index.ts",
+          "target": "drawer/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon-button",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

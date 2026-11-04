@@ -1,0 +1,25 @@
+.root {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.root > * {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.root > *:first-child {
+  border-top-left-radius: var(--cx-radius-lg);
+  border-bottom-left-radius: var(--cx-radius-lg);
+  margin-left: 0;
+}
+
+.root > *:last-child {
+  border-top-right-radius: var(--cx-radius-lg);
+  border-bottom-right-radius: var(--cx-radius-lg);
+}
+
+.root > *:hover,
+.root > *:focus-visible {
+  z-index: 1;
+}

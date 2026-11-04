@@ -1,0 +1,3940 @@
+{
+  "$schema": "./schema.json",
+  "name": "coloxo",
+  "version": "1.0.0",
+  "items": [
+    {
+      "name": "Button Variants",
+      "slug": "button-variants",
+      "type": "registry:lib",
+      "description": "Shared button variant and size CSS module for Button and IconButton.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/_internal/buttonVariants.module.css",
+              "target": "button-variants/button-variants.module.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "Form Control",
+      "slug": "form-control",
+      "type": "registry:lib",
+      "description": "Shared form control surface CSS, size helpers, and Spinner.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/form-control.tsx",
+              "target": "form-control/form-control.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/_internal/Control.module.css",
+              "target": "form-control/control.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/_internal/controlSize.ts",
+              "target": "form-control/control-size.ts"
+            },
+            {
+              "path": "packages/ui/src/components/_internal/Spinner.tsx",
+              "target": "form-control/spinner.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/_internal/Spinner.module.css",
+              "target": "form-control/spinner.module.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "FormField",
+      "slug": "form-field",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Label, description, and error chrome around form controls.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/form-field.tsx",
+              "target": "form-field.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "label"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/FormField/FormField.tsx",
+              "target": "form-field/form-field.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/FormField/FormField.module.css",
+              "target": "form-field/form-field.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/FormField/index.ts",
+              "target": "form-field/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "label"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "aria": true,
+        "notes": "Errors use role=alert; description/error ids via fieldDescribedBy."
+      }
+    },
+    {
+      "name": "Icon",
+      "slug": "icon",
+      "type": "registry:ui",
+      "category": "Foundation",
+      "description": "Sized icon wrapper for custom SVG or ReactNode children.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/icon.tsx",
+              "target": "icon.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Icon/Icon.tsx",
+              "target": "icon/icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Icon/Icon.module.css",
+              "target": "icon/icon.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Icon/index.ts",
+              "target": "icon/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "aria": true,
+        "notes": "Decorative by default (aria-hidden). Pass aria attributes when the icon is meaningful."
+      }
+    },
+    {
+      "name": "Icons",
+      "slug": "icons",
+      "type": "registry:lib",
+      "description": "Self-contained Lucide-derived SVG icons used by Coloxo UI chrome. No react-icons or lucide-react dependency.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/icons/arrow-down-icon.tsx",
+              "target": "icons/arrow-down-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/arrow-up-icon.tsx",
+              "target": "icons/arrow-up-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/calendar-icon.tsx",
+              "target": "icons/calendar-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/check-icon.tsx",
+              "target": "icons/check-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevron-down-icon.tsx",
+              "target": "icons/chevron-down-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevron-left-icon.tsx",
+              "target": "icons/chevron-left-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevron-right-icon.tsx",
+              "target": "icons/chevron-right-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevron-up-icon.tsx",
+              "target": "icons/chevron-up-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevrons-left-icon.tsx",
+              "target": "icons/chevrons-left-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/chevrons-right-icon.tsx",
+              "target": "icons/chevrons-right-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/circle-alert-icon.tsx",
+              "target": "icons/circle-alert-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/circle-check-icon.tsx",
+              "target": "icons/circle-check-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/circle-help-icon.tsx",
+              "target": "icons/circle-help-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/circle-xicon.tsx",
+              "target": "icons/circle-xicon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/clock-icon.tsx",
+              "target": "icons/clock-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/columns3icon.tsx",
+              "target": "icons/columns3icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/copy-icon.tsx",
+              "target": "icons/copy-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/eye-icon.tsx",
+              "target": "icons/eye-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/eye-off-icon.tsx",
+              "target": "icons/eye-off-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/funnel-icon.tsx",
+              "target": "icons/funnel-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/info-icon.tsx",
+              "target": "icons/info-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/layout-grid-icon.tsx",
+              "target": "icons/layout-grid-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/mail-icon.tsx",
+              "target": "icons/mail-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/menu-icon.tsx",
+              "target": "icons/menu-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/minus-icon.tsx",
+              "target": "icons/minus-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/NOTICE",
+              "target": "icons/NOTICE"
+            },
+            {
+              "path": "registry/styles/icons/pipette-icon.tsx",
+              "target": "icons/pipette-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/plus-icon.tsx",
+              "target": "icons/plus-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/search-icon.tsx",
+              "target": "icons/search-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/table-icon.tsx",
+              "target": "icons/table-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/trash2icon.tsx",
+              "target": "icons/trash2icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/triangle-alert-icon.tsx",
+              "target": "icons/triangle-alert-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/upload-icon.tsx",
+              "target": "icons/upload-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/user-icon.tsx",
+              "target": "icons/user-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/xicon.tsx",
+              "target": "icons/xicon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/create-icon.tsx",
+              "target": "icons/create-icon.tsx"
+            },
+            {
+              "path": "registry/styles/icons/index.ts",
+              "target": "icons/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/icons/ArrowDownIcon.tsx",
+              "target": "icons/arrow-down-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ArrowUpIcon.tsx",
+              "target": "icons/arrow-up-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CalendarIcon.tsx",
+              "target": "icons/calendar-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CheckIcon.tsx",
+              "target": "icons/check-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronDownIcon.tsx",
+              "target": "icons/chevron-down-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronLeftIcon.tsx",
+              "target": "icons/chevron-left-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronRightIcon.tsx",
+              "target": "icons/chevron-right-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronUpIcon.tsx",
+              "target": "icons/chevron-up-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronsLeftIcon.tsx",
+              "target": "icons/chevrons-left-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ChevronsRightIcon.tsx",
+              "target": "icons/chevrons-right-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CircleAlertIcon.tsx",
+              "target": "icons/circle-alert-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CircleCheckIcon.tsx",
+              "target": "icons/circle-check-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CircleHelpIcon.tsx",
+              "target": "icons/circle-help-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CircleXIcon.tsx",
+              "target": "icons/circle-xicon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/ClockIcon.tsx",
+              "target": "icons/clock-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/Columns3Icon.tsx",
+              "target": "icons/columns3icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/CopyIcon.tsx",
+              "target": "icons/copy-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/EyeIcon.tsx",
+              "target": "icons/eye-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/EyeOffIcon.tsx",
+              "target": "icons/eye-off-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/FunnelIcon.tsx",
+              "target": "icons/funnel-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/InfoIcon.tsx",
+              "target": "icons/info-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/LayoutGridIcon.tsx",
+              "target": "icons/layout-grid-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/MailIcon.tsx",
+              "target": "icons/mail-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/MenuIcon.tsx",
+              "target": "icons/menu-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/MinusIcon.tsx",
+              "target": "icons/minus-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/NOTICE",
+              "target": "icons/NOTICE"
+            },
+            {
+              "path": "packages/ui/src/icons/PipetteIcon.tsx",
+              "target": "icons/pipette-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/PlusIcon.tsx",
+              "target": "icons/plus-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/SearchIcon.tsx",
+              "target": "icons/search-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/TableIcon.tsx",
+              "target": "icons/table-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/Trash2Icon.tsx",
+              "target": "icons/trash2icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/TriangleAlertIcon.tsx",
+              "target": "icons/triangle-alert-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/UploadIcon.tsx",
+              "target": "icons/upload-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/UserIcon.tsx",
+              "target": "icons/user-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/XIcon.tsx",
+              "target": "icons/xicon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/createIcon.tsx",
+              "target": "icons/create-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/icons/index.ts",
+              "target": "icons/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "Label",
+      "slug": "label",
+      "type": "registry:ui",
+      "category": "Foundation",
+      "description": "Accessible form label with optional required/optional markers and tooltip.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/label.tsx",
+              "target": "label.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-label"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "tooltip",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Label/Label.tsx",
+              "target": "label/label.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Label/Label.module.css",
+              "target": "label/label.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Label/index.ts",
+              "target": "label/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-label"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "tooltip",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "aria": true,
+        "notes": "Associates with controls via htmlFor."
+      }
+    },
+    {
+      "name": "Picker Field",
+      "slug": "picker-field",
+      "type": "registry:lib",
+      "description": "Shared picker field shell, aria helpers, and open state for date/time/color pickers.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/_internal/picker/PickerField.tsx",
+              "target": "picker-field/picker-field.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/_internal/picker/usePickerOpen.ts",
+              "target": "picker-field/use-picker-open.ts"
+            },
+            {
+              "path": "packages/ui/src/components/_internal/picker/index.ts",
+              "target": "picker-field/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "form-field"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "Styles",
+      "slug": "styles",
+      "type": "registry:style",
+      "description": "Coloxo design tokens and shared CSS primitives (--cx-* variables).",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/coloxo-theme.css",
+              "target": "coloxo-theme.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/styles/tokens.css",
+              "target": "coloxo-tokens.css"
+            },
+            {
+              "path": "packages/ui/src/styles/primitives.css",
+              "target": "coloxo-primitives.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "Theme",
+      "slug": "theme",
+      "type": "registry:theme",
+      "description": "ThemeProvider for light/dark/system via data-cx-theme and design tokens.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/theme-provider.tsx",
+              "target": "theme-provider.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/theme/ThemeProvider.tsx",
+              "target": "theme/theme-provider.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "styles",
+            "utils"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [
+        "styles",
+        "utils"
+      ],
+      "providers": [
+        "theme"
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Radix-based tooltip for short helper text.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/tooltip.tsx",
+              "target": "tooltip.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tooltip"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Tooltip/Tooltip.tsx",
+              "target": "tooltip/tooltip.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Tooltip/Tooltip.module.css",
+              "target": "tooltip/tooltip.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Tooltip/index.ts",
+              "target": "tooltip/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tooltip"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Utils",
+      "slug": "utils",
+      "type": "registry:lib",
+      "description": "Shared utilities: cx (clsx wrapper), useId, useControllableState.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/utils.ts",
+              "target": "utils/utils.ts"
+            },
+            {
+              "path": "registry/styles/utils-index.ts",
+              "target": "utils/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/utils/cx.ts",
+              "target": "cx.ts"
+            },
+            {
+              "path": "packages/ui/src/utils/useId.ts",
+              "target": "use-id.ts"
+            },
+            {
+              "path": "packages/ui/src/utils/useControllableState.ts",
+              "target": "use-controllable-state.ts"
+            },
+            {
+              "path": "packages/cli/templates/utils-index.ts",
+              "target": "index.ts"
+            }
+          ],
+          "dependencies": [
+            "clsx"
+          ],
+          "registryDependencies": []
+        }
+      },
+      "dependencies": [
+        "clsx"
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "Alert",
+      "slug": "alert",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Inline alert banners and error boundary helper.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/alert.tsx",
+              "target": "alert.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "featured-icon",
+            "icon",
+            "icon-button",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Alert/Alert.module.css",
+              "target": "alert/alert.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Alert/Alert.tsx",
+              "target": "alert/alert.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Alert/AlertErrorBoundary.tsx",
+              "target": "alert/alert-error-boundary.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Alert/index.ts",
+              "target": "alert/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "AvatarGroup",
+      "slug": "avatar-group",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Stacked avatar group.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/avatar-group.tsx",
+              "target": "avatar-group.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "avatar"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/AvatarGroup/AvatarGroup.module.css",
+              "target": "avatar-group/avatar-group.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/AvatarGroup/AvatarGroup.tsx",
+              "target": "avatar-group/avatar-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/AvatarGroup/index.ts",
+              "target": "avatar-group/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "avatar",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Avatar",
+      "slug": "avatar",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "User avatar with status, groups, and profile photo variants.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/avatar.tsx",
+              "target": "avatar.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+              "target": "avatar/avatar.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+              "target": "avatar/avatar.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarCompanyIcon.module.css",
+              "target": "avatar/avatar-company-icon.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarCompanyIcon.tsx",
+              "target": "avatar/avatar-company-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.module.css",
+              "target": "avatar/avatar-label-group.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.tsx",
+              "target": "avatar/avatar-label-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.module.css",
+              "target": "avatar/avatar-profile-photo.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.tsx",
+              "target": "avatar/avatar-profile-photo.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/index.ts",
+              "target": "avatar/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Badge",
+      "slug": "badge",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Status and label badges with color and type variants.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/badge.tsx",
+              "target": "badge.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Badge/Badge.tsx",
+              "target": "badge/badge.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Badge/Badge.module.css",
+              "target": "badge/badge.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Badge/index.ts",
+              "target": "badge/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "icons"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "aria": true
+      },
+      "docs": {
+        "usage": "<Badge type=\"pill-color\" color=\"brand\">New</Badge>"
+      }
+    },
+    {
+      "name": "Bar Chart",
+      "slug": "bar-chart",
+      "type": "registry:ui",
+      "category": "Chart",
+      "description": "Responsive bar charts with grouped, stacked, and horizontal layouts.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/bar-chart.tsx",
+              "target": "bar-chart.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "chart-tooltip"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/BarChart/BarChart.tsx",
+              "target": "bar-chart/BarChart.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/BarChart/BarChart.module.css",
+              "target": "bar-chart/BarChart.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/BarChart/index.ts",
+              "target": "bar-chart/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "chart-tooltip"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Breadcrumb",
+      "slug": "breadcrumb",
+      "type": "registry:ui",
+      "category": "Navigation",
+      "description": "Hierarchy breadcrumb trail.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/breadcrumb.tsx",
+              "target": "breadcrumb.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Breadcrumb/Breadcrumb.module.css",
+              "target": "breadcrumb/breadcrumb.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Breadcrumb/Breadcrumb.tsx",
+              "target": "breadcrumb/breadcrumb.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Breadcrumb/index.ts",
+              "target": "breadcrumb/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "ButtonGroup",
+      "slug": "button-group",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Grouped button layout.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/button-group.tsx",
+              "target": "button-group.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "button"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/ButtonGroup/ButtonGroup.module.css",
+              "target": "button-group/button-group.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/ButtonGroup/ButtonGroup.tsx",
+              "target": "button-group/button-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ButtonGroup/index.ts",
+              "target": "button-group/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "button",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Button",
+      "slug": "button",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Primary interactive button with variants, sizes, loading, and icon slots.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/button.tsx",
+              "target": "button.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Button/Button.tsx",
+              "target": "button/button.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Button/Button.module.css",
+              "target": "button/button.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Button/index.ts",
+              "target": "button/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "form-control",
+            "button-variants",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Native button semantics; loading exposes aria-busy."
+      },
+      "docs": {
+        "usage": "<Button variant=\"primary\">Save</Button>"
+      }
+    },
+    {
+      "name": "Card",
+      "slug": "card",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Content card container.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/card.tsx",
+              "target": "card.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Card/Card.module.css",
+              "target": "card/card.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Card/Card.tsx",
+              "target": "card/card.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Card/index.ts",
+              "target": "card/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Chart Tooltip",
+      "slug": "chart-tooltip",
+      "type": "registry:ui",
+      "category": "Chart",
+      "description": "Shared theme-aware details for bar and pie chart marks on hover and keyboard focus.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/chart-tooltip.tsx",
+              "target": "chart-tooltip.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/ChartTooltip/ChartTooltip.tsx",
+              "target": "chart-tooltip/ChartTooltip.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ChartTooltip/ChartTooltip.module.css",
+              "target": "chart-tooltip/ChartTooltip.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/ChartTooltip/index.ts",
+              "target": "chart-tooltip/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "styles"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Checkbox input with indeterminate state.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/checkbox.tsx",
+              "target": "checkbox.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-checkbox"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Checkbox/Checkbox.module.css",
+              "target": "checkbox/checkbox.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Checkbox/Checkbox.tsx",
+              "target": "checkbox/checkbox.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Checkbox/index.ts",
+              "target": "checkbox/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-checkbox"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "CodeBlock",
+      "slug": "code-block",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Self-contained code display with built-in syntax highlighting — no Prism, Shiki, or Highlight.js.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/code-block.tsx",
+              "target": "code-block.tsx"
+            },
+            {
+              "path": "registry/styles/code-block-bash.ts",
+              "target": "code-block-bash.ts"
+            },
+            {
+              "path": "registry/styles/code-block-css.ts",
+              "target": "code-block-css.ts"
+            },
+            {
+              "path": "registry/styles/code-block-grammars.ts",
+              "target": "code-block-grammars.ts"
+            },
+            {
+              "path": "registry/styles/code-block-html.ts",
+              "target": "code-block-html.ts"
+            },
+            {
+              "path": "registry/styles/code-block-json.ts",
+              "target": "code-block-json.ts"
+            },
+            {
+              "path": "registry/styles/code-block-languages.ts",
+              "target": "code-block-languages.ts"
+            },
+            {
+              "path": "registry/styles/code-block-markdown.ts",
+              "target": "code-block-markdown.ts"
+            },
+            {
+              "path": "registry/styles/code-block-plaintext.ts",
+              "target": "code-block-plaintext.ts"
+            },
+            {
+              "path": "registry/styles/code-block-python.ts",
+              "target": "code-block-python.ts"
+            },
+            {
+              "path": "registry/styles/code-block-sql.ts",
+              "target": "code-block-sql.ts"
+            },
+            {
+              "path": "registry/styles/code-block-tokenize.ts",
+              "target": "code-block-tokenize.ts"
+            },
+            {
+              "path": "registry/styles/code-block-tokens.ts",
+              "target": "code-block-tokens.ts"
+            },
+            {
+              "path": "registry/styles/code-block-types.ts",
+              "target": "code-block-types.ts"
+            },
+            {
+              "path": "registry/styles/code-block-typescript.ts",
+              "target": "code-block-typescript.ts"
+            },
+            {
+              "path": "registry/styles/code-block-yaml.ts",
+              "target": "code-block-yaml.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/CodeBlock/CodeBlock.tsx",
+              "target": "code-block/code-block.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/CodeBlock.module.css",
+              "target": "code-block/code-block.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/index.ts",
+              "target": "code-block/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/types.ts",
+              "target": "code-block/types.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/tokens.ts",
+              "target": "code-block/tokens.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/tokenize.ts",
+              "target": "code-block/tokenize.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/languages.ts",
+              "target": "code-block/languages.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/index.ts",
+              "target": "code-block/grammars/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/typescript.ts",
+              "target": "code-block/grammars/typescript.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/json.ts",
+              "target": "code-block/grammars/json.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/css.ts",
+              "target": "code-block/grammars/css.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/html.ts",
+              "target": "code-block/grammars/html.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/bash.ts",
+              "target": "code-block/grammars/bash.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/sql.ts",
+              "target": "code-block/grammars/sql.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/python.ts",
+              "target": "code-block/grammars/python.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/yaml.ts",
+              "target": "code-block/grammars/yaml.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/markdown.ts",
+              "target": "code-block/grammars/markdown.ts"
+            },
+            {
+              "path": "packages/ui/src/components/CodeBlock/grammars/plaintext.ts",
+              "target": "code-block/grammars/plaintext.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Copy button with polite live region; line numbers excluded from clipboard."
+      },
+      "docs": {
+        "usage": "<CodeBlock language=\"typescript\" showLineNumbers code={code} />"
+      }
+    },
+    {
+      "name": "ColorPicker",
+      "slug": "color-picker",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Solid and gradient color pickers.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/color-picker.tsx",
+              "target": "color-picker.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icons",
+            "form-field",
+            "icon"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/ColorPicker/ColorParts.tsx",
+              "target": "color-picker/color-parts.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/ColorPicker.module.css",
+              "target": "color-picker/color-picker.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/ColorPicker.tsx",
+              "target": "color-picker/color-picker.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/GradientPicker.tsx",
+              "target": "color-picker/gradient-picker.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/gradient.ts",
+              "target": "color-picker/gradient.ts"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/index.ts",
+              "target": "color-picker/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/ColorPicker/presets.ts",
+              "target": "color-picker/presets.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "picker-field",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "DataTable",
+      "slug": "data-table",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Data grid with sorting, filtering, and pagination.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/data-table.tsx",
+              "target": "data-table.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons",
+            "button",
+            "empty-state",
+            "pagination"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/DataTable/Body.tsx",
+              "target": "data-table/body.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/DataTable.module.css",
+              "target": "data-table/data-table.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/DataTable.tsx",
+              "target": "data-table/data-table.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/Grid.tsx",
+              "target": "data-table/grid.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/Toolbar.tsx",
+              "target": "data-table/toolbar.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/filters.ts",
+              "target": "data-table/filters.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/index.ts",
+              "target": "data-table/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/mapColumns.ts",
+              "target": "data-table/map-columns.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/query.ts",
+              "target": "data-table/query.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/types.ts",
+              "target": "data-table/types.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DataTable/url.ts",
+              "target": "data-table/url.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover"
+          ],
+          "registryDependencies": [
+            "utils",
+            "button",
+            "empty-state",
+            "pagination",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "DatePicker",
+      "slug": "date-picker",
+      "type": "registry:ui",
+      "category": "Date & File",
+      "description": "Date, range, and time pickers with calendar panels.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/date-picker.tsx",
+              "target": "date-picker.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "date-fns"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icons",
+            "form-field",
+            "icon",
+            "button"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/DatePicker/CalendarPanel.tsx",
+              "target": "date-picker/calendar-panel.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/ClearControl.tsx",
+              "target": "date-picker/clear-control.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/CustomPanels.tsx",
+              "target": "date-picker/custom-panels.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/DatePicker.module.css",
+              "target": "date-picker/date-picker.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/DatePicker.tsx",
+              "target": "date-picker/date-picker.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/PickerFooter.tsx",
+              "target": "date-picker/picker-footer.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/RangePicker.tsx",
+              "target": "date-picker/range-picker.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/TimePanel.tsx",
+              "target": "date-picker/time-panel.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/TimePicker.tsx",
+              "target": "date-picker/time-picker.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/index.ts",
+              "target": "date-picker/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/types.ts",
+              "target": "date-picker/types.ts"
+            },
+            {
+              "path": "packages/ui/src/components/DatePicker/utils.ts",
+              "target": "date-picker/utils.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "date-fns",
+            "react-day-picker"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icon",
+            "button",
+            "picker-field",
+            "styles",
+            "theme",
+            "icons"
+          ],
+          "cssImports": [
+            "react-day-picker/style.css"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Divider",
+      "slug": "divider",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Horizontal or vertical content separator.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/divider.tsx",
+              "target": "divider.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-separator"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Divider/Divider.module.css",
+              "target": "divider/divider.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Divider/Divider.tsx",
+              "target": "divider/divider.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Divider/index.ts",
+              "target": "divider/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-separator"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "DocsHeader",
+      "slug": "docs-header",
+      "type": "registry:ui",
+      "category": "Navigation",
+      "description": "Documentation site header with navigation.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/docs-header.tsx",
+              "target": "docs-header.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "dropdown",
+            "icon",
+            "icon-button",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/DocsHeader/DocsHeader.module.css",
+              "target": "docs-header/docs-header.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/DocsHeader/DocsHeader.tsx",
+              "target": "docs-header/docs-header.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/DocsHeader/index.ts",
+              "target": "docs-header/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "dropdown",
+            "icon",
+            "icon-button",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Drawer",
+      "slug": "drawer",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Slide-over panel dialog.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/drawer.tsx",
+              "target": "drawer.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dialog"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon-button",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Drawer/Drawer.module.css",
+              "target": "drawer/drawer.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Drawer/Drawer.tsx",
+              "target": "drawer/drawer.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Drawer/index.ts",
+              "target": "drawer/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dialog"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon-button",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Dropdown",
+      "slug": "dropdown",
+      "type": "registry:ui",
+      "category": "Navigation",
+      "description": "Dropdown menu with items and shortcuts.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/dropdown.tsx",
+              "target": "dropdown.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dropdown-menu"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Dropdown/Dropdown.module.css",
+              "target": "dropdown/dropdown.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Dropdown/Dropdown.tsx",
+              "target": "dropdown/dropdown.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Dropdown/index.ts",
+              "target": "dropdown/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dropdown-menu"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "EmptyState",
+      "slug": "empty-state",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Empty collection placeholder with actions.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/empty-state.tsx",
+              "target": "empty-state.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/EmptyState/EmptyState.module.css",
+              "target": "empty-state/empty-state.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/EmptyState/EmptyState.tsx",
+              "target": "empty-state/empty-state.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/EmptyState/index.ts",
+              "target": "empty-state/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "FeaturedIcon",
+      "slug": "featured-icon",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Decorative icon in a colored container.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/featured-icon.tsx",
+              "target": "featured-icon.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/FeaturedIcon/FeaturedIcon.module.css",
+              "target": "featured-icon/featured-icon.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/FeaturedIcon/FeaturedIcon.tsx",
+              "target": "featured-icon/featured-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/FeaturedIcon/index.ts",
+              "target": "featured-icon/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "FileUpload",
+      "slug": "file-upload",
+      "type": "registry:ui",
+      "category": "Date & File",
+      "description": "Drag-and-drop file upload with file list.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/file-upload.tsx",
+              "target": "file-upload.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons",
+            "form-field",
+            "icon",
+            "featured-icon"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/FileUpload/FileListItem.module.css",
+              "target": "file-upload/file-list-item.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/FileListItem.tsx",
+              "target": "file-upload/file-list-item.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/FileTypeIcon.module.css",
+              "target": "file-upload/file-type-icon.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/FileTypeIcon.tsx",
+              "target": "file-upload/file-type-icon.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/FileUpload.module.css",
+              "target": "file-upload/file-upload.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/FileUpload.tsx",
+              "target": "file-upload/file-upload.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/FileUpload/index.ts",
+              "target": "file-upload/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icon",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "FluidBackground",
+      "slug": "fluid-background",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Lightweight pointer-driven iridescent liquid-ink trails using native Canvas 2D — fills any container, stays behind children, transparent by default so the parent owns the background, stops rendering when idle.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/FluidBackground/FluidBackground.tsx",
+          "target": "fluid-background/fluid-background.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/FluidBackground/FluidBackground.module.css",
+          "target": "fluid-background/fluid-background.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/FluidBackground/fluidEngine.ts",
+          "target": "fluid-background/fluidEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/FluidBackground/types.ts",
+          "target": "fluid-background/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/FluidBackground/index.ts",
+          "target": "fluid-background/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<FluidBackground colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\", \"#EC4899\"]}>\n  <HeroContent />\n</FluidBackground>"
+      }
+    },
+    {
+      "name": "Heading",
+      "slug": "heading",
+      "type": "registry:ui",
+      "category": "Foundation",
+      "description": "Heading typography scale.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/heading.tsx",
+              "target": "heading.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Typography/Typography.module.css",
+              "target": "heading/heading.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Typography/Typography.tsx",
+              "target": "heading/heading.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Typography/index.ts",
+              "target": "heading/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "IconButton",
+      "slug": "icon-button",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Icon-only button with tooltip, loading, and variant styles.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/icon-button.tsx",
+              "target": "icon-button.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tooltip"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "form-control",
+            "tooltip"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/IconButton/IconButton.module.css",
+              "target": "icon-button/icon-button.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/IconButton/IconButton.tsx",
+              "target": "icon-button/icon-button.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/IconButton/index.ts",
+              "target": "icon-button/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tooltip"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "form-control",
+            "button-variants",
+            "styles",
+            "theme",
+            "tooltip"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Input OTP",
+      "slug": "input-otp",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Separate verification code slots with sizes, paste support, and one-time-code autofill.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/input-otp.tsx",
+              "target": "input-otp.tsx"
+            }
+          ],
+          "dependencies": [
+            "input-otp"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/InputOTP/InputOTP.tsx",
+              "target": "input-otp/input-otp.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/InputOTP/InputOTP.module.css",
+              "target": "input-otp/input-otp.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/InputOTP/index.ts",
+              "target": "input-otp/index.ts"
+            }
+          ],
+          "dependencies": [
+            "input-otp@^1.5.0"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "One labelled native input supports keyboard editing, paste, and one-time-code autofill."
+      },
+      "docs": {
+        "usage": "<InputOTP maxLength={6} aria-label=\"Verification code\"><InputOTPGroup>{[0, 1, 2, 3, 4, 5].map(index => <InputOTPSlot key={index} index={index} />)}</InputOTPGroup></InputOTP>"
+      }
+    },
+    {
+      "name": "Input",
+      "slug": "input",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Text input with label, hint, error, icons, and size variants.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/input.tsx",
+              "target": "input.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Input/Input.tsx",
+              "target": "input/input.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Input/Input.module.css",
+              "target": "input/input.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Input/InputGroup.tsx",
+              "target": "input/input-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Input/InputGroup.module.css",
+              "target": "input/input-group.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Input/index.ts",
+              "target": "input/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "form-control",
+            "form-field",
+            "icon",
+            "tooltip",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "form-control",
+        "form-field",
+        "icon",
+        "tooltip",
+        "icons"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Labelled via FormField; errors use aria-invalid and role=alert."
+      },
+      "docs": {
+        "usage": "<Input label=\"Email\" placeholder=\"you@company.com\" />"
+      }
+    },
+    {
+      "name": "Kbd",
+      "slug": "kbd",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Keyboard key hint styling.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/kbd.tsx",
+              "target": "kbd.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Kbd/Kbd.module.css",
+              "target": "kbd/kbd.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Kbd/Kbd.tsx",
+              "target": "kbd/kbd.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Kbd/index.ts",
+              "target": "kbd/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Modal",
+      "slug": "modal",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Accessible dialog modal built on Radix Dialog.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/modal.tsx",
+              "target": "modal.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dialog"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon-button",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Modal/Modal.module.css",
+              "target": "modal/modal.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Modal/Modal.tsx",
+              "target": "modal/modal.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Modal/index.ts",
+              "target": "modal/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-dialog"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon-button",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Notification",
+      "slug": "notification",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Toast notifications with progress and actions.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/notification.tsx",
+              "target": "notification.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-toast"
+          ],
+          "registryDependencies": [
+            "utils",
+            "avatar",
+            "featured-icon",
+            "icon-button",
+            "progress-bar",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Notification/Notification.module.css",
+              "target": "notification/notification.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Notification/Notification.tsx",
+              "target": "notification/notification.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Notification/index.ts",
+              "target": "notification/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-toast"
+          ],
+          "registryDependencies": [
+            "utils",
+            "avatar",
+            "featured-icon",
+            "icon-button",
+            "progress-bar",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme",
+        "notification"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "OrbitingPlanets",
+      "slug": "orbiting-planets",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Luminous ice-cyan orbital system on native WebGL — soft bloom halos, additive orbit ribbons, pastel spheres with depth occlusion. Transparent by default; static CSS fallback when WebGL is unavailable. No Three.js.",
+      "status": "stable",
+      "version": "1.1.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.tsx",
+          "target": "orbiting-planets/orbiting-planets.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.module.css",
+          "target": "orbiting-planets/orbiting-planets.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/orbitingPlanetsEngine.ts",
+          "target": "orbiting-planets/orbiting-planets-engine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/sphereGeometry.ts",
+          "target": "orbiting-planets/sphere-geometry.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/orbitingPlanetsFallback.ts",
+          "target": "orbiting-planets/orbiting-planets-fallback.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/sphereVert.ts",
+          "target": "orbiting-planets/shaders/sphere-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/sphereFrag.ts",
+          "target": "orbiting-planets/shaders/sphere-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/orbitVert.ts",
+          "target": "orbiting-planets/shaders/orbit-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/orbitFrag.ts",
+          "target": "orbiting-planets/shaders/orbit-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/ribbonVert.ts",
+          "target": "orbiting-planets/shaders/ribbon-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/ribbonFrag.ts",
+          "target": "orbiting-planets/shaders/ribbon-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/glowQuadVert.ts",
+          "target": "orbiting-planets/shaders/glow-quad-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/glowQuadFrag.ts",
+          "target": "orbiting-planets/shaders/glow-quad-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/sparkleVert.ts",
+          "target": "orbiting-planets/shaders/sparkle-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/sparkleFrag.ts",
+          "target": "orbiting-planets/shaders/sparkle-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/shaders/bloomBlur.ts",
+          "target": "orbiting-planets/shaders/bloom-blur.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/types.ts",
+          "target": "orbiting-planets/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/OrbitingPlanets/index.ts",
+          "target": "orbiting-planets/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion. touch-action: pan-y preserves scroll when parallax is enabled."
+      },
+      "docs": {
+        "usage": "<OrbitingPlanets>\n  <HeroContent />\n</OrbitingPlanets>"
+      }
+    },
+    {
+      "name": "Pagination",
+      "slug": "pagination",
+      "type": "registry:ui",
+      "category": "Navigation",
+      "description": "Page navigation controls.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/pagination.tsx",
+              "target": "pagination.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Pagination/Pagination.module.css",
+              "target": "pagination/pagination.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Pagination/Pagination.tsx",
+              "target": "pagination/pagination.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Pagination/index.ts",
+              "target": "pagination/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Pie Chart",
+      "slug": "pie-chart",
+      "type": "registry:ui",
+      "category": "Chart",
+      "description": "Responsive pie and donut charts with legends and accessible values.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/pie-chart.tsx",
+              "target": "pie-chart.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "chart-tooltip"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/PieChart/PieChart.tsx",
+              "target": "pie-chart/PieChart.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/PieChart/PieChart.module.css",
+              "target": "pie-chart/PieChart.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/PieChart/index.ts",
+              "target": "pie-chart/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "chart-tooltip"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "ProgressBar",
+      "slug": "progress-bar",
+      "type": "registry:ui",
+      "category": "Feedback",
+      "description": "Linear progress indicator.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/progress-bar.tsx",
+              "target": "progress-bar.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/ProgressBar/ProgressBar.module.css",
+              "target": "progress-bar/progress-bar.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/ProgressBar/ProgressBar.tsx",
+              "target": "progress-bar/progress-bar.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/ProgressBar/index.ts",
+              "target": "progress-bar/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Radio",
+      "slug": "radio",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Radio group for single selection.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/radio.tsx",
+              "target": "radio.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-radio-group"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Radio/Radio.module.css",
+              "target": "radio/radio.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Radio/Radio.tsx",
+              "target": "radio/radio.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Radio/index.ts",
+              "target": "radio/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-radio-group"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Select",
+      "slug": "select",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Single and multi-select with search, groups, and form field integration.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/select.tsx",
+              "target": "select.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-popover",
+            "@radix-ui/react-select"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icon",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Select/Select.module.css",
+              "target": "select/select.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Select/Select.tsx",
+              "target": "select/select.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Select/index.ts",
+              "target": "select/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-select",
+            "@radix-ui/react-popover"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icon",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Skeleton",
+      "slug": "skeleton",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Loading placeholder skeleton shapes.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/skeleton.tsx",
+              "target": "skeleton.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Skeleton/Skeleton.module.css",
+              "target": "skeleton/skeleton.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Skeleton/Skeleton.tsx",
+              "target": "skeleton/skeleton.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Skeleton/index.ts",
+              "target": "skeleton/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Slider",
+      "slug": "slider",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Accessible numeric slider with single-value, range, vertical, and size variants.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/slider.tsx",
+              "target": "slider.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-slider"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Slider/Slider.tsx",
+              "target": "slider/slider.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Slider/Slider.module.css",
+              "target": "slider/slider.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Slider/index.ts",
+              "target": "slider/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-slider"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Label each thumb; supports arrow keys, Home, End, and page increments."
+      },
+      "docs": {
+        "usage": "<Slider defaultValue={[50]} aria-label=\"Volume\" />"
+      }
+    },
+    {
+      "name": "Statistic",
+      "slug": "statistic",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Metric display with trend indicator.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/statistic.tsx",
+              "target": "statistic.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Statistic/Statistic.module.css",
+              "target": "statistic/statistic.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Statistic/Statistic.tsx",
+              "target": "statistic/statistic.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Statistic/index.ts",
+              "target": "statistic/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Switch",
+      "slug": "switch",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Toggle switch control.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/switch.tsx",
+              "target": "switch.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-switch"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Switch/Switch.module.css",
+              "target": "switch/switch.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Switch/Switch.tsx",
+              "target": "switch/switch.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Switch/index.ts",
+              "target": "switch/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-switch"
+          ],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Table",
+      "slug": "table",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Sortable data table primitives.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/table.tsx",
+              "target": "table.tsx"
+            }
+          ],
+          "dependencies": [
+            "@tanstack/react-table"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Table/Table.module.css",
+              "target": "table/table.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Table/Table.tsx",
+              "target": "table/table.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Table/index.ts",
+              "target": "table/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs",
+      "type": "registry:ui",
+      "category": "Navigation",
+      "description": "Tabbed navigation and content panels.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/tabs.tsx",
+              "target": "tabs.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tabs"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Tabs/Tabs.module.css",
+              "target": "tabs/tabs.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Tabs/Tabs.tsx",
+              "target": "tabs/tabs.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Tabs/index.ts",
+              "target": "tabs/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-tabs"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Tag",
+      "slug": "tag",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Removable tag chip.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/tag.tsx",
+              "target": "tag.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Tag/Tag.module.css",
+              "target": "tag/tag.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Tag/Tag.tsx",
+              "target": "tag/tag.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Tag/index.ts",
+              "target": "tag/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Terminal",
+      "slug": "terminal",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Visual terminal/console session for documentation — prompts, commands, output, cursor, and chrome. Display-only; does not execute shell commands.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/terminal.tsx",
+              "target": "terminal.tsx"
+            },
+            {
+              "path": "registry/styles/terminal-shells.ts",
+              "target": "terminal-shells.ts"
+            },
+            {
+              "path": "registry/styles/terminal-types.ts",
+              "target": "terminal-types.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Terminal/Terminal.tsx",
+              "target": "terminal/terminal.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Terminal/Terminal.module.css",
+              "target": "terminal/terminal.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Terminal/index.ts",
+              "target": "terminal/index.ts"
+            },
+            {
+              "path": "packages/ui/src/components/Terminal/types.ts",
+              "target": "terminal/types.ts"
+            },
+            {
+              "path": "packages/ui/src/components/Terminal/shells.ts",
+              "target": "terminal/shells.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Copy button with polite live region; prompts and cursor are presentational and excluded from clipboard payload."
+      },
+      "docs": {
+        "usage": "<Terminal shell=\"bash\" commands={[{ command: \"npx coloxo add terminal\" }]} showCopyButton />"
+      }
+    },
+    {
+      "name": "Text",
+      "slug": "text",
+      "type": "registry:ui",
+      "category": "Foundation",
+      "description": "Body and caption typography.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/text.tsx",
+              "target": "text.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Typography/Typography.module.css",
+              "target": "text/text.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Typography/Typography.tsx",
+              "target": "text/text.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Typography/index.ts",
+              "target": "text/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Textarea",
+      "slug": "textarea",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Multiline text input with validation states.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/textarea.tsx",
+              "target": "textarea.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Textarea/Textarea.module.css",
+              "target": "textarea/textarea.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Textarea/Textarea.tsx",
+              "target": "textarea/textarea.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Textarea/index.ts",
+              "target": "textarea/index.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "form-control",
+            "form-field",
+            "styles",
+            "theme",
+            "icons"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Toggle",
+      "slug": "toggle",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Toggle button and toggle group.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/toggle.tsx",
+              "target": "toggle.tsx"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-toggle",
+            "@radix-ui/react-toggle-group"
+          ],
+          "registryDependencies": [
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Toggle/Toggle.module.css",
+              "target": "toggle/toggle.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Toggle/Toggle.tsx",
+              "target": "toggle/toggle.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Toggle/ToggleGroup.tsx",
+              "target": "toggle/toggle-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Toggle/index.ts",
+              "target": "toggle/index.ts"
+            }
+          ],
+          "dependencies": [
+            "@radix-ui/react-toggle",
+            "@radix-ui/react-toggle-group"
+          ],
+          "registryDependencies": [
+            "utils",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true
+      }
+    },
+    {
+      "name": "Vortex",
+      "slug": "vortex",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Premium GPU spiral particles with soft persistence trails on native WebGL — fills any container, stays behind children, transparent by default. Canvas 2D fallback when WebGL is unavailable. No Three.js or particle libraries.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Vortex/Vortex.tsx",
+          "target": "vortex/vortex.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/Vortex.module.css",
+          "target": "vortex/vortex.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/vortexEngine.ts",
+          "target": "vortex/vortex-engine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/shaders/vortexVert.ts",
+          "target": "vortex/shaders/vortex-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/shaders/vortexFrag.ts",
+          "target": "vortex/shaders/vortex-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/shaders/fadeShaders.ts",
+          "target": "vortex/shaders/fade-shaders.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/types.ts",
+          "target": "vortex/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Vortex/index.ts",
+          "target": "vortex/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled (static frame, no loop)."
+      },
+      "docs": {
+        "usage": "<Vortex colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\", \"#EC4899\"]}>\n  <HeroContent />\n</Vortex>"
+      }
+    },
+    {
+      "name": "WaveBackground",
+      "slug": "wave-background",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Interactive 3D-looking wave surface on native WebGL — GPU-displaced mesh with pointer ripples, Canvas 2D / static fallbacks, no Three.js. Fills any container and stays behind children; transparent by default so the parent owns the background.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/WaveBackground/WaveBackground.tsx",
+          "target": "wave-background/wave-background.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/WaveBackground.module.css",
+          "target": "wave-background/wave-background.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/waveEngine.ts",
+          "target": "wave-background/wave-engine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/waveFallback.ts",
+          "target": "wave-background/wave-fallback.ts"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/shaders/waveVert.ts",
+          "target": "wave-background/shaders/wave-vert.ts"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/shaders/waveFrag.ts",
+          "target": "wave-background/shaders/wave-frag.ts"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/types.ts",
+          "target": "wave-background/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/WaveBackground/index.ts",
+          "target": "wave-background/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme"
+      ],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Canvas is aria-hidden; children remain interactive. Respects prefers-reduced-motion when enabled (static frame, no pointer deformation). touch-action: pan-y avoids blocking vertical scroll."
+      },
+      "docs": {
+        "usage": "<WaveBackground colors={[\"#2563FF\", \"#22D3EE\", \"#8B5CF6\"]}>\n  <HeroContent />\n</WaveBackground>"
+      }
+    }
+  ]
+}

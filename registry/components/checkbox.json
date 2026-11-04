@@ -1,0 +1,62 @@
+{
+  "name": "Checkbox",
+  "slug": "checkbox",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Checkbox input with indeterminate state.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/checkbox.tsx",
+          "target": "checkbox.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-checkbox"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Checkbox/Checkbox.module.css",
+          "target": "checkbox/checkbox.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Checkbox/Checkbox.tsx",
+          "target": "checkbox/checkbox.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Checkbox/index.ts",
+          "target": "checkbox/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-checkbox"
+      ],
+      "registryDependencies": [
+        "utils",
+        "form-control",
+        "form-field",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

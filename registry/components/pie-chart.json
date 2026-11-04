@@ -1,0 +1,50 @@
+{
+  "name": "Pie Chart",
+  "slug": "pie-chart",
+  "type": "registry:ui",
+  "category": "Chart",
+  "description": "Responsive pie and donut charts with legends and accessible values.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/pie-chart.tsx",
+          "target": "pie-chart.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "chart-tooltip"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/PieChart/PieChart.tsx",
+          "target": "pie-chart/PieChart.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/PieChart/PieChart.module.css",
+          "target": "pie-chart/PieChart.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/PieChart/index.ts",
+          "target": "pie-chart/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "chart-tooltip"
+      ]
+    }
+  }
+}

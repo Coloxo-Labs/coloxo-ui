@@ -1,0 +1,61 @@
+{
+  "name": "Alert",
+  "slug": "alert",
+  "type": "registry:ui",
+  "category": "Feedback",
+  "description": "Inline alert banners and error boundary helper.",
+  "status": "stable",
+  "version": "1.0.0",
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/alert.tsx",
+          "target": "alert.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "featured-icon",
+        "icon",
+        "icon-button",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Alert/Alert.module.css",
+          "target": "alert/alert.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Alert/Alert.tsx",
+          "target": "alert/alert.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Alert/AlertErrorBoundary.tsx",
+          "target": "alert/alert-error-boundary.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Alert/index.ts",
+          "target": "alert/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

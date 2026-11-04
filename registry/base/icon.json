@@ -1,0 +1,47 @@
+{
+  "name": "Icon",
+  "slug": "icon",
+  "type": "registry:ui",
+  "category": "Foundation",
+  "description": "Sized icon wrapper for custom SVG or ReactNode children.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "aria": true,
+    "notes": "Decorative by default (aria-hidden). Pass aria attributes when the icon is meaningful."
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/icon.tsx",
+          "target": "icon.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Icon/Icon.tsx",
+          "target": "icon/icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Icon/Icon.module.css",
+          "target": "icon/icon.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Icon/index.ts",
+          "target": "icon/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    }
+  }
+}

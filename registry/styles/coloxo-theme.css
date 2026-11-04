@@ -1,0 +1,32 @@
+/*
+ * Coloxo UI — Tailwind theme layer.
+ *
+ * Import once, after Tailwind itself:
+ *   @import "tailwindcss";
+ *   @import "./styles/coloxo-theme.css";
+ *
+ * Registers the brand accent as Tailwind color utilities (bg-brand, text-brand)
+ * and exposes the dark theme through [data-cx-theme="dark"].
+ * Plain CSS on purpose: works with Tailwind v4 and needs no plugin.
+ */
+@theme {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #7c8cf8;
+  --color-brand-500: #4f5ff0;
+  --color-brand-600: #2348ff;
+  --color-brand-700: #1c38d6;
+  --color-brand-800: #182cae;
+  --color-brand-900: #17288a;
+  --color-brand-950: #101a57;
+}
+
+:root {
+  color-scheme: light;
+}
+
+[data-cx-theme="dark"] {
+  color-scheme: dark;
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Label",
+  "slug": "label",
+  "type": "registry:ui",
+  "category": "Foundation",
+  "description": "Accessible form label with optional required/optional markers and tooltip.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "aria": true,
+    "notes": "Associates with controls via htmlFor."
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/label.tsx",
+          "target": "label.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "tooltip",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Label/Label.tsx",
+          "target": "label/label.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Label/Label.module.css",
+          "target": "label/label.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Label/index.ts",
+          "target": "label/index.ts"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "tooltip",
+        "icons"
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Avatar",
+  "slug": "avatar",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "User avatar with status, groups, and profile photo variants.",
+  "status": "stable",
+  "version": "1.0.0",
+  "accessibility": {
+    "keyboard": true,
+    "aria": true
+  },
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/avatar.tsx",
+          "target": "avatar.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+          "target": "avatar/avatar.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+          "target": "avatar/avatar.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarCompanyIcon.module.css",
+          "target": "avatar/avatar-company-icon.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarCompanyIcon.tsx",
+          "target": "avatar/avatar-company-icon.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.module.css",
+          "target": "avatar/avatar-label-group.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.tsx",
+          "target": "avatar/avatar-label-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.module.css",
+          "target": "avatar/avatar-profile-photo.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.tsx",
+          "target": "avatar/avatar-profile-photo.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/index.ts",
+          "target": "avatar/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "styles",
+        "theme",
+        "icons"
+      ]
+    }
+  }
+}

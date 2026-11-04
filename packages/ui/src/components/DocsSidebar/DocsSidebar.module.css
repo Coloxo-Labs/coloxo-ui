@@ -1,0 +1,99 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--cx-font-body);
+}
+
+.groups {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--cx-space-4) var(--cx-space-3);
+}
+
+.group + .group {
+  margin-top: var(--cx-space-6);
+}
+
+.groupLabel {
+  margin: 0 0 var(--cx-space-2);
+  padding: 0 var(--cx-space-2);
+  font-size: var(--cx-text-xs);
+  font-weight: var(--cx-font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cx-color-text-quaternary);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-0-5, 0.125rem);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-space-2);
+  width: 100%;
+  margin: 0;
+  padding: var(--cx-space-2) var(--cx-space-2-5);
+  border: none;
+  border-radius: var(--cx-radius-md);
+  background: transparent;
+  color: var(--cx-color-text-secondary);
+  font: inherit;
+  font-size: var(--cx-text-sm);
+  font-weight: var(--cx-font-weight-medium);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--cx-duration-fast) var(--cx-ease-linear);
+}
+
+.link:hover {
+  background: var(--cx-color-bg-primary-hover);
+  color: var(--cx-color-text-primary);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--cx-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.linkActive {
+  background: var(--cx-color-bg-brand-primary);
+  color: var(--cx-color-text-brand-secondary);
+}
+
+.linkActive:hover {
+  background: var(--cx-color-bg-brand-primary);
+  color: var(--cx-color-text-brand-secondary);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--cx-color-fg-quaternary);
+}
+
+.linkActive .icon {
+  color: var(--cx-color-fg-brand-primary);
+}
+
+.linkLabel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: var(--cx-space-4) var(--cx-space-3);
+  border-top: 1px solid var(--cx-color-border-secondary);
+}
