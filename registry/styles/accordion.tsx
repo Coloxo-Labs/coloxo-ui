@@ -21,7 +21,8 @@ const CX = {
   heading: "m-0 font-[inherit]",
   trigger:
     "group flex w-full cursor-pointer items-center justify-between gap-4 rounded-sm border-0 bg-transparent py-4 text-start font-[inherit] font-medium text-inherit data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focus-visible]:outline data-[focus-visible]:outline-2 data-[focus-visible]:outline-offset-[3px] data-[focus-visible]:outline-[var(--cx-color-border-brand)] data-[hovered]:[&>span]:underline data-[hovered]:[&>span]:underline-offset-4",
-  chevron: "shrink-0 text-cx-tertiary transition-transform duration-150 ease-linear motion-reduce:transition-none group-aria-expanded:rotate-180",
+  chevron:
+    "shrink-0 text-cx-tertiary transition-transform duration-150 ease-linear motion-reduce:transition-none group-aria-expanded:rotate-180",
   panel: "overflow-hidden",
   content: "pb-4 text-sm leading-5 text-cx-secondary",
 };
@@ -36,7 +37,9 @@ export type AccordionTriggerProps = {
   className?: string;
   headingLevel?: 2 | 3 | 4 | 5 | 6;
 };
-export type AccordionContentProps = Omit<DisclosurePanelProps, "className"> & { className?: string };
+export type AccordionContentProps = Omit<DisclosurePanelProps, "className"> & {
+  className?: string;
+};
 
 export function Accordion({ className, variant = "default", ...props }: AccordionProps) {
   return (

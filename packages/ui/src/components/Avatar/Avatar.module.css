@@ -58,13 +58,7 @@
   pointer-events: none;
   z-index: 1;
   box-shadow: inset 0 0 0 1px rgb(var(--cx-alpha-white) / 0.32);
-  mask-image: linear-gradient(
-    to bottom,
-    black 0%,
-    transparent 25%,
-    transparent 75%,
-    black 100%
-  );
+  mask-image: linear-gradient(to bottom, black 0%, transparent 25%, transparent 75%, black 100%);
 }
 
 .image {
@@ -95,20 +89,56 @@
 }
 
 /* ---- Sizes (outer diameter) ---- */
-.xs { width: 1.5rem; height: 1.5rem; font-size: var(--cx-text-xs); line-height: var(--cx-text-xs-lh); }
-.sm { width: 2rem; height: 2rem; font-size: var(--cx-text-sm); line-height: var(--cx-text-sm-lh); }
-.md { width: 2.5rem; height: 2.5rem; font-size: var(--cx-text-md); line-height: var(--cx-text-md-lh); }
-.lg { width: 3rem; height: 3rem; font-size: var(--cx-text-lg); line-height: var(--cx-text-lg-lh); }
-.xl { width: 3.5rem; height: 3.5rem; font-size: var(--cx-text-xl); line-height: var(--cx-text-xl-lh); }
-.size2xl { width: 4rem; height: 4rem; font-size: var(--cx-text-xl); line-height: var(--cx-text-xl-lh); }
+.xs {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--cx-text-xs);
+  line-height: var(--cx-text-xs-lh);
+}
+.sm {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--cx-text-sm);
+  line-height: var(--cx-text-sm-lh);
+}
+.md {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: var(--cx-text-md);
+  line-height: var(--cx-text-md-lh);
+}
+.lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--cx-text-lg);
+  line-height: var(--cx-text-lg-lh);
+}
+.xl {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: var(--cx-text-xl);
+  line-height: var(--cx-text-xl-lh);
+}
+.size2xl {
+  width: 4rem;
+  height: 4rem;
+  font-size: var(--cx-text-xl);
+  line-height: var(--cx-text-xl-lh);
+}
 
 /* Outer border padding (Untitled rootWithBorder) */
 .borderPad_xs,
 .borderPad_sm,
-.borderPad_md { padding: 1px; }
-.borderPad_lg { padding: 1.5px; }
+.borderPad_md {
+  padding: 1px;
+}
+.borderPad_lg {
+  padding: 1.5px;
+}
 .borderPad_xl,
-.borderPad_2xl { padding: 2px; }
+.borderPad_2xl {
+  padding: 2px;
+}
 
 /* ---- Status indicator ---- */
 .status {
@@ -121,17 +151,46 @@
   z-index: 2;
 }
 
-.status_xs { width: 6px; height: 6px; }
-.status_sm { width: 8px; height: 8px; }
-.status_md { width: 10px; height: 10px; }
-.status_lg { width: 12px; height: 12px; border-width: 2px; }
-.status_xl { width: 14px; height: 14px; border-width: 2px; }
-.status_2xl { width: 16px; height: 16px; border-width: 2px; }
+.status_xs {
+  width: 6px;
+  height: 6px;
+}
+.status_sm {
+  width: 8px;
+  height: 8px;
+}
+.status_md {
+  width: 10px;
+  height: 10px;
+}
+.status_lg {
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+}
+.status_xl {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+.status_2xl {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
 
-.online { background: var(--cx-color-fg-success-secondary); }
-.offline { background: var(--cx-color-fg-quaternary); }
-.busy { background: var(--cx-color-fg-error-secondary); }
-.away { background: var(--cx-color-fg-warning-secondary); }
+.online {
+  background: var(--cx-color-fg-success-secondary);
+}
+.offline {
+  background: var(--cx-color-fg-quaternary);
+}
+.busy {
+  background: var(--cx-color-fg-error-secondary);
+}
+.away {
+  background: var(--cx-color-fg-warning-secondary);
+}
 
 /* ---- Verified (Coloxo brand) ---- */
 .verified {
@@ -153,12 +212,35 @@
   height: 60%;
 }
 
-.verified_xs { width: 10px; height: 10px; right: -1px; bottom: -1px; }
-.verified_sm { width: 12px; height: 12px; }
-.verified_md { width: 14px; height: 14px; }
-.verified_lg { width: 16px; height: 16px; border-width: 2px; }
-.verified_xl { width: 18px; height: 18px; border-width: 2px; }
-.verified_2xl { width: 20px; height: 20px; border-width: 2px; }
+.verified_xs {
+  width: 10px;
+  height: 10px;
+  right: -1px;
+  bottom: -1px;
+}
+.verified_sm {
+  width: 12px;
+  height: 12px;
+}
+.verified_md {
+  width: 14px;
+  height: 14px;
+}
+.verified_lg {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+.verified_xl {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+}
+.verified_2xl {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
 
 /* ---- Count pill ---- */
 .count {
@@ -177,7 +259,9 @@
   font-size: 10px;
   font-weight: var(--cx-font-weight-semibold);
   line-height: 1;
-  box-shadow: 0 0 0 1.5px var(--cx-color-bg-primary), inset 0 0 0 1px var(--cx-color-border-secondary);
+  box-shadow:
+    0 0 0 1.5px var(--cx-color-bg-primary),
+    inset 0 0 0 1px var(--cx-color-border-secondary);
   z-index: 2;
 }
 
@@ -203,9 +287,29 @@
   display: block;
 }
 
-.badge_xs { width: 8px; height: 8px; }
-.badge_sm { width: 12px; height: 12px; }
-.badge_md { width: 14px; height: 14px; }
-.badge_lg { width: 16px; height: 16px; }
-.badge_xl { width: 18px; height: 18px; }
-.badge_2xl { width: 20px; height: 20px; border-radius: var(--cx-radius-md); box-shadow: 0 0 0 1.67px var(--cx-color-bg-primary); }
+.badge_xs {
+  width: 8px;
+  height: 8px;
+}
+.badge_sm {
+  width: 12px;
+  height: 12px;
+}
+.badge_md {
+  width: 14px;
+  height: 14px;
+}
+.badge_lg {
+  width: 16px;
+  height: 16px;
+}
+.badge_xl {
+  width: 18px;
+  height: 18px;
+}
+.badge_2xl {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--cx-radius-md);
+  box-shadow: 0 0 0 1.67px var(--cx-color-bg-primary);
+}

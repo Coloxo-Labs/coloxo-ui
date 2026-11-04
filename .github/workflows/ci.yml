@@ -1,20 +1,68 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+
+      - name: Locate npm workspace
+        id: workspace
+        shell: bash
+        run: |
+          set -euo pipefail
+          lock=$(find . -name package-lock.json -not -path '*/node_modules/*' -print -quit)
+          if [ -z "${lock}" ]; then
+            echo "package-lock.json is not in this checkout. Commit it next to the workspace package.json." >&2
+            exit 1
+          fi
+          dir=$(dirname "$lock")
+          dir=${dir#./}
+          lock=${lock#./}
+          echo "dir=${dir}" >> "$GITHUB_OUTPUT"
+          echo "lock=${lock}" >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-      - run: pnpm install
-      - run: pnpm registry:build
-      - run: pnpm registry:validate
-      - run: pnpm build
-      - run: pnpm typecheck
-      - run: pnpm test
-      - run: pnpm test:cli
-      - run: pnpm pack:check
+          cache: npm
+          cache-dependency-path: ${{ steps.workspace.outputs.lock }}
+
+      - name: Use development npm
+        run: npm install -g npm@11.19.0
+
+      - name: Install
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm ci
+
+      - name: Check formatting
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run format:check
+
+      - name: Typecheck
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run typecheck
+
+      - name: Build
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run build
+
+      - name: Build registry
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run registry:build
+
+      - name: Validate registry
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run registry:validate
+
+      - name: Test UI
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm test
+
+      - name: Test CLI
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run test:cli
+
+      - name: Pack check
+        working-directory: ${{ steps.workspace.outputs.dir }}
+        run: npm run pack:check

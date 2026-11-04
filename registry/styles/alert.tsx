@@ -271,7 +271,10 @@ type AlertErrorBoundaryState = {
   error: Error | null;
 };
 
-export class AlertErrorBoundary extends Component<AlertErrorBoundaryProps, AlertErrorBoundaryState> {
+export class AlertErrorBoundary extends Component<
+  AlertErrorBoundaryProps,
+  AlertErrorBoundaryState
+> {
   override state: AlertErrorBoundaryState = { hasError: false, error: null };
 
   static getDerivedStateFromError(error: Error): AlertErrorBoundaryState {

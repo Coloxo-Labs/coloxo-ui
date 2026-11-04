@@ -19,7 +19,12 @@ import {
   getControlSizeClass,
   type ControlSize,
 } from "../_internal/controlSize";
-import { PickerFieldShell, usePickerAria, usePickerFieldIds, usePickerOpen } from "../_internal/picker";
+import {
+  PickerFieldShell,
+  usePickerAria,
+  usePickerFieldIds,
+  usePickerOpen,
+} from "../_internal/picker";
 import { IconButton } from "../IconButton/IconButton";
 import { Input } from "../Input/Input";
 import { Select } from "../Select/Select";
@@ -100,7 +105,9 @@ function GradientStopsEditor({
   const onPointerMove = useCallback(
     (event: PointerEvent) => {
       if (!draggingId.current) return;
-      onChange(updateStop(value, draggingId.current, { position: positionFromClientX(event.clientX) }));
+      onChange(
+        updateStop(value, draggingId.current, { position: positionFromClientX(event.clientX) }),
+      );
     },
     [onChange, positionFromClientX, value],
   );
@@ -163,9 +170,7 @@ function GradientStopsEditor({
             size="sm"
             aria-label="Gradient type"
             value={value.type}
-            onValueChange={(next) =>
-              onChange({ ...value, type: next as GradientValue["type"] })
-            }
+            onValueChange={(next) => onChange({ ...value, type: next as GradientValue["type"] })}
             options={[...GRADIENT_TYPE_OPTIONS]}
           />
         </div>
@@ -181,9 +186,7 @@ function GradientStopsEditor({
               max={360}
               value={value.angle}
               aria-label="Gradient angle"
-              onChange={(event) =>
-                onChange({ ...value, angle: Number(event.target.value) || 0 })
-              }
+              onChange={(event) => onChange({ ...value, angle: Number(event.target.value) || 0 })}
             />
           </label>
         ) : null}

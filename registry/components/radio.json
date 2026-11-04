@@ -6,9 +6,7 @@
   "description": "Radio group for single selection.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,14 +19,8 @@
           "target": "radio.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-radio-group"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field"
-      ]
+      "dependencies": ["@radix-ui/react-radio-group"],
+      "registryDependencies": ["utils", "form-control", "form-field"]
     },
     "coloxo-css": {
       "files": [
@@ -45,16 +37,8 @@
           "target": "radio/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-radio-group"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-radio-group"],
+      "registryDependencies": ["utils", "form-control", "form-field", "styles", "theme"]
     }
   }
 }

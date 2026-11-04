@@ -19,10 +19,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "chart-tooltip"
-      ]
+      "registryDependencies": ["utils", "chart-tooltip"]
     },
     "coloxo-css": {
       "files": [
@@ -40,11 +37,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "chart-tooltip"
-      ]
+      "registryDependencies": ["utils", "styles", "chart-tooltip"]
     }
   }
 }

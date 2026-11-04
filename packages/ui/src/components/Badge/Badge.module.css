@@ -92,70 +92,90 @@
   border-color: var(--cx-utility-brand-200);
   color: var(--cx-utility-brand-700);
 }
-.colorBrand .dot { background: var(--cx-utility-brand-500); }
+.colorBrand .dot {
+  background: var(--cx-utility-brand-500);
+}
 
 .colorGray {
   background: var(--cx-utility-gray-50);
   border-color: var(--cx-utility-gray-200);
   color: var(--cx-utility-gray-700);
 }
-.colorGray .dot { background: var(--cx-utility-gray-500); }
+.colorGray .dot {
+  background: var(--cx-utility-gray-500);
+}
 
 .colorError {
   background: var(--cx-utility-red-50);
   border-color: var(--cx-utility-red-200);
   color: var(--cx-utility-red-700);
 }
-.colorError .dot { background: var(--cx-utility-red-500); }
+.colorError .dot {
+  background: var(--cx-utility-red-500);
+}
 
 .colorWarning {
   background: var(--cx-utility-yellow-50);
   border-color: var(--cx-utility-yellow-200);
   color: var(--cx-utility-yellow-700);
 }
-.colorWarning .dot { background: var(--cx-utility-yellow-500); }
+.colorWarning .dot {
+  background: var(--cx-utility-yellow-500);
+}
 
 .colorSuccess {
   background: var(--cx-utility-green-50);
   border-color: var(--cx-utility-green-200);
   color: var(--cx-utility-green-700);
 }
-.colorSuccess .dot { background: var(--cx-utility-green-500); }
+.colorSuccess .dot {
+  background: var(--cx-utility-green-500);
+}
 
 .colorBlue {
   background: var(--cx-utility-blue-50);
   border-color: var(--cx-utility-blue-200);
   color: var(--cx-utility-blue-700);
 }
-.colorBlue .dot { background: var(--cx-utility-blue-500); }
+.colorBlue .dot {
+  background: var(--cx-utility-blue-500);
+}
 
 .colorIndigo {
   background: var(--cx-utility-indigo-50);
   border-color: var(--cx-utility-indigo-200);
   color: var(--cx-utility-indigo-700);
 }
-.colorIndigo .dot { background: var(--cx-utility-indigo-500); }
+.colorIndigo .dot {
+  background: var(--cx-utility-indigo-500);
+}
 
 .colorPurple {
   background: var(--cx-utility-purple-50);
   border-color: var(--cx-utility-purple-200);
   color: var(--cx-utility-purple-700);
 }
-.colorPurple .dot { background: var(--cx-utility-purple-500); }
+.colorPurple .dot {
+  background: var(--cx-utility-purple-500);
+}
 
 .colorPink {
   background: var(--cx-utility-pink-50);
   border-color: var(--cx-utility-pink-200);
   color: var(--cx-utility-pink-700);
 }
-.colorPink .dot { background: var(--cx-utility-pink-500); }
+.colorPink .dot {
+  background: var(--cx-utility-pink-500);
+}
 
 .colorOrange {
   background: var(--cx-utility-orange-50);
   border-color: var(--cx-utility-orange-200);
   color: var(--cx-utility-orange-700);
 }
-.colorOrange .dot { background: var(--cx-utility-orange-500); }
+.colorOrange .dot {
+  background: var(--cx-utility-orange-500);
+}
 
 .badgeModern .dot {
   background: var(--cx-color-fg-quaternary);

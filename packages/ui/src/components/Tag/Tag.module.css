@@ -14,9 +14,18 @@
   white-space: nowrap;
 }
 
-.sm { min-height: 1.5rem; padding: 0 var(--cx-space-2); }
-.md { min-height: 1.75rem; padding: 0 var(--cx-space-2-5); }
-.lg { min-height: 2rem; padding: 0 var(--cx-space-3); }
+.sm {
+  min-height: 1.5rem;
+  padding: 0 var(--cx-space-2);
+}
+.md {
+  min-height: 1.75rem;
+  padding: 0 var(--cx-space-2-5);
+}
+.lg {
+  min-height: 2rem;
+  padding: 0 var(--cx-space-3);
+}
 
 .dot {
   width: 6px;

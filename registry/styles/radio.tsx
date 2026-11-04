@@ -19,7 +19,8 @@ const CX: Record<string, string> = {
   indicator: "w-2 h-2 rounded-full",
   item: "flex items-start gap-2",
   label: "text-sm font-medium leading-5 text-cx-secondary cursor-pointer",
-  radio: "w-5 h-5 mt-0.5 shrink-0 rounded-full border border-solid border-cx-primary bg-cx-primary p-0 cursor-pointer inline-flex items-center justify-center hover:disabled:bg-cx-brand-soft hover:disabled:border-cx-brand focus:outline-none focus-visible:outline disabled:cursor-not-allowed",
+  radio:
+    "w-5 h-5 mt-0.5 shrink-0 rounded-full border border-solid border-cx-primary bg-cx-primary p-0 cursor-pointer inline-flex items-center justify-center hover:disabled:bg-cx-brand-soft hover:disabled:border-cx-brand focus:outline-none focus-visible:outline disabled:cursor-not-allowed",
   required: "text-cx-error ml-0.5",
   root: "flex flex-col gap-3 font-sans",
 };

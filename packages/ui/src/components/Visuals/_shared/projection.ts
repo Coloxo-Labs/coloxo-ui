@@ -26,13 +26,7 @@ export function rotate(v: Vec3, ax: number, ay: number, az: number): Vec3 {
 export type Projected = { x: number; y: number; scale: number; depth: number };
 
 /** Perspective projection around the canvas centre. `focal` controls how strong the effect is. */
-export function project(
-  v: Vec3,
-  width: number,
-  height: number,
-  focal = 2.6,
-  zoom = 1,
-): Projected {
+export function project(v: Vec3, width: number, height: number, focal = 2.6, zoom = 1): Projected {
   const scale = Math.min(width, height) * 0.34 * zoom;
   const perspective = focal / (focal + v.z);
   return {

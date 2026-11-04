@@ -26,7 +26,10 @@ describe("Notification", () => {
   it("animates by default and can disable animation", async () => {
     const { rerender } = renderWithTheme(
       <NotificationProvider>
-        <button type="button" onClick={() => notification.info({ title: "Animated", duration: false })}>
+        <button
+          type="button"
+          onClick={() => notification.info({ title: "Animated", duration: false })}
+        >
           Notify
         </button>
       </NotificationProvider>,

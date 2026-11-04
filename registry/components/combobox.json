@@ -14,14 +14,8 @@
           "target": "combobox.tsx"
         }
       ],
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon",
-        "icons"
-      ]
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["utils", "icon", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -38,22 +32,11 @@
           "target": "combobox/index.ts"
         }
       ],
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon",
-        "icons",
-        "form-control",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["utils", "icon", "icons", "form-control", "styles", "theme"]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,

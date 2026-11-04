@@ -2,12 +2,7 @@
 import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon } from "../../icons";
 
 import { Fragment, useMemo, type ReactNode } from "react";
-import {
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  type ColumnDef,
-} from "@tanstack/react-table";
+import { flexRender, getCoreRowModel, useReactTable, type ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { EmptyState } from "../EmptyState/EmptyState";
 import { Skeleton } from "../Skeleton/Skeleton";
@@ -91,9 +86,7 @@ export function DataTableBody<T>({
               aria-label={expanded ? "Collapse row" : "Expand row"}
               onClick={() => {
                 const current = expandedRowKeys ?? [];
-                const next = expanded
-                  ? current.filter((key) => key !== id)
-                  : [...current, id];
+                const next = expanded ? current.filter((key) => key !== id) : [...current, id];
                 onExpandedChange(next);
               }}
             >
@@ -181,8 +174,7 @@ export function DataTableBody<T>({
               {group.headers.map((header) => {
                 const columnKey = header.column.id;
                 const meta = header.column.columnDef.meta as
-                  | { align?: string; fixed?: string }
-                  | undefined;
+                  { align?: string; fixed?: string } | undefined;
                 const columnSort = sortForColumn(sort, columnKey);
                 const canSort = header.column.getCanSort();
                 return (
@@ -197,9 +189,15 @@ export function DataTableBody<T>({
                       header.column.id === "__expand" && styles.expandCell,
                     )}
                     style={{
-    width: typeof header.column.columnDef.size === "number" ? header.column.columnDef.size : undefined,
-    minWidth: typeof header.column.columnDef.minSize === "number" ? header.column.columnDef.minSize : undefined,
-  }}
+                      width:
+                        typeof header.column.columnDef.size === "number"
+                          ? header.column.columnDef.size
+                          : undefined,
+                      minWidth:
+                        typeof header.column.columnDef.minSize === "number"
+                          ? header.column.columnDef.minSize
+                          : undefined,
+                    }}
                     aria-sort={
                       columnSort?.order === "asc"
                         ? "ascending"
@@ -264,14 +262,10 @@ export function DataTableBody<T>({
               const expanded = expandedRowKeys?.includes(row.id) ?? false;
               return (
                 <Fragment key={row.id}>
-                  <tr
-                    className={styles.tr}
-                    data-selected={row.getIsSelected() || undefined}
-                  >
+                  <tr className={styles.tr} data-selected={row.getIsSelected() || undefined}>
                     {row.getVisibleCells().map((cell) => {
                       const meta = cell.column.columnDef.meta as
-                        | { align?: string; fixed?: string }
-                        | undefined;
+                        { align?: string; fixed?: string } | undefined;
                       return (
                         <td
                           key={cell.id}

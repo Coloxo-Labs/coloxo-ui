@@ -1,69 +1,1 @@
-name: Feature request
-description: Propose a new component, API, CLI capability, or registry improvement.
-title: "[feat]: "
-labels: ["enhancement", "triage"]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Describe the problem first, then the idea. We prioritize work that helps many consumers without bloating the public API.
-
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      options:
-        - New component
-        - Existing component API / props
-        - Accessibility
-        - Dual styles (CSS Modules / Tailwind)
-        - coloxo CLI
-        - Registry
-        - Tokens / theming
-        - Docs / examples
-        - Other
-    validations:
-      required: true
-
-  - type: textarea
-    id: problem
-    attributes:
-      label: Problem
-      description: What are you trying to build that is awkward or impossible today?
-      placeholder: As a consumer, I need… because…
-    validations:
-      required: true
-
-  - type: textarea
-    id: proposal
-    attributes:
-      label: Proposed solution
-      description: Sketch the API, CLI flag, or component behavior you want.
-    validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered
-      description: Workarounds, other libraries, or simpler shapes you already tried.
-
-  - type: checkboxes
-    id: constraints
-    attributes:
-      label: Design constraints (please confirm)
-      options:
-        - label: Fits CSS Modules + design tokens (no Tailwind inside `packages/ui`)
-          required: false
-        - label: Works for both styles when installable via the CLI (`coloxo-css` and/or `tailwind`)
-          required: false
-        - label: Accessible by default (keyboard, focus, ARIA)
-          required: false
-        - label: No HR-specific / product-specific business logic in the library
-          required: false
-
-  - type: textarea
-    id: extra
-    attributes:
-      label: Additional context
-      description: Mockups, references (Figma / Untitled UI / etc.), or prior art.
+name: Feature requestdescription: Propose a new component, API, CLI capability, or registry improvement.title: "[feat]: "labels: ["enhancement", "triage"]body:  - type: markdown    attributes:      value: |        Describe the problem first, then the idea. We prioritize work that helps many consumers without bloating the public API.  - type: dropdown    id: area    attributes:      label: Area      options:        - New component        - Existing component API / props        - Accessibility        - Dual styles (CSS Modules / Tailwind)        - coloxo CLI        - Registry        - Tokens / theming        - Docs / examples        - Other    validations:      required: true  - type: textarea    id: problem    attributes:      label: Problem      description: What are you trying to build that is awkward or impossible today?      placeholder: As a consumer, I need… because…    validations:      required: true  - type: textarea    id: proposal    attributes:      label: Proposed solution      description: Sketch the API, CLI flag, or component behavior you want.    validations:      required: true  - type: textarea    id: alternatives    attributes:      label: Alternatives considered      description: Workarounds, other libraries, or simpler shapes you already tried.  - type: checkboxes    id: constraints    attributes:      label: Design constraints (please confirm)      options:        - label: Fits CSS Modules + design tokens (no Tailwind inside `packages/ui`)          required: false        - label: Works for both styles when installable via the CLI (`coloxo-css` and/or `tailwind`)          required: false        - label: Accessible by default (keyboard, focus, ARIA)          required: false        - label: No HR-specific / product-specific business logic in the library          required: false  - type: textarea    id: extra    attributes:      label: Additional context      description: Mockups, references (Figma / Untitled UI / etc.), or prior art.

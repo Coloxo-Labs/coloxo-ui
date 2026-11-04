@@ -193,11 +193,7 @@
   pointer-events: none;
   border-radius: inherit;
   /* Keep clear of the 2px focus ring on the trailing edge */
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--cx-color-bg-primary) 40%
-  );
+  background: linear-gradient(to right, transparent, var(--cx-color-bg-primary) 40%);
   padding-left: var(--cx-space-8);
   margin-right: 0;
 }

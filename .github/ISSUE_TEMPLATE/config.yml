@@ -1,11 +1,1 @@
-blank_issues_enabled: false
-contact_links:
-  - name: Documentation
-    url: https://ui.coloxolabs.com/docs/getting-started
-    about: Install guides, theming, tokens, and styling architecture.
-  - name: Discussions / questions
-    url: https://github.com/Coloxo-Labs/coloxo-ui/discussions
-    about: Ask usage questions and share ideas that are not bug reports.
-  - name: Security
-    url: https://github.com/Coloxo-Labs/coloxo-ui/security/advisories/new
-    about: Report a vulnerability privately — do not file a public issue.
+blank_issues_enabled: falsecontact_links:  - name: Documentation    url: https://ui.coloxolabs.com/docs/getting-started    about: Install guides, theming, tokens, and styling architecture.  - name: Discussions / questions    url: https://github.com/Coloxo-Labs/coloxo-ui/discussions    about: Ask usage questions and share ideas that are not bug reports.  - name: Security    url: https://github.com/Coloxo-Labs/coloxo-ui/security/advisories/new    about: Report a vulnerability privately — do not file a public issue.

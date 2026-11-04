@@ -9,7 +9,8 @@ import { cx } from "@/lib/utils";
  * file needs no stylesheet of its own and no runtime styling deps.
  */
 const CX: Record<string, string> = {
-  content: "min-w-[12rem] bg-cx-primary border border-solid border-cx-secondary rounded-lg shadow-lg p-1 font-sans",
+  content:
+    "min-w-[12rem] bg-cx-primary border border-solid border-cx-secondary rounded-lg shadow-lg p-1 font-sans",
   destructive: "text-cx-error",
   item: "flex items-center gap-2 p-2 rounded-md text-sm text-cx-secondary cursor-pointer outline-none",
   separator: "h-px my-1 mx-0",

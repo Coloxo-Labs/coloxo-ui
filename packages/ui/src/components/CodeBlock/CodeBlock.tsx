@@ -94,8 +94,7 @@ export function CodeBlock({
   const focusSet = useMemo(() => new Set(focusLines ?? []), [focusLines]);
   const hasFocus = focusSet.size > 0;
 
-  const displayLanguage =
-    languageLabel ?? (language ? getLanguageLabel(language) : undefined);
+  const displayLanguage = languageLabel ?? (language ? getLanguageLabel(language) : undefined);
   const languageVisible = (showLanguage ?? true) && Boolean(displayLanguage);
 
   const hasHeaderContent = Boolean(label || filename || languageVisible || showCopyButton);
@@ -128,8 +127,7 @@ export function CodeBlock({
 
     let frame = 0;
     const measure = () => {
-      const next =
-        el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1;
+      const next = el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1;
       setScrollable((prev) => (prev === next ? prev : next));
     };
     const schedule = () => {
@@ -234,7 +232,11 @@ export function CodeBlock({
                 data-dimmed={dimmed ? "true" : undefined}
               >
                 {showLineNumbers ? (
-                  <span className={styles.lineNumber} aria-hidden="true" data-line-number={lineNumber}>
+                  <span
+                    className={styles.lineNumber}
+                    aria-hidden="true"
+                    data-line-number={lineNumber}
+                  >
                     {lineNumber}
                   </span>
                 ) : null}

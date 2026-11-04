@@ -28,9 +28,7 @@ function filterItems(items: DocsSearchItem[], query: string): DocsSearchItem[] {
   const q = query.trim().toLowerCase();
   if (!q) return items;
   return items.filter(
-    (item) =>
-      item.label.toLowerCase().includes(q) ||
-      item.description?.toLowerCase().includes(q),
+    (item) => item.label.toLowerCase().includes(q) || item.description?.toLowerCase().includes(q),
   );
 }
 
@@ -60,13 +58,7 @@ export function DocsSearch({
 
   return (
     <div className={cx(styles.root, className)}>
-      <div
-        className={cx(
-          control.surface,
-          styles.field,
-          hotkey && styles.hasHotkey,
-        )}
-      >
+      <div className={cx(control.surface, styles.field, hotkey && styles.hasHotkey)}>
         <span className={styles.leadingIcon} aria-hidden="true">
           <Icon size="sm">
             <SearchIcon />
@@ -88,11 +80,7 @@ export function DocsSearch({
         <ul className={styles.dropdown} role="listbox">
           {filtered.map((item) => (
             <li key={item.id} role="option">
-              <button
-                type="button"
-                className={styles.option}
-                onClick={() => handleSelect(item.id)}
-              >
+              <button type="button" className={styles.option} onClick={() => handleSelect(item.id)}>
                 <span className={styles.optionLabel}>{item.label}</span>
                 {item.description ? (
                   <span className={styles.optionDescription}>{item.description}</span>

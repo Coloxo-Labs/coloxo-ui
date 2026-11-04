@@ -37,18 +37,18 @@ program
       registry?: string;
       style?: string;
     }) => {
-    try {
-      await runInit({
-        cwd: opts.cwd,
-        force: opts.force,
-        yes: opts.yes,
-        registry: opts.registry,
-        style: parseStyle(opts.style),
-      });
-    } catch (err) {
-      console.error(pc.red((err as Error).message));
-      process.exit(1);
-    }
+      try {
+        await runInit({
+          cwd: opts.cwd,
+          force: opts.force,
+          yes: opts.yes,
+          registry: opts.registry,
+          style: parseStyle(opts.style),
+        });
+      } catch (err) {
+        console.error(pc.red((err as Error).message));
+        process.exit(1);
+      }
     },
   );
 

@@ -6,9 +6,7 @@
   "description": "Single and multi-select with search, groups, and form field integration.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,17 +19,8 @@
           "target": "select.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "@radix-ui/react-select"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "icon",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-popover", "@radix-ui/react-select"],
+      "registryDependencies": ["utils", "form-control", "form-field", "icon", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -48,10 +37,7 @@
           "target": "select/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-select",
-        "@radix-ui/react-popover"
-      ],
+      "dependencies": ["@radix-ui/react-select", "@radix-ui/react-popover"],
       "registryDependencies": [
         "utils",
         "form-control",

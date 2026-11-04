@@ -83,9 +83,18 @@ export function ColorAreaControl() {
   );
 }
 
-export function ColorHueSliderControl({ "aria-label": ariaLabel = "Hue" }: { "aria-label"?: string }) {
+export function ColorHueSliderControl({
+  "aria-label": ariaLabel = "Hue",
+}: {
+  "aria-label"?: string;
+}) {
   return (
-    <AriaColorSlider className={styles.slider} colorSpace="hsb" channel="hue" aria-label={ariaLabel}>
+    <AriaColorSlider
+      className={styles.slider}
+      colorSpace="hsb"
+      channel="hue"
+      aria-label={ariaLabel}
+    >
       <SliderTrack className={styles.track}>
         <ColorThumb className={styles.sliderThumb} />
       </SliderTrack>
@@ -146,7 +155,10 @@ export function EyeDropperButton() {
 
 const FORMAT_CHANNELS: Record<
   Exclude<ColorFormat, "hex">,
-  { space: ColorSpace; channels: Array<"red" | "green" | "blue" | "hue" | "saturation" | "lightness" | "brightness"> }
+  {
+    space: ColorSpace;
+    channels: Array<"red" | "green" | "blue" | "hue" | "saturation" | "lightness" | "brightness">;
+  }
 > = {
   rgb: { space: "rgb", channels: ["red", "green", "blue"] },
   hsl: { space: "hsl", channels: ["hue", "saturation", "lightness"] },
@@ -238,17 +250,16 @@ export function SwatchGrid({
   );
 }
 
-export function PaletteGrid({
-  palette,
-}: {
-  palette: Record<string, readonly string[]>;
-}) {
+export function PaletteGrid({ palette }: { palette: Record<string, readonly string[]> }) {
   return (
     <div className={styles.palette}>
       {Object.entries(palette).map(([name, colors]) => (
         <div key={name} className={styles.paletteRow}>
           <span className={styles.paletteLabel}>{name}</span>
-          <AriaColorSwatchPicker className={styles.swatchGrid} style={{ gridTemplateColumns: `repeat(${colors.length}, 1fr)`, gap: "4px" }}>
+          <AriaColorSwatchPicker
+            className={styles.swatchGrid}
+            style={{ gridTemplateColumns: `repeat(${colors.length}, 1fr)`, gap: "4px" }}
+          >
             {colors.map((hex) => {
               const color = toColor(hex);
               const light = isLight(color);

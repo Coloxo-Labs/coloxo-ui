@@ -44,15 +44,7 @@ export type TextColor =
   | "success"
   | "warning"
   | "inherit";
-export type TextElement =
-  | "p"
-  | "span"
-  | "div"
-  | "strong"
-  | "em"
-  | "label"
-  | "li"
-  | "figcaption";
+export type TextElement = "p" | "span" | "div" | "strong" | "em" | "label" | "li" | "figcaption";
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type HeadingSize = "sm" | "md" | "lg" | "xl" | "2xl";
@@ -155,14 +147,7 @@ function defaultHeadingSize(level: HeadingLevel): HeadingSize {
   return "sm";
 }
 
-export function Heading({
-  level = 2,
-  size,
-  weight,
-  tracking,
-  className,
-  ...rest
-}: HeadingProps) {
+export function Heading({ level = 2, size, weight, tracking, className, ...rest }: HeadingProps) {
   const Comp = headingTag[level];
   const resolvedSize = size ?? defaultHeadingSize(level);
   const defaultWeight: HeadingWeight =

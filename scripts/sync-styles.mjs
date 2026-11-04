@@ -31,7 +31,7 @@ for (const [, styles] of entries) {
 
 const body = `/**
  * GENERATED FILE - do not edit by hand.
- * Source: registry/registry.json. Regenerate with \`pnpm styles:build\`.
+ * Source: registry/registry.json. Regenerate with \`npm run styles:build\`.
  *
  * Style availability per component, derived with the same rule the CLI uses so
  * the documentation cannot promise a style the installer would reject.

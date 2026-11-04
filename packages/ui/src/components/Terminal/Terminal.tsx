@@ -245,11 +245,7 @@ export function Terminal({
           <span className={styles.cursorLine} aria-hidden="true">
             {showPrompt ? <span className={styles.prompt}>{resolvedPrompt}</span> : null}
             <span
-              className={cx(
-                styles.cursor,
-                cursorClass(cursor),
-                cursorBlink && styles.cursorBlink,
-              )}
+              className={cx(styles.cursor, cursorClass(cursor), cursorBlink && styles.cursorBlink)}
             >
               █
             </span>

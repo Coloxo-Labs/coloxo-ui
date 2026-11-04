@@ -11,7 +11,8 @@ const CX: Record<string, string> = {
   avatar: "w-4 h-4 rounded-full object-cover ml-0.5 mr-1.5",
   badgeColor: "rounded-md",
   badgeModern: "rounded-md bg-cx-primary border-cx-primary text-cx-secondary shadow-sm",
-  close: "inline-flex ml-1 mr-0.5 p-0 border-none bg-transparent text-inherit opacity-60 cursor-pointer hover:opacity-100",
+  close:
+    "inline-flex ml-1 mr-0.5 p-0 border-none bg-transparent text-inherit opacity-60 cursor-pointer hover:opacity-100",
   colorBlue: "bg-cx-blue-50 border-cx-blue-200 text-cx-blue-700",
   colorBrand: "bg-cx-brand-50 border-cx-brand-200 text-cx-brand-700",
   colorError: "bg-cx-red-50 border-cx-red-200 text-cx-red-700",
@@ -101,17 +102,10 @@ export function Badge({
       {...rest}
     >
       {dot ? <span className={CX.dot} aria-hidden="true" /> : null}
-      {avatarSrc ? (
-        <img className={CX.avatar} src={avatarSrc} alt="" />
-      ) : null}
+      {avatarSrc ? <img className={CX.avatar} src={avatarSrc} alt="" /> : null}
       <span className={CX.label}>{children}</span>
       {onClose ? (
-        <button
-          type="button"
-          className={CX.close}
-          aria-label="Remove"
-          onClick={onClose}
-        >
+        <button type="button" className={CX.close} aria-label="Remove" onClick={onClose}>
           <Icon size="xs">
             <XIcon />
           </Icon>

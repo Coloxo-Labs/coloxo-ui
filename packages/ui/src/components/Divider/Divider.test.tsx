@@ -43,9 +43,7 @@ describe("Divider", () => {
   });
 
   it("applies spacing and subtle data attrs", () => {
-    const { container } = renderWithTheme(
-      <Divider spacing="compact" subtle inset />,
-    );
+    const { container } = renderWithTheme(<Divider spacing="compact" subtle inset />);
     const sep = container.querySelector("[data-spacing='compact']");
     expect(sep).toHaveAttribute("data-subtle");
     expect(sep).toHaveAttribute("data-inset");

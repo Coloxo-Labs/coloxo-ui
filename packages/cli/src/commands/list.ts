@@ -12,11 +12,13 @@ export type ListOptions = {
 function groupByCategory(items: RegistryItem[]): Map<string, RegistryItem[]> {
   const map = new Map<string, RegistryItem[]>();
   for (const item of items) {
-    const cat = item.category ?? (item.type === "registry:style" || item.type === "registry:lib"
-      ? "Foundation"
-      : item.type === "registry:theme"
+    const cat =
+      item.category ??
+      (item.type === "registry:style" || item.type === "registry:lib"
         ? "Foundation"
-        : "Uncategorized");
+        : item.type === "registry:theme"
+          ? "Foundation"
+          : "Uncategorized");
     const list = map.get(cat) ?? [];
     list.push(item);
     map.set(cat, list);
@@ -42,14 +44,11 @@ export async function runList(options: ListOptions): Promise<void> {
 
   console.log(pc.bold("\nColoxo registry\n"));
 
-  for (const [category, list] of [...grouped.entries()].sort(([a], [b]) =>
-    a.localeCompare(b),
-  )) {
+  for (const [category, list] of [...grouped.entries()].sort(([a], [b]) => a.localeCompare(b))) {
     console.log(pc.cyan(` ${category}`));
     for (const item of list) {
       const mark = installed.has(item.slug) ? pc.green("●") : pc.dim("○");
-      const status =
-        item.status !== "stable" ? pc.dim(` (${item.status})`) : "";
+      const status = item.status !== "stable" ? pc.dim(` (${item.status})`) : "";
       console.log(`  ${mark} ${pc.bold(item.slug)}${status} — ${item.description}`);
     }
     console.log();

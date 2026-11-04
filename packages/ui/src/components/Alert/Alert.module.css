@@ -36,12 +36,17 @@
   border: 1px solid var(--cx-color-border-secondary);
 }
 
-.filled {}
+.filled {
+}
 
-.info {}
-.success {}
-.warning {}
-.error {}
+.info {
+}
+.success {
+}
+.warning {
+}
+.error {
+}
 
 .card.filled.info {
   background: var(--cx-color-bg-brand-primary);
@@ -130,10 +135,18 @@
   margin-top: 0;
 }
 
-.inlineIcon.info { color: var(--cx-color-fg-brand-primary); }
-.inlineIcon.success { color: var(--cx-color-fg-success-primary); }
-.inlineIcon.warning { color: var(--cx-color-fg-warning-primary); }
-.inlineIcon.error { color: var(--cx-color-fg-error-primary); }
+.inlineIcon.info {
+  color: var(--cx-color-fg-brand-primary);
+}
+.inlineIcon.success {
+  color: var(--cx-color-fg-success-primary);
+}
+.inlineIcon.warning {
+  color: var(--cx-color-fg-warning-primary);
+}
+.inlineIcon.error {
+  color: var(--cx-color-fg-error-primary);
+}
 
 .section {
   flex: 1;

@@ -28,12 +28,7 @@ export type CodeLanguage =
 export type CodeTheme = "light" | "dark" | "system";
 
 export type CodeBlockVariant =
-  | "default"
-  | "minimal"
-  | "compact"
-  | "borderless"
-  | "elevated"
-  | "terminal";
+  "default" | "minimal" | "compact" | "borderless" | "elevated" | "terminal";
 
 export interface CodeBlockProps {
   /** Raw source code. This exact string is what the copy button copies. */

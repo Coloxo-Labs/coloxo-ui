@@ -7,8 +7,7 @@ export const yamlGrammar: Grammar = {
     { type: "punctuation", pattern: /(?<=^\s*(?:-\s+)*)-(?=\s|$)/ },
     {
       type: "property",
-      pattern:
-        /(?<=^\s*(?:-\s+)*)(?:"[^"]*"|'[^']*'|[^\s#:'"{}[\],&*!|>-][^#]*?)(?=\s*:(?:\s|$))/,
+      pattern: /(?<=^\s*(?:-\s+)*)(?:"[^"]*"|'[^']*'|[^\s#:'"{}[\],&*!|>-][^#]*?)(?=\s*:(?:\s|$))/,
     },
     { type: "string", pattern: /"(?:[^"\\]|\\.)*(?:"|$)/ },
     { type: "string", pattern: /'(?:[^']|'')*(?:'|$)/ },
@@ -23,8 +22,7 @@ export const yamlGrammar: Grammar = {
     { type: "constant", pattern: /(?<![\w.-])(?:null|~)(?![\w.-])/i },
     {
       type: "number",
-      pattern:
-        /(?<![\w.-])[+-]?(?:0x[\da-fA-F]+|\d[\d_]*(?:\.\d+)?(?:[eE][+-]?\d+)?)(?![\w.-])/,
+      pattern: /(?<![\w.-])[+-]?(?:0x[\da-fA-F]+|\d[\d_]*(?:\.\d+)?(?:[eE][+-]?\d+)?)(?![\w.-])/,
     },
     { type: "punctuation", pattern: /[[\]{},:]/ },
   ],

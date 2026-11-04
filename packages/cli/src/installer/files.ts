@@ -91,16 +91,13 @@ export async function installRegistryItems(options: {
     }
 
     const isBinary =
-      p.file.path.endsWith(".png") ||
-      p.file.path.endsWith(".jpg") ||
-      p.file.path.endsWith(".webp");
+      p.file.path.endsWith(".png") || p.file.path.endsWith(".jpg") || p.file.path.endsWith(".webp");
 
     await fs.mkdir(path.dirname(p.abs), { recursive: true });
     if (isBinary) {
       await fs.writeFile(p.abs, raw);
     } else {
-      const text =
-        typeof raw === "string" ? raw : Buffer.from(raw).toString("utf8");
+      const text = typeof raw === "string" ? raw : Buffer.from(raw).toString("utf8");
       const content = transformFileContent(text, p.file.path, {
         config,
         items,

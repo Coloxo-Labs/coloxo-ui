@@ -10,7 +10,11 @@ describe("Button", () => {
   });
 
   it("applies variants and sizes", () => {
-    const { rerender } = renderWithTheme(<Button variant="secondary" size="sm">Edit</Button>);
+    const { rerender } = renderWithTheme(
+      <Button variant="secondary" size="sm">
+        Edit
+      </Button>,
+    );
     expect(screen.getByRole("button")).toBeEnabled();
     rerender(
       <Button variant="primary-destructive" size="lg">

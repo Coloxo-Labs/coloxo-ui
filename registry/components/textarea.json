@@ -6,9 +6,7 @@
   "description": "Multiline text input with validation states.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -22,12 +20,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "form-control", "form-field", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -45,14 +38,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "form-control", "form-field", "styles", "theme", "icons"]
     }
   }
 }

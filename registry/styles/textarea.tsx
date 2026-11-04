@@ -1,12 +1,7 @@
 "use client";
 import { CircleAlertIcon } from "@/lib/icons";
 
-import {
-  useState,
-  type ChangeEvent,
-  type ReactNode,
-  type TextareaHTMLAttributes,
-} from "react";
+import { useState, type ChangeEvent, type ReactNode, type TextareaHTMLAttributes } from "react";
 import { FormField, fieldDescribedBy } from "./form-field";
 import { Icon } from "./icon";
 import { useId } from "@/lib/utils";
@@ -22,7 +17,8 @@ const CX: Record<string, string> = {
   countInvalid: "text-cx-error",
   hasTrailingIcon: "pe-10",
   invalidIcon: "absolute top-3 right-3 inline-flex pointer-events-none z-[1]",
-  textarea: "block w-full min-h-[8rem] py-3 px-3.5 m-0 border-none bg-transparent text-inherit leading-6 outline-none shadow-none placeholder:text-cx-placeholder disabled:cursor-not-allowed",
+  textarea:
+    "block w-full min-h-[8rem] py-3 px-3.5 m-0 border-none bg-transparent text-inherit leading-6 outline-none shadow-none placeholder:text-cx-placeholder disabled:cursor-not-allowed",
   wrap: "block w-full p-0",
 };
 

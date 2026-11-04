@@ -1,13 +1,7 @@
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { cx } from "@/lib/utils";
 
-export type CardVariant =
-  | "default"
-  | "elevated"
-  | "outline"
-  | "flat"
-  | "filled"
-  | "ghost";
+export type CardVariant = "default" | "elevated" | "outline" | "flat" | "filled" | "ghost";
 
 export type CardPadding = "none" | "sm" | "md" | "lg";
 

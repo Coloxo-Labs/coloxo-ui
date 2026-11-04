@@ -144,9 +144,7 @@ export function Modal({
                     {description}
                   </Dialog.Description>
                 ) : (
-                  <Dialog.Description className={styles.srOnly}>
-                    Dialog content
-                  </Dialog.Description>
+                  <Dialog.Description className={styles.srOnly}>Dialog content</Dialog.Description>
                 )}
               </div>
               {closeButton ? (

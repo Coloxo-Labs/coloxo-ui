@@ -1,14 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-} from "./Card";
+import { Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia } from "./Card";
 import { renderWithTheme, expectNoA11yViolations } from "../../test/utils";
 
 describe("Card", () => {
@@ -24,9 +17,7 @@ describe("Card", () => {
   });
 
   it("applies visual style variants", () => {
-    const { container, rerender } = renderWithTheme(
-      <Card variant="elevated">Elevated</Card>,
-    );
+    const { container, rerender } = renderWithTheme(<Card variant="elevated">Elevated</Card>);
     expect(container.querySelector('[data-variant="elevated"]')).toBeTruthy();
 
     rerender(<Card variant="aurora">Aurora</Card>);

@@ -8,14 +8,26 @@ describe("Modal", () => {
   it("renders when open and closes with the close button", () => {
     let open = true;
     const { rerender } = renderWithTheme(
-      <Modal open={open} onOpenChange={(next) => { open = next; }} title="Edit employee">
+      <Modal
+        open={open}
+        onOpenChange={(next) => {
+          open = next;
+        }}
+        title="Edit employee"
+      >
         Form
       </Modal>,
     );
     expect(screen.getByRole("dialog")).toHaveTextContent("Edit employee");
     fireEvent.click(screen.getByRole("button", { name: "Close dialog" }));
     rerender(
-      <Modal open={open} onOpenChange={(next) => { open = next; }} title="Edit employee">
+      <Modal
+        open={open}
+        onOpenChange={(next) => {
+          open = next;
+        }}
+        title="Edit employee"
+      >
         Form
       </Modal>,
     );

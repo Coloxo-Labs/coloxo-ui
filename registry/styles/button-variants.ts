@@ -4,8 +4,7 @@
  * variant and size classes.
  */
 const buttonVariants = {
-  root:
-    "relative m-0 inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-solid border-transparent font-sans font-medium no-underline transition-colors focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--cx-color-focus-ring)] disabled:cursor-not-allowed",
+  root: "relative m-0 inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-solid border-transparent font-sans font-medium no-underline transition-colors focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--cx-color-focus-ring)] disabled:cursor-not-allowed",
   destructiveFocus: "focus-visible:outline-[var(--cx-color-focus-ring-error)]",
   xs: "min-h-8 gap-1 rounded-md px-2.5 text-sm leading-5",
   sm: "min-h-9 gap-1.5 rounded-md px-3 text-sm leading-5",

@@ -14,7 +14,12 @@ import {
   getControlSizeClass,
 } from "../_internal/controlSize";
 import { ClearControl } from "./ClearControl";
-import { PickerFieldShell, usePickerAria, usePickerFieldIds, usePickerOpen } from "../_internal/picker";
+import {
+  PickerFieldShell,
+  usePickerAria,
+  usePickerFieldIds,
+  usePickerOpen,
+} from "../_internal/picker";
 import { TimePanel } from "./TimePanel";
 import { PickerFooter } from "./PickerFooter";
 import type { TimePickerProps } from "./types";

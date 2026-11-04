@@ -1,93 +1,1 @@
-name: Bug report
-description: Something in @coloxo/ui, the coloxo CLI, or the registry is broken.
-title: "[bug]: "
-labels: ["bug", "triage"]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for helping improve Coloxo UI. Fill in as much as you can — reproducible reports get fixed faster.
-
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      description: Where does the bug show up?
-      options:
-        - "@coloxo/ui component"
-        - coloxo CLI (init / add / list)
-        - Registry / install manifests
-        - Styles (CSS Modules / Tailwind)
-        - Theming / tokens
-        - Documentation site
-        - Other
-    validations:
-      required: true
-
-  - type: input
-    id: component
-    attributes:
-      label: Component or command
-      description: Slug or CLI command if applicable (e.g. `button`, `coloxo add select`).
-      placeholder: button
-
-  - type: textarea
-    id: description
-    attributes:
-      label: Description
-      description: What went wrong? What did you expect instead?
-      placeholder: When I…, Coloxo does… instead of…
-    validations:
-      required: true
-
-  - type: textarea
-    id: reproduce
-    attributes:
-      label: Reproduction steps
-      description: Minimal steps someone else can follow.
-      placeholder: |
-        1. `npx coloxo init --style coloxo-css`
-        2. `npx coloxo add button`
-        3. …
-      value: |
-        1.
-        2.
-        3.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-      description: Include error messages, stack traces, or screenshots if useful.
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      value: |
-        - OS:
-        - Node:
-        - Package manager (npm / pnpm / yarn / bun):
-        - `@coloxo/ui` version (if installed):
-        - `coloxo` CLI version (`coloxo --version`):
-        - Style mode (`coloxo-css` / `tailwind`):
-        - Framework (Next.js / Vite / other) + version:
-    validations:
-      required: true
-
-  - type: textarea
-    id: extra
-    attributes:
-      label: Additional context
-      description: Links to a minimal reproduction repo, CodeSandbox, or related PRs.
+name: Bug reportdescription: Something in @coloxo/ui, the coloxo CLI, or the registry is broken.title: "[bug]: "labels: ["bug", "triage"]body:  - type: markdown    attributes:      value: |        Thanks for helping improve Coloxo UI. Fill in as much as you can — reproducible reports get fixed faster.  - type: dropdown    id: area    attributes:      label: Area      description: Where does the bug show up?      options:        - "@coloxo/ui component"        - coloxo CLI (init / add / list)        - Registry / install manifests        - Styles (CSS Modules / Tailwind)        - Theming / tokens        - Documentation site        - Other    validations:      required: true  - type: input    id: component    attributes:      label: Component or command      description: Slug or CLI command if applicable (e.g. `button`, `coloxo add select`).      placeholder: button  - type: textarea    id: description    attributes:      label: Description      description: What went wrong? What did you expect instead?      placeholder: When I…, Coloxo does… instead of…    validations:      required: true  - type: textarea    id: reproduce    attributes:      label: Reproduction steps      description: Minimal steps someone else can follow.      placeholder: |        1. `npx coloxo init --style coloxo-css`        2. `npx coloxo add button`        3. …      value: |        1.        2.        3.    validations:      required: true  - type: textarea    id: expected    attributes:      label: Expected behavior    validations:      required: true  - type: textarea    id: actual    attributes:      label: Actual behavior      description: Include error messages, stack traces, or screenshots if useful.    validations:      required: true  - type: textarea    id: environment    attributes:      label: Environment      value: |        - OS:        - Node:        - Package manager (npm / pnpm / yarn / bun):        - `@coloxo/ui` version (if installed):        - `coloxo` CLI version (`coloxo --version`):        - Style mode (`coloxo-css` / `tailwind`):        - Framework (Next.js / Vite / other) + version:    validations:      required: true  - type: textarea    id: extra    attributes:      label: Additional context      description: Links to a minimal reproduction repo, CodeSandbox, or related PRs.

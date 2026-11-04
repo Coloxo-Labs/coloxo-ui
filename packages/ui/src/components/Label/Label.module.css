@@ -77,7 +77,9 @@
 }
 
 .helpButton:focus-visible {
-  box-shadow: 0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring);
+  box-shadow:
+    0 0 0 2px var(--cx-color-bg-primary),
+    0 0 0 4px var(--cx-color-focus-ring);
   border-radius: 999px;
 }
 

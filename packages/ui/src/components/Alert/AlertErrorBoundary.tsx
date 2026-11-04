@@ -34,8 +34,7 @@ export class AlertErrorBoundary extends Component<AlertErrorBoundaryProps, State
 
     if (this.state.hasError) {
       const resolvedDescription =
-        description ??
-        (this.state.error ? this.state.error.message : undefined);
+        description ?? (this.state.error ? this.state.error.message : undefined);
 
       return (
         <Alert

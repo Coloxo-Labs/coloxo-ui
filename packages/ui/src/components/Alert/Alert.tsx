@@ -132,8 +132,11 @@ function AlertBase({
   };
 
   const showStatusIcon = showIcon !== false && icon !== null;
-  const resolvedIcon =
-    !showStatusIcon ? null : icon === undefined ? defaultIcons[resolvedVariant] : icon;
+  const resolvedIcon = !showStatusIcon
+    ? null
+    : icon === undefined
+      ? defaultIcons[resolvedVariant]
+      : icon;
 
   if (!visible) {
     return null;
@@ -180,9 +183,7 @@ function AlertBase({
         {children ? <div className={styles.extra}>{children}</div> : null}
       </div>
       {action ? (
-        <div
-          className={cx(styles.actions, hasDescription && styles.actionsWithDescription)}
-        >
+        <div className={cx(styles.actions, hasDescription && styles.actionsWithDescription)}>
           {action}
         </div>
       ) : null}

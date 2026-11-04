@@ -75,7 +75,10 @@ export class ParticleTypographyEngine extends Canvas2DEngine {
 
     const data = ctx.getImageData(0, 0, sampling.width, sampling.height).data;
     const candidates: { x: number; y: number }[] = [];
-    const step = Math.max(1, Math.round(Math.sqrt((sampling.width * sampling.height) / (count * 4))));
+    const step = Math.max(
+      1,
+      Math.round(Math.sqrt((sampling.width * sampling.height) / (count * 4))),
+    );
 
     for (let y = 0; y < sampling.height; y += step) {
       for (let x = 0; x < sampling.width; x += step) {

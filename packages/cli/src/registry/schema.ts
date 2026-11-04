@@ -40,9 +40,7 @@ export const StyleEntrySchema = z.object({
   dependencies: z.array(z.string()).default([]),
   registryDependencies: z.array(z.string()).default([]),
   cssImports: z.array(z.string()).optional(),
-  docs: z
-    .object({ usage: z.string().optional() })
-    .optional(),
+  docs: z.object({ usage: z.string().optional() }).optional(),
 });
 export const AccessibilitySchema = z.object({
   keyboard: z.boolean().optional(),

@@ -20,9 +20,7 @@ describe("ColorPicker", () => {
   });
 
   it("renders swatch variant grid inline", () => {
-    renderWithTheme(
-      <ColorPicker variant="swatches" defaultValue="#2348ff" inline hideTrigger />,
-    );
+    renderWithTheme(<ColorPicker variant="swatches" defaultValue="#2348ff" inline hideTrigger />);
     expect(screen.getByRole("listbox")).toBeInTheDocument();
   });
 

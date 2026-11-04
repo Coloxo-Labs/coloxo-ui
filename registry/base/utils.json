@@ -5,9 +5,7 @@
   "description": "Shared utilities: cx (clsx wrapper), useId, useControllableState.",
   "status": "stable",
   "version": "1.0.0",
-  "dependencies": [
-    "clsx"
-  ],
+  "dependencies": ["clsx"],
   "registryDependencies": [],
   "styles": {
     "tailwind": {
@@ -43,9 +41,7 @@
           "target": "index.ts"
         }
       ],
-      "dependencies": [
-        "clsx"
-      ],
+      "dependencies": ["clsx"],
       "registryDependencies": []
     }
   }

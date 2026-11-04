@@ -20,7 +20,12 @@ export function resolveColumnTitle<T>(column: DataTableColumn<T>): ReactNode {
 export function mapDataTableColumns<T>(
   columns: DataTableColumn<T>[],
   options?: {
-    renderCell?: (column: DataTableColumn<T>, value: unknown, record: T, index: number) => ReactNode;
+    renderCell?: (
+      column: DataTableColumn<T>,
+      value: unknown,
+      record: T,
+      index: number,
+    ) => ReactNode;
   },
 ): ColumnDef<T>[] {
   return columns.map((column) => ({

@@ -25,7 +25,8 @@ const CX: Record<string, string> = {
   nav: "hidden lg:block",
   navBadge: "inline-flex",
   navChevron: "transition-transform",
-  navLink: "inline-flex items-center gap-1.5 m-0 py-2 px-2.5 border-none rounded-md bg-transparent text-cx-secondary text-sm font-medium cursor-pointer transition-colors hover:bg-cx-primary-hover hover:text-cx-primary focus-visible:outline",
+  navLink:
+    "inline-flex items-center gap-1.5 m-0 py-2 px-2.5 border-none rounded-md bg-transparent text-cx-secondary text-sm font-medium cursor-pointer transition-colors hover:bg-cx-primary-hover hover:text-cx-primary focus-visible:outline",
   navLinkActive: "text-cx-brand-secondary bg-cx-brand-soft",
   navList: "flex items-center gap-1 m-0 p-0",
   root: "flex items-center gap-4 py-3 px-4 bg-cx-primary font-sans",
@@ -84,7 +85,13 @@ function NavDropdown({ item }: { item: DocsHeaderNavItem }) {
     >
       {children.map((child) =>
         child.href ? (
-          <DropdownItem key={child.id} asChild className={"flex items-center gap-2 p-2 rounded-md text-sm text-cx-secondary cursor-pointer outline-none"}>
+          <DropdownItem
+            key={child.id}
+            asChild
+            className={
+              "flex items-center gap-2 p-2 rounded-md text-sm text-cx-secondary cursor-pointer outline-none"
+            }
+          >
             <a
               href={child.href}
               className={cx(CX.dropdownLink, child.active && CX.dropdownLinkActive)}
@@ -98,7 +105,10 @@ function NavDropdown({ item }: { item: DocsHeaderNavItem }) {
         ) : (
           <DropdownItem
             key={child.id}
-            className={cx("flex items-center gap-2 p-2 rounded-md text-sm text-cx-secondary cursor-pointer outline-none", child.active && CX.dropdownLinkActive)}
+            className={cx(
+              "flex items-center gap-2 p-2 rounded-md text-sm text-cx-secondary cursor-pointer outline-none",
+              child.active && CX.dropdownLinkActive,
+            )}
             onSelect={child.onClick}
           >
             {child.label}

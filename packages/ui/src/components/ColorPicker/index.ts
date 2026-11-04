@@ -1,8 +1,4 @@
-export {
-  ColorPicker,
-  ColorHueSlider,
-  ColorAlphaSlider,
-} from "./ColorPicker";
+export { ColorPicker, ColorHueSlider, ColorAlphaSlider } from "./ColorPicker";
 export type {
   ColorPickerProps,
   ColorPickerVariant,
@@ -13,12 +9,7 @@ export type {
 export { GradientPicker, GradientPanel } from "./GradientPicker";
 export type { GradientPickerProps, GradientPanelProps } from "./GradientPicker";
 export type { ColorFormat } from "./ColorParts";
-export {
-  BRAND_SWATCHES,
-  GRAY_SWATCHES,
-  DEFAULT_SWATCHES,
-  COLOR_PALETTE,
-} from "./presets";
+export { BRAND_SWATCHES, GRAY_SWATCHES, DEFAULT_SWATCHES, COLOR_PALETTE } from "./presets";
 export {
   DEFAULT_GRADIENT,
   gradientToCss,

@@ -6,13 +6,8 @@
   "status": "stable",
   "version": "1.0.0",
   "dependencies": [],
-  "registryDependencies": [
-    "styles",
-    "utils"
-  ],
-  "providers": [
-    "theme"
-  ],
+  "registryDependencies": ["styles", "utils"],
+  "providers": ["theme"],
   "styles": {
     "tailwind": {
       "files": [
@@ -32,10 +27,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "styles",
-        "utils"
-      ]
+      "registryDependencies": ["styles", "utils"]
     }
   }
 }

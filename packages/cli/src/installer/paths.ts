@@ -4,10 +4,7 @@ import type { RegistryFile, RegistryItem } from "../registry/schema.js";
 import type { ProjectInfo } from "../project/detect.js";
 
 /** Map alias like @/components/ui → filesystem path relative to cwd. */
-export function resolveAliasToRelative(
-  aliasPath: string,
-  info: ProjectInfo,
-): string {
+export function resolveAliasToRelative(aliasPath: string, info: ProjectInfo): string {
   const normalized = aliasPath.replace(/\\/g, "/");
   let rel = normalized;
 

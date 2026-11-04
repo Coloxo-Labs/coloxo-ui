@@ -174,7 +174,7 @@ export abstract class ShaderEngine extends VisualEngine {
   /** Cached uniform lookup; missing uniforms resolve to null and are skipped. */
   protected uniform(name: string): WebGLUniformLocation | null {
     if (!this.locations.has(name)) {
-      const loc = this.program ? this.gl?.getUniformLocation(this.program, name) ?? null : null;
+      const loc = this.program ? (this.gl?.getUniformLocation(this.program, name) ?? null) : null;
       this.locations.set(name, loc);
     }
     return this.locations.get(name) ?? null;

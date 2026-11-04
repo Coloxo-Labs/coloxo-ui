@@ -1,9 +1,6 @@
 import type { RegistryClient } from "./client.js";
 import { RegistrySchema, type RegistryItem } from "./schema.js";
-import {
-  DEFAULT_CONTENT_BASE_URL,
-  inferContentBaseFromRegistryUrl,
-} from "./defaults.js";
+import { DEFAULT_CONTENT_BASE_URL, inferContentBaseFromRegistryUrl } from "./defaults.js";
 
 export class RemoteRegistryClient implements RegistryClient {
   private items: RegistryItem[] | undefined;
@@ -35,9 +32,7 @@ export class RemoteRegistryClient implements RegistryClient {
       );
     }
     const isBinary =
-      normalized.endsWith(".png") ||
-      normalized.endsWith(".jpg") ||
-      normalized.endsWith(".webp");
+      normalized.endsWith(".png") || normalized.endsWith(".jpg") || normalized.endsWith(".webp");
     if (isBinary) {
       return Buffer.from(await res.arrayBuffer());
     }

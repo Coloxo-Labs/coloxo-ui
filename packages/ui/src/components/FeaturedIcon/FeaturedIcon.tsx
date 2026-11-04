@@ -4,11 +4,7 @@ import { cx } from "../../utils/cx";
 import styles from "./FeaturedIcon.module.css";
 
 export type FeaturedIconType =
-  | "light-circle"
-  | "dark-circle"
-  | "modern"
-  | "modern-neue"
-  | "outline";
+  "light-circle" | "dark-circle" | "modern" | "modern-neue" | "outline";
 
 export type FeaturedIconColor = "brand" | "gray" | "error" | "warning" | "success";
 export type FeaturedIconSize = "sm" | "md" | "lg" | "xl";

@@ -39,12 +39,7 @@ export function Label({
 }: LabelProps) {
   return (
     <RadixLabel.Root
-      className={cx(
-        styles.root,
-        styles[`size-${size}`],
-        disabled && styles.disabled,
-        className,
-      )}
+      className={cx(styles.root, styles[`size-${size}`], disabled && styles.disabled, className)}
       data-disabled={disabled || undefined}
       data-required={required || undefined}
       data-optional={(optional && !required) || undefined}

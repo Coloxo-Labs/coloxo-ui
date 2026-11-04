@@ -39,8 +39,7 @@ function parseFilters(raw: string | null): DataTableFilterValue[] | undefined {
   if (!raw) return undefined;
   try {
     const parsed = JSON.parse(raw) as
-      | DataTableFilterValue[]
-      | Record<string, Omit<DataTableFilterValue, "field">>;
+      DataTableFilterValue[] | Record<string, Omit<DataTableFilterValue, "field">>;
     if (Array.isArray(parsed)) {
       return parsed.length > 0 ? parsed : undefined;
     }

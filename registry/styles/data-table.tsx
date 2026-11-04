@@ -1,5 +1,13 @@
 "use client";
-import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, Columns3Icon, LayoutGridIcon, SearchIcon, TableIcon } from "@/lib/icons";
+import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+  Columns3Icon,
+  LayoutGridIcon,
+  SearchIcon,
+  TableIcon,
+} from "@/lib/icons";
 
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Button } from "./button";
@@ -14,7 +22,8 @@ import { cx, useControllableState } from "@/lib/utils";
  */
 const CX: Record<string, string> = {
   panel: "overflow-hidden rounded-xl border border-solid border-cx-secondary bg-cx-primary",
-  search: "min-w-0 flex-1 rounded-md border border-solid border-cx-primary bg-cx-primary px-3 py-2 text-sm text-cx-primary outline-none focus:border-cx-brand",
+  search:
+    "min-w-0 flex-1 rounded-md border border-solid border-cx-primary bg-cx-primary px-3 py-2 text-sm text-cx-primary outline-none focus:border-cx-brand",
   table: "w-full border-collapse text-sm",
   td: "border-t border-solid border-cx-secondary px-3 text-cx-secondary align-middle",
   th: "bg-cx-secondary px-3 py-2 text-left text-xs font-medium text-cx-tertiary",
@@ -196,7 +205,9 @@ export type DataTableProps<T> = {
 
 export type DataTablePagination = { page: number; pageSize: number; total: number };
 
-function normalizeFilter(filter: DataTableFilterValue | undefined): DataTableFilterValue | undefined {
+function normalizeFilter(
+  filter: DataTableFilterValue | undefined,
+): DataTableFilterValue | undefined {
   if (!filter) return undefined;
   if (filter.operator === "isNull" || filter.operator === "isNotNull") return filter;
   if (filter.value === undefined || filter.value === null || filter.value === "") return undefined;
@@ -282,16 +293,24 @@ export function applyFilters<T>(
     .map((filter) => [filter.field, normalizeFilter(filter)] as const)
     .filter((entry): entry is readonly [string, DataTableFilterValue] => entry[1] != null);
   if (entries.length === 0) return rows;
-  return rows.filter((row) => entries.every(([field, filter]) => matchOperator(getValue(row, field), filter)));
+  return rows.filter((row) =>
+    entries.every(([field, filter]) => matchOperator(getValue(row, field), filter)),
+  );
 }
 
-export function applySearch<T>(rows: T[], search: string | undefined, getSearchText: (row: T) => string): T[] {
+export function applySearch<T>(
+  rows: T[],
+  search: string | undefined,
+  getSearchText: (row: T) => string,
+): T[] {
   const term = search?.trim().toLowerCase();
   if (!term) return rows;
   return rows.filter((row) => getSearchText(row).toLowerCase().includes(term));
 }
 
-export function normalizeSort(sort: DataTableSort | DataTableSort[] | undefined): DataTableSort[] | undefined {
+export function normalizeSort(
+  sort: DataTableSort | DataTableSort[] | undefined,
+): DataTableSort[] | undefined {
   if (!sort) return undefined;
   const list = Array.isArray(sort) ? sort : [sort];
   return list.length > 0 ? list : undefined;
@@ -308,7 +327,9 @@ export function applySort<T>(
   return [...rows].sort((a, b) => {
     for (const item of sorts) {
       const custom = getCompare?.(item.field);
-      const cmp = custom ? custom(a, b) : compareValues(getValue(a, item.field), getValue(b, item.field));
+      const cmp = custom
+        ? custom(a, b)
+        : compareValues(getValue(a, item.field), getValue(b, item.field));
       if (cmp !== 0) return item.order === "desc" ? -cmp : cmp;
     }
     return 0;
@@ -338,16 +359,34 @@ export function mergeQuery(base: DataTableQuery, patch: Partial<DataTableQuery>)
   };
 }
 
-function shouldResetPage(prev: DataTableQuery, patch: Partial<DataTableQuery>, resetOn: DataTableResetPageOn): boolean {
+function shouldResetPage(
+  prev: DataTableQuery,
+  patch: Partial<DataTableQuery>,
+  resetOn: DataTableResetPageOn,
+): boolean {
   const cfg = { ...DEFAULT_RESET_PAGE_ON, ...resetOn };
   if (cfg.search && patch.search !== undefined && patch.search !== prev.search) return true;
-  if (cfg.filter && patch.filters !== undefined && JSON.stringify(patch.filters) !== JSON.stringify(prev.filters)) return true;
+  if (
+    cfg.filter &&
+    patch.filters !== undefined &&
+    JSON.stringify(patch.filters) !== JSON.stringify(prev.filters)
+  )
+    return true;
   if (cfg.pageSize && patch.pageSize !== undefined && patch.pageSize !== prev.pageSize) return true;
-  if (cfg.sort && patch.sort !== undefined && JSON.stringify(patch.sort) !== JSON.stringify(prev.sort)) return true;
+  if (
+    cfg.sort &&
+    patch.sort !== undefined &&
+    JSON.stringify(patch.sort) !== JSON.stringify(prev.sort)
+  )
+    return true;
   return false;
 }
 
-export function withPageReset(prev: DataTableQuery, patch: Partial<DataTableQuery>, resetOn?: DataTableResetPageOn): DataTableQuery {
+export function withPageReset(
+  prev: DataTableQuery,
+  patch: Partial<DataTableQuery>,
+  resetOn?: DataTableResetPageOn,
+): DataTableQuery {
   const next = mergeQuery(prev, patch);
   if (shouldResetPage(prev, patch, resetOn ?? {})) next.page = 1;
   return next;
@@ -363,7 +402,10 @@ function getByDataIndex(row: unknown, dataIndex: string | string[]): unknown {
   return cur;
 }
 
-function dataIndexMatches(dataIndex: DataTableColumn<unknown>["dataIndex"], field: string): boolean {
+function dataIndexMatches(
+  dataIndex: DataTableColumn<unknown>["dataIndex"],
+  field: string,
+): boolean {
   if (dataIndex == null) return false;
   if (Array.isArray(dataIndex)) return dataIndex.join(".") === field;
   return String(dataIndex) === field;
@@ -402,7 +444,9 @@ export function applyClientPipeline<T>(
   let rows = applySearch(data, query.search, searchText);
   rows = applyFilters(rows, query.filters, getValue);
   rows = applySort(rows, query.sort, getValue, (field) => {
-    const column = columns.find((col) => col.key === field || dataIndexMatches(col.dataIndex, field));
+    const column = columns.find(
+      (col) => col.key === field || dataIndexMatches(col.dataIndex, field),
+    );
     return column && typeof column.sortable === "object" ? column.sortable.compare : undefined;
   });
   const total = rows.length;
@@ -423,7 +467,8 @@ function parseSort(raw: string | null): DataTableSort[] | undefined {
 function parseFilters(raw: string | null): DataTableFilterValue[] | undefined {
   if (!raw) return undefined;
   try {
-    const parsed = JSON.parse(raw) as DataTableFilterValue[] | Record<string, Omit<DataTableFilterValue, "field">>;
+    const parsed = JSON.parse(raw) as
+      DataTableFilterValue[] | Record<string, Omit<DataTableFilterValue, "field">>;
     if (Array.isArray(parsed)) return parsed.length > 0 ? parsed : undefined;
     if (parsed && typeof parsed === "object") {
       const legacy = Object.entries(parsed).map(([field, value]) => ({ field, ...value }));
@@ -435,7 +480,9 @@ function parseFilters(raw: string | null): DataTableFilterValue[] | undefined {
   return undefined;
 }
 
-export function parseDataTableQuery(params: URLSearchParams | Record<string, string> | string): DataTableQuery {
+export function parseDataTableQuery(
+  params: URLSearchParams | Record<string, string> | string,
+): DataTableQuery {
   const searchParams =
     typeof params === "string"
       ? new URLSearchParams(params.startsWith("?") ? params.slice(1) : params)
@@ -455,7 +502,10 @@ export function parseDataTableQuery(params: URLSearchParams | Record<string, str
 }
 
 export function serializeDataTableQuery(query: DataTableQuery): Record<string, string> {
-  const out: Record<string, string> = { page: String(query.page), pageSize: String(query.pageSize) };
+  const out: Record<string, string> = {
+    page: String(query.page),
+    pageSize: String(query.pageSize),
+  };
   if (query.search) out.search = query.search;
   if (query.sort?.length) out.sort = JSON.stringify(query.sort);
   if (query.filters?.length) out.filters = JSON.stringify(query.filters);
@@ -481,7 +531,11 @@ function textTitle<T>(column: DataTableColumn<T>): string {
   return typeof title === "string" || typeof title === "number" ? String(title) : column.key;
 }
 
-function resolveRowId<T>(record: T, index: number, getRowId?: (record: T, index: number) => string): string {
+function resolveRowId<T>(
+  record: T,
+  index: number,
+  getRowId?: (record: T, index: number) => string,
+): string {
   if (getRowId) return getRowId(record, index);
   const candidate = (record as { id?: string | number }).id;
   return candidate != null ? String(candidate) : String(index);
@@ -569,7 +623,8 @@ export function DataTable<T>({
     () => new Set(visibilityConfig?.defaultHiddenColumnKeys ?? []),
   );
   useEffect(() => {
-    if (visibilityConfig?.hiddenColumnKeys) setHiddenColumnKeys(new Set(visibilityConfig.hiddenColumnKeys));
+    if (visibilityConfig?.hiddenColumnKeys)
+      setHiddenColumnKeys(new Set(visibilityConfig.hiddenColumnKeys));
   }, [visibilityConfig?.hiddenColumnKeys]);
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<string[]>({
@@ -594,7 +649,8 @@ export function DataTable<T>({
   }, [mode, data, columns, query, total, searchConfig?.fields]);
 
   const visible = columns.filter((column) => !column.hidden && !hiddenColumnKeys.has(column.key));
-  const updateQuery = (patch: Partial<DataTableQuery>) => setQuery(withPageReset(query, patch, resetPageOn));
+  const updateQuery = (patch: Partial<DataTableQuery>) =>
+    setQuery(withPageReset(query, patch, resetPageOn));
   const alignClass = (align?: "left" | "center" | "right") =>
     align === "center" ? "text-center" : align === "right" ? "text-right" : "text-left";
 
@@ -614,29 +670,27 @@ export function DataTable<T>({
       (empty as ReactNode)
     );
 
-  const errorNode = !error
-    ? undefined
-    : (
-        <EmptyState
-          title={emptyTitle(errorConfig?.title, "Unable to load data")}
-          description={
-            typeof errorConfig?.description === "string"
-              ? errorConfig.description
-              : error instanceof Error
-                ? error.message
-                : typeof error === "string"
-                  ? error
-                  : "Something went wrong"
-          }
-          action={
-            errorConfig?.onRetry ? (
-              <Button size="sm" onClick={errorConfig.onRetry}>
-                Retry
-              </Button>
-            ) : undefined
-          }
-        />
-      );
+  const errorNode = !error ? undefined : (
+    <EmptyState
+      title={emptyTitle(errorConfig?.title, "Unable to load data")}
+      description={
+        typeof errorConfig?.description === "string"
+          ? errorConfig.description
+          : error instanceof Error
+            ? error.message
+            : typeof error === "string"
+              ? error
+              : "Something went wrong"
+      }
+      action={
+        errorConfig?.onRetry ? (
+          <Button size="sm" onClick={errorConfig.onRetry}>
+            Retry
+          </Button>
+        ) : undefined
+      }
+    />
+  );
 
   const pageIds = pipeline.rows.map((row, index) => resolveRowId(row, index, getRowId));
   const allSelected = pageIds.length > 0 && pageIds.every((id) => selectedRowKeys.includes(id));
@@ -644,11 +698,16 @@ export function DataTable<T>({
   return (
     <div className={cx("font-sans", className)} data-testid="data-table" data-density={rowDensity}>
       <div className={CX.panel}>
-        {searchConfig || columns.some((column) => column.filter) || columnVisibility || renderGridItem ? (
+        {searchConfig ||
+        columns.some((column) => column.filter) ||
+        columnVisibility ||
+        renderGridItem ? (
           <div className={CX.toolbar}>
             {searchConfig ? (
               <label className="flex min-w-48 flex-1 items-center gap-2">
-                <Icon size="sm"><SearchIcon /></Icon>
+                <Icon size="sm">
+                  <SearchIcon />
+                </Icon>
                 <input
                   className={CX.search}
                   aria-label="Search table"
@@ -668,7 +727,12 @@ export function DataTable<T>({
                 if (filter.render) {
                   return (
                     <div key={column.key}>
-                      {filter.render({ value: current, onChange: change, onApply: () => undefined, onClear: () => change(undefined) })}
+                      {filter.render({
+                        value: current,
+                        onChange: change,
+                        onApply: () => undefined,
+                        onClear: () => change(undefined),
+                      })}
                     </div>
                   );
                 }
@@ -680,7 +744,14 @@ export function DataTable<T>({
                       aria-label={filter.label ?? textTitle(column)}
                       value={current?.value == null ? "" : String(current.value)}
                       onChange={(event) =>
-                        change(event.target.value ? { operator: filter.defaultOperator ?? "eq", value: event.target.value } : undefined)
+                        change(
+                          event.target.value
+                            ? {
+                                operator: filter.defaultOperator ?? "eq",
+                                value: event.target.value,
+                              }
+                            : undefined,
+                        )
                       }
                     >
                       <option value="">{filter.placeholder ?? textTitle(column)}</option>
@@ -702,7 +773,10 @@ export function DataTable<T>({
                     onChange={(event) =>
                       change(
                         event.target.value
-                          ? { operator: filter.defaultOperator ?? "contains", value: event.target.value }
+                          ? {
+                              operator: filter.defaultOperator ?? "contains",
+                              value: event.target.value,
+                            }
                           : undefined,
                       )
                     }
@@ -712,7 +786,9 @@ export function DataTable<T>({
             {columnVisibility ? (
               <details className="relative">
                 <summary className="flex cursor-pointer list-none items-center gap-1 rounded-md border border-solid border-cx-primary px-2 py-2 text-sm">
-                  <Icon size="sm"><Columns3Icon /></Icon>
+                  <Icon size="sm">
+                    <Columns3Icon />
+                  </Icon>
                   Columns
                 </summary>
                 <div className="absolute right-0 z-10 mt-1 flex min-w-40 flex-col gap-1 rounded-md border border-solid border-cx-secondary bg-cx-primary p-2 shadow-lg">
@@ -739,11 +815,25 @@ export function DataTable<T>({
             ) : null}
             {renderGridItem ? (
               <div className="inline-flex overflow-hidden rounded-md border border-solid border-cx-primary">
-                <button type="button" className={cx("px-2 py-2", viewMode === "list" && "bg-cx-secondary")} aria-label="List view" onClick={() => setViewMode("list")}>
-                  <Icon size="sm"><TableIcon /></Icon>
+                <button
+                  type="button"
+                  className={cx("px-2 py-2", viewMode === "list" && "bg-cx-secondary")}
+                  aria-label="List view"
+                  onClick={() => setViewMode("list")}
+                >
+                  <Icon size="sm">
+                    <TableIcon />
+                  </Icon>
                 </button>
-                <button type="button" className={cx("px-2 py-2", viewMode === "grid" && "bg-cx-secondary")} aria-label="Grid view" onClick={() => setViewMode("grid")}>
-                  <Icon size="sm"><LayoutGridIcon /></Icon>
+                <button
+                  type="button"
+                  className={cx("px-2 py-2", viewMode === "grid" && "bg-cx-secondary")}
+                  aria-label="Grid view"
+                  onClick={() => setViewMode("grid")}
+                >
+                  <Icon size="sm">
+                    <LayoutGridIcon />
+                  </Icon>
                 </button>
               </div>
             ) : null}
@@ -760,14 +850,18 @@ export function DataTable<T>({
           <div role="alert">{errorNode}</div>
         ) : viewMode === "grid" ? (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-3 p-3">
-            {pipeline.rows.length === 0 ? emptyNode : pipeline.rows.map((row, index) => (
-              <div key={resolveRowId(row, index, getRowId)}>{renderGridItem?.(row, index)}</div>
-            ))}
+            {pipeline.rows.length === 0
+              ? emptyNode
+              : pipeline.rows.map((row, index) => (
+                  <div key={resolveRowId(row, index, getRowId)}>{renderGridItem?.(row, index)}</div>
+                ))}
           </div>
         ) : (
           <div className="overflow-auto">
             <table className={CX.table}>
-              {caption ? <caption className="px-3 py-2 text-left font-semibold">{caption}</caption> : null}
+              {caption ? (
+                <caption className="px-3 py-2 text-left font-semibold">{caption}</caption>
+              ) : null}
               <thead>
                 <tr>
                   {expandable ? <th className={CX.th} /> : null}
@@ -778,7 +872,10 @@ export function DataTable<T>({
                         aria-label="Select all rows"
                         checked={allSelected}
                         onChange={() => {
-                          if (allSelected) setSelectedRowKeys(selectedRowKeys.filter((id) => !pageIds.includes(id)));
+                          if (allSelected)
+                            setSelectedRowKeys(
+                              selectedRowKeys.filter((id) => !pageIds.includes(id)),
+                            );
                           else setSelectedRowKeys([...new Set([...selectedRowKeys, ...pageIds])]);
                         }}
                       />
@@ -786,21 +883,46 @@ export function DataTable<T>({
                   ) : null}
                   {visible.map((column) => {
                     const sort = query.sort?.find((item) => item.field === column.key);
-                    const multi = typeof column.sortable === "object" && Boolean(column.sortable.multi);
+                    const multi =
+                      typeof column.sortable === "object" && Boolean(column.sortable.multi);
                     return (
-                      <th key={column.key} className={cx(CX.th, stickyHeader && "sticky top-0", alignClass(column.align))} style={{ width: column.width, minWidth: column.minWidth }}>
+                      <th
+                        key={column.key}
+                        className={cx(
+                          CX.th,
+                          stickyHeader && "sticky top-0",
+                          alignClass(column.align),
+                        )}
+                        style={{ width: column.width, minWidth: column.minWidth }}
+                      >
                         {column.sortable ? (
                           <button
                             type="button"
                             className="inline-flex items-center gap-1"
                             onClick={() => {
-                              const order = !sort ? "asc" : sort.order === "asc" ? "desc" : undefined;
-                              const rest = multi ? (query.sort ?? []).filter((item) => item.field !== column.key) : [];
-                              updateQuery({ sort: order ? [...rest, { field: column.key, order }] : rest.length ? rest : undefined });
+                              const order = !sort
+                                ? "asc"
+                                : sort.order === "asc"
+                                  ? "desc"
+                                  : undefined;
+                              const rest = multi
+                                ? (query.sort ?? []).filter((item) => item.field !== column.key)
+                                : [];
+                              updateQuery({
+                                sort: order
+                                  ? [...rest, { field: column.key, order }]
+                                  : rest.length
+                                    ? rest
+                                    : undefined,
+                              });
                             }}
                           >
                             {columnTitle(column)}
-                            {sort?.order === "asc" ? <ChevronUpIcon /> : sort?.order === "desc" ? <ChevronDownIcon /> : null}
+                            {sort?.order === "asc" ? (
+                              <ChevronUpIcon />
+                            ) : sort?.order === "desc" ? (
+                              <ChevronDownIcon />
+                            ) : null}
                           </button>
                         ) : (
                           columnTitle(column)
@@ -828,7 +950,9 @@ export function DataTable<T>({
                   pipeline.rows.map((row, index) => {
                     const id = resolveRowId(row, index, getRowId);
                     const expanded = expandedRowKeys.includes(id);
-                    const canExpand = expandable ? (expandable.rowExpandable?.(row) ?? true) : false;
+                    const canExpand = expandable
+                      ? (expandable.rowExpandable?.(row) ?? true)
+                      : false;
                     return (
                       <Fragment key={id}>
                         <tr>
@@ -841,12 +965,16 @@ export function DataTable<T>({
                                   aria-label={expanded ? "Collapse row" : "Expand row"}
                                   onClick={() =>
                                     setExpandedRowKeys(
-                                      expanded ? expandedRowKeys.filter((key) => key !== id) : [...expandedRowKeys, id],
+                                      expanded
+                                        ? expandedRowKeys.filter((key) => key !== id)
+                                        : [...expandedRowKeys, id],
                                     )
                                   }
                                 >
                                   <Icon size="sm">
-                                    <ChevronRightIcon className={expanded ? "rotate-90" : undefined} />
+                                    <ChevronRightIcon
+                                      className={expanded ? "rotate-90" : undefined}
+                                    />
                                   </Icon>
                                 </button>
                               ) : null}
@@ -874,12 +1002,21 @@ export function DataTable<T>({
                               ? getByDataIndex(row, column.dataIndex as string | string[])
                               : (row as Record<string, unknown>)[column.key];
                             return (
-                              <td key={column.key} className={cx(CX.td, DENSITY[rowDensity], alignClass(column.align))}>
-                                {column.render ? column.render(value, row, index) : (value as ReactNode)}
+                              <td
+                                key={column.key}
+                                className={cx(CX.td, DENSITY[rowDensity], alignClass(column.align))}
+                              >
+                                {column.render
+                                  ? column.render(value, row, index)
+                                  : (value as ReactNode)}
                               </td>
                             );
                           })}
-                          {rowActions ? <td className={cx(CX.td, DENSITY[rowDensity])}>{rowActions(row, index)}</td> : null}
+                          {rowActions ? (
+                            <td className={cx(CX.td, DENSITY[rowDensity])}>
+                              {rowActions(row, index)}
+                            </td>
+                          ) : null}
                         </tr>
                         {expanded && expandable?.renderExpandedRow ? (
                           <tr key={`${id}-expanded`}>
@@ -904,7 +1041,11 @@ export function DataTable<T>({
               pageSize={query.pageSize}
               total={pipeline.total}
               onPageChange={(page) => updateQuery({ page })}
-              onPageSizeChange={paginationConfig.showSizeChanger === false ? undefined : (pageSize) => updateQuery({ pageSize })}
+              onPageSizeChange={
+                paginationConfig.showSizeChanger === false
+                  ? undefined
+                  : (pageSize) => updateQuery({ pageSize })
+              }
               pageSizeOptions={paginationConfig.pageSizeOptions}
               showFirstLast={paginationConfig.showFirstLast}
               metaLabel={paginationConfig.metaLabel}

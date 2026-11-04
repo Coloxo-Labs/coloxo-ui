@@ -18,12 +18,8 @@
           "target": "tooltip.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -40,12 +36,8 @@
           "target": "tooltip/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": ["utils"]
     }
   }
 }

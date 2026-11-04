@@ -10,7 +10,8 @@ const CX: Record<string, string> = {
   item: "ml--2 rounded-full first:ml-0",
   lg: "w-12 h-12",
   md: "w-10 h-10",
-  overflow: "inline-flex items-center justify-center ml--2 rounded-full bg-cx-secondary text-cx-secondary font-sans text-xs leading-4 font-semibold",
+  overflow:
+    "inline-flex items-center justify-center ml--2 rounded-full bg-cx-secondary text-cx-secondary font-sans text-xs leading-4 font-semibold",
   root: "inline-flex items-center",
   size2xl: "w-16 h-16",
   sm: "w-8 h-8",

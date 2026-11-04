@@ -42,7 +42,10 @@ export function parseColor(value: string): RGB | null {
  * Shader uniform arrays cannot hold CSS keywords, so unparseable entries are dropped here rather
  * than silently rendering black.
  */
-export function sanitizePalette(colors: readonly string[] | undefined, fallback: readonly string[]): string[] {
+export function sanitizePalette(
+  colors: readonly string[] | undefined,
+  fallback: readonly string[],
+): string[] {
   const parsed = (colors ?? []).filter((color) => typeof color === "string" && parseColor(color));
   return parsed.length > 0 ? parsed.slice(0, 8) : [...fallback];
 }
@@ -83,7 +86,12 @@ export function clamp01(value: number): number {
 }
 
 /** Reads a numeric prop defensively: non-finite input falls back instead of poisoning the frame. */
-export function numeric(value: number | undefined, fallback: number, min: number, max: number): number {
+export function numeric(
+  value: number | undefined,
+  fallback: number,
+  min: number,
+  max: number,
+): number {
   if (typeof value !== "number" || !Number.isFinite(value)) return fallback;
   return clamp(value, min, max);
 }

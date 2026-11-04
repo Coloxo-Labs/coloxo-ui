@@ -15,12 +15,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "avatar",
-        "utils",
-        "icon",
-        "icons"
-      ]
+      "registryDependencies": ["avatar", "utils", "icon", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -42,9 +37,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     }
   },
   "accessibility": {

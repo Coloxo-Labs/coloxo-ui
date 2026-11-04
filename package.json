@@ -3,25 +3,33 @@
   "private": true,
   "version": "1.0.4",
   "description": "Premium Coloxo UI — React component library, CLI, and open registry",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "npm@11.19.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
-    "build": "pnpm --filter @coloxo/ui build && pnpm --filter @coloxo/cli build",
-    "build:ui": "pnpm --filter @coloxo/ui build",
-    "build:cli": "pnpm --filter @coloxo/cli build",
-    "pack:check": "pnpm --filter @coloxo/ui pack --dry-run && pnpm --filter @coloxo/cli pack --dry-run",
-    "test": "pnpm --filter @coloxo/ui test",
-    "test:cli": "pnpm --filter @coloxo/cli test",
-    "typecheck": "pnpm -r typecheck",
-    "lint": "pnpm -r lint",
-    "clean": "pnpm -r clean",
+    "build": "npm run build --workspace=@coloxo/ui && npm run build --workspace=@coloxo/cli",
+    "build:ui": "npm run build --workspace=@coloxo/ui",
+    "build:cli": "npm run build --workspace=@coloxo/cli",
+    "pack:check": "npm pack --dry-run --workspace=@coloxo/ui && npm pack --dry-run --workspace=@coloxo/cli",
+    "test": "npm run test --workspace=@coloxo/ui",
+    "test:cli": "npm run test --workspace=@coloxo/cli",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "registry:build": "tsx scripts/build-registry.ts",
     "registry:validate": "tsx scripts/validate-registry.ts",
-    "styles:build": "node scripts/sync-styles.mjs"
+    "styles:build": "node scripts/sync-styles.mjs",
+    "publish:packages": "npm publish --workspace=@coloxo/ui --access public && npm publish --workspace=@coloxo/cli --access public"
   },
   "devDependencies": {
+    "prettier": "^3.6.2",
     "tsx": "^4.19.3",
     "typescript": "^5.9.2",
     "zod": "^3.25.76"
@@ -35,5 +43,8 @@
   },
   "bugs": {
     "url": "https://github.com/Coloxo-Labs/coloxo-ui/issues"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

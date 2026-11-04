@@ -222,7 +222,11 @@ function SearchableSelect({
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return options;
-    return options.filter((option) => optionText(option.label).toLowerCase().includes(q) || option.value.toLowerCase().includes(q));
+    return options.filter(
+      (option) =>
+        optionText(option.label).toLowerCase().includes(q) ||
+        option.value.toLowerCase().includes(q),
+    );
   }, [options, query]);
 
   const [active, setActive] = useState(0);
@@ -263,7 +267,13 @@ function SearchableSelect({
           type="button"
           id={selectId}
           disabled={disabled}
-          className={cx(control.surface, control[size], styles.trigger, error && control.invalid, className)}
+          className={cx(
+            control.surface,
+            control[size],
+            styles.trigger,
+            error && control.invalid,
+            className,
+          )}
           aria-label={ariaLabel}
           aria-haspopup="listbox"
           aria-expanded={open}
@@ -271,7 +281,9 @@ function SearchableSelect({
           aria-describedby={describedBy}
           aria-required={required}
         >
-          <span className={cx(!selectedOption && styles.trigger)}>{selectedOption?.label ?? placeholder}</span>
+          <span className={cx(!selectedOption && styles.trigger)}>
+            {selectedOption?.label ?? placeholder}
+          </span>
           <span className={styles.actions}>
             {clearable && selected ? (
               <span

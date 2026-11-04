@@ -79,7 +79,12 @@ describe("FluidBackground", () => {
 
   it("accepts custom colors and quality without crashing", () => {
     const { container } = renderWithTheme(
-      <FluidBackground colors={["#072699", "#32B8FF"]} quality="low" intensity={1} trailPersistence={0.2}>
+      <FluidBackground
+        colors={["#072699", "#32B8FF"]}
+        quality="low"
+        intensity={1}
+        trailPersistence={0.2}
+      >
         <p>Panel</p>
       </FluidBackground>,
     );

@@ -6,9 +6,7 @@
   "description": "Self-contained code display with built-in syntax highlighting — no Prism, Shiki, or Highlight.js.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,
@@ -86,10 +84,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -167,12 +162,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "styles", "theme", "icons"]
     }
   }
 }

@@ -89,7 +89,10 @@ export type { LivingWireframeTerrainProps } from "./components/Visuals/LivingWir
 
 export { MagneticFieldVisualizer } from "./components/Visuals/MagneticFieldVisualizer";
 export type { MagneticFieldVisualizerProps } from "./components/Visuals/MagneticFieldVisualizer";
-export type { MagneticPolarity, MagneticColorMode } from "./components/Visuals/MagneticFieldVisualizer";
+export type {
+  MagneticPolarity,
+  MagneticColorMode,
+} from "./components/Visuals/MagneticFieldVisualizer";
 
 export { ParametricSculpture } from "./components/Visuals/ParametricSculpture";
 export { SCULPTURE_VARIANTS } from "./components/Visuals/ParametricSculpture";

@@ -14,17 +14,8 @@
           "target": "date-picker.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "date-fns"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icons",
-        "form-field",
-        "icon",
-        "button"
-      ]
+      "dependencies": ["@radix-ui/react-popover", "date-fns"],
+      "registryDependencies": ["utils", "icons", "form-field", "icon", "button"]
     },
     "coloxo-css": {
       "files": [
@@ -77,11 +68,7 @@
           "target": "date-picker/utils.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "date-fns",
-        "react-day-picker"
-      ],
+      "dependencies": ["@radix-ui/react-popover", "date-fns", "react-day-picker"],
       "registryDependencies": [
         "utils",
         "form-control",
@@ -93,14 +80,10 @@
         "theme",
         "icons"
       ],
-      "cssImports": [
-        "react-day-picker/style.css"
-      ]
+      "cssImports": ["react-day-picker/style.css"]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true

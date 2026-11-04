@@ -86,9 +86,7 @@ export function clampDecay(n: number): number {
 }
 
 export function sanitizeColors(colors: string[] | undefined): string[] {
-  const list = (colors ?? [])
-    .map((c) => (typeof c === "string" ? c.trim() : ""))
-    .filter(Boolean);
+  const list = (colors ?? []).map((c) => (typeof c === "string" ? c.trim() : "")).filter(Boolean);
   return list.length > 0 ? list : DEFAULT_COLORS;
 }
 
@@ -627,8 +625,7 @@ export class WaveEngine {
     const rect = this.root.getBoundingClientRect();
     const cssW = Math.max(1, Math.floor(rect.width));
     const cssH = Math.max(1, Math.floor(rect.height));
-    const deviceDpr =
-      typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
+    const deviceDpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
     let dpr = Math.min(deviceDpr, QUALITY_DPR[this.opts.quality]);
     let bw = Math.max(1, Math.floor(cssW * dpr));
     let bh = Math.max(1, Math.floor(cssH * dpr));
@@ -793,7 +790,9 @@ export class WaveEngine {
 
     const c0 = rgbNorm(this.palette[0] ?? { r: 37, g: 99, b: 255 });
     const c1 = rgbNorm(this.palette[1] ?? this.palette[0] ?? { r: 34, g: 211, b: 238 });
-    const c2 = rgbNorm(this.palette[2] ?? this.palette[1] ?? this.palette[0] ?? { r: 139, g: 92, b: 246 });
+    const c2 = rgbNorm(
+      this.palette[2] ?? this.palette[1] ?? this.palette[0] ?? { r: 139, g: 92, b: 246 },
+    );
     const hi = rgbNorm(HIGHLIGHT);
     const bg = rgbNorm(this.bg);
     const aspect = this.cssW / Math.max(1, this.cssH);

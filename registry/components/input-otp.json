@@ -6,9 +6,7 @@
   "description": "Separate verification code slots with sizes, paste support, and one-time-code autofill.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,
@@ -25,12 +23,8 @@
           "target": "input-otp.tsx"
         }
       ],
-      "dependencies": [
-        "input-otp"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["input-otp"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -47,14 +41,8 @@
           "target": "input-otp/index.ts"
         }
       ],
-      "dependencies": [
-        "input-otp@^1.5.0"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["input-otp@^1.5.0"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

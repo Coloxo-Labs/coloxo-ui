@@ -216,7 +216,8 @@
 }
 
 .stackedBehind {
-  transform: translateY(var(--cx-notification-stack-offset, 0)) scale(var(--cx-notification-stack-scale, 1));
+  transform: translateY(var(--cx-notification-stack-offset, 0))
+    scale(var(--cx-notification-stack-scale, 1));
   opacity: 0.88;
 }
 
@@ -310,7 +311,11 @@
   bottom: 0;
   height: 3px;
   transform-origin: left center;
-  background: linear-gradient(90deg, var(--cx-color-bg-brand-solid), var(--cx-color-fg-brand-primary));
+  background: linear-gradient(
+    90deg,
+    var(--cx-color-bg-brand-solid),
+    var(--cx-color-fg-brand-primary)
+  );
   animation-name: cx-notification-progress;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -364,7 +369,15 @@
   }
 }
 
-.success .iconContainer { color: var(--cx-color-success); }
-.error .iconContainer { color: var(--cx-color-error); }
-.warning .iconContainer { color: var(--cx-color-warning); }
-.info .iconContainer { color: var(--cx-color-info); }
+.success .iconContainer {
+  color: var(--cx-color-success);
+}
+.error .iconContainer {
+  color: var(--cx-color-error);
+}
+.warning .iconContainer {
+  color: var(--cx-color-warning);
+}
+.info .iconContainer {
+  color: var(--cx-color-info);
+}

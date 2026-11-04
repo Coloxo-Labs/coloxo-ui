@@ -8,7 +8,10 @@ describe("DocsPageHeader", () => {
   it("renders title, breadcrumb, and badges", () => {
     renderWithTheme(
       <DocsPageHeader
-        breadcrumb={[{ label: "Components", href: "/" }, { label: "Button", current: true }]}
+        breadcrumb={[
+          { label: "Components", href: "/" },
+          { label: "Button", current: true },
+        ]}
         title="Button"
         description="Primary actions"
         badges={<Badge>Stable</Badge>}

@@ -6,9 +6,7 @@
   "description": "Inline alert banners and error boundary helper.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -22,13 +20,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "featured-icon",
-        "icon",
-        "icon-button",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "featured-icon", "icon", "icon-button", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -50,12 +42,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "styles", "theme", "icons"]
     }
   }
 }

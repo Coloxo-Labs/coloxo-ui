@@ -26,7 +26,8 @@ import { cx } from "@/lib/utils";
  * file needs no stylesheet of its own and no runtime styling deps.
  */
 const CX: Record<string, string> = {
-  action: "border-none bg-none text-cx-brand-secondary font-semibold text-sm cursor-pointer p-0 mt-2",
+  action:
+    "border-none bg-none text-cx-brand-secondary font-semibold text-sm cursor-pointer p-0 mt-2",
   actions: "flex flex-wrap justify-start gap-2 mt-3",
   avatar: "shrink-0 inline-flex",
   close: "shrink-0",
@@ -57,12 +58,7 @@ const CX: Record<string, string> = {
 export type NotificationVariant = "success" | "info" | "warning" | "error";
 
 export type NotificationPlacement =
-  | "top"
-  | "topLeft"
-  | "topRight"
-  | "bottom"
-  | "bottomLeft"
-  | "bottomRight";
+  "top" | "topLeft" | "topRight" | "bottom" | "bottomLeft" | "bottomRight";
 
 export type NotificationLayout = "default" | "avatar" | "image" | "progress";
 
@@ -217,7 +213,8 @@ function resolveAnimation(config: NotificationAnimationConfig | undefined): {
   }
   return {
     enabled: config.enabled ?? DEFAULT_ANIMATED,
-    delay: typeof config.delay === "number" ? Math.max(0, config.delay) : DEFAULT_ANIMATION_DELAY_MS,
+    delay:
+      typeof config.delay === "number" ? Math.max(0, config.delay) : DEFAULT_ANIMATION_DELAY_MS,
   };
 }
 
@@ -263,7 +260,10 @@ function resolveStackThreshold(stack: NotificationStackConfig | undefined): numb
   return stack.threshold ?? DEFAULT_STACK_THRESHOLD;
 }
 
-function resolveDuration(value: number | false | undefined, fallback: number | false): number | false {
+function resolveDuration(
+  value: number | false | undefined,
+  fallback: number | false,
+): number | false {
   if (value === false || value === 0) return false;
   if (typeof value === "number") return value;
   if (fallback === false || fallback === 0) return false;
@@ -354,9 +354,7 @@ function normalizeRecord(
 
   const layout = inferLayout(options);
   const durationSource =
-    options.duration === undefined && options.progress != null
-      ? false
-      : options.duration;
+    options.duration === undefined && options.progress != null ? false : options.duration;
   const animation = resolveAnimation(options.animated ?? globalConfig.animated);
 
   return {
@@ -402,7 +400,11 @@ function upsert(record: NotificationRecord) {
   return record.id;
 }
 
-function push(variant: NotificationVariant, titleOrConfig: string | NotificationConfig, options: NotificationOptions = {}) {
+function push(
+  variant: NotificationVariant,
+  titleOrConfig: string | NotificationConfig,
+  options: NotificationOptions = {},
+) {
   if (typeof titleOrConfig === "string") {
     return upsert(normalizeRecord(variant, options, titleOrConfig));
   }
@@ -557,17 +559,13 @@ function NotificationItem({
   const useDefaultStatusIcon = item.layout === "default";
 
   const statusIcon =
-    item.icon === null
-      ? null
-      : item.icon !== undefined
-        ? item.icon
-        : useDefaultStatusIcon
-          ? (
-              <FeaturedIcon type="light-circle" color={featuredColor[item.variant]} size="sm">
-                {icons[item.variant]}
-              </FeaturedIcon>
-            )
-          : null;
+    item.icon === null ? null : item.icon !== undefined ? (
+      item.icon
+    ) : useDefaultStatusIcon ? (
+      <FeaturedIcon type="light-circle" color={featuredColor[item.variant]} size="sm">
+        {icons[item.variant]}
+      </FeaturedIcon>
+    ) : null;
 
   const leadingNode =
     item.layout === "avatar" && item.avatar != null
@@ -643,7 +641,12 @@ function NotificationItem({
       </div>
       {showClose ? (
         <RxToast.Close asChild>
-          <IconButton aria-label="Dismiss notification" variant="tertiary" size="xs" className={CX.close}>
+          <IconButton
+            aria-label="Dismiss notification"
+            variant="tertiary"
+            size="xs"
+            className={CX.close}
+          >
             {resolvedCloseIcon}
           </IconButton>
         </RxToast.Close>

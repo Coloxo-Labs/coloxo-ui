@@ -18,15 +18,8 @@
           "target": "label.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon",
-        "tooltip",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-label"],
+      "registryDependencies": ["utils", "icon", "tooltip", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -43,15 +36,8 @@
           "target": "label/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon",
-        "tooltip",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-label"],
+      "registryDependencies": ["utils", "icon", "tooltip", "icons"]
     }
   }
 }

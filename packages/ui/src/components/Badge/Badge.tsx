@@ -74,17 +74,10 @@ export function Badge({
       {...rest}
     >
       {dot ? <span className={styles.dot} aria-hidden="true" /> : null}
-      {avatarSrc ? (
-        <img className={styles.avatar} src={avatarSrc} alt="" />
-      ) : null}
+      {avatarSrc ? <img className={styles.avatar} src={avatarSrc} alt="" /> : null}
       <span className={styles.label}>{children}</span>
       {onClose ? (
-        <button
-          type="button"
-          className={styles.close}
-          aria-label="Remove"
-          onClick={onClose}
-        >
+        <button type="button" className={styles.close} aria-label="Remove" onClick={onClose}>
           <Icon size="xs">
             <XIcon />
           </Icon>

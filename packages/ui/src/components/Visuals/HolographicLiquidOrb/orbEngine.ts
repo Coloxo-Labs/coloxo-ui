@@ -1,4 +1,8 @@
-import { GLSL_HEADER, ShaderEngine, type ShaderProgramSpec } from "../../_internal/visuals/shaderEngine";
+import {
+  GLSL_HEADER,
+  ShaderEngine,
+  type ShaderProgramSpec,
+} from "../../_internal/visuals/shaderEngine";
 import { GLSL_UTILS } from "../../_internal/visuals/glsl";
 import type { FrameInfo } from "../../_internal/visuals/visualEngine";
 import type { OrbColorScheme, OrbQuality } from "./types";

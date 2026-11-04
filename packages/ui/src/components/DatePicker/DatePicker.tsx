@@ -15,7 +15,12 @@ import {
 } from "../_internal/controlSize";
 import { CalendarPanel } from "./CalendarPanel";
 import { ClearControl } from "./ClearControl";
-import { PickerFieldShell, usePickerAria, usePickerFieldIds, usePickerOpen } from "../_internal/picker";
+import {
+  PickerFieldShell,
+  usePickerAria,
+  usePickerFieldIds,
+  usePickerOpen,
+} from "../_internal/picker";
 import {
   formatPickerDisplay,
   getDefaultFormat,
@@ -26,9 +31,7 @@ import type { DatePickerProps } from "./types";
 import styles from "./DatePicker.module.css";
 
 function DateChip({ date, displayFormat }: { date: Date; displayFormat: string }) {
-  return (
-    <span className={styles.chip}>{formatPickerDisplay(date, displayFormat)}</span>
-  );
+  return <span className={styles.chip}>{formatPickerDisplay(date, displayFormat)}</span>;
 }
 
 export function DatePicker(props: DatePickerProps) {

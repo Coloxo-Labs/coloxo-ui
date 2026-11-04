@@ -49,35 +49,45 @@ export function Drawer({
         {modal !== false ? (
           <Dialog.Overlay className={styles.overlay} />
         ) : (
-          <div 
-            className={styles.overlay} 
+          <div
+            className={styles.overlay}
             aria-hidden="true"
             onClick={() => {
               if (closeOnBackdropClick !== false) {
                 onOpenChange?.(false);
               }
-            }} 
+            }}
           />
         )}
-        <Dialog.Content className={cx(styles.content, styles[side], styles[size], className)}
+        <Dialog.Content
+          className={cx(styles.content, styles[side], styles[size], className)}
           onPointerDownOutside={(event) => {
             if (!closeOnBackdropClick) event.preventDefault();
           }}
           onInteractOutside={(event) => {
             if (!closeOnBackdropClick) {
               event.preventDefault();
-            } else if (portalContainer && event.target instanceof Node && !portalContainer.contains(event.target)) {
+            } else if (
+              portalContainer &&
+              event.target instanceof Node &&
+              !portalContainer.contains(event.target)
+            ) {
               // If rendered inline in a portal, clicking outside the portal (e.g. configurator controls) shouldn't close it
               event.preventDefault();
             }
-          }}>
+          }}
+        >
           <div className={styles.header}>
             <div>
-              {title ? <Dialog.Title className={styles.title}>{title}</Dialog.Title> : (
+              {title ? (
+                <Dialog.Title className={styles.title}>{title}</Dialog.Title>
+              ) : (
                 <Dialog.Title className={styles.srOnly}>Drawer</Dialog.Title>
               )}
               {description ? (
-                <Dialog.Description className={styles.description}>{description}</Dialog.Description>
+                <Dialog.Description className={styles.description}>
+                  {description}
+                </Dialog.Description>
               ) : (
                 <Dialog.Description className={styles.srOnly}>Drawer content</Dialog.Description>
               )}

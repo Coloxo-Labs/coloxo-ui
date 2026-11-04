@@ -1,13 +1,7 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { act } from "@testing-library/react";
 import { Vortex } from "./Vortex";
-import {
-  clamp01,
-  sanitizeColors,
-  clampParticles,
-  clampSpeed,
-  clampRange,
-} from "./vortexEngine";
+import { clamp01, sanitizeColors, clampParticles, clampSpeed, clampRange } from "./vortexEngine";
 import { renderWithTheme } from "../../test/utils";
 
 function createWebGLMock() {

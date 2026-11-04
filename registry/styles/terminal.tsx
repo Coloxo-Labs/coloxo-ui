@@ -14,7 +14,8 @@ const CX: Record<string, string> = {
   body: "flex-1 m-0 overflow-auto bg-transparent whitespace-pre-wrap",
   bodyNoScroll: "overflow-hidden",
   commandLine: "flex flex-wrap items-baseline",
-  copyButton: "inline-flex items-center gap-1 m-0 py-1 px-2 border border-solid border-transparent rounded-md bg-transparent font-sans text-xs font-medium cursor-pointer transition-colors focus-visible:outline",
+  copyButton:
+    "inline-flex items-center gap-1 m-0 py-1 px-2 border border-solid border-transparent rounded-md bg-transparent font-sans text-xs font-medium cursor-pointer transition-colors focus-visible:outline",
   copyIcon: "inline-flex w-3.5 h-3.5",
   cursor: "inline-block shrink-0 text-transparent",
   cursorLine: "flex items-center",
@@ -281,13 +282,7 @@ export function Terminal({
         {showCursor ? (
           <span className={CX.cursorLine} aria-hidden="true">
             {showPrompt ? <span className={CX.prompt}>{resolvedPrompt}</span> : null}
-            <span
-              className={cx(
-                CX.cursor,
-                cursorClass(cursor),
-                cursorBlink && CX.cursorBlink,
-              )}
-            >
+            <span className={cx(CX.cursor, cursorClass(cursor), cursorBlink && CX.cursorBlink)}>
               █
             </span>
           </span>

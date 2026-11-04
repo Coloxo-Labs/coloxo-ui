@@ -1,4 +1,11 @@
-.root { position: relative; width: 100%; min-width: 0; margin: 0; font-family: var(--cx-font-body); color: var(--cx-color-text-primary); }
+.root {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--cx-font-body);
+  color: var(--cx-color-text-primary);
+}
 /* Keep the donut square — a fixed height + width:100% was squashing slices. */
 .chart {
   display: block;
@@ -7,15 +14,78 @@
   height: auto;
   margin-inline: auto;
 }
-.slice { stroke: var(--cx-color-bg-primary); stroke-width: 2; transition: opacity 120ms ease; }
-.slice:hover, .slice:focus { opacity: 0.8; }
-.slice:focus-visible { outline: 2px solid var(--cx-color-text-primary); outline-offset: 3px; }
-.percentage { fill: white; font-size: 13px; font-weight: 600; paint-order: stroke; stroke: #0f172a; stroke-width: 2px; stroke-linejoin: round; pointer-events: none; }
-.total { fill: var(--cx-color-text-primary); font-size: 26px; font-weight: 600; }
-.centerLabel { fill: var(--cx-color-text-tertiary); font-size: 12px; }
-.legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 16px; padding: 12px 0 0; margin: 0; list-style: none; font-size: 12px; color: var(--cx-color-text-secondary); }
-.legend li { display: inline-flex; align-items: center; gap: 6px; }
-.swatch { width: 10px; height: 10px; border-radius: 3px; }
-.empty { display: grid; place-items: center; color: var(--cx-color-text-tertiary); font-size: 14px; }
-.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-@media (prefers-reduced-motion: reduce) { .slice { transition: none; } }
+.slice {
+  stroke: var(--cx-color-bg-primary);
+  stroke-width: 2;
+  transition: opacity 120ms ease;
+}
+.slice:hover,
+.slice:focus {
+  opacity: 0.8;
+}
+.slice:focus-visible {
+  outline: 2px solid var(--cx-color-text-primary);
+  outline-offset: 3px;
+}
+.percentage {
+  fill: white;
+  font-size: 13px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #0f172a;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.total {
+  fill: var(--cx-color-text-primary);
+  font-size: 26px;
+  font-weight: 600;
+}
+.centerLabel {
+  fill: var(--cx-color-text-tertiary);
+  font-size: 12px;
+}
+.legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  padding: 12px 0 0;
+  margin: 0;
+  list-style: none;
+  font-size: 12px;
+  color: var(--cx-color-text-secondary);
+}
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.empty {
+  display: grid;
+  place-items: center;
+  color: var(--cx-color-text-tertiary);
+  font-size: 14px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .slice {
+    transition: none;
+  }
+}

@@ -15,7 +15,9 @@ function mockClipboard() {
 
 describe("CodeBlock", () => {
   it("renders the code text", () => {
-    const { container } = renderWithTheme(<CodeBlock code={"const x = 1;"} language="typescript" />);
+    const { container } = renderWithTheme(
+      <CodeBlock code={"const x = 1;"} language="typescript" />,
+    );
     expect(container.querySelector("code")?.textContent).toBe("const x = 1;");
   });
 
@@ -23,7 +25,9 @@ describe("CodeBlock", () => {
     const { container } = renderWithTheme(
       <CodeBlock code={"first\n\nthird\n\n\nsixth"} showLineNumbers />,
     );
-    const numbers = [...container.querySelectorAll("[data-line-number]")].map((el) => el.textContent);
+    const numbers = [...container.querySelectorAll("[data-line-number]")].map(
+      (el) => el.textContent,
+    );
     expect(numbers).toEqual(["1", "2", "3", "4", "5", "6"]);
   });
 
@@ -33,8 +37,12 @@ describe("CodeBlock", () => {
   });
 
   it("offsets line numbers with startLine", () => {
-    const { container } = renderWithTheme(<CodeBlock code={"a\nb\nc"} showLineNumbers startLine={10} />);
-    const numbers = [...container.querySelectorAll("[data-line-number]")].map((el) => el.textContent);
+    const { container } = renderWithTheme(
+      <CodeBlock code={"a\nb\nc"} showLineNumbers startLine={10} />,
+    );
+    const numbers = [...container.querySelectorAll("[data-line-number]")].map(
+      (el) => el.textContent,
+    );
     expect(numbers).toEqual(["10", "11", "12"]);
   });
 
@@ -166,7 +174,7 @@ describe("tokenizeLines", () => {
   });
 
   it("highlights the JS/TS family", () => {
-    const [line] = types('const greet = (name: string) => `hi`; // note', "typescript");
+    const [line] = types("const greet = (name: string) => `hi`; // note", "typescript");
     expect(line).toContainEqual(["keyword", "const"]);
     expect(line).toContainEqual(["function", "greet"]);
     expect(line).toContainEqual(["type", "string"]);
@@ -231,7 +239,10 @@ describe("tokenizeLines", () => {
   });
 
   it("highlights Python docstrings, decorators and defs", () => {
-    const lines = types('@app.route("/")\ndef home():\n    """doc\n    more"""\n    return None', "python");
+    const lines = types(
+      '@app.route("/")\ndef home():\n    """doc\n    more"""\n    return None',
+      "python",
+    );
     expect(lines[0]).toContainEqual(["attribute", "@app.route"]);
     expect(lines[1]).toContainEqual(["keyword", "def"]);
     expect(lines[1]).toContainEqual(["function", "home"]);

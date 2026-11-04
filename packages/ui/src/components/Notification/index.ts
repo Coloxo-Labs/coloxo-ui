@@ -1,4 +1,9 @@
-export { NotificationProvider, notification, dismissNotification, configureNotification } from "./Notification";
+export {
+  NotificationProvider,
+  notification,
+  dismissNotification,
+  configureNotification,
+} from "./Notification";
 export type {
   NotificationProviderProps,
   NotificationOptions,

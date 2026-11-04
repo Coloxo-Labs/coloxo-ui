@@ -6,9 +6,7 @@
   "description": "Slide-over panel dialog.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,14 +19,8 @@
           "target": "drawer.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-dialog"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon-button",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-dialog"],
+      "registryDependencies": ["utils", "icon-button", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -45,16 +37,8 @@
           "target": "drawer/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-dialog"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon-button",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-dialog"],
+      "registryDependencies": ["utils", "icon-button", "styles", "theme", "icons"]
     }
   }
 }

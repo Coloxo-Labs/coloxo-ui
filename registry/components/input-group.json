@@ -15,11 +15,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "input",
-        "form-field",
-        "utils"
-      ]
+      "registryDependencies": ["input", "form-field", "utils"]
     },
     "coloxo-css": {
       "files": [
@@ -41,14 +37,10 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "input"
-      ]
+      "registryDependencies": ["input"]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,

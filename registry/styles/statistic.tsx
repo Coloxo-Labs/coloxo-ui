@@ -54,11 +54,9 @@ export function Statistic({
   ...rest
 }: StatisticProps) {
   const direction =
-    trendDirection ??
-    (typeof trend === "string" && trend.trim().startsWith("-") ? "down" : "up");
+    trendDirection ?? (typeof trend === "string" && trend.trim().startsWith("-") ? "down" : "up");
 
-  const trendColor =
-    direction === "down" ? "error" : direction === "neutral" ? "gray" : "success";
+  const trendColor = direction === "down" ? "error" : direction === "neutral" ? "gray" : "success";
 
   return (
     <div className={cx(CX.root, className)} data-size={size} {...rest}>
@@ -85,9 +83,7 @@ export function Statistic({
         <div className={CX.trendRow}>
           {trend ? (
             <Badge type="pill-color" color={trendColor} size="sm" className={CX.trendBadge}>
-              <Icon size="xs">
-                {direction === "down" ? <ArrowDownIcon /> : <ArrowUpIcon />}
-              </Icon>
+              <Icon size="xs">{direction === "down" ? <ArrowDownIcon /> : <ArrowUpIcon />}</Icon>
               {trend}
             </Badge>
           ) : null}

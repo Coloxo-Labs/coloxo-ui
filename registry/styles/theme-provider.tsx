@@ -117,7 +117,9 @@ export function ThemeProvider({
   return (
     <ThemeContext.Provider value={contextValue}>
       <div
-        className={className ?? "min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100"}
+        className={
+          className ?? "min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+        }
         {...(mounted ? { "data-cx-theme": resolved } : {})}
         suppressHydrationWarning
       >

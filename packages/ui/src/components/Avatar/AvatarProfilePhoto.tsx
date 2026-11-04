@@ -107,12 +107,7 @@ export function AvatarProfilePhoto({
 
   return (
     <span
-      className={cx(
-        styles.root,
-        sizes.root,
-        isPlaceholder && styles.placeholderPad,
-        className,
-      )}
+      className={cx(styles.root, sizes.root, isPlaceholder && styles.placeholderPad, className)}
       {...rest}
     >
       {canShowImage ? (
@@ -129,11 +124,11 @@ export function AvatarProfilePhoto({
           {label ? (
             <span className={cx(styles.initials, sizes.initials)}>{label}</span>
           ) : (
-            placeholder ?? (
+            (placeholder ?? (
               <Icon size={size === "sm" ? "lg" : "xl"}>
                 <UserIcon />
               </Icon>
-            )
+            ))
           )}
         </span>
       )}

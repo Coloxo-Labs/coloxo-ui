@@ -6,7 +6,11 @@ import { renderWithTheme, expectNoA11yViolations } from "../../test/utils";
 describe("EmptyState", () => {
   it("renders action", () => {
     renderWithTheme(
-      <EmptyState title="No employees" description="Add your first record." actionLabel="Add employee" />,
+      <EmptyState
+        title="No employees"
+        description="Add your first record."
+        actionLabel="Add employee"
+      />,
     );
     expect(screen.getByRole("button", { name: "Add employee" })).toBeInTheDocument();
   });

@@ -13,7 +13,8 @@ import { Tooltip } from "./tooltip";
  */
 const CX: Record<string, string> = {
   content: "inline min-w-0",
-  helpButton: "inline-flex items-center justify-center m-0 p-0 border-none bg-transparent cursor-help align-middle transition-colors",
+  helpButton:
+    "inline-flex items-center justify-center m-0 p-0 border-none bg-transparent cursor-help align-middle transition-colors",
   optional: "text-xs leading-4 font-normal",
   required: "font-bold ml-px",
   root: "inline-flex items-center flex-wrap gap-1 m-0 font-sans select-none cursor-default",
@@ -50,12 +51,7 @@ export function Label({
 }: LabelProps) {
   return (
     <RadixLabel.Root
-      className={cx(
-        CX.root,
-        CX[`size-${size}`],
-        disabled && CX.disabled,
-        className,
-      )}
+      className={cx(CX.root, CX[`size-${size}`], disabled && CX.disabled, className)}
       data-disabled={disabled || undefined}
       data-required={required || undefined}
       data-optional={(optional && !required) || undefined}

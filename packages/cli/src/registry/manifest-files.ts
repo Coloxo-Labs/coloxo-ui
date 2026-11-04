@@ -51,9 +51,7 @@ export function styleShapeErrors(item: RegistryItem): string[] {
 
       if (style === "tailwind") {
         if (base.endsWith(".module.css")) {
-          errors.push(
-            `[${item.slug}] tailwind target must not be a CSS Module: ${file.target}`,
-          );
+          errors.push(`[${item.slug}] tailwind target must not be a CSS Module: ${file.target}`);
         }
         /*
          * Components land as a single flat file. Shared libraries keep their
@@ -95,10 +93,7 @@ export function styleShapeErrors(item: RegistryItem): string[] {
  * Tailwind mode cannot ship a component that still imports a CSS Module or a
  * Coloxo token stylesheet; that would defeat the point of the mode.
  */
-export function tailwindImportErrors(
-  item: RegistryItem,
-  contents: Map<string, string>,
-): string[] {
+export function tailwindImportErrors(item: RegistryItem, contents: Map<string, string>): string[] {
   const entry = item.styles?.tailwind;
   if (!entry) return [];
   const errors: string[] = [];

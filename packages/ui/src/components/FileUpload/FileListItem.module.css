@@ -26,7 +26,9 @@
   position: absolute;
   inset: 0;
   background: var(--cx-color-bg-secondary);
-  transition: transform 75ms var(--cx-ease-linear), opacity var(--cx-duration-fast) var(--cx-ease-linear);
+  transition:
+    transform 75ms var(--cx-ease-linear),
+    opacity var(--cx-duration-fast) var(--cx-ease-linear);
   z-index: 0;
 }
 

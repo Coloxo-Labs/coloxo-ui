@@ -10,7 +10,11 @@ describe("Badge", () => {
   });
 
   it("has no axe violations", async () => {
-    const { container } = renderWithTheme(<Badge color="error" size="sm">Overdue</Badge>);
+    const { container } = renderWithTheme(
+      <Badge color="error" size="sm">
+        Overdue
+      </Badge>,
+    );
     await expectNoA11yViolations(container);
   });
 });

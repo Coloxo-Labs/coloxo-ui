@@ -49,9 +49,7 @@ export function resolveForStyle(item: RegistryItem, style: StyleMode): ResolvedI
     const offered = availableStyles(item);
     throw new Error(
       `"${item.slug}" is not available for style "${style}".` +
-        (offered.length
-          ? ` Available styles: ${offered.join(", ")}.`
-          : " It declares no files."),
+        (offered.length ? ` Available styles: ${offered.join(", ")}.` : " It declares no files."),
     );
   }
   return {

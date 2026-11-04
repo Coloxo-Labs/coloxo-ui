@@ -9,14 +9,13 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> & {
   children: ReactNode;
 };
 
-export function Icon({
-  size = "md",
-  className,
-  children,
-  ...rest
-}: IconProps) {
+export function Icon({ size = "md", className, children, ...rest }: IconProps) {
   return (
-    <span className={cx(styles.root, styles[size], className)} aria-hidden={rest["aria-hidden"] ?? true} {...rest}>
+    <span
+      className={cx(styles.root, styles[size], className)}
+      aria-hidden={rest["aria-hidden"] ?? true}
+      {...rest}
+    >
       {children}
     </span>
   );

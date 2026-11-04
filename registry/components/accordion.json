@@ -14,13 +14,8 @@
           "target": "accordion.tsx"
         }
       ],
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icons"
-      ]
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["utils", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -37,20 +32,11 @@
           "target": "accordion/index.ts"
         }
       ],
-      "dependencies": [
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icons",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["utils", "icons", "styles", "theme"]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,

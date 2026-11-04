@@ -223,7 +223,9 @@ export function Table<T>({
           ) : table.getRowModel().rows.length === 0 ? (
             <tr>
               <td className={CX.empty} colSpan={columnDefs.length}>
-                {empty ?? <EmptyState title="No data" description="There are no rows to display." />}
+                {empty ?? (
+                  <EmptyState title="No data" description="There are no rows to display." />
+                )}
               </td>
             </tr>
           ) : (

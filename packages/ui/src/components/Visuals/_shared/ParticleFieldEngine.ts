@@ -1,6 +1,13 @@
 import { Canvas2DEngine } from "../../_internal/visuals/canvasEngine";
 import type { FrameInfo } from "../../_internal/visuals/visualEngine";
-import { createRandom, ease, lerp, sampleShape, type Point, type ShapeKind } from "../_shared/particles";
+import {
+  createRandom,
+  ease,
+  lerp,
+  sampleShape,
+  type Point,
+  type ShapeKind,
+} from "../_shared/particles";
 
 export type ParticleConfig = {
   count: number;

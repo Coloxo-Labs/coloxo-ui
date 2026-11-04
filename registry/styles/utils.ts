@@ -8,14 +8,7 @@ import { useCallback, useId as useReactId, useState } from "react";
  * by source order, so conditional overrides still work in the common case.
  */
 export type ClassValue =
-  | string
-  | number
-  | bigint
-  | boolean
-  | null
-  | undefined
-  | Record<string, unknown>
-  | ClassValue[];
+  string | number | bigint | boolean | null | undefined | Record<string, unknown> | ClassValue[];
 
 export function cx(...inputs: ClassValue[]): string {
   const out: string[] = [];

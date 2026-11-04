@@ -6,9 +6,7 @@
   "description": "Tabbed navigation and content panels.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,12 +19,8 @@
           "target": "tabs.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tabs"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-tabs"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -43,14 +37,8 @@
           "target": "tabs/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tabs"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-tabs"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

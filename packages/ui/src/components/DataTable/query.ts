@@ -60,16 +60,17 @@ export function withPageReset(
   return next;
 }
 
-function dataIndexMatches(dataIndex: DataTableColumn<unknown>["dataIndex"], field: string): boolean {
+function dataIndexMatches(
+  dataIndex: DataTableColumn<unknown>["dataIndex"],
+  field: string,
+): boolean {
   if (dataIndex == null) return false;
   if (Array.isArray(dataIndex)) return dataIndex.join(".") === field;
   return String(dataIndex) === field;
 }
 
 function getCellValue<T>(row: T, field: string, columns: DataTableColumn<T>[]): unknown {
-  const column = columns.find(
-    (col) => col.key === field || dataIndexMatches(col.dataIndex, field),
-  );
+  const column = columns.find((col) => col.key === field || dataIndexMatches(col.dataIndex, field));
   if (column?.dataIndex) {
     return getByDataIndex(row, column.dataIndex as string | string[]);
   }
@@ -83,9 +84,7 @@ function resolveColumnCompare<T>(
   columns: DataTableColumn<T>[],
   field: string,
 ): ((a: T, b: T) => number) | undefined {
-  const column = columns.find(
-    (col) => col.key === field || dataIndexMatches(col.dataIndex, field),
-  );
+  const column = columns.find((col) => col.key === field || dataIndexMatches(col.dataIndex, field));
   if (!column || typeof column.sortable !== "object") return undefined;
   return column.sortable.compare;
 }

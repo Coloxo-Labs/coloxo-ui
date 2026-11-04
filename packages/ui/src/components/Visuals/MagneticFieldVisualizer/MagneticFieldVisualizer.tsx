@@ -28,7 +28,10 @@ export type MagneticFieldVisualizerProps = {
   style?: CSSProperties;
 };
 
-const COLOR_MODES: Record<MagneticColorMode, { a: [number, number, number]; b: [number, number, number] }> = {
+const COLOR_MODES: Record<
+  MagneticColorMode,
+  { a: [number, number, number]; b: [number, number, number] }
+> = {
   duotone: { a: [0.14, 0.28, 1], b: [0.13, 0.83, 0.93] },
   brand: { a: [0.09, 0.2, 0.85], b: [0.35, 0.55, 1] },
   mono: { a: [0.55, 0.6, 0.7], b: [0.92, 0.95, 1] },

@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepack": "pnpm run build",
+    "prepack": "npm run build",
     "dev": "tsx src/index.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"

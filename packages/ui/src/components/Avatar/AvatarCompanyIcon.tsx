@@ -17,12 +17,5 @@ export function AvatarCompanyIcon({
   ...rest
 }: AvatarCompanyIconProps) {
   const sizeClass = size === "2xl" ? styles.size2xl : styles[size];
-  return (
-    <img
-      className={cx(styles.root, sizeClass, className)}
-      src={src}
-      alt={alt}
-      {...rest}
-    />
-  );
+  return <img className={cx(styles.root, sizeClass, className)} src={src} alt={alt} {...rest} />;
 }

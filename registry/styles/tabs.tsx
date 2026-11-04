@@ -12,7 +12,8 @@ const CX: Record<string, string> = {
   content: "pt-4 text-base text-cx-secondary",
   list: "flex gap-1 hidden w-0 h-0",
   root: "font-sans",
-  trigger: "appearance-none border-none bg-transparent text-cx-tertiary text-sm font-medium py-2 px-3 mb-px cursor-pointer whitespace-nowrap hover:disabled:text-cx-secondary focus:outline-none focus-visible:outline disabled:text-cx-disabled disabled:cursor-not-allowed",
+  trigger:
+    "appearance-none border-none bg-transparent text-cx-tertiary text-sm font-medium py-2 px-3 mb-px cursor-pointer whitespace-nowrap hover:disabled:text-cx-secondary focus:outline-none focus-visible:outline disabled:text-cx-disabled disabled:cursor-not-allowed",
 };
 
 export type TabItem = {

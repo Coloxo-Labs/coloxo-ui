@@ -34,8 +34,7 @@ const BASE =
   "disabled:pointer-events-none disabled:opacity-50";
 
 const VARIANTS: Record<ButtonVariant, string> = {
-  primary:
-    "bg-blue-600 text-white border-blue-700 shadow-sm hover:bg-blue-700 active:bg-blue-800",
+  primary: "bg-blue-600 text-white border-blue-700 shadow-sm hover:bg-blue-700 active:bg-blue-800",
   secondary:
     "bg-white text-slate-800 border-slate-300 shadow-sm hover:bg-slate-50 active:bg-slate-100",
   "secondary-brand":
@@ -44,10 +43,8 @@ const VARIANTS: Record<ButtonVariant, string> = {
     "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800 active:bg-slate-200",
   "primary-destructive":
     "bg-red-600 text-white border-red-700 shadow-sm hover:bg-red-700 active:bg-red-800",
-  "secondary-destructive":
-    "bg-white text-red-600 border-red-200 hover:bg-red-50 active:bg-red-100",
-  "tertiary-destructive":
-    "bg-transparent text-red-600 hover:bg-red-50 active:bg-red-100",
+  "secondary-destructive": "bg-white text-red-600 border-red-200 hover:bg-red-50 active:bg-red-100",
+  "tertiary-destructive": "bg-transparent text-red-600 hover:bg-red-50 active:bg-red-100",
   "link-color":
     "bg-transparent text-blue-700 hover:text-blue-800 hover:underline active:text-blue-900",
   "link-gray":

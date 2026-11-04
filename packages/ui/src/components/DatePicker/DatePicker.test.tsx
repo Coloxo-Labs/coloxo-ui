@@ -79,9 +79,7 @@ describe("RangePicker", () => {
 
 describe("TimePicker", () => {
   it("renders formatted time value", () => {
-    renderWithTheme(
-      <TimePicker label="At" defaultValue={new Date(1970, 0, 1, 14, 30, 0)} />,
-    );
+    renderWithTheme(<TimePicker label="At" defaultValue={new Date(1970, 0, 1, 14, 30, 0)} />);
     expect(screen.getByText("14:30:00")).toBeInTheDocument();
   });
 

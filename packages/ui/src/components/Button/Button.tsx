@@ -40,19 +40,22 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   iconPosition?: ButtonIconPosition;
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({
-  variant = "primary",
-  size = "md",
-  loading = false,
-  fullWidth = false,
-  icon,
-  iconPosition = "left",
-  disabled,
-  className,
-  children,
-  type = "button",
-  ...rest
-}, ref) {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  {
+    variant = "primary",
+    size = "md",
+    loading = false,
+    fullWidth = false,
+    icon,
+    iconPosition = "left",
+    disabled,
+    className,
+    children,
+    type = "button",
+    ...rest
+  },
+  ref,
+) {
   const isDisabled = Boolean(disabled);
   const isLink = variant === "link-color" || variant === "link-gray";
   const iconSize = size === "xs" || size === "sm" ? "xs" : size === "xl" ? "md" : "sm";
@@ -85,14 +88,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
           <Spinner size={size === "xs" ? "sm" : "md"} />
         </span>
       ) : null}
-      {icon && iconPosition === "left" && !loading ? (
-        <Icon size={iconSize}>{icon}</Icon>
-      ) : null}
+      {icon && iconPosition === "left" && !loading ? <Icon size={iconSize}>{icon}</Icon> : null}
       {children ? <span className={cx(styles.label, "cx-truncate")}>{children}</span> : null}
-      {icon && iconPosition === "right" && !loading ? (
-        <Icon size={iconSize}>{icon}</Icon>
-      ) : null}
+      {icon && iconPosition === "right" && !loading ? <Icon size={iconSize}>{icon}</Icon> : null}
     </button>
   );
 });
-  

@@ -46,10 +46,7 @@ export function normalizeShowTime(showTime?: ShowTimeConfig): ShowTimeOptions | 
   return showTime;
 }
 
-export function getDefaultFormat(
-  picker: PickerMode,
-  showTime: ShowTimeOptions | null,
-): string {
+export function getDefaultFormat(picker: PickerMode, showTime: ShowTimeOptions | null): string {
   if (showTime) {
     return showTime.format ?? "PPP HH:mm:ss";
   }
@@ -145,17 +142,17 @@ export function isSameCalendarDay(a: Date, b: Date): boolean {
 }
 
 export function isSameISOWeek(a: Date, b: Date): boolean {
-  return (
-    getISOWeekYear(a) === getISOWeekYear(b) &&
-    getISOWeek(a) === getISOWeek(b)
-  );
+  return getISOWeekYear(a) === getISOWeekYear(b) && getISOWeek(a) === getISOWeek(b);
 }
 
 export function getISOWeekRange(date: Date): { from: Date; to: Date } {
   return { from: startOfISOWeek(date), to: endOfISOWeek(date) };
 }
 
-export function rangeToTuple(range: { from?: Date; to?: Date }): [Date | undefined, Date | undefined] {
+export function rangeToTuple(range: {
+  from?: Date;
+  to?: Date;
+}): [Date | undefined, Date | undefined] {
   return [range.from, range.to];
 }
 

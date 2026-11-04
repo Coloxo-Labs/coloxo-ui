@@ -6,10 +6,7 @@
   "description": "Toast notifications with progress and actions.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme",
-    "notification"
-  ],
+  "providers": ["theme", "notification"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -22,9 +19,7 @@
           "target": "notification.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-toast"
-      ],
+      "dependencies": ["@radix-ui/react-toast"],
       "registryDependencies": [
         "utils",
         "avatar",
@@ -49,9 +44,7 @@
           "target": "notification/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-toast"
-      ],
+      "dependencies": ["@radix-ui/react-toast"],
       "registryDependencies": [
         "utils",
         "avatar",

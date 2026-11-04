@@ -43,9 +43,7 @@ export function Tooltip({
             sideOffset={6}
           >
             <div className={styles.title}>{content}</div>
-            {supportingText ? (
-              <div className={styles.supporting}>{supportingText}</div>
-            ) : null}
+            {supportingText ? <div className={styles.supporting}>{supportingText}</div> : null}
             <RadixTooltip.Arrow className={styles.arrow} />
           </RadixTooltip.Content>
         </RadixTooltip.Portal>

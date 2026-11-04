@@ -4,9 +4,24 @@ export type { ChartTooltipProps, ChartTooltipItem } from "./components/ChartTool
 export { PieChart } from "./components/PieChart";
 export type { PieChartProps, PieChartDatum } from "./components/PieChart";
 export { BarChart } from "./components/BarChart";
-export type { BarChartProps, BarChartColor, BarChartDatum, BarChartSeries } from "./components/BarChart";
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./components/Accordion";
-export type { AccordionProps, AccordionItemProps, AccordionTriggerProps, AccordionContentProps } from "./components/Accordion";
+export type {
+  BarChartProps,
+  BarChartColor,
+  BarChartDatum,
+  BarChartSeries,
+} from "./components/BarChart";
+export {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "./components/Accordion";
+export type {
+  AccordionProps,
+  AccordionItemProps,
+  AccordionTriggerProps,
+  AccordionContentProps,
+} from "./components/Accordion";
 
 export { Slider } from "./components/Slider";
 export type { SliderProps } from "./components/Slider";
@@ -39,7 +54,6 @@ export type {
   HeadingTracking,
 } from "./components/Typography";
 
-
 export { Label } from "./components/Label";
 export type { LabelProps, LabelSize } from "./components/Label";
 
@@ -55,7 +69,12 @@ export type {
 } from "./components/Divider";
 
 export { Button } from "./components/Button";
-export type { ButtonProps, ButtonVariant, ButtonSize, ButtonIconPosition } from "./components/Button";
+export type {
+  ButtonProps,
+  ButtonVariant,
+  ButtonSize,
+  ButtonIconPosition,
+} from "./components/Button";
 
 export { IconButton } from "./components/IconButton";
 export type {
@@ -178,11 +197,7 @@ export type { RadioProps, RadioGroupProps, RadioOption } from "./components/Radi
 export { Switch } from "./components/Switch";
 export type { SwitchProps } from "./components/Switch";
 
-export {
-  Toggle,
-  ToggleGroup,
-  ToggleGroupItem,
-} from "./components/Toggle";
+export { Toggle, ToggleGroup, ToggleGroupItem } from "./components/Toggle";
 export type {
   ToggleProps,
   ToggleSize,
@@ -324,11 +339,7 @@ export { DocsSearch } from "./components/DocsSearch";
 export type { DocsSearchProps, DocsSearchItem } from "./components/DocsSearch";
 
 export { DocsSidebar } from "./components/DocsSidebar";
-export type {
-  DocsSidebarProps,
-  DocsSidebarGroup,
-  DocsSidebarItem,
-} from "./components/DocsSidebar";
+export type { DocsSidebarProps, DocsSidebarGroup, DocsSidebarItem } from "./components/DocsSidebar";
 
 export { DocsToc } from "./components/DocsToc";
 export type { DocsTocProps, DocsTocItem } from "./components/DocsToc";
@@ -384,11 +395,11 @@ export {
   InputOTPSeparator,
   REGEXP_ONLY_DIGITS,
   REGEXP_ONLY_CHARS,
-  REGEXP_ONLY_DIGITS_AND_CHARS
+  REGEXP_ONLY_DIGITS_AND_CHARS,
 } from "./components/InputOTP";
 export type {
   InputOTPProps,
   InputOTPGroupProps,
   InputOTPSlotProps,
-  InputOTPSeparatorProps
+  InputOTPSeparatorProps,
 } from "./components/InputOTP";

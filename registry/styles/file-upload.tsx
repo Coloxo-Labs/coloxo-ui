@@ -1,7 +1,15 @@
 "use client";
 import { CircleCheckIcon, CircleXIcon, Trash2Icon, UploadIcon } from "@/lib/icons";
 
-import { useCallback, useRef, useState, type ChangeEvent, type DragEvent, type HTMLAttributes, type ReactNode } from "react";
+import {
+  useCallback,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type DragEvent,
+  type HTMLAttributes,
+  type ReactNode,
+} from "react";
 import { FeaturedIcon } from "./featured-icon";
 import { FormField } from "./form-field";
 import { Icon } from "./icon";
@@ -14,7 +22,8 @@ import { cx, useId } from "@/lib/utils";
 const CX: Record<string, string> = {
   bar: "h-full rounded-full bg-cx-brand",
   body: "min-w-0 flex-1",
-  delete: "inline-flex h-7 w-7 items-center justify-center rounded-md text-cx-tertiary hover:bg-cx-secondary",
+  delete:
+    "inline-flex h-7 w-7 items-center justify-center rounded-md text-cx-tertiary hover:bg-cx-secondary",
   drop: "flex flex-col items-center gap-3 rounded-xl border border-dashed border-cx-secondary bg-cx-primary px-6 py-8 text-center",
   hint: "m-0 text-sm text-cx-tertiary",
   item: "relative flex items-start gap-3 overflow-hidden rounded-xl border border-solid border-cx-secondary bg-cx-primary p-3",
@@ -79,9 +88,18 @@ export type FileTypeIconProps = HTMLAttributes<HTMLSpanElement> & {
   variant?: FileTypeIconVariant;
 };
 
-export function FileTypeIcon({ type = "", variant = "default", className, ...rest }: FileTypeIconProps) {
-  const ext = type.includes(".") || type.includes("/") ? extensionFromName(type) : type.toLowerCase();
-  const meta = TYPE_META[ext] ?? { label: (ext || "FILE").slice(0, 4).toUpperCase(), tone: "empty" };
+export function FileTypeIcon({
+  type = "",
+  variant = "default",
+  className,
+  ...rest
+}: FileTypeIconProps) {
+  const ext =
+    type.includes(".") || type.includes("/") ? extensionFromName(type) : type.toLowerCase();
+  const meta = TYPE_META[ext] ?? {
+    label: (ext || "FILE").slice(0, 4).toUpperCase(),
+    tone: "empty",
+  };
   return (
     <span
       className={cx(
@@ -161,43 +179,68 @@ export function FileListItem({
             <p className={CX.name}>{name}</p>
             <p className={CX.size}>
               {failed ? "Upload failed, please try again" : formatFileSize(size)}
-              <span className="px-1" aria-hidden>·</span>
+              <span className="px-1" aria-hidden>
+                ·
+              </span>
               {isComplete ? (
                 <span className="inline-flex items-center gap-1 text-cx-success">
-                  <Icon size="sm"><CircleCheckIcon /></Icon>
+                  <Icon size="sm">
+                    <CircleCheckIcon />
+                  </Icon>
                   {statusLabel ?? "Complete"}
                 </span>
               ) : null}
               {!failed && !isComplete ? (
                 <span className="inline-flex items-center gap-1">
-                  <Icon size="sm"><UploadIcon /></Icon>
+                  <Icon size="sm">
+                    <UploadIcon />
+                  </Icon>
                   {statusLabel ?? "Uploading..."}
                 </span>
               ) : null}
               {failed ? (
                 <span className="inline-flex items-center gap-1 text-cx-error">
-                  <Icon size="sm"><CircleXIcon /></Icon>
+                  <Icon size="sm">
+                    <CircleXIcon />
+                  </Icon>
                   {statusLabel ?? "Failed"}
                 </span>
               ) : null}
             </p>
           </div>
           {onDelete ? (
-            <button type="button" className={CX.delete} aria-label={`Delete ${name}`} onClick={onDelete}>
-              <Icon size="sm"><Trash2Icon /></Icon>
+            <button
+              type="button"
+              className={CX.delete}
+              aria-label={`Delete ${name}`}
+              onClick={onDelete}
+            >
+              <Icon size="sm">
+                <Trash2Icon />
+              </Icon>
             </button>
           ) : null}
         </div>
         {progressVariant === "bar" && !failed ? (
           <div className="mt-2 flex items-center gap-2">
-            <div className={CX.track} role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+            <div
+              className={CX.track}
+              role="progressbar"
+              aria-valuenow={pct}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            >
               <span className={CX.bar} style={{ width: `${pct}%` }} />
             </div>
             <span className="text-xs text-cx-tertiary">{pct}%</span>
           </div>
         ) : null}
         {failed && onRetry ? (
-          <button type="button" className="mt-1 text-sm font-semibold text-cx-brand" onClick={onRetry}>
+          <button
+            type="button"
+            className="mt-1 text-sm font-semibold text-cx-brand"
+            onClick={onRetry}
+          >
             Try again
           </button>
         ) : null}
@@ -372,7 +415,12 @@ export function FileUpload({
   const control = (
     <div className={cx("flex w-full flex-col gap-3", className)}>
       <div
-        className={cx(CX.drop, dragOver && CX.over, disabled && "opacity-50", (invalidHint || error) && "border-cx-error")}
+        className={cx(
+          CX.drop,
+          dragOver && CX.over,
+          disabled && "opacity-50",
+          (invalidHint || error) && "border-cx-error",
+        )}
         onDragOver={(event) => {
           event.preventDefault();
           if (!disabled) setDragOver(true);
@@ -398,7 +446,12 @@ export function FileUpload({
               event.target.value = "";
             }}
           />
-          <button type="button" className={CX.link} disabled={disabled} onClick={() => inputRef.current?.click()}>
+          <button
+            type="button"
+            className={CX.link}
+            disabled={disabled}
+            onClick={() => inputRef.current?.click()}
+          >
             Click to upload
           </button>
           <span className="text-sm text-cx-secondary"> or drag and drop</span>
@@ -426,7 +479,13 @@ export function FileUpload({
                 setFiles(
                   rawFiles.map((file) =>
                     file.id === item.id
-                      ? { ...file, failed: false, status: "uploading", progress: 0, error: undefined }
+                      ? {
+                          ...file,
+                          failed: false,
+                          status: "uploading",
+                          progress: 0,
+                          error: undefined,
+                        }
                       : file,
                   ),
                 );

@@ -1,11 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 
-export type OrbColorScheme =
-  | "iridescent"
-  | "aurora"
-  | "sunset"
-  | "ocean"
-  | "monochrome";
+export type OrbColorScheme = "iridescent" | "aurora" | "sunset" | "ocean" | "monochrome";
 
 export type HolographicLiquidOrbProps = {
   children?: ReactNode;

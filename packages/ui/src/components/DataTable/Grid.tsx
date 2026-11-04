@@ -12,13 +12,16 @@ export type DataTableGridProps<T> = {
   className?: string;
 };
 
-export function DataTableGrid<T>({ rows, renderGridItem, empty, className }: DataTableGridProps<T>) {
+export function DataTableGrid<T>({
+  rows,
+  renderGridItem,
+  empty,
+  className,
+}: DataTableGridProps<T>) {
   if (rows.length === 0) {
     return (
       <div className={cx(styles.gridEmpty, className)}>
-        {empty ?? (
-          <EmptyState title="No data" description="There are no rows to display." />
-        )}
+        {empty ?? <EmptyState title="No data" description="There are no rows to display." />}
       </div>
     );
   }

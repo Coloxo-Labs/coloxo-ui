@@ -1,7 +1,6 @@
 ﻿import { Canvas2DEngine } from "../../_internal/visuals/canvasEngine";
 import type { FrameInfo } from "../../_internal/visuals/visualEngine";
 
-
 export type GlassLayersConfig = {
   layerCount: number;
   color: string;

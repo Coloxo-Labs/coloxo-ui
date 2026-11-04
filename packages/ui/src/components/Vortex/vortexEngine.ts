@@ -68,9 +68,7 @@ function clamp(n: number, min: number, max: number): number {
 }
 
 export function sanitizeColors(colors: string[] | undefined): string[] {
-  const list = (colors ?? [])
-    .map((c) => (typeof c === "string" ? c.trim() : ""))
-    .filter(Boolean);
+  const list = (colors ?? []).map((c) => (typeof c === "string" ? c.trim() : "")).filter(Boolean);
   return list.length > 0 ? list : DEFAULT_COLORS;
 }
 
@@ -259,8 +257,7 @@ export class VortexEngine {
     const qualityChanged = next.quality !== prev.quality;
     const particlesChanged = next.particles !== prev.particles;
     const colorsChanged =
-      next.colors.length !== prev.colors.length ||
-      next.colors.some((c, i) => c !== prev.colors[i]);
+      next.colors.length !== prev.colors.length || next.colors.some((c, i) => c !== prev.colors[i]);
 
     this.opts = next;
     if (colorsChanged) this.palette = buildPalette(next.colors);
@@ -411,11 +408,7 @@ export class VortexEngine {
 
     this.fadeVbo = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, this.fadeVbo);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 3, -1, -1, 3]),
-      gl.STATIC_DRAW,
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
     this.aFadePos = gl.getAttribLocation(fProg, "aPos");
     if (is2) {
       const gl2 = gl as WebGL2RenderingContext;
@@ -493,9 +486,7 @@ export class VortexEngine {
     const area = Math.max(1, this.cssW * this.cssH);
     const areaScale = Math.sqrt(area / (960 * 540));
     const n =
-      this.opts.particles *
-      QUALITY_PARTICLE_MULT[this.opts.quality] *
-      clamp(areaScale, 0.55, 1.35);
+      this.opts.particles * QUALITY_PARTICLE_MULT[this.opts.quality] * clamp(areaScale, 0.55, 1.35);
     return clampParticles(n);
   }
 
@@ -633,8 +624,7 @@ export class VortexEngine {
     const rect = this.root.getBoundingClientRect();
     const cssW = Math.max(1, Math.floor(rect.width));
     const cssH = Math.max(1, Math.floor(rect.height));
-    const deviceDpr =
-      typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
+    const deviceDpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
     let dpr = Math.min(deviceDpr, QUALITY_DPR[this.opts.quality]);
     let bw = Math.max(1, Math.floor(cssW * dpr));
     let bh = Math.max(1, Math.floor(cssH * dpr));

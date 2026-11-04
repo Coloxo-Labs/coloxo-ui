@@ -12,7 +12,8 @@ import buttonStyles from "@/lib/form-control";
 const CX: Record<string, string> = {
   circle: "rounded-full",
   root: "p-0",
-  tooltip: "text-cx-white font-sans text-xs font-semibold leading-4 py-2 px-3 rounded-md shadow-lg max-w-[20rem]",
+  tooltip:
+    "text-cx-white font-sans text-xs font-semibold leading-4 py-2 px-3 rounded-md shadow-lg max-w-[20rem]",
 };
 
 export type IconButtonVariant =
@@ -47,21 +48,23 @@ export type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
 };
 
-export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton({
-  variant = "tertiary",
-  size = "md",
-  shape = "square",
-  loading = false,
-  tooltip,
-  disabled,
-  className,
-  children,
-  type = "button",
-  ...rest
-}, ref) {
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
+  {
+    variant = "tertiary",
+    size = "md",
+    shape = "square",
+    loading = false,
+    tooltip,
+    disabled,
+    className,
+    children,
+    type = "button",
+    ...rest
+  },
+  ref,
+) {
   const isDisabled = disabled || loading;
-  const iconSize =
-    size === "xs" || size === "sm" ? "xs" : size === "xl" ? "md" : "sm";
+  const iconSize = size === "xs" || size === "sm" ? "xs" : size === "xl" ? "md" : "sm";
   const button = (
     <button
       type={type}

@@ -48,13 +48,31 @@
   border-top: 1px solid var(--cx-color-border-secondary);
 }
 
-.right.sm, .left.sm { width: min(20rem, 100%); }
-.right.md, .left.md { width: min(28rem, 100%); }
-.right.lg, .left.lg { width: min(40rem, 100%); }
+.right.sm,
+.left.sm {
+  width: min(20rem, 100%);
+}
+.right.md,
+.left.md {
+  width: min(28rem, 100%);
+}
+.right.lg,
+.left.lg {
+  width: min(40rem, 100%);
+}
 
-.top.sm, .bottom.sm { height: min(14rem, 100%); }
-.top.md, .bottom.md { height: min(22rem, 100%); }
-.top.lg, .bottom.lg { height: min(32rem, 100%); }
+.top.sm,
+.bottom.sm {
+  height: min(14rem, 100%);
+}
+.top.md,
+.bottom.md {
+  height: min(22rem, 100%);
+}
+.top.lg,
+.bottom.lg {
+  height: min(32rem, 100%);
+}
 
 .header {
   display: flex;
@@ -104,6 +122,9 @@
   border: 0;
 }
 
-.sm {}
-.md {}
-.lg {}
+.sm {
+}
+.md {
+}
+.lg {
+}

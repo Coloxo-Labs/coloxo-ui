@@ -13,9 +13,7 @@ describe("Input", () => {
   });
 
   it("announces error state and shows invalid affordance", () => {
-    renderWithTheme(
-      <Input label="Employee name" error="Employee name is required" />,
-    );
+    renderWithTheme(<Input label="Employee name" error="Employee name is required" />);
     const input = screen.getByLabelText(/Employee name/);
     expect(input).toHaveAttribute("aria-invalid", "true");
     expect(screen.getByRole("alert")).toHaveTextContent("Employee name is required");
@@ -64,10 +62,7 @@ describe("Input", () => {
 
   it("renders InputGroup addons", () => {
     renderWithTheme(
-      <InputGroup
-        label="Phone"
-        leadingAddon={<InputPrefix position="leading">US</InputPrefix>}
-      >
+      <InputGroup label="Phone" leadingAddon={<InputPrefix position="leading">US</InputPrefix>}>
         <Input type="tel" placeholder="+1" />
       </InputGroup>,
     );

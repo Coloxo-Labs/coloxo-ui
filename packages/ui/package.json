@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "prepack": "pnpm run build",
+    "prepack": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",

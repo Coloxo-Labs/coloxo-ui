@@ -38,12 +38,14 @@ const CX: Record<string, string> = {
   day: "grid grid-cols-7 gap-1",
   header: "flex items-center justify-between gap-2",
   nav: "inline-flex h-8 w-8 items-center justify-center rounded-md text-cx-secondary hover:bg-cx-secondary",
-  panel: "z-50 w-[18rem] rounded-lg border border-solid border-cx-secondary bg-cx-primary p-3 shadow-lg",
+  panel:
+    "z-50 w-[18rem] rounded-lg border border-solid border-cx-secondary bg-cx-primary p-3 shadow-lg",
   placeholder: "text-cx-placeholder",
   timeCol: "flex max-h-40 flex-col gap-1 overflow-auto",
   timeOpt: "rounded-md px-2 py-1 text-sm text-cx-secondary hover:bg-cx-secondary",
   timeSelected: "bg-cx-brand text-white hover:bg-cx-brand",
-  trigger: "inline-flex w-full items-center gap-2 rounded-md border border-solid border-cx-primary bg-cx-primary text-left text-cx-primary shadow-sm outline-none focus-visible:border-cx-brand disabled:cursor-not-allowed disabled:opacity-50",
+  trigger:
+    "inline-flex w-full items-center gap-2 rounded-md border border-solid border-cx-primary bg-cx-primary text-left text-cx-primary shadow-sm outline-none focus-visible:border-cx-brand disabled:cursor-not-allowed disabled:opacity-50",
   weekday: "text-center text-xs font-medium text-cx-tertiary",
 };
 
@@ -298,7 +300,12 @@ function TimeColumns({
     onChange(copy);
   };
 
-  const columns: Array<{ label: string; values: Array<number | string>; selected: number | string; onSelect: (value: number | string) => void }> = [
+  const columns: Array<{
+    label: string;
+    values: Array<number | string>;
+    selected: number | string;
+    onSelect: (value: number | string) => void;
+  }> = [
     {
       label: use12Hours ? "Hour" : "Hours",
       values: use12Hours ? buildRange(hourStep, 12, 1) : buildRange(hourStep, 23),
@@ -389,7 +396,8 @@ function CalendarGrid({
   const isSelected = (date: Date) => {
     if (picker === "week") {
       return selectedList.some(
-        (item) => getISOWeek(item) === getISOWeek(date) && getISOWeekYear(item) === getISOWeekYear(date),
+        (item) =>
+          getISOWeek(item) === getISOWeek(date) && getISOWeekYear(item) === getISOWeekYear(date),
       );
     }
     return selectedList.some((item) => isSameDay(item, date));
@@ -565,7 +573,9 @@ export function DatePicker(props: DatePickerProps) {
     const next = normalizePickerValue(date, picker);
     if (multiple) {
       const exists = multiSelected.some((item) => isSameDay(item, next));
-      setMultiSelected(exists ? multiSelected.filter((item) => !isSameDay(item, next)) : [...multiSelected, next]);
+      setMultiSelected(
+        exists ? multiSelected.filter((item) => !isSameDay(item, next)) : [...multiSelected, next],
+      );
       return;
     }
     if (showTimeOptions) {
@@ -598,7 +608,13 @@ export function DatePicker(props: DatePickerProps) {
             type="button"
             id={inputId}
             disabled={disabled}
-            className={cx(CX.trigger, SIZE[size], error && "border-cx-error", !hasValue && CX.placeholder, className)}
+            className={cx(
+              CX.trigger,
+              SIZE[size],
+              error && "border-cx-error",
+              !hasValue && CX.placeholder,
+              className,
+            )}
             aria-haspopup="dialog"
             aria-invalid={error ? true : undefined}
             aria-describedby={describedBy}
@@ -623,12 +639,28 @@ export function DatePicker(props: DatePickerProps) {
           <Popover.Content className={CX.panel} align="start" sideOffset={6}>
             <div className="flex flex-col gap-3">
               <div className={CX.header}>
-                <button type="button" className={CX.nav} aria-label="Previous" onClick={() => setView((current) => shiftView(current, picker, -1))}>
-                  <Icon size="sm"><ChevronLeftIcon /></Icon>
+                <button
+                  type="button"
+                  className={CX.nav}
+                  aria-label="Previous"
+                  onClick={() => setView((current) => shiftView(current, picker, -1))}
+                >
+                  <Icon size="sm">
+                    <ChevronLeftIcon />
+                  </Icon>
                 </button>
-                <span className="text-sm font-medium text-cx-primary">{viewLabel(view, picker)}</span>
-                <button type="button" className={CX.nav} aria-label="Next" onClick={() => setView((current) => shiftView(current, picker, 1))}>
-                  <Icon size="sm"><ChevronRightIcon /></Icon>
+                <span className="text-sm font-medium text-cx-primary">
+                  {viewLabel(view, picker)}
+                </span>
+                <button
+                  type="button"
+                  className={CX.nav}
+                  aria-label="Next"
+                  onClick={() => setView((current) => shiftView(current, picker, 1))}
+                >
+                  <Icon size="sm">
+                    <ChevronRightIcon />
+                  </Icon>
                 </button>
               </div>
               <CalendarGrid
@@ -649,7 +681,12 @@ export function DatePicker(props: DatePickerProps) {
                     use12Hours={showTimeOptions.use12Hours}
                   />
                   <div className="flex justify-end gap-2">
-                    <Button type="button" size="sm" variant="secondary" onClick={() => setDraft(new Date())}>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="secondary"
+                      onClick={() => setDraft(new Date())}
+                    >
                       Now
                     </Button>
                     <Button type="button" size="sm" onClick={() => commitSingle(draft)}>
@@ -662,7 +699,11 @@ export function DatePicker(props: DatePickerProps) {
           </Popover.Content>
         </Popover.Portal>
         {name && !multiple ? (
-          <input type="hidden" name={name} value={singleSelected ? format(singleSelected, "yyyy-MM-dd") : ""} />
+          <input
+            type="hidden"
+            name={name}
+            value={singleSelected ? format(singleSelected, "yyyy-MM-dd") : ""}
+          />
         ) : null}
       </Popover.Root>
     </PickerFieldShell>
@@ -745,7 +786,15 @@ export function RangePicker({
     >
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Anchor asChild>
-          <div className={cx(CX.trigger, SIZE[size], error && "border-cx-error", disabled && "opacity-50", className)}>
+          <div
+            className={cx(
+              CX.trigger,
+              SIZE[size],
+              error && "border-cx-error",
+              disabled && "opacity-50",
+              className,
+            )}
+          >
             <Icon size={iconBox(size)}>
               <CalendarIcon />
             </Icon>
@@ -753,7 +802,10 @@ export function RangePicker({
               type="button"
               id={inputId}
               disabled={disabled}
-              className={cx("min-w-0 flex-1 bg-transparent text-left", !range.from && !allowEmpty[0] && CX.placeholder)}
+              className={cx(
+                "min-w-0 flex-1 bg-transparent text-left",
+                !range.from && !allowEmpty[0] && CX.placeholder,
+              )}
               aria-haspopup="dialog"
               aria-invalid={error ? true : undefined}
               aria-describedby={describedBy}
@@ -761,11 +813,16 @@ export function RangePicker({
             >
               {side(range.from, 0)}
             </button>
-            <span aria-hidden className="text-cx-tertiary">→</span>
+            <span aria-hidden className="text-cx-tertiary">
+              →
+            </span>
             <button
               type="button"
               disabled={disabled}
-              className={cx("min-w-0 flex-1 bg-transparent text-left", !range.to && !allowEmpty[1] && CX.placeholder)}
+              className={cx(
+                "min-w-0 flex-1 bg-transparent text-left",
+                !range.to && !allowEmpty[1] && CX.placeholder,
+              )}
               onClick={() => setOpen(true)}
             >
               {side(range.to, 1)}
@@ -779,12 +836,28 @@ export function RangePicker({
           <Popover.Content className={CX.panel} align="start" sideOffset={6}>
             <div className="flex flex-col gap-3">
               <div className={CX.header}>
-                <button type="button" className={CX.nav} aria-label="Previous" onClick={() => setView((current) => addMonths(current, -1))}>
-                  <Icon size="sm"><ChevronLeftIcon /></Icon>
+                <button
+                  type="button"
+                  className={CX.nav}
+                  aria-label="Previous"
+                  onClick={() => setView((current) => addMonths(current, -1))}
+                >
+                  <Icon size="sm">
+                    <ChevronLeftIcon />
+                  </Icon>
                 </button>
-                <span className="text-sm font-medium text-cx-primary">{format(view, "MMMM yyyy")}</span>
-                <button type="button" className={CX.nav} aria-label="Next" onClick={() => setView((current) => addMonths(current, 1))}>
-                  <Icon size="sm"><ChevronRightIcon /></Icon>
+                <span className="text-sm font-medium text-cx-primary">
+                  {format(view, "MMMM yyyy")}
+                </span>
+                <button
+                  type="button"
+                  className={CX.nav}
+                  aria-label="Next"
+                  onClick={() => setView((current) => addMonths(current, 1))}
+                >
+                  <Icon size="sm">
+                    <ChevronRightIcon />
+                  </Icon>
                 </button>
               </div>
               <CalendarGrid
@@ -800,7 +873,11 @@ export function RangePicker({
                     type="button"
                     size="sm"
                     onClick={() => {
-                      if (draft.from && draft.to) commit({ from: withTime(draft.from, draft.from), to: withTime(draft.to, draft.to) });
+                      if (draft.from && draft.to)
+                        commit({
+                          from: withTime(draft.from, draft.from),
+                          to: withTime(draft.to, draft.to),
+                        });
                     }}
                   >
                     OK
@@ -812,8 +889,16 @@ export function RangePicker({
         </Popover.Portal>
         {name ? (
           <>
-            <input type="hidden" name={`${name}_start`} value={range.from ? format(range.from, "yyyy-MM-dd") : ""} />
-            <input type="hidden" name={`${name}_end`} value={range.to ? format(range.to, "yyyy-MM-dd") : ""} />
+            <input
+              type="hidden"
+              name={`${name}_start`}
+              value={range.from ? format(range.from, "yyyy-MM-dd") : ""}
+            />
+            <input
+              type="hidden"
+              name={`${name}_end`}
+              value={range.to ? format(range.to, "yyyy-MM-dd") : ""}
+            />
           </>
         ) : null}
       </Popover.Root>
@@ -881,7 +966,13 @@ export function TimePicker({
             type="button"
             id={inputId}
             disabled={disabled}
-            className={cx(CX.trigger, SIZE[size], error && "border-cx-error", !selected && CX.placeholder, className)}
+            className={cx(
+              CX.trigger,
+              SIZE[size],
+              error && "border-cx-error",
+              !selected && CX.placeholder,
+              className,
+            )}
             aria-haspopup="dialog"
             aria-invalid={error ? true : undefined}
             aria-describedby={describedBy}
@@ -890,7 +981,9 @@ export function TimePicker({
             <Icon size={iconBox(size)}>
               <ClockIcon />
             </Icon>
-            <span className="min-w-0 flex-1 truncate">{selected ? format(selected, formatProp) : placeholder}</span>
+            <span className="min-w-0 flex-1 truncate">
+              {selected ? format(selected, formatProp) : placeholder}
+            </span>
             {allowClear && selected && !disabled ? (
               <ClearButton label="Clear time" onClear={() => setSelected(undefined)} />
             ) : null}
@@ -908,7 +1001,12 @@ export function TimePicker({
                 use12Hours={use12Hours}
               />
               <div className="flex justify-end gap-2">
-                <Button type="button" size="sm" variant="secondary" onClick={() => setDraft(new Date())}>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => setDraft(new Date())}
+                >
                   Now
                 </Button>
                 <Button
@@ -925,7 +1023,9 @@ export function TimePicker({
             </div>
           </Popover.Content>
         </Popover.Portal>
-        {name ? <input type="hidden" name={name} value={selected ? format(selected, formatProp) : ""} /> : null}
+        {name ? (
+          <input type="hidden" name={name} value={selected ? format(selected, formatProp) : ""} />
+        ) : null}
       </Popover.Root>
     </PickerFieldShell>
   );

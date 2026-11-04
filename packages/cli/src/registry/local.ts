@@ -1,115 +1,1 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-import type { RegistryClient } from "./client.js";
-import { RegistryItemSchema, RegistrySchema, type RegistryItem } from "./schema.js";
-import { discoverRegistryRoot, inferRepoRoot } from "./discover.js";
-
-export class LocalRegistryClient implements RegistryClient {
-  private items: RegistryItem[] | undefined;
-  private readonly registryRoot: string;
-  private readonly sourceRoot: string;
-
-  constructor(registryRoot: string, sourceRoot?: string) {
-    this.registryRoot = path.resolve(registryRoot);
-    this.sourceRoot = sourceRoot ?? path.dirname(this.registryRoot);
-  }
-
-  static async create(options: {
-    cwd: string;
-    registryPath?: string;
-    envRegistryDir?: string;
-  }): Promise<LocalRegistryClient | undefined> {
-    let root = options.registryPath;
-    if (!root && options.envRegistryDir) {
-      root = path.isAbsolute(options.envRegistryDir)
-        ? options.envRegistryDir
-        : path.join(options.cwd, options.envRegistryDir);
-    }
-    if (!root) {
-      root = await discoverRegistryRoot(options.cwd);
-    }
-    if (!root) return undefined;
-
-    // Allow pointing at registry.json directly
-    try {
-      const st = await fs.stat(root);
-      if (st.isFile() && root.endsWith(".json")) {
-        root = path.dirname(root);
-      }
-    } catch {
-      // keep as-is; load will fail with a clear error later
-    }
-
-    const sourceRoot = await inferRepoRoot(root);
-    return new LocalRegistryClient(root, sourceRoot);
-  }
-
-  getRegistryRoot(): string {
-    return this.registryRoot;
-  }
-
-  async getSourceRoot(): Promise<string | undefined> {
-    return this.sourceRoot;
-  }
-
-  async readSource(filePath: string): Promise<string | Buffer> {
-    const abs = path.isAbsolute(filePath)
-      ? filePath
-      : path.join(this.sourceRoot, filePath);
-    const isBinary =
-      filePath.endsWith(".png") ||
-      filePath.endsWith(".jpg") ||
-      filePath.endsWith(".webp");
-    if (isBinary) {
-      return fs.readFile(abs);
-    }
-    return fs.readFile(abs, "utf8");
-  }
-
-  async listItems(): Promise<RegistryItem[]> {
-    if (this.items) return this.items;
-    this.items = await this.loadItems();
-    return this.items;
-  }
-
-  async getItem(slug: string): Promise<RegistryItem | undefined> {
-    const items = await this.listItems();
-    return items.find((i) => i.slug === slug);
-  }
-
-  private async loadItems(): Promise<RegistryItem[]> {
-    const assembled = path.join(this.registryRoot, "registry.json");
-    try {
-      const raw = await fs.readFile(assembled, "utf8");
-      const parsed = RegistrySchema.safeParse(JSON.parse(raw));
-      if (parsed.success) {
-        return parsed.data.items;
-      }
-    } catch {
-      // fall through to per-file load
-    }
-
-    const items: RegistryItem[] = [];
-    for (const sub of ["base", "components"] as const) {
-      const dir = path.join(this.registryRoot, sub);
-      let entries: string[];
-      try {
-        entries = await fs.readdir(dir);
-      } catch {
-        continue;
-      }
-      for (const file of entries) {
-        if (!file.endsWith(".json")) continue;
-        const content = await fs.readFile(path.join(dir, file), "utf8");
-        const parsed = RegistryItemSchema.safeParse(JSON.parse(content));
-        if (!parsed.success) {
-          throw new Error(
-            `Invalid registry item ${sub}/${file}: ${parsed.error.message}`,
-          );
-        }
-        items.push(parsed.data);
-      }
-    }
-    return items;
-  }
-}
+import fs from "node:fs/promises";import path from "node:path";import type { RegistryClient } from "./client.js";import { RegistryItemSchema, RegistrySchema, type RegistryItem } from "./schema.js";import { discoverRegistryRoot, inferRepoRoot } from "./discover.js";export class LocalRegistryClient implements RegistryClient {  private items: RegistryItem[] | undefined;  private readonly registryRoot: string;  private readonly sourceRoot: string;  constructor(registryRoot: string, sourceRoot?: string) {    this.registryRoot = path.resolve(registryRoot);    this.sourceRoot = sourceRoot ?? path.dirname(this.registryRoot);  }  static async create(options: {    cwd: string;    registryPath?: string;    envRegistryDir?: string;  }): Promise<LocalRegistryClient | undefined> {    let root = options.registryPath;    if (!root && options.envRegistryDir) {      root = path.isAbsolute(options.envRegistryDir)        ? options.envRegistryDir        : path.join(options.cwd, options.envRegistryDir);    }    if (!root) {      root = await discoverRegistryRoot(options.cwd);    }    if (!root) return undefined;    // Allow pointing at registry.json directly    try {      const st = await fs.stat(root);      if (st.isFile() && root.endsWith(".json")) {        root = path.dirname(root);      }    } catch {      // keep as-is; load will fail with a clear error later    }    const sourceRoot = await inferRepoRoot(root);    return new LocalRegistryClient(root, sourceRoot);  }  getRegistryRoot(): string {    return this.registryRoot;  }  async getSourceRoot(): Promise<string | undefined> {    return this.sourceRoot;  }  async readSource(filePath: string): Promise<string | Buffer> {    const abs = path.isAbsolute(filePath) ? filePath : path.join(this.sourceRoot, filePath);    const isBinary =      filePath.endsWith(".png") || filePath.endsWith(".jpg") || filePath.endsWith(".webp");    if (isBinary) {      return fs.readFile(abs);    }    return fs.readFile(abs, "utf8");  }  async listItems(): Promise<RegistryItem[]> {    if (this.items) return this.items;    this.items = await this.loadItems();    return this.items;  }  async getItem(slug: string): Promise<RegistryItem | undefined> {    const items = await this.listItems();    return items.find((i) => i.slug === slug);  }  private async loadItems(): Promise<RegistryItem[]> {    const assembled = path.join(this.registryRoot, "registry.json");    try {      const raw = await fs.readFile(assembled, "utf8");      const parsed = RegistrySchema.safeParse(JSON.parse(raw));      if (parsed.success) {        return parsed.data.items;      }    } catch {      // fall through to per-file load    }    const items: RegistryItem[] = [];    for (const sub of ["base", "components"] as const) {      const dir = path.join(this.registryRoot, sub);      let entries: string[];      try {        entries = await fs.readdir(dir);      } catch {        continue;      }      for (const file of entries) {        if (!file.endsWith(".json")) continue;        const content = await fs.readFile(path.join(dir, file), "utf8");        const parsed = RegistryItemSchema.safeParse(JSON.parse(content));        if (!parsed.success) {          throw new Error(`Invalid registry item ${sub}/${file}: ${parsed.error.message}`);        }        items.push(parsed.data);      }    }    return items;  }}

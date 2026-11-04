@@ -13,7 +13,9 @@ describe("Icon", () => {
         <PlusIcon />
       </Icon>,
     );
-    expect(screen.getByText("", { selector: "span" }) || document.querySelector("[aria-hidden='true']")).toBeTruthy();
+    expect(
+      screen.getByText("", { selector: "span" }) || document.querySelector("[aria-hidden='true']"),
+    ).toBeTruthy();
   });
 });
 

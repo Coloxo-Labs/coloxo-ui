@@ -28,7 +28,8 @@ const CX = {
   sm: "min-h-8 text-sm",
   md: "min-h-10 text-base",
   lg: "min-h-11 text-base",
-  input: "min-w-0 w-full flex-1 border-0 bg-transparent py-2.5 font-[inherit] text-inherit outline-none placeholder:text-cx-placeholder",
+  input:
+    "min-w-0 w-full flex-1 border-0 bg-transparent py-2.5 font-[inherit] text-inherit outline-none placeholder:text-cx-placeholder",
   button:
     "inline-flex shrink-0 cursor-pointer items-center justify-center rounded-sm border-0 bg-transparent p-1 text-cx-tertiary data-[disabled]:cursor-not-allowed data-[focus-visible]:outline data-[focus-visible]:outline-2 data-[focus-visible]:outline-[var(--cx-color-border-brand)]",
   popover:
@@ -106,13 +107,7 @@ export function Combobox({
         </Label>
       ) : null}
       <div
-        className={cx(
-          CX.surface,
-          CX[size],
-          CX.field,
-          error && CX.invalid,
-          disabled && CX.disabled,
-        )}
+        className={cx(CX.surface, CX[size], CX.field, error && CX.invalid, disabled && CX.disabled)}
       >
         <Input id={id} className={CX.input} placeholder={placeholder} />
         {clearable ? <ClearButton /> : null}
@@ -122,10 +117,21 @@ export function Combobox({
           </Icon>
         </Button>
       </div>
-      {description && !error ? <Text slot="description" className={CX.description}>{description}</Text> : null}
-      {error ? <Text slot="errorMessage" className={CX.error}>{error}</Text> : null}
+      {description && !error ? (
+        <Text slot="description" className={CX.description}>
+          {description}
+        </Text>
+      ) : null}
+      {error ? (
+        <Text slot="errorMessage" className={CX.error}>
+          {error}
+        </Text>
+      ) : null}
       <Popover className={CX.popover} placement="bottom start" offset={4}>
-        <ListBox className={CX.list} renderEmptyState={() => <div className={CX.empty}>{emptyMessage}</div>}>
+        <ListBox
+          className={CX.list}
+          renderEmptyState={() => <div className={CX.empty}>{emptyMessage}</div>}
+        >
           {(option: ComboboxOption) => (
             <ListBoxItem id={option.value} textValue={option.label} className={CX.option}>
               {option.label}

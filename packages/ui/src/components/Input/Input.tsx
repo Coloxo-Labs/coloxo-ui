@@ -44,10 +44,7 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "p
   groupFlatTrailing?: boolean;
 };
 
-function renderLeadingIcon(
-  icon: InputProps["icon"],
-  size: InputSize,
-): ReactNode {
+function renderLeadingIcon(icon: InputProps["icon"], size: InputSize): ReactNode {
   if (!icon) return null;
   if (typeof icon === "function") {
     const Comp = icon;
@@ -93,8 +90,7 @@ export function Input({
   const leadingIconNode = renderLeadingIcon(icon, size);
   const hasLeadingIcon = Boolean(leadingIconNode);
   const hasLeadingText = Boolean(leadingText);
-  const hasTrailingIcon =
-    (!isPassword && (Boolean(tooltip) || isInvalid)) || isPassword;
+  const hasTrailingIcon = (!isPassword && (Boolean(tooltip) || isInvalid)) || isPassword;
   const hasShortcut = Boolean(shortcut) && !isPassword;
 
   const field = (
@@ -192,9 +188,7 @@ export function Input({
 
       {hasShortcut ? (
         <div className={styles.shortcutWrap} aria-hidden="true">
-          <span className={styles.shortcut}>
-            {typeof shortcut === "string" ? shortcut : "⌘K"}
-          </span>
+          <span className={styles.shortcut}>{typeof shortcut === "string" ? shortcut : "⌘K"}</span>
         </div>
       ) : null}
     </div>

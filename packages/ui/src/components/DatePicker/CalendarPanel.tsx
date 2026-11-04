@@ -7,12 +7,7 @@ import "react-day-picker/style.css";
 import { MonthPanel, QuarterPanel, YearPanel } from "./CustomPanels";
 import { TimePanel } from "./TimePanel";
 import { PickerFooter } from "./PickerFooter";
-import {
-  isDateDisabled,
-  mergeDateAndTime,
-  normalizePickerValue,
-  normalizeShowTime,
-} from "./utils";
+import { isDateDisabled, mergeDateAndTime, normalizePickerValue, normalizeShowTime } from "./utils";
 import type { DisabledDates, PickerMode, ShowTimeConfig } from "./types";
 import { cx } from "../../utils/cx";
 import styles from "./DatePicker.module.css";
@@ -48,27 +43,14 @@ export type RangeCalendarPanelProps = BaseCalendarProps & {
 };
 
 export type CalendarPanelProps =
-  | SingleCalendarPanelProps
-  | MultipleCalendarPanelProps
-  | RangeCalendarPanelProps;
+  SingleCalendarPanelProps | MultipleCalendarPanelProps | RangeCalendarPanelProps;
 
-function disabledMatcher(
-  minDate?: Date,
-  maxDate?: Date,
-  disabledDates?: DisabledDates,
-) {
+function disabledMatcher(minDate?: Date, maxDate?: Date, disabledDates?: DisabledDates) {
   return (date: Date) => isDateDisabled(date, { minDate, maxDate, disabledDates });
 }
 
 export function CalendarPanel(props: CalendarPanelProps) {
-  const {
-    picker = "date",
-    minDate,
-    maxDate,
-    disabledDates,
-    className,
-    showTime,
-  } = props;
+  const { picker = "date", minDate, maxDate, disabledDates, className, showTime } = props;
 
   const showTimeOptions = normalizeShowTime(showTime);
   const needsFooter = Boolean(showTimeOptions);
@@ -83,9 +65,7 @@ export function CalendarPanel(props: CalendarPanelProps) {
   const [viewDate, setViewDate] = useState(anchor ?? new Date());
   const [pendingTime, setPendingTime] = useState(anchor ?? new Date());
   const [rangeStartMonth, setRangeStartMonth] = useState(() => anchor ?? new Date());
-  const [rangeEndMonth, setRangeEndMonth] = useState(() =>
-    addMonths(anchor ?? new Date(), 1),
-  );
+  const [rangeEndMonth, setRangeEndMonth] = useState(() => addMonths(anchor ?? new Date(), 1));
 
   useEffect(() => {
     if (!anchor) return;
@@ -162,9 +142,7 @@ export function CalendarPanel(props: CalendarPanelProps) {
         from: range.from
           ? mergeDateAndTime(normalizePickerValue(range.from, picker), timeFrom)
           : undefined,
-        to: range.to
-          ? mergeDateAndTime(normalizePickerValue(range.to, picker), timeTo)
-          : undefined,
+        to: range.to ? mergeDateAndTime(normalizePickerValue(range.to, picker), timeTo) : undefined,
       };
       onSelect(next);
       if (!showTimeOptions && closeOnSelect !== false && next.from && next.to) {
@@ -303,8 +281,7 @@ export function CalendarPanel(props: CalendarPanelProps) {
     <div className={styles.panelBody}>
       <div
         className={cx(
-          showTimeOptions &&
-            (props.mode !== "range" ? styles.panelWithTime : undefined),
+          showTimeOptions && (props.mode !== "range" ? styles.panelWithTime : undefined),
         )}
       >
         {showDayPicker ? renderDayPicker(props.mode) : renderCustomPicker()}

@@ -15,13 +15,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "icons",
-        "button",
-        "empty-state",
-        "pagination"
-      ]
+      "registryDependencies": ["utils", "icons", "button", "empty-state", "pagination"]
     },
     "coloxo-css": {
       "files": [
@@ -70,9 +64,7 @@
           "target": "data-table/url.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover"
-      ],
+      "dependencies": ["@radix-ui/react-popover"],
       "registryDependencies": [
         "utils",
         "button",
@@ -84,9 +76,7 @@
       ]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true

@@ -19,12 +19,15 @@ const CX: Record<string, string> = {
   check: "inline-flex",
   chevron: "inline-flex transition-transform",
   clear: "inline-flex rounded-sm",
-  content: "overflow-hidden bg-cx-primary border border-solid border-cx-secondary rounded-lg shadow-lg",
+  content:
+    "overflow-hidden bg-cx-primary border border-solid border-cx-secondary rounded-lg shadow-lg",
   empty: "flex items-center justify-center min-h-[2.5rem] p-2 text-cx-tertiary text-sm",
   item: "flex items-center justify-between gap-3 min-h-[2.5rem] rounded-md p-2.5 font-sans text-base font-medium leading-6 text-cx-primary cursor-pointer outline-none",
   listbox: "m-0 p-1 max-h-[20rem] overflow-auto",
-  search: "m-2 border border-solid border-cx-primary rounded-md p-2 text-sm focus:outline focus:border-cx-brand",
-  trigger: "inline-flex items-center justify-between gap-2 py-0 px-3 text-left cursor-pointer text-cx-placeholder",
+  search:
+    "m-2 border border-solid border-cx-primary rounded-md p-2 text-sm focus:outline focus:border-cx-brand",
+  trigger:
+    "inline-flex items-center justify-between gap-2 py-0 px-3 text-left cursor-pointer text-cx-placeholder",
   viewport: "p-1 max-h-[20rem]",
 };
 
@@ -239,7 +242,11 @@ function SearchableSelect({
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return options;
-    return options.filter((option) => optionText(option.label).toLowerCase().includes(q) || option.value.toLowerCase().includes(q));
+    return options.filter(
+      (option) =>
+        optionText(option.label).toLowerCase().includes(q) ||
+        option.value.toLowerCase().includes(q),
+    );
   }, [options, query]);
 
   const [active, setActive] = useState(0);
@@ -280,7 +287,13 @@ function SearchableSelect({
           type="button"
           id={selectId}
           disabled={disabled}
-          className={cx(control.surface, control[size], CX.trigger, error && control.invalid, className)}
+          className={cx(
+            control.surface,
+            control[size],
+            CX.trigger,
+            error && control.invalid,
+            className,
+          )}
           aria-label={ariaLabel}
           aria-haspopup="listbox"
           aria-expanded={open}
@@ -288,7 +301,9 @@ function SearchableSelect({
           aria-describedby={describedBy}
           aria-required={required}
         >
-          <span className={cx(!selectedOption && CX.trigger)}>{selectedOption?.label ?? placeholder}</span>
+          <span className={cx(!selectedOption && CX.trigger)}>
+            {selectedOption?.label ?? placeholder}
+          </span>
           <span className={CX.actions}>
             {clearable && selected ? (
               <span

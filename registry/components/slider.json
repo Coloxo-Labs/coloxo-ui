@@ -6,9 +6,7 @@
   "description": "Accessible numeric slider with single-value, range, vertical, and size variants.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,
@@ -25,12 +23,8 @@
           "target": "slider.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-slider"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-slider"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -47,14 +41,8 @@
           "target": "slider/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-slider"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-slider"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

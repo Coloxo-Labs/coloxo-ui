@@ -31,7 +31,9 @@ const DEFAULT_SEARCH_CONFIG: DataTableSearchConfig = {
 
 const DEFAULT_PAGINATION_CONFIG: DataTablePaginationConfig = {};
 
-function resolveSearchConfig(search: DataTableProps<unknown>["search"]): DataTableSearchConfig | undefined {
+function resolveSearchConfig(
+  search: DataTableProps<unknown>["search"],
+): DataTableSearchConfig | undefined {
   if (!search) return undefined;
   if (search === true) return DEFAULT_SEARCH_CONFIG;
   return search;
@@ -52,9 +54,7 @@ function emptyStateTitle(value: ReactNode | undefined, fallback: string): string
   return fallback;
 }
 
-function resolveEmptyNode(
-  empty: DataTableProps<unknown>["empty"],
-): ReactNode | undefined {
+function resolveEmptyNode(empty: DataTableProps<unknown>["empty"]): ReactNode | undefined {
   if (!empty) return undefined;
   if (typeof empty === "object" && empty !== null && "title" in empty) {
     const config = empty as DataTableEmptyConfig;
@@ -90,11 +90,7 @@ function resolveErrorNode(
   return (
     <EmptyState
       title={emptyStateTitle(errorConfig?.title, "Unable to load data")}
-      description={
-        typeof errorConfig?.description === "string"
-          ? errorConfig.description
-          : message
-      }
+      description={typeof errorConfig?.description === "string" ? errorConfig.description : message}
       action={
         errorConfig?.onRetry ? (
           <Button size="sm" onClick={errorConfig.onRetry}>
@@ -194,9 +190,7 @@ export function DataTable<T>({
     defaultValue: rowSelection?.defaultSelectedRowKeys ?? [],
     onChange: (keys) => {
       if (!rowSelection?.onChange) return;
-      const rows = data.filter((row, index) =>
-        keys.includes(resolveRowId(row, index, getRowId)),
-      );
+      const rows = data.filter((row, index) => keys.includes(resolveRowId(row, index, getRowId)));
       rowSelection.onChange(keys, rows);
     },
   });
@@ -207,8 +201,7 @@ export function DataTable<T>({
     onChange: expandable?.onChange,
   });
 
-  const resolveRowIdFn = (record: T, index: number) =>
-    resolveRowId(record, index, getRowId);
+  const resolveRowIdFn = (record: T, index: number) => resolveRowId(record, index, getRowId);
 
   const pipeline = useMemo(() => {
     if (mode === "server") {
@@ -251,11 +244,7 @@ export function DataTable<T>({
   };
 
   return (
-    <div
-      className={cx(styles.root, className)}
-      data-testid="data-table"
-      data-density={rowDensity}
-    >
+    <div className={cx(styles.root, className)} data-testid="data-table" data-density={rowDensity}>
       <div className={styles.panel}>
         {showToolbar ? (
           <DataTableToolbar

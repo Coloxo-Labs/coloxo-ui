@@ -52,7 +52,10 @@ export function FileTypeIcon({
   ...rest
 }: FileTypeIconProps) {
   const ext = type.includes(".") ? extensionFromName(type) : type.toLowerCase();
-  const meta = TYPE_META[ext] ?? { label: (ext || "FILE").slice(0, 4).toUpperCase(), tone: "empty" };
+  const meta = TYPE_META[ext] ?? {
+    label: (ext || "FILE").slice(0, 4).toUpperCase(),
+    tone: "empty",
+  };
 
   return (
     <span

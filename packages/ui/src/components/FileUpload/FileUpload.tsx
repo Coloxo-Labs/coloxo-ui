@@ -13,11 +13,7 @@ import { FormField } from "../FormField/FormField";
 import { FeaturedIcon } from "../FeaturedIcon/FeaturedIcon";
 import { useId } from "../../utils/useId";
 import { cx } from "../../utils/cx";
-import {
-  FileListItem,
-  type FileListItemProgressVariant,
-  formatFileSize,
-} from "./FileListItem";
+import { FileListItem, type FileListItemProgressVariant, formatFileSize } from "./FileListItem";
 import { extensionFromName } from "./FileTypeIcon";
 import styles from "./FileUpload.module.css";
 
@@ -102,8 +98,7 @@ function normalizeUpload(item: UploadFile): UploadFile & { name: string; size: n
   const size = item.size ?? item.file?.size ?? 0;
   const failed = item.failed ?? item.status === "error";
   const progress =
-    item.progress ??
-    (item.status === "success" ? 100 : item.status === "uploading" ? 0 : 0);
+    item.progress ?? (item.status === "success" ? 100 : item.status === "uploading" ? 0 : 0);
   return {
     ...item,
     name,
@@ -242,7 +237,12 @@ export function FileUpload({
         onDrop={onDrop}
         data-dropzone=""
       >
-        <FeaturedIcon type="modern" color="gray" size="md" className={disabled ? styles.iconDisabled : undefined}>
+        <FeaturedIcon
+          type="modern"
+          color="gray"
+          size="md"
+          className={disabled ? styles.iconDisabled : undefined}
+        >
           <UploadIcon />
         </FeaturedIcon>
 

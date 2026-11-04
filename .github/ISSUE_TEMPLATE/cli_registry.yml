@@ -1,71 +1,1 @@
-name: CLI / registry
-description: Issues with `coloxo init`, `coloxo add`, manifests, or install file paths.
-title: "[cli]: "
-labels: ["cli", "registry", "triage"]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Use this for copy-source install problems. For visual/component bugs after a successful install, prefer **Bug report**.
-
-  - type: dropdown
-    id: command
-    attributes:
-      label: Command
-      options:
-        - coloxo init
-        - coloxo add
-        - coloxo list
-        - Registry manifest / registry.json
-        - Remote registry fetch (GitHub raw)
-        - Other
-    validations:
-      required: true
-
-  - type: dropdown
-    id: style
-    attributes:
-      label: Style mode
-      options:
-        - coloxo-css
-        - tailwind
-        - Not sure / N/A
-    validations:
-      required: true
-
-  - type: input
-    id: slug
-    attributes:
-      label: Component slug(s)
-      placeholder: button, select, data-table
-
-  - type: textarea
-    id: command_output
-    attributes:
-      label: Command + full output
-      description: Paste the exact command and terminal output (redact secrets).
-      render: shell
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected vs actual
-      description: What files/paths should appear, and what happened instead?
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      value: |
-        - OS:
-        - Node:
-        - Package manager:
-        - `coloxo` version:
-        - Registry override (`--registry` / `COLOXO_REGISTRY_*`) if any:
-        - Install method (npx / global / linked from source):
-    validations:
-      required: true
+name: CLI / registrydescription: Issues with `coloxo init`, `coloxo add`, manifests, or install file paths.title: "[cli]: "labels: ["cli", "registry", "triage"]body:  - type: markdown    attributes:      value: |        Use this for copy-source install problems. For visual/component bugs after a successful install, prefer **Bug report**.  - type: dropdown    id: command    attributes:      label: Command      options:        - coloxo init        - coloxo add        - coloxo list        - Registry manifest / registry.json        - Remote registry fetch (GitHub raw)        - Other    validations:      required: true  - type: dropdown    id: style    attributes:      label: Style mode      options:        - coloxo-css        - tailwind        - Not sure / N/A    validations:      required: true  - type: input    id: slug    attributes:      label: Component slug(s)      placeholder: button, select, data-table  - type: textarea    id: command_output    attributes:      label: Command + full output      description: Paste the exact command and terminal output (redact secrets).      render: shell    validations:      required: true  - type: textarea    id: expected    attributes:      label: Expected vs actual      description: What files/paths should appear, and what happened instead?    validations:      required: true  - type: textarea    id: environment    attributes:      label: Environment      value: |        - OS:        - Node:        - Package manager:        - `coloxo` version:        - Registry override (`--registry` / `COLOXO_REGISTRY_*`) if any:        - Install method (npx / global / linked from source):    validations:      required: true

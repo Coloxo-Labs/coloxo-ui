@@ -18,7 +18,13 @@ export type SculptureConfig = {
 };
 
 /** Parametric surface points for the chosen variant, in unit space. */
-function sampleSurface(variant: number, u: number, v: number, time: number, amplitude: number): Vec3 {
+function sampleSurface(
+  variant: number,
+  u: number,
+  v: number,
+  time: number,
+  amplitude: number,
+): Vec3 {
   const tau = Math.PI * 2;
   const uu = u * tau;
   const vv = v * Math.PI;
@@ -51,10 +57,12 @@ function sampleSurface(variant: number, u: number, v: number, time: number, ampl
   // Superformula blob.
   const m = 6;
   const r = Math.pow(
-    Math.pow(Math.abs(Math.cos((m * uu) / 4)), 2.2) + Math.pow(Math.abs(Math.sin((m * uu) / 4)), 2.2),
+    Math.pow(Math.abs(Math.cos((m * uu) / 4)), 2.2) +
+      Math.pow(Math.abs(Math.sin((m * uu) / 4)), 2.2),
     -1 / 2.2,
   );
-  const shape = r * (0.6 + 0.35 * Math.sin(vv)) * (1 + Math.sin(time * 1.3 + vv * 3) * 0.08 * amplitude);
+  const shape =
+    r * (0.6 + 0.35 * Math.sin(vv)) * (1 + Math.sin(time * 1.3 + vv * 3) * 0.08 * amplitude);
   return vec3(
     shape * Math.cos(uu) * Math.sin(vv),
     shape * Math.cos(vv),

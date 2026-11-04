@@ -43,8 +43,7 @@ function TimeColumn({ label, values, selected, onSelect }: ColumnProps) {
     if (!(node instanceof HTMLElement)) return;
     const listRect = list.getBoundingClientRect();
     const nodeRect = node.getBoundingClientRect();
-    const visible =
-      nodeRect.top >= listRect.top - 1 && nodeRect.bottom <= listRect.bottom + 1;
+    const visible = nodeRect.top >= listRect.top - 1 && nodeRect.bottom <= listRect.bottom + 1;
     if (!visible) {
       node.scrollIntoView({ block: "nearest" });
     }
@@ -108,7 +107,7 @@ export function TimePanel({
     ? buildRange(hourStep, 12).filter((h) => h >= 1)
     : buildRange(hourStep, 23);
 
-  const displayHour = use12Hours ? ((hours24 % 12) || 12) : hours24;
+  const displayHour = use12Hours ? hours24 % 12 || 12 : hours24;
   const period = hours24 >= 12 ? "PM" : "AM";
 
   return (
@@ -150,10 +149,7 @@ export function TimePanel({
                     type="button"
                     role="option"
                     aria-selected={period === item}
-                    className={cx(
-                      styles.timeOption,
-                      period === item && styles.timeOptionSelected,
-                    )}
+                    className={cx(styles.timeOption, period === item && styles.timeOptionSelected)}
                     onClick={() => {
                       if (item === "AM" && hours24 >= 12) setHours24(hours24 - 12);
                       if (item === "PM" && hours24 < 12) setHours24(hours24 + 12);

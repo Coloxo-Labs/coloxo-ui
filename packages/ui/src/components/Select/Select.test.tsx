@@ -10,7 +10,9 @@ const options = [
 
 describe("Select", () => {
   it("renders a labelled trigger", () => {
-    renderWithTheme(<Select label="Department" options={options} placeholder="Select department" />);
+    renderWithTheme(
+      <Select label="Department" options={options} placeholder="Select department" />,
+    );
     expect(screen.getByRole("combobox")).toBeInTheDocument();
     expect(screen.getByText("Department")).toBeInTheDocument();
   });

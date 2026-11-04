@@ -7,15 +7,8 @@
   "status": "stable",
   "version": "1.0.0",
   "dependencies": [],
-  "registryDependencies": [
-    "utils",
-    "styles",
-    "theme",
-    "icons"
-  ],
-  "providers": [
-    "theme"
-  ],
+  "registryDependencies": ["utils", "styles", "theme", "icons"],
+  "providers": ["theme"],
   "accessibility": {
     "aria": true
   },
@@ -31,9 +24,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils"
-      ]
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -51,12 +42,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "styles", "theme", "icons"]
     }
   }
 }

@@ -1,5 +1,12 @@
 "use client";
-import { FunnelIcon, SearchIcon, LayoutGridIcon, TableIcon, Columns3Icon, XIcon } from "../../icons";
+import {
+  FunnelIcon,
+  SearchIcon,
+  LayoutGridIcon,
+  TableIcon,
+  Columns3Icon,
+  XIcon,
+} from "../../icons";
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import * as Popover from "@radix-ui/react-popover";
@@ -196,9 +203,7 @@ function FilterField<T>({
                 label={opt.label}
                 checked={selected}
                 onCheckedChange={(checked) => {
-                  const current = Array.isArray(draft?.value)
-                    ? [...(draft.value as string[])]
-                    : [];
+                  const current = Array.isArray(draft?.value) ? [...(draft.value as string[])] : [];
                   const next = checked
                     ? [...current, opt.value]
                     : current.filter((item) => item !== opt.value);
@@ -218,9 +223,7 @@ function FilterField<T>({
         <Checkbox
           aria-label={label}
           checked={Boolean(draft?.value)}
-          onCheckedChange={(checked) =>
-            onChange({ operator: "eq", value: Boolean(checked) })
-          }
+          onCheckedChange={(checked) => onChange({ operator: "eq", value: Boolean(checked) })}
         />
       </FilterRow>
     );
@@ -241,8 +244,7 @@ function FilterField<T>({
           value={draft?.value == null ? "" : String(draft.value)}
           onChange={(event) =>
             onChange({
-              operator:
-                filter.defaultOperator ?? (filter.type === "date-range" ? "between" : "eq"),
+              operator: filter.defaultOperator ?? (filter.type === "date-range" ? "between" : "eq"),
               value: event.target.value,
             })
           }

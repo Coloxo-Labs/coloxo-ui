@@ -16,12 +16,7 @@ export type DocsTocProps = {
   className?: string;
 };
 
-export function DocsToc({
-  title = "On this page",
-  items,
-  footer,
-  className,
-}: DocsTocProps) {
+export function DocsToc({ title = "On this page", items, footer, className }: DocsTocProps) {
   return (
     <nav className={cx(styles.root, className)} aria-labelledby="docs-toc-heading">
       <h2 id="docs-toc-heading" className={styles.title}>

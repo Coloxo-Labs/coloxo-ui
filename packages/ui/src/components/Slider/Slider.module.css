@@ -8,9 +8,21 @@
   touch-action: none;
   user-select: none;
 }
-.sm { --slider-control: 32px; --slider-track: 4px; --slider-thumb: 16px; }
-.md { --slider-control: 40px; --slider-track: 6px; --slider-thumb: 20px; }
-.lg { --slider-control: 48px; --slider-track: 8px; --slider-thumb: 24px; }
+.sm {
+  --slider-control: 32px;
+  --slider-track: 4px;
+  --slider-thumb: 16px;
+}
+.md {
+  --slider-control: 40px;
+  --slider-track: 6px;
+  --slider-thumb: 20px;
+}
+.lg {
+  --slider-control: 48px;
+  --slider-track: 8px;
+  --slider-thumb: 24px;
+}
 .track {
   position: relative;
   flex-grow: 1;
@@ -19,7 +31,12 @@
   border-radius: 999px;
   background: var(--cx-color-bg-quaternary);
 }
-.range { position: absolute; height: 100%; border-radius: inherit; background: var(--cx-color-bg-brand-solid); }
+.range {
+  position: absolute;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cx-color-bg-brand-solid);
+}
 .thumb {
   display: block;
   box-sizing: border-box;
@@ -31,15 +48,41 @@
   box-shadow: var(--cx-shadow-sm);
   cursor: grab;
 }
-.thumb:active { cursor: grabbing; }
-.thumb:focus-visible { outline: 3px solid var(--cx-color-focus-ring); outline-offset: 3px; }
-.root[data-disabled] { opacity: 0.5; }
-.thumb[data-disabled] { cursor: not-allowed; }
-.root[data-orientation="vertical"] { width: var(--slider-control); min-height: 160px; height: 100%; flex-direction: column; }
-.track[data-orientation="vertical"] { width: var(--slider-track); height: auto; }
-.range[data-orientation="vertical"] { width: 100%; height: auto; }
+.thumb:active {
+  cursor: grabbing;
+}
+.thumb:focus-visible {
+  outline: 3px solid var(--cx-color-focus-ring);
+  outline-offset: 3px;
+}
+.root[data-disabled] {
+  opacity: 0.5;
+}
+.thumb[data-disabled] {
+  cursor: not-allowed;
+}
+.root[data-orientation="vertical"] {
+  width: var(--slider-control);
+  min-height: 160px;
+  height: 100%;
+  flex-direction: column;
+}
+.track[data-orientation="vertical"] {
+  width: var(--slider-track);
+  height: auto;
+}
+.range[data-orientation="vertical"] {
+  width: 100%;
+  height: auto;
+}
 @media (forced-colors: active) {
-  .track { background: GrayText; }
-  .range { background: Highlight; }
-  .thumb { border-color: ButtonText; }
+  .track {
+    background: GrayText;
+  }
+  .range {
+    background: Highlight;
+  }
+  .thumb {
+    border-color: ButtonText;
+  }
 }

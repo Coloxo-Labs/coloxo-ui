@@ -51,10 +51,12 @@ describe("resolveForStyle", () => {
   });
 
   it("throws when the style is unavailable instead of installing the wrong shape", () => {
-    expect(() => resolveForStyle(
-      { ...tailwindItem, styles: { tailwind: tailwindItem.styles!.tailwind } },
-      "coloxo-css",
-    )).toThrow(/not available for style "coloxo-css"/);
+    expect(() =>
+      resolveForStyle(
+        { ...tailwindItem, styles: { tailwind: tailwindItem.styles!.tailwind } },
+        "coloxo-css",
+      ),
+    ).toThrow(/not available for style "coloxo-css"/);
   });
 
   it("treats a manifest without styles as Coloxo CSS", () => {

@@ -12,10 +12,7 @@ export type ConflictPolicy = {
   preflightConflicts?: string[];
 };
 
-export async function shouldWriteFile(
-  absPath: string,
-  policy: ConflictPolicy,
-): Promise<boolean> {
+export async function shouldWriteFile(absPath: string, policy: ConflictPolicy): Promise<boolean> {
   let exists = false;
   try {
     await fs.access(absPath);

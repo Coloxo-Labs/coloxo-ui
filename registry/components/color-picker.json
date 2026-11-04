@@ -14,16 +14,8 @@
           "target": "color-picker.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icons",
-        "form-field",
-        "icon"
-      ]
+      "dependencies": ["@radix-ui/react-popover", "react-aria-components"],
+      "registryDependencies": ["utils", "icons", "form-field", "icon"]
     },
     "coloxo-css": {
       "files": [
@@ -56,23 +48,11 @@
           "target": "color-picker/presets.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "react-aria-components"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "picker-field",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-popover", "react-aria-components"],
+      "registryDependencies": ["utils", "form-control", "picker-field", "styles", "theme", "icons"]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true

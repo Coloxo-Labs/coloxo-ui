@@ -6,12 +6,33 @@
   max-width: 100%;
 }
 
-.sm { --otp-width: 32px; --otp-height: 36px; --otp-font-size: 16px; }
-.md { --otp-width: 40px; --otp-height: 44px; --otp-font-size: 18px; }
-.lg { --otp-width: 48px; --otp-height: 52px; --otp-font-size: 20px; }
-.root:has(input:disabled) { opacity: 0.5; cursor: not-allowed; }
-.input:disabled { cursor: not-allowed; }
-.group { display: flex; align-items: center; min-width: 0; }
+.sm {
+  --otp-width: 32px;
+  --otp-height: 36px;
+  --otp-font-size: 16px;
+}
+.md {
+  --otp-width: 40px;
+  --otp-height: 44px;
+  --otp-font-size: 18px;
+}
+.lg {
+  --otp-width: 48px;
+  --otp-height: 52px;
+  --otp-font-size: 20px;
+}
+.root:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.input:disabled {
+  cursor: not-allowed;
+}
+.group {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
 .slot {
   position: relative;
   display: flex;
@@ -26,20 +47,34 @@
   font: inherit;
   font-size: var(--otp-font-size, 18px);
   font-variant-numeric: tabular-nums;
-  transition: border-color 120ms, box-shadow 120ms;
+  transition:
+    border-color 120ms,
+    box-shadow 120ms;
 }
-.slot + .slot { margin-left: -1px; }
-.slot:first-child { border-radius: 8px 0 0 8px; }
-.slot:last-child { border-radius: 0 8px 8px 0; }
-.slot:only-child { border-radius: 8px; }
+.slot + .slot {
+  margin-left: -1px;
+}
+.slot:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.slot:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.slot:only-child {
+  border-radius: 8px;
+}
 .slot[data-active] {
   z-index: 1;
   border-color: var(--cx-color-border-brand);
   box-shadow: 0 0 0 3px var(--cx-color-bg-brand-secondary);
 }
 .root:has(input[aria-invalid="true"]) .slot,
-.slot[aria-invalid="true"] { border-color: var(--cx-color-text-error-primary, #d92d20); }
-.separator { color: var(--cx-color-text-tertiary); }
+.slot[aria-invalid="true"] {
+  border-color: var(--cx-color-text-error-primary, #d92d20);
+}
+.separator {
+  color: var(--cx-color-text-tertiary);
+}
 .caret {
   position: absolute;
   width: 1px;
@@ -48,8 +83,16 @@
   pointer-events: none;
   animation: blink 1s step-end infinite;
 }
-@keyframes blink { 50% { opacity: 0; } }
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .slot { transition: none; }
-  .caret { animation: none; }
+  .slot {
+    transition: none;
+  }
+  .caret {
+    animation: none;
+  }
 }

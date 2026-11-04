@@ -1,5 +1,10 @@
 "use client";
-import { ChevronsLeftIcon, ChevronsRightIcon, ChevronLeftIcon, ChevronRightIcon } from "../../icons";
+import {
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "../../icons";
 
 import { IconButton } from "../IconButton/IconButton";
 import { cx } from "../../utils/cx";
@@ -61,9 +66,7 @@ export function Pagination({
 
   return (
     <nav className={cx(styles.root, className)} aria-label="Pagination">
-      <div className={styles.meta}>
-        {formatMetaLabel(metaLabel, { start, end, total })}
-      </div>
+      <div className={styles.meta}>{formatMetaLabel(metaLabel, { start, end, total })}</div>
       {onPageSizeChange ? (
         <label className={styles.size}>
           Rows

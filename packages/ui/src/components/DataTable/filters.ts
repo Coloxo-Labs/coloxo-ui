@@ -1,6 +1,8 @@
 import type { DataTableFilterOperator, DataTableFilterValue, DataTableSort } from "./types";
 
-function normalizeFilter(filter: DataTableFilterValue | undefined): DataTableFilterValue | undefined {
+function normalizeFilter(
+  filter: DataTableFilterValue | undefined,
+): DataTableFilterValue | undefined {
   if (!filter) return undefined;
   if (filter.operator === "isNull" || filter.operator === "isNotNull") return filter;
   if (filter.value === undefined || filter.value === null || filter.value === "") return undefined;
@@ -115,7 +117,9 @@ export function applySearch<T>(
   return rows.filter((row) => getSearchText(row).toLowerCase().includes(term));
 }
 
-export function normalizeSort(sort: DataTableSort | DataTableSort[] | undefined): DataTableSort[] | undefined {
+export function normalizeSort(
+  sort: DataTableSort | DataTableSort[] | undefined,
+): DataTableSort[] | undefined {
   if (!sort) return undefined;
   const list = Array.isArray(sort) ? sort : [sort];
   return list.length > 0 ? list : undefined;

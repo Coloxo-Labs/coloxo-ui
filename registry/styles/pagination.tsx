@@ -1,5 +1,10 @@
 "use client";
-import { ChevronsLeftIcon, ChevronsRightIcon, ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons";
+import {
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@/lib/icons";
 
 import { IconButton } from "./icon-button";
 import { cx } from "@/lib/utils";
@@ -15,7 +20,8 @@ const CX: Record<string, string> = {
   meta: "min-w-[8rem]",
   page: "border border-solid border-transparent rounded-md bg-transparent text-cx-secondary cursor-pointer hover:disabled:bg-cx-primary-hover hover:disabled:text-cx-primary hover:disabled:border-cx-secondary focus-visible:outline",
   root: "flex flex-wrap items-center justify-between gap-3 font-sans text-sm text-cx-tertiary",
-  select: "border border-solid border-cx-primary rounded-md bg-cx-primary text-cx-secondary py-0 px-2 focus-visible:outline",
+  select:
+    "border border-solid border-cx-primary rounded-md bg-cx-primary text-cx-secondary py-0 px-2 focus-visible:outline",
   size: "inline-flex items-center gap-2",
 };
 
@@ -75,9 +81,7 @@ export function Pagination({
 
   return (
     <nav className={cx(CX.root, className)} aria-label="Pagination">
-      <div className={CX.meta}>
-        {formatMetaLabel(metaLabel, { start, end, total })}
-      </div>
+      <div className={CX.meta}>{formatMetaLabel(metaLabel, { start, end, total })}</div>
       {onPageSizeChange ? (
         <label className={CX.size}>
           Rows

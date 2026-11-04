@@ -45,8 +45,7 @@ const VISUAL_SLUGS = [
   "volumetric-light-tunnel",
 ] as const;
 
-const IMPORT_RE =
-  /(?:import|export)\s+(?:type\s+)?(?:[\s\S]*?\sfrom\s+)?["']([^"']+)["']/g;
+const IMPORT_RE = /(?:import|export)\s+(?:type\s+)?(?:[\s\S]*?\sfrom\s+)?["']([^"']+)["']/g;
 
 function resolveAlias(spec: string, hasSrcDir: boolean): string | undefined {
   if (spec.startsWith("@/")) {
@@ -65,7 +64,11 @@ async function exists(filePath: string): Promise<boolean> {
   }
 }
 
-async function resolveModule(fromFile: string, spec: string, cwd: string): Promise<string | undefined> {
+async function resolveModule(
+  fromFile: string,
+  spec: string,
+  cwd: string,
+): Promise<string | undefined> {
   const aliased = resolveAlias(spec, true);
   const base = aliased
     ? path.join(cwd, aliased)
@@ -160,7 +163,9 @@ describe("shader visual registry", () => {
 
       expect(missing).toEqual([]);
       await expect(
-        fs.access(path.join(dir, "src/components/ui/aurora-mesh-gradient/aurora-mesh-gradient.tsx")),
+        fs.access(
+          path.join(dir, "src/components/ui/aurora-mesh-gradient/aurora-mesh-gradient.tsx"),
+        ),
       ).resolves.toBeUndefined();
       await expect(
         fs.access(path.join(dir, "src/components/ui/holographic-liquid-orb/orbEngine.ts")),

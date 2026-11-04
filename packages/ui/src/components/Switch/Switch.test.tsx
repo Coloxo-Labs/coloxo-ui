@@ -19,7 +19,9 @@ describe("Switch", () => {
   });
 
   it("has no axe violations", async () => {
-    const { container } = renderWithTheme(<Switch label="Enable overtime" description="Applies next cycle" />);
+    const { container } = renderWithTheme(
+      <Switch label="Enable overtime" description="Applies next cycle" />,
+    );
     await expectNoA11yViolations(container);
   });
 });

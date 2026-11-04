@@ -8,7 +8,16 @@ describe("Slider", () => {
   it("supports keyboard steps and bounds", async () => {
     const user = userEvent.setup();
     const commit = vi.fn();
-    renderWithTheme(<Slider defaultValue={[40]} min={0} max={100} step={5} aria-label="Volume" onValueCommit={commit} />);
+    renderWithTheme(
+      <Slider
+        defaultValue={[40]}
+        min={0}
+        max={100}
+        step={5}
+        aria-label="Volume"
+        onValueCommit={commit}
+      />,
+    );
     const thumb = screen.getByRole("slider", { name: "Volume" });
     thumb.focus();
     await user.keyboard("{ArrowRight}");
@@ -22,12 +31,25 @@ describe("Slider", () => {
 
   it("labels range endpoints, enforces a minimum gap, and submits both values", async () => {
     const user = userEvent.setup();
-    renderWithTheme(<form aria-label="Price filter"><Slider defaultValue={[20, 40]} step={10} minStepsBetweenThumbs={1} name="price" thumbLabels={["Minimum price", "Maximum price"]} /></form>);
+    renderWithTheme(
+      <form aria-label="Price filter">
+        <Slider
+          defaultValue={[20, 40]}
+          step={10}
+          minStepsBetweenThumbs={1}
+          name="price"
+          thumbLabels={["Minimum price", "Maximum price"]}
+        />
+      </form>,
+    );
     const minimum = screen.getByRole("slider", { name: "Minimum price" });
     minimum.focus();
     await user.keyboard("{ArrowRight}{ArrowRight}");
     expect(minimum).toHaveAttribute("aria-valuenow", "30");
-    expect(screen.getByRole("slider", { name: "Maximum price" })).toHaveAttribute("aria-valuenow", "40");
+    expect(screen.getByRole("slider", { name: "Maximum price" })).toHaveAttribute(
+      "aria-valuenow",
+      "40",
+    );
     const data = new FormData(screen.getByRole("form") as HTMLFormElement);
     expect(data.getAll("price[]")).toEqual(["30", "40"]);
   });
@@ -35,7 +57,9 @@ describe("Slider", () => {
   it("supports controlled values and disables keyboard interaction", async () => {
     const user = userEvent.setup();
     const change = vi.fn();
-    const { rerender } = renderWithTheme(<Slider value={[25]} onValueChange={change} aria-label="Value" />);
+    const { rerender } = renderWithTheme(
+      <Slider value={[25]} onValueChange={change} aria-label="Value" />,
+    );
     rerender(<Slider value={[75]} disabled onValueChange={change} aria-label="Value" />);
     const thumb = screen.getByRole("slider", { name: "Value" });
     expect(thumb).toHaveAttribute("aria-valuenow", "75");

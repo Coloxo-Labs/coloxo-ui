@@ -6,9 +6,7 @@
   "description": "Icon-only button with tooltip, loading, and variant styles.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,15 +19,8 @@
           "target": "icon-button.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
-      "registryDependencies": [
-        "utils",
-        "icon",
-        "form-control",
-        "tooltip"
-      ]
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": ["utils", "icon", "form-control", "tooltip"]
     },
     "coloxo-css": {
       "files": [
@@ -46,9 +37,7 @@
           "target": "icon-button/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
       "registryDependencies": [
         "utils",
         "icon",

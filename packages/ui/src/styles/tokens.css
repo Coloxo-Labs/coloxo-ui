@@ -290,7 +290,8 @@
   --cx-color-disabled-fg: var(--cx-color-text-disabled);
   --cx-color-disabled-border: var(--cx-color-border-disabled);
   --cx-shadow-focus: 0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring);
-  --cx-shadow-focus-error: 0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring-error);
+  --cx-shadow-focus-error:
+    0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring-error);
 }
 
 [data-cx-theme="dark"],
@@ -392,21 +393,27 @@
   --cx-color-tooltip-supporting-text: var(--cx-neutral-400);
 
   --cx-shadow-xs: 0px 1px 2px rgb(var(--cx-alpha-white) / 0.06);
-  --cx-shadow-sm: 0px 1px 3px rgb(var(--cx-alpha-white) / 0.1),
-    0px 1px 2px -1px rgb(var(--cx-alpha-white) / 0.08);
-  --cx-shadow-md: 0px 4px 6px -1px rgb(var(--cx-alpha-white) / 0.1),
+  --cx-shadow-sm:
+    0px 1px 3px rgb(var(--cx-alpha-white) / 0.1), 0px 1px 2px -1px rgb(var(--cx-alpha-white) / 0.08);
+  --cx-shadow-md:
+    0px 4px 6px -1px rgb(var(--cx-alpha-white) / 0.1),
     0px 2px 4px -2px rgb(var(--cx-alpha-white) / 0.06);
-  --cx-shadow-lg: 0px 12px 16px -4px rgb(var(--cx-alpha-white) / 0.08),
+  --cx-shadow-lg:
+    0px 12px 16px -4px rgb(var(--cx-alpha-white) / 0.08),
     0px 4px 6px -2px rgb(var(--cx-alpha-white) / 0.04),
     0px 2px 2px -1px rgb(var(--cx-alpha-white) / 0.04);
-  --cx-shadow-xl: 0px 20px 24px -4px rgb(var(--cx-alpha-white) / 0.08),
+  --cx-shadow-xl:
+    0px 20px 24px -4px rgb(var(--cx-alpha-white) / 0.08),
     0px 8px 8px -4px rgb(var(--cx-alpha-white) / 0.04),
     0px 3px 3px -1.5px rgb(var(--cx-alpha-white) / 0.04);
-  --cx-shadow-2xl: 0px 24px 48px -12px rgb(var(--cx-alpha-white) / 0.18),
+  --cx-shadow-2xl:
+    0px 24px 48px -12px rgb(var(--cx-alpha-white) / 0.18),
     0px 4px 4px -2px rgb(var(--cx-alpha-white) / 0.04);
-  --cx-shadow-3xl: 0px 32px 64px -12px rgb(var(--cx-alpha-white) / 0.14),
+  --cx-shadow-3xl:
+    0px 32px 64px -12px rgb(var(--cx-alpha-white) / 0.14),
     0px 5px 5px -2.5px rgb(var(--cx-alpha-white) / 0.04);
-  --cx-shadow-skeuomorphic: 0px 0px 0px 1px rgb(var(--cx-alpha-white) / 0.18) inset,
+  --cx-shadow-skeuomorphic:
+    0px 0px 0px 1px rgb(var(--cx-alpha-white) / 0.18) inset,
     0px -2px 0px 0px rgb(var(--cx-alpha-white) / 0.05) inset;
 
   --cx-utility-neutral-50: var(--cx-neutral-900);
@@ -486,7 +493,8 @@
   --cx-color-disabled-fg: var(--cx-color-text-disabled);
   --cx-color-disabled-border: var(--cx-color-border-disabled);
   --cx-shadow-focus: 0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring);
-  --cx-shadow-focus-error: 0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring-error);
+  --cx-shadow-focus-error:
+    0 0 0 2px var(--cx-color-bg-primary), 0 0 0 4px var(--cx-color-focus-ring-error);
 }
 
 :root,
@@ -495,7 +503,9 @@
 .cx-dark {
   --cx-font-body: "Plus Jakarta Sans", Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --cx-font-display: var(--cx-font-body);
-  --cx-font-mono: "JetBrains Mono", "Liberation Mono", ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --cx-font-mono:
+    "JetBrains Mono", "Liberation Mono", ui-monospace, "Roboto Mono", SFMono-Regular, Menlo,
+    Consolas, monospace;
   --cx-font-sans: var(--cx-font-body);
   --cx-font: var(--cx-font-body);
 
@@ -625,14 +635,16 @@
   --cx-shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.05);
   --cx-shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
   --cx-shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.06);
-  --cx-shadow-lg: 0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03),
+  --cx-shadow-lg:
+    0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03),
     0px 2px 2px -1px rgba(0, 0, 0, 0.04);
-  --cx-shadow-xl: 0px 20px 24px -4px rgba(0, 0, 0, 0.08), 0px 8px 8px -4px rgba(0, 0, 0, 0.03),
+  --cx-shadow-xl:
+    0px 20px 24px -4px rgba(0, 0, 0, 0.08), 0px 8px 8px -4px rgba(0, 0, 0, 0.03),
     0px 3px 3px -1.5px rgba(0, 0, 0, 0.04);
   --cx-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.18), 0px 4px 4px -2px rgba(0, 0, 0, 0.04);
   --cx-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.14), 0px 5px 5px -2.5px rgba(0, 0, 0, 0.04);
-  --cx-shadow-skeuomorphic: 0px 0px 0px 1px rgba(0, 0, 0, 0.18) inset,
-    0px -2px 0px 0px rgba(0, 0, 0, 0.05) inset;
+  --cx-shadow-skeuomorphic:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.18) inset, 0px -2px 0px 0px rgba(0, 0, 0, 0.05) inset;
   --cx-shadow-xs-skeuomorphic: var(--cx-shadow-skeuomorphic), var(--cx-shadow-xs);
 
   --cx-control-height-xs: 2rem;

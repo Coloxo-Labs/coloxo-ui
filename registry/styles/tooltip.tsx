@@ -54,9 +54,7 @@ export function Tooltip({
             sideOffset={6}
           >
             <div className={CX.title}>{content}</div>
-            {supportingText ? (
-              <div className={CX.supporting}>{supportingText}</div>
-            ) : null}
+            {supportingText ? <div className={CX.supporting}>{supportingText}</div> : null}
             <RadixTooltip.Arrow className={CX.arrow} />
           </RadixTooltip.Content>
         </RadixTooltip.Portal>

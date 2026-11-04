@@ -19,10 +19,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "label"
-      ]
+      "registryDependencies": ["utils", "label"]
     },
     "coloxo-css": {
       "files": [
@@ -40,10 +37,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "label"
-      ]
+      "registryDependencies": ["utils", "label"]
     }
   }
 }

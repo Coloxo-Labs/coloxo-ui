@@ -20,7 +20,8 @@ import { cx } from "@/lib/utils";
  */
 const CX: Record<string, string> = {
   body: "pt-5 px-6 pb-6 overflow-auto flex-1",
-  content: "fixed top-[50%] left-[50%] bg-cx-primary text-cx-primary rounded-2xl shadow-xl border-none font-sans flex flex-col outline-none",
+  content:
+    "fixed top-[50%] left-[50%] bg-cx-primary text-cx-primary rounded-2xl shadow-xl border-none font-sans flex flex-col outline-none",
   description: "mt-1 mx-0 mb-0 text-sm leading-5 text-cx-tertiary",
   footer: "flex justify-end gap-3 pt-0 px-6 pb-6",
   header: "flex items-start justify-between gap-3 pt-6 px-6 pb-0",
@@ -158,13 +159,9 @@ export function Modal({
                   <Dialog.Title className={CX.srOnly}>Dialog</Dialog.Title>
                 )}
                 {description ? (
-                  <Dialog.Description className={CX.description}>
-                    {description}
-                  </Dialog.Description>
+                  <Dialog.Description className={CX.description}>{description}</Dialog.Description>
                 ) : (
-                  <Dialog.Description className={CX.srOnly}>
-                    Dialog content
-                  </Dialog.Description>
+                  <Dialog.Description className={CX.srOnly}>Dialog content</Dialog.Description>
                 )}
               </div>
               {closeButton ? (

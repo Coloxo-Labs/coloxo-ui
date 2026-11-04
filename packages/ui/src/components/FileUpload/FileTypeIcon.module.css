@@ -40,20 +40,57 @@
 }
 
 /* Tones */
-.empty .label { background: var(--cx-neutral-500); }
-.pdf .label { background: var(--cx-red-600); }
-.doc .label { background: var(--cx-blue-600); }
-.xls .label { background: var(--cx-green-600); }
-.img .label { background: var(--cx-brand-600); }
-.video .label { background: var(--cx-indigo-700); }
-.audio .label { background: var(--cx-purple-700); }
-.zip .label { background: var(--cx-yellow-600); }
-.code .label { background: var(--cx-blue-700); }
-.txt .label { background: var(--cx-neutral-600); }
+.empty .label {
+  background: var(--cx-neutral-500);
+}
+.pdf .label {
+  background: var(--cx-red-600);
+}
+.doc .label {
+  background: var(--cx-blue-600);
+}
+.xls .label {
+  background: var(--cx-green-600);
+}
+.img .label {
+  background: var(--cx-brand-600);
+}
+.video .label {
+  background: var(--cx-indigo-700);
+}
+.audio .label {
+  background: var(--cx-purple-700);
+}
+.zip .label {
+  background: var(--cx-yellow-600);
+}
+.code .label {
+  background: var(--cx-blue-700);
+}
+.txt .label {
+  background: var(--cx-neutral-600);
+}
 
-.solid.pdf { background: var(--cx-red-50); box-shadow: inset 0 0 0 1px var(--cx-red-200); }
-.solid.doc { background: var(--cx-blue-50); box-shadow: inset 0 0 0 1px var(--cx-blue-200); }
-.solid.xls { background: var(--cx-green-50); box-shadow: inset 0 0 0 1px var(--cx-green-200); }
-.solid.img { background: var(--cx-brand-50); box-shadow: inset 0 0 0 1px var(--cx-brand-200); }
-.solid.video { background: var(--cx-indigo-50); box-shadow: inset 0 0 0 1px var(--cx-indigo-200); }
-.solid.code { background: var(--cx-blue-50); }
+.solid.pdf {
+  background: var(--cx-red-50);
+  box-shadow: inset 0 0 0 1px var(--cx-red-200);
+}
+.solid.doc {
+  background: var(--cx-blue-50);
+  box-shadow: inset 0 0 0 1px var(--cx-blue-200);
+}
+.solid.xls {
+  background: var(--cx-green-50);
+  box-shadow: inset 0 0 0 1px var(--cx-green-200);
+}
+.solid.img {
+  background: var(--cx-brand-50);
+  box-shadow: inset 0 0 0 1px var(--cx-brand-200);
+}
+.solid.video {
+  background: var(--cx-indigo-50);
+  box-shadow: inset 0 0 0 1px var(--cx-indigo-200);
+}
+.solid.code {
+  background: var(--cx-blue-50);
+}

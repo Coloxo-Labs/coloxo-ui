@@ -9,7 +9,8 @@ import { cx } from "@/lib/utils";
  * file needs no stylesheet of its own and no runtime styling deps.
  */
 const CX: Record<string, string> = {
-  label: "font-sans text-xs leading-4 font-semibold tracking-[0.04em] uppercase text-cx-tertiary whitespace-nowrap",
+  label:
+    "font-sans text-xs leading-4 font-semibold tracking-[0.04em] uppercase text-cx-tertiary whitespace-nowrap",
   labeled: "flex items-center w-full",
   labeledLine: "flex-1 min-w-0 block",
   root: "block border-none shrink-0",

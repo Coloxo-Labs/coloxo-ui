@@ -20,10 +20,17 @@ export type PieChartProps = {
   style?: CSSProperties;
 };
 
-const COLORS = ["var(--cx-brand-600)", "var(--cx-brand-400)", "var(--cx-blue-400)", "var(--cx-green-600)", "var(--cx-orange-500)"];
+const COLORS = [
+  "var(--cx-brand-600)",
+  "var(--cx-brand-400)",
+  "var(--cx-blue-400)",
+  "var(--cx-green-600)",
+  "var(--cx-orange-500)",
+];
 const formatValue = (value: number) => value.toLocaleString();
-const cleanValue = (value: number) => Number.isFinite(value) && value > 0 ? value : 0;
-const point = (radius: number, angle: number) => `${160 + radius * Math.cos(angle)},${160 + radius * Math.sin(angle)}`;
+const cleanValue = (value: number) => (Number.isFinite(value) && value > 0 ? value : 0);
+const point = (radius: number, angle: number) =>
+  `${160 + radius * Math.cos(angle)},${160 + radius * Math.sin(angle)}`;
 
 function slicePath(start: number, end: number, inner: number) {
   const middle = (start + end) / 2;
@@ -34,7 +41,18 @@ function slicePath(start: number, end: number, inner: number) {
 }
 
 /** Responsive pie and donut charts with keyboard-readable values and a data table. */
-export function PieChart({ data, label, innerRadius = 0, height = 280, showLegend = true, showLabels = false, centerLabel, valueFormatter = formatValue, className, style }: PieChartProps) {
+export function PieChart({
+  data,
+  label,
+  innerRadius = 0,
+  height = 280,
+  showLegend = true,
+  showLabels = false,
+  centerLabel,
+  valueFormatter = formatValue,
+  className,
+  style,
+}: PieChartProps) {
   const id = useId();
   const rows = data.map((item) => ({ ...item, value: cleanValue(item.value) }));
   const largest = Math.max(0, ...rows.map((item) => item.value));
@@ -44,36 +62,117 @@ export function PieChart({ data, label, innerRadius = 0, height = 280, showLegen
   const chartHeight = Number.isFinite(height) ? Math.max(160, height) : 280;
   let angle = -Math.PI / 2;
 
-  return <figure className={cx(styles.root, className)} style={style} aria-label={label}>
-    {!weightTotal ? <div className={styles.empty} style={{ height: chartHeight }}>No data available</div> : <>
-      <svg
-        className={styles.chart}
-        style={{ width: `min(100%, ${chartHeight}px)` }}
-        viewBox="0 0 320 320"
-        role="img"
-        aria-label={label}
-        aria-describedby={`${id}-description`}
-      >
-        <desc id={`${id}-description`}>Category shares of the total. Focus a slice to read its value. Values are also provided in the accompanying data table.</desc>
-        {rows.map((item, index) => {
-          if (!item.value) return null;
-          const share = (item.value / largest) / weightTotal;
-          const start = angle;
-          angle += share * Math.PI * 2;
-          const middle = (start + angle) / 2;
-          const textRadius = inner > 0 ? (140 + inner) / 2 : 92;
-          const description = `${item.label}: ${valueFormatter(item.value)} (${(share * 100).toFixed(1)}%)`;
-          return <g key={index}>
-            <ChartTooltip label={item.label} items={[{ label: "Value", value: valueFormatter(item.value), color: item.color ?? COLORS[index % COLORS.length]!, supportingText: `${(share * 100).toFixed(1)}% of total` }]}>
-              <path className={styles.slice} d={slicePath(start, angle, inner)} fill={item.color ?? COLORS[index % COLORS.length]} tabIndex={0} role="img" aria-label={description} />
-            </ChartTooltip>
-            {showLabels && share >= 0.06 && <text className={styles.percentage} x={160 + textRadius * Math.cos(middle)} y={160 + textRadius * Math.sin(middle)} textAnchor="middle" dominantBaseline="middle" aria-hidden="true">{Math.round(share * 100)}%</text>}
-          </g>;
-        })}
-        {inner > 0 && centerLabel && <g aria-hidden="true"><text className={styles.total} x={160} y={156} textAnchor="middle">{valueFormatter(total)}</text><text className={styles.centerLabel} x={160} y={178} textAnchor="middle">{centerLabel}</text></g>}
-      </svg>
-      {showLegend && <ul className={styles.legend} aria-label="Chart legend">{rows.map((item, index) => <li key={index}><span className={styles.swatch} style={{ background: item.color ?? COLORS[index % COLORS.length] }} aria-hidden="true" />{item.label}</li>)}</ul>}
-      <table className={styles.srOnly}><caption>{label} — data</caption><thead><tr><th scope="col">Category</th><th scope="col">Value</th><th scope="col">Share</th></tr></thead><tbody>{rows.map((item, index) => <tr key={index}><th scope="row">{item.label}</th><td>{valueFormatter(item.value)}</td><td>{((item.value / largest) / weightTotal * 100).toFixed(1)}%</td></tr>)}</tbody></table>
-    </>}
-  </figure>;
+  return (
+    <figure className={cx(styles.root, className)} style={style} aria-label={label}>
+      {!weightTotal ? (
+        <div className={styles.empty} style={{ height: chartHeight }}>
+          No data available
+        </div>
+      ) : (
+        <>
+          <svg
+            className={styles.chart}
+            style={{ width: `min(100%, ${chartHeight}px)` }}
+            viewBox="0 0 320 320"
+            role="img"
+            aria-label={label}
+            aria-describedby={`${id}-description`}
+          >
+            <desc id={`${id}-description`}>
+              Category shares of the total. Focus a slice to read its value. Values are also
+              provided in the accompanying data table.
+            </desc>
+            {rows.map((item, index) => {
+              if (!item.value) return null;
+              const share = item.value / largest / weightTotal;
+              const start = angle;
+              angle += share * Math.PI * 2;
+              const middle = (start + angle) / 2;
+              const textRadius = inner > 0 ? (140 + inner) / 2 : 92;
+              const description = `${item.label}: ${valueFormatter(item.value)} (${(share * 100).toFixed(1)}%)`;
+              return (
+                <g key={index}>
+                  <ChartTooltip
+                    label={item.label}
+                    items={[
+                      {
+                        label: "Value",
+                        value: valueFormatter(item.value),
+                        color: item.color ?? COLORS[index % COLORS.length]!,
+                        supportingText: `${(share * 100).toFixed(1)}% of total`,
+                      },
+                    ]}
+                  >
+                    <path
+                      className={styles.slice}
+                      d={slicePath(start, angle, inner)}
+                      fill={item.color ?? COLORS[index % COLORS.length]}
+                      tabIndex={0}
+                      role="img"
+                      aria-label={description}
+                    />
+                  </ChartTooltip>
+                  {showLabels && share >= 0.06 && (
+                    <text
+                      className={styles.percentage}
+                      x={160 + textRadius * Math.cos(middle)}
+                      y={160 + textRadius * Math.sin(middle)}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      aria-hidden="true"
+                    >
+                      {Math.round(share * 100)}%
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+            {inner > 0 && centerLabel && (
+              <g aria-hidden="true">
+                <text className={styles.total} x={160} y={156} textAnchor="middle">
+                  {valueFormatter(total)}
+                </text>
+                <text className={styles.centerLabel} x={160} y={178} textAnchor="middle">
+                  {centerLabel}
+                </text>
+              </g>
+            )}
+          </svg>
+          {showLegend && (
+            <ul className={styles.legend} aria-label="Chart legend">
+              {rows.map((item, index) => (
+                <li key={index}>
+                  <span
+                    className={styles.swatch}
+                    style={{ background: item.color ?? COLORS[index % COLORS.length] }}
+                    aria-hidden="true"
+                  />
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+          )}
+          <table className={styles.srOnly}>
+            <caption>{label} — data</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Value</th>
+                <th scope="col">Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((item, index) => (
+                <tr key={index}>
+                  <th scope="row">{item.label}</th>
+                  <td>{valueFormatter(item.value)}</td>
+                  <td>{((item.value / largest / weightTotal) * 100).toFixed(1)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+    </figure>
+  );
 }

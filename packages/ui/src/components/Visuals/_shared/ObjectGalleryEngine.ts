@@ -29,9 +29,18 @@ type SceneObject = {
 };
 
 const CUBE_EDGES: [number, number][] = [
-  [0, 1], [1, 2], [2, 3], [3, 0],
-  [4, 5], [5, 6], [6, 7], [7, 4],
-  [0, 4], [1, 5], [2, 6], [3, 7],
+  [0, 1],
+  [1, 2],
+  [2, 3],
+  [3, 0],
+  [4, 5],
+  [5, 6],
+  [6, 7],
+  [7, 4],
+  [0, 4],
+  [1, 5],
+  [2, 6],
+  [3, 7],
 ];
 
 /**
@@ -107,16 +116,7 @@ export class ObjectGalleryEngine extends Canvas2DEngine {
       entry.obj.spin += frame.dt * 0.6;
 
       const size = Math.min(width, height) * 0.075 * projected.scale;
-      this.drawObject(
-        ctx,
-        entry.obj,
-        projected.x,
-        projected.y,
-        size,
-        tiltX,
-        tiltY,
-        config,
-      );
+      this.drawObject(ctx, entry.obj, projected.x, projected.y, size, tiltX, tiltY, config);
     }
 
     ctx.globalAlpha = 1;
@@ -139,8 +139,14 @@ export class ObjectGalleryEngine extends Canvas2DEngine {
 
     if (obj.kind === "cube") {
       const corners = [
-        vec3(-1, -1, -1), vec3(1, -1, -1), vec3(1, 1, -1), vec3(-1, 1, -1),
-        vec3(-1, -1, 1), vec3(1, -1, 1), vec3(1, 1, 1), vec3(-1, 1, 1),
+        vec3(-1, -1, -1),
+        vec3(1, -1, -1),
+        vec3(1, 1, -1),
+        vec3(-1, 1, -1),
+        vec3(-1, -1, 1),
+        vec3(1, -1, 1),
+        vec3(1, 1, 1),
+        vec3(-1, 1, 1),
       ].map((p) => {
         const rotated = rotate(p, tiltX + obj.spin * 0.4, tiltY + obj.spin * 0.3, 0);
         return {

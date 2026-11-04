@@ -13,8 +13,18 @@
   display: block;
 }
 
-.xs { font-size: var(--cx-icon-xs); }
-.sm { font-size: var(--cx-icon-sm); }
-.md { font-size: var(--cx-icon-md); }
-.lg { font-size: var(--cx-icon-lg); }
-.xl { font-size: var(--cx-icon-xl); }
+.xs {
+  font-size: var(--cx-icon-xs);
+}
+.sm {
+  font-size: var(--cx-icon-sm);
+}
+.md {
+  font-size: var(--cx-icon-md);
+}
+.lg {
+  font-size: var(--cx-icon-lg);
+}
+.xl {
+  font-size: var(--cx-icon-xl);
+}

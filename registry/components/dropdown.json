@@ -6,9 +6,7 @@
   "description": "Dropdown menu with items and shortcuts.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,12 +19,8 @@
           "target": "dropdown.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-dropdown-menu"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -43,14 +37,8 @@
           "target": "dropdown/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-dropdown-menu"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

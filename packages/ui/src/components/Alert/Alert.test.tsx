@@ -65,13 +65,23 @@ describe("Alert", () => {
   it("can be dismissed via onClose", async () => {
     const user = userEvent.setup();
     let closed = false;
-    renderWithTheme(<Alert title="Notice" closable onClose={() => { closed = true; }} />);
+    renderWithTheme(
+      <Alert
+        title="Notice"
+        closable
+        onClose={() => {
+          closed = true;
+        }}
+      />,
+    );
     await user.click(screen.getByRole("button", { name: "Dismiss alert" }));
     expect(closed).toBe(true);
   });
 
   it("has no axe violations", async () => {
-    const { container } = renderWithTheme(<Alert variant="error" title="Failed" description="Try again." />);
+    const { container } = renderWithTheme(
+      <Alert variant="error" title="Failed" description="Try again." />,
+    );
     await expectNoA11yViolations(container);
   });
 

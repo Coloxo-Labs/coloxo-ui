@@ -52,10 +52,7 @@ export function GravitationalLens({
       uniforms={{
         uGravity: numeric(gravityStrength, 0.6, 0, 1) * 2.2,
         uLensRadius: numeric(lensRadius, 0.12, 0.01, 0.6),
-        uCenter: [
-          numeric(centerPosition?.x, 0.5, 0, 1),
-          numeric(centerPosition?.y, 0.5, 0, 1),
-        ],
+        uCenter: [numeric(centerPosition?.x, 0.5, 0, 1), numeric(centerPosition?.y, 0.5, 0, 1)],
         uTrail: numeric(trailLength, 0.7, 0, 1),
         uColor: rgb,
         uPoles: massCount === 1 ? 1 : 2,

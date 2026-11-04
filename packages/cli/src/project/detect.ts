@@ -47,8 +47,6 @@ async function fileExists(p: string): Promise<boolean> {
 export async function requirePackageJson(cwd: string): Promise<void> {
   const info = await detectProject(cwd);
   if (!info.hasPackageJson) {
-    throw new Error(
-      `No package.json found in ${cwd}. Run coloxo init from your project root.`,
-    );
+    throw new Error(`No package.json found in ${cwd}. Run coloxo init from your project root.`);
   }
 }

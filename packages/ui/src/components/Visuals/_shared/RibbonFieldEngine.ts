@@ -87,8 +87,11 @@ export class RibbonFieldEngine extends Canvas2DEngine {
 
         // Two overlapping sine terms plus a slow scroll give a non-repeating wave.
         const wave =
-          Math.sin(t * Math.PI * 2 * ribbon.frequency + this.scroll + ribbon.offset) * config.amplitude +
-          Math.sin(t * Math.PI * 4.4 - this.scroll * 0.7 + ribbon.offset * 0.5) * config.amplitude * 0.35;
+          Math.sin(t * Math.PI * 2 * ribbon.frequency + this.scroll + ribbon.offset) *
+            config.amplitude +
+          Math.sin(t * Math.PI * 4.4 - this.scroll * 0.7 + ribbon.offset * 0.5) *
+            config.amplitude *
+            0.35;
 
         // Pointer attraction pulls the ribbon toward the cursor's vertical position.
         const proximity = Math.exp(-Math.pow((t - pointerX) * 3.2, 2));
@@ -111,8 +114,11 @@ export class RibbonFieldEngine extends Canvas2DEngine {
           const t = i / samples;
           const x = t * width;
           const wave =
-            Math.sin(t * Math.PI * 2 * ribbon.frequency + this.scroll + ribbon.offset) * config.amplitude +
-            Math.sin(t * Math.PI * 4.4 - this.scroll * 0.7 + ribbon.offset * 0.5) * config.amplitude * 0.35;
+            Math.sin(t * Math.PI * 2 * ribbon.frequency + this.scroll + ribbon.offset) *
+              config.amplitude +
+            Math.sin(t * Math.PI * 4.4 - this.scroll * 0.7 + ribbon.offset * 0.5) *
+              config.amplitude *
+              0.35;
           const proximity = Math.exp(-Math.pow((t - pointerX) * 3.2, 2));
           const pull = (pointerY * height - baseY) * proximity * config.attraction * 0.55;
           ctx.lineTo(x, baseY + wave + pull + config.thickness * 6);

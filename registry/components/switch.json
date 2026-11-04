@@ -6,9 +6,7 @@
   "description": "Toggle switch control.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,14 +19,8 @@
           "target": "switch.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field"
-      ]
+      "dependencies": ["@radix-ui/react-switch"],
+      "registryDependencies": ["utils", "form-control", "form-field"]
     },
     "coloxo-css": {
       "files": [
@@ -45,16 +37,8 @@
           "target": "switch/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-switch"],
+      "registryDependencies": ["utils", "form-control", "form-field", "styles", "theme"]
     }
   }
 }

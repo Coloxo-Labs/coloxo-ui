@@ -13,7 +13,8 @@ const CX: Record<string, string> = {
   borderless: "border-transparent",
   code: "block p-0 font-sans whitespace-pre",
   comment: "italic",
-  compact: "[--cx-code-font-size:0.75rem] [--cx-code-line-height:1.55] [--cx-code-pad-x:0.75rem] [--cx-code-pad-y:0.75rem] rounded-md",
+  compact:
+    "[--cx-code-font-size:0.75rem] [--cx-code-line-height:1.55] [--cx-code-pad-x:0.75rem] [--cx-code-pad-y:0.75rem] rounded-md",
   copyButton: "py-1 px-2",
   copyIcon: "inline-flex",
   default: "shadow-sm",
@@ -22,7 +23,8 @@ const CX: Record<string, string> = {
   elevated: "shadow-md",
   filename: "min-w-0 overflow-hidden font-mono whitespace-nowrap",
   floatingCopy: "absolute top-2 right-2 z-[1]",
-  header: "flex items-center justify-between gap-3 min-h-[2.5rem] pt-1 pr-3 pb-1 pl-4 font-sans text-xs",
+  header:
+    "flex items-center justify-between gap-3 min-h-[2.5rem] pt-1 pr-3 pb-1 pl-4 font-sans text-xs",
   headerEnd: "shrink-0",
   headerStart: "flex-1",
   label: "font-medium",
@@ -121,8 +123,7 @@ export function CodeBlock({
   const focusSet = useMemo(() => new Set(focusLines ?? []), [focusLines]);
   const hasFocus = focusSet.size > 0;
 
-  const displayLanguage =
-    languageLabel ?? (language ? getLanguageLabel(language) : undefined);
+  const displayLanguage = languageLabel ?? (language ? getLanguageLabel(language) : undefined);
   const languageVisible = (showLanguage ?? true) && Boolean(displayLanguage);
 
   const hasHeaderContent = Boolean(label || filename || languageVisible || showCopyButton);
@@ -155,8 +156,7 @@ export function CodeBlock({
 
     let frame = 0;
     const measure = () => {
-      const next =
-        el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1;
+      const next = el.scrollHeight > el.clientHeight + 1 || el.scrollWidth > el.clientWidth + 1;
       setScrollable((prev) => (prev === next ? prev : next));
     };
     const schedule = () => {

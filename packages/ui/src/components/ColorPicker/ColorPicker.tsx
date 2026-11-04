@@ -12,7 +12,12 @@ import {
   getControlSizeClass,
   type ControlSize,
 } from "../_internal/controlSize";
-import { PickerFieldShell, usePickerAria, usePickerFieldIds, usePickerOpen } from "../_internal/picker";
+import {
+  PickerFieldShell,
+  usePickerAria,
+  usePickerFieldIds,
+  usePickerOpen,
+} from "../_internal/picker";
 import {
   ColorAlphaSliderControl,
   ColorAreaControl,
@@ -25,21 +30,10 @@ import {
   SwatchGrid,
   toColor,
 } from "./ColorParts";
-import {
-  BRAND_SWATCHES,
-  COLOR_PALETTE,
-  DEFAULT_SWATCHES,
-  GRAY_SWATCHES,
-} from "./presets";
+import { BRAND_SWATCHES, COLOR_PALETTE, DEFAULT_SWATCHES, GRAY_SWATCHES } from "./presets";
 import styles from "./ColorPicker.module.css";
 
-export type ColorPickerVariant =
-  | "solid"
-  | "minimal"
-  | "swatches"
-  | "brand"
-  | "gray"
-  | "palette";
+export type ColorPickerVariant = "solid" | "minimal" | "swatches" | "brand" | "gray" | "palette";
 
 export type ColorPickerSize = ControlSize;
 
@@ -104,11 +98,7 @@ function PanelBody({
       <>
         <ColorPreviewSwatch />
         <SwatchGrid colors={swatches} size={swatchSize} />
-        <ColorFormatFields
-          format={format}
-          onFormatChange={onFormatChange}
-          showEyeDropper={false}
-        />
+        <ColorFormatFields format={format} onFormatChange={onFormatChange} showEyeDropper={false} />
       </>
     );
   }
@@ -221,10 +211,7 @@ export function ColorPicker({
   const color = useMemo(() => toColor(hex), [hex]);
   const sizeClass = getControlSizeClass(size);
   const swatches = useMemo(
-    () =>
-      variant === "solid"
-        ? (swatchesProp ?? [])
-        : resolveSwatches(variant, swatchesProp),
+    () => (variant === "solid" ? (swatchesProp ?? []) : resolveSwatches(variant, swatchesProp)),
     [variant, swatchesProp],
   );
 
@@ -331,10 +318,7 @@ export function ColorHueSlider({
   const color = useMemo(() => toColor(hex), [hex]);
 
   return (
-    <AriaColorPicker
-      value={color}
-      onChange={(next) => setHex(serializeColor(next))}
-    >
+    <AriaColorPicker value={color} onChange={(next) => setHex(serializeColor(next))}>
       <div className={cx(styles.standalone, className)}>
         <div className={styles.standaloneRow}>
           <ColorPreviewSwatch />
@@ -371,10 +355,7 @@ export function ColorAlphaSlider({
   const color = useMemo(() => toColor(hex), [hex]);
 
   return (
-    <AriaColorPicker
-      value={color}
-      onChange={(next) => setHex(serializeColor(next))}
-    >
+    <AriaColorPicker value={color} onChange={(next) => setHex(serializeColor(next))}>
       <div className={cx(styles.standalone, className)}>
         <div className={styles.standaloneRow}>
           <ColorPreviewSwatch />

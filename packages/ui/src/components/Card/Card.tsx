@@ -47,27 +47,153 @@ export const CARD_VARIANTS: ReadonlyArray<{
   bestFor: string;
   category: "surface" | "effect" | "layout" | "visual";
 }> = [
-  { value: "default", label: "Default", description: "Clean white surface with soft border and shadow.", bestFor: "General content, forms, lists", category: "surface" },
-  { value: "elevated", label: "Elevated", description: "Lifted solid card with pronounced soft shadow.", bestFor: "Enterprise SaaS, dashboards", category: "surface" },
-  { value: "outline", label: "Outlined", description: "Dashed border defines the card, no shadow.", bestFor: "Dense dashboards, filters", category: "surface" },
-  { value: "filled", label: "Filled", description: "Solid brand-tinted fill without elevation.", bestFor: "Highlights, grouped content", category: "surface" },
-  { value: "inset", label: "Inset", description: "Recessed surface with inner shadow.", bestFor: "Controls, settings panels", category: "surface" },
-  { value: "ghost", label: "Transparent", description: "Light surface with blur and thin edge.", bestFor: "Minimal overlays, secondary panels", category: "surface" },
-  { value: "neumorphic", label: "Neumorphism", description: "Soft extruded dual-shadow surface.", bestFor: "Minimal interfaces, controls", category: "effect" },
-  { value: "clay", label: "Claymorphism", description: "Chunky inflated shape with soft highlights.", bestFor: "Friendly / creative products", category: "effect" },
-  { value: "aurora", label: "Aurora / Glow", description: "Soft brand glow around the card.", bestFor: "Modern SaaS, AI products", category: "effect" },
-  { value: "holographic", label: "Holographic", description: "Iridescent brand wash with sheen.", bestFor: "Creative / experimental UI", category: "effect" },
-  { value: "bento", label: "Bento", description: "Modular tile with brand accent rail.", bestFor: "Dashboards, landing modules", category: "layout" },
-  { value: "material", label: "Material", description: "Structured elevation with brand-tinted depth.", bestFor: "Apps, product dashboards", category: "visual" },
-  { value: "brutalist", label: "Brutalist", description: "Hard border with offset brand shadow.", bestFor: "Creative / design sites", category: "visual" },
-  { value: "paper", label: "Editorial", description: "Paper-like surface for long-form content.", bestFor: "Articles, content-heavy apps", category: "visual" },
-  { value: "skeuomorphic", label: "Skeuomorphic", description: "Physical bevel and inset light.", bestFor: "Specialized tactile UI", category: "visual" },
-  { value: "retro", label: "Retro / Y2K", description: "Chunky brand border and playful offset.", bestFor: "Expressive / nostalgic UI", category: "visual" },
-  { value: "flat", label: "Flat", description: "Solid fill, no shadow.", bestFor: "Enterprise apps, clean SaaS", category: "surface" },
-  { value: "glassGradient", label: "Glass + Gradient", description: "Frosted glass over brand wash.", bestFor: "Marketing, AI products", category: "effect" },
-  { value: "gradient", label: "Gradient", description: "Brand gradient fill with light content.", bestFor: "Stats, featured content", category: "visual" },
-  { value: "carbon", label: "Carbon", description: "Dark surface with brand-edged highlight.", bestFor: "Developer tools, analytics", category: "visual" },
-  { value: "bordered", label: "Bordered", description: "Strong solid outline without elevation.", bestFor: "Structured layouts", category: "surface" },
+  {
+    value: "default",
+    label: "Default",
+    description: "Clean white surface with soft border and shadow.",
+    bestFor: "General content, forms, lists",
+    category: "surface",
+  },
+  {
+    value: "elevated",
+    label: "Elevated",
+    description: "Lifted solid card with pronounced soft shadow.",
+    bestFor: "Enterprise SaaS, dashboards",
+    category: "surface",
+  },
+  {
+    value: "outline",
+    label: "Outlined",
+    description: "Dashed border defines the card, no shadow.",
+    bestFor: "Dense dashboards, filters",
+    category: "surface",
+  },
+  {
+    value: "filled",
+    label: "Filled",
+    description: "Solid brand-tinted fill without elevation.",
+    bestFor: "Highlights, grouped content",
+    category: "surface",
+  },
+  {
+    value: "inset",
+    label: "Inset",
+    description: "Recessed surface with inner shadow.",
+    bestFor: "Controls, settings panels",
+    category: "surface",
+  },
+  {
+    value: "ghost",
+    label: "Transparent",
+    description: "Light surface with blur and thin edge.",
+    bestFor: "Minimal overlays, secondary panels",
+    category: "surface",
+  },
+  {
+    value: "neumorphic",
+    label: "Neumorphism",
+    description: "Soft extruded dual-shadow surface.",
+    bestFor: "Minimal interfaces, controls",
+    category: "effect",
+  },
+  {
+    value: "clay",
+    label: "Claymorphism",
+    description: "Chunky inflated shape with soft highlights.",
+    bestFor: "Friendly / creative products",
+    category: "effect",
+  },
+  {
+    value: "aurora",
+    label: "Aurora / Glow",
+    description: "Soft brand glow around the card.",
+    bestFor: "Modern SaaS, AI products",
+    category: "effect",
+  },
+  {
+    value: "holographic",
+    label: "Holographic",
+    description: "Iridescent brand wash with sheen.",
+    bestFor: "Creative / experimental UI",
+    category: "effect",
+  },
+  {
+    value: "bento",
+    label: "Bento",
+    description: "Modular tile with brand accent rail.",
+    bestFor: "Dashboards, landing modules",
+    category: "layout",
+  },
+  {
+    value: "material",
+    label: "Material",
+    description: "Structured elevation with brand-tinted depth.",
+    bestFor: "Apps, product dashboards",
+    category: "visual",
+  },
+  {
+    value: "brutalist",
+    label: "Brutalist",
+    description: "Hard border with offset brand shadow.",
+    bestFor: "Creative / design sites",
+    category: "visual",
+  },
+  {
+    value: "paper",
+    label: "Editorial",
+    description: "Paper-like surface for long-form content.",
+    bestFor: "Articles, content-heavy apps",
+    category: "visual",
+  },
+  {
+    value: "skeuomorphic",
+    label: "Skeuomorphic",
+    description: "Physical bevel and inset light.",
+    bestFor: "Specialized tactile UI",
+    category: "visual",
+  },
+  {
+    value: "retro",
+    label: "Retro / Y2K",
+    description: "Chunky brand border and playful offset.",
+    bestFor: "Expressive / nostalgic UI",
+    category: "visual",
+  },
+  {
+    value: "flat",
+    label: "Flat",
+    description: "Solid fill, no shadow.",
+    bestFor: "Enterprise apps, clean SaaS",
+    category: "surface",
+  },
+  {
+    value: "glassGradient",
+    label: "Glass + Gradient",
+    description: "Frosted glass over brand wash.",
+    bestFor: "Marketing, AI products",
+    category: "effect",
+  },
+  {
+    value: "gradient",
+    label: "Gradient",
+    description: "Brand gradient fill with light content.",
+    bestFor: "Stats, featured content",
+    category: "visual",
+  },
+  {
+    value: "carbon",
+    label: "Carbon",
+    description: "Dark surface with brand-edged highlight.",
+    bestFor: "Developer tools, analytics",
+    category: "visual",
+  },
+  {
+    value: "bordered",
+    label: "Bordered",
+    description: "Strong solid outline without elevation.",
+    bestFor: "Structured layouts",
+    category: "surface",
+  },
 ];
 
 export type CardPadding = "none" | "sm" | "md" | "lg";
@@ -233,9 +359,7 @@ export function CardMedia({
     component === "iframe";
 
   const heightStyle: CSSProperties | undefined =
-    height == null
-      ? undefined
-      : { height: typeof height === "number" ? `${height}px` : height };
+    height == null ? undefined : { height: typeof height === "number" ? `${height}px` : height };
 
   if (isMediaElement) {
     return createElement(component, {
@@ -285,11 +409,7 @@ export function CardActions({
 }: CardActionsProps) {
   return (
     <div
-      className={cx(
-        styles.cardActions,
-        !disableSpacing && styles.cardActionsSpacing,
-        className,
-      )}
+      className={cx(styles.cardActions, !disableSpacing && styles.cardActionsSpacing, className)}
       {...rest}
     >
       {children}
@@ -306,79 +426,73 @@ export type CardActionAreaProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   active?: boolean;
 };
 
-export const CardActionArea = forwardRef<HTMLElement, CardActionAreaProps>(
-  function CardActionArea(
-    {
-      href,
-      component,
-      active,
-      className,
-      children,
-      disabled,
-      type = "button",
-      onMouseDown,
-      onMouseUp,
-      onMouseLeave,
-      onKeyDown,
-      onKeyUp,
-      onBlur,
-      ...rest
-    },
-    ref,
-  ) {
-    const [pressed, setPressed] = useState(false);
-    const isActive = active ?? pressed;
-    const Comp: ElementType = component ?? (href ? "a" : "button");
-    const isButton = Comp === "button";
-
-    return createElement(
-      Comp,
-      {
-        ref,
-        href: href && !disabled ? href : undefined,
-        type: isButton ? type : undefined,
-        disabled: isButton ? disabled : undefined,
-        "aria-disabled": !isButton && disabled ? true : undefined,
-        className: cx(
-          styles.cardActionArea,
-          disabled && styles.cardActionAreaDisabled,
-          className,
-        ),
-        "data-active": isActive ? "true" : undefined,
-        onMouseDown: (e: MouseEvent<HTMLElement>) => {
-          if (!disabled) setPressed(true);
-          onMouseDown?.(e as MouseEvent<HTMLButtonElement>);
-        },
-        onMouseUp: (e: MouseEvent<HTMLElement>) => {
-          setPressed(false);
-          onMouseUp?.(e as MouseEvent<HTMLButtonElement>);
-        },
-        onMouseLeave: (e: MouseEvent<HTMLElement>) => {
-          setPressed(false);
-          onMouseLeave?.(e as MouseEvent<HTMLButtonElement>);
-        },
-        onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
-          if (!disabled && (e.key === " " || e.key === "Enter")) setPressed(true);
-          onKeyDown?.(e as KeyboardEvent<HTMLButtonElement>);
-        },
-        onKeyUp: (e: KeyboardEvent<HTMLElement>) => {
-          setPressed(false);
-          onKeyUp?.(e as KeyboardEvent<HTMLButtonElement>);
-        },
-        onBlur: (e: FocusEvent<HTMLElement>) => {
-          setPressed(false);
-          onBlur?.(e as FocusEvent<HTMLButtonElement>);
-        },
-        ...rest,
-      },
-      children,
-      createElement("span", {
-        className: styles.cardActionAreaFocus,
-        "aria-hidden": "true",
-      }),
-    );
+export const CardActionArea = forwardRef<HTMLElement, CardActionAreaProps>(function CardActionArea(
+  {
+    href,
+    component,
+    active,
+    className,
+    children,
+    disabled,
+    type = "button",
+    onMouseDown,
+    onMouseUp,
+    onMouseLeave,
+    onKeyDown,
+    onKeyUp,
+    onBlur,
+    ...rest
   },
-);
+  ref,
+) {
+  const [pressed, setPressed] = useState(false);
+  const isActive = active ?? pressed;
+  const Comp: ElementType = component ?? (href ? "a" : "button");
+  const isButton = Comp === "button";
+
+  return createElement(
+    Comp,
+    {
+      ref,
+      href: href && !disabled ? href : undefined,
+      type: isButton ? type : undefined,
+      disabled: isButton ? disabled : undefined,
+      "aria-disabled": !isButton && disabled ? true : undefined,
+      className: cx(styles.cardActionArea, disabled && styles.cardActionAreaDisabled, className),
+      "data-active": isActive ? "true" : undefined,
+      onMouseDown: (e: MouseEvent<HTMLElement>) => {
+        if (!disabled) setPressed(true);
+        onMouseDown?.(e as MouseEvent<HTMLButtonElement>);
+      },
+      onMouseUp: (e: MouseEvent<HTMLElement>) => {
+        setPressed(false);
+        onMouseUp?.(e as MouseEvent<HTMLButtonElement>);
+      },
+      onMouseLeave: (e: MouseEvent<HTMLElement>) => {
+        setPressed(false);
+        onMouseLeave?.(e as MouseEvent<HTMLButtonElement>);
+      },
+      onKeyDown: (e: KeyboardEvent<HTMLElement>) => {
+        if (!disabled && (e.key === " " || e.key === "Enter")) setPressed(true);
+        onKeyDown?.(e as KeyboardEvent<HTMLButtonElement>);
+      },
+      onKeyUp: (e: KeyboardEvent<HTMLElement>) => {
+        setPressed(false);
+        onKeyUp?.(e as KeyboardEvent<HTMLButtonElement>);
+      },
+      onBlur: (e: FocusEvent<HTMLElement>) => {
+        setPressed(false);
+        onBlur?.(e as FocusEvent<HTMLButtonElement>);
+      },
+      ...rest,
+    },
+    children,
+    createElement("span", {
+      className: styles.cardActionAreaFocus,
+      "aria-hidden": "true",
+    }),
+  );
+});
 
 export const Card = Object.assign(CardRoot, {
   Header: CardHeader,

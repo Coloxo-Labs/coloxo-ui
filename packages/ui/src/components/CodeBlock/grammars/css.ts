@@ -58,8 +58,7 @@ function createCssGrammar(scss: boolean): Grammar {
     // Property names: `color: red;` (but not `a:hover {` selectors).
     {
       type: "property",
-      pattern:
-        /[A-Za-z_-][\w-]*(?=\s*:(?!:)(?:[^{]*?(?:;|\}|[^,{\s]\s*$)|\s*$))/,
+      pattern: /[A-Za-z_-][\w-]*(?=\s*:(?!:)(?:[^{]*?(?:;|\}|[^,{\s]\s*$)|\s*$))/,
       when: (s) => s.mode !== "decl",
       after: (_, s) => {
         s.mode = "decl";

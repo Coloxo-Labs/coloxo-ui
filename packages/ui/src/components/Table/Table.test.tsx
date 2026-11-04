@@ -17,7 +17,12 @@ describe("Table", () => {
         data={data}
         columns={[
           { id: "name", header: "Name", accessor: "name" },
-          { id: "dept", header: "Department", accessor: "dept", cell: ({ value }) => String(value) },
+          {
+            id: "dept",
+            header: "Department",
+            accessor: "dept",
+            cell: ({ value }) => String(value),
+          },
         ]}
       />,
     );

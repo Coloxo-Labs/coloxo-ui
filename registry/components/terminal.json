@@ -6,9 +6,7 @@
   "description": "Visual terminal/console session for documentation — prompts, commands, output, cursor, and chrome. Display-only; does not execute shell commands.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,
@@ -34,10 +32,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -63,12 +58,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "styles", "theme", "icons"]
     }
   }
 }

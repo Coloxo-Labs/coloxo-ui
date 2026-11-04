@@ -55,9 +55,7 @@ export async function runInit(options: InitOptions): Promise<void> {
   const config = defaultConfig();
   config.style = style;
   const registrySource =
-    options.registry ??
-    process.env.COLOXO_REGISTRY_DIR ??
-    process.env.COLOXO_REGISTRY_PATH;
+    options.registry ?? process.env.COLOXO_REGISTRY_DIR ?? process.env.COLOXO_REGISTRY_PATH;
   if (registrySource) {
     config.registry = registrySource;
   }
@@ -108,16 +106,17 @@ export async function runInit(options: InitOptions): Promise<void> {
   });
 
   await installNpmDependencies(cwd, items, style);
-  await mergeInstalled(cwd, items.map((i) => i.slug));
+  await mergeInstalled(
+    cwd,
+    items.map((i) => i.slug),
+  );
 
   p.log.success(`Installed foundation: ${TIER_ZERO.join(", ")}`);
   if (created.length > 0) {
     p.log.info(`Created ${created.length} file(s)`);
   }
 
-  p.log.message(
-    pc.dim("Wrap your app with ThemeProvider from the theme component when ready."),
-  );
+  p.log.message(pc.dim("Wrap your app with ThemeProvider from the theme component when ready."));
   p.outro(pc.green("Project initialized."));
 }
 

@@ -19,13 +19,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "dropdown",
-        "icon",
-        "icon-button",
-        "icons"
-      ]
+      "registryDependencies": ["utils", "dropdown", "icon", "icon-button", "icons"]
     },
     "coloxo-css": {
       "files": [

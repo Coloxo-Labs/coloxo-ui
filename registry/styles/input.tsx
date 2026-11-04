@@ -73,10 +73,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       {label ? (
         <label
           htmlFor={inputId}
-          className={cx(
-            "text-sm font-medium text-slate-800",
-            disabled && "text-slate-400",
-          )}
+          className={cx("text-sm font-medium text-slate-800", disabled && "text-slate-400")}
         >
           {label}
           {required ? (
@@ -92,7 +89,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
       <div className="relative flex w-full items-center">
         {leadingText ? (
-          <span className="shrink-0 whitespace-nowrap pl-3 pr-1.5 text-cx-tertiary">{leadingText}</span>
+          <span className="shrink-0 whitespace-nowrap pl-3 pr-1.5 text-cx-tertiary">
+            {leadingText}
+          </span>
         ) : null}
         {hasIcon ? (
           <span

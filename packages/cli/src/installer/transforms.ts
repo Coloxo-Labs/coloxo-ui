@@ -108,8 +108,12 @@ export function transformFileContent(
   let out = content;
 
   // Block runtime imports of @coloxo/ui (comments mentioning the package name are fine)
-  if (/from\s+["']@coloxo\/ui(?:\/[^"']*)?["']|import\s+["']@coloxo\/ui(?:\/[^"']*)?["']/.test(out)) {
-    throw new Error(`Source ${sourcePath} imports @coloxo/ui; registry sources must use relative paths.`);
+  if (
+    /from\s+["']@coloxo\/ui(?:\/[^"']*)?["']|import\s+["']@coloxo\/ui(?:\/[^"']*)?["']/.test(out)
+  ) {
+    throw new Error(
+      `Source ${sourcePath} imports @coloxo/ui; registry sources must use relative paths.`,
+    );
   }
 
   const utilsPatterns = [
@@ -184,24 +188,18 @@ export function transformFileContent(
   );
 
   // Internal Lucide-derived icons → installed icons/ package
-  out = out.replace(
-    /from\s+["'](?:\.\.\/)+icons(?:\/index)?["']/g,
-    `from "${components}/icons"`,
-  );
-  out = out.replace(
-    /from\s+["'](?:\.\.\/)+icons\/([^"']+)["']/g,
-    (_m, file: string) => {
-      const base = file.replace(/\.(tsx|ts)$/, "");
-      const kebab = base
-        .replace(/([a-z])([A-Z])/g, "$1-$2")
-        .replace(/_/g, "-")
-        .toLowerCase();
-      if (base === "createIcon") {
-        return `from "${components}/icons/create-icon"`;
-      }
-      return `from "${components}/icons/${kebab}"`;
-    },
-  );
+  out = out.replace(/from\s+["'](?:\.\.\/)+icons(?:\/index)?["']/g, `from "${components}/icons"`);
+  out = out.replace(/from\s+["'](?:\.\.\/)+icons\/([^"']+)["']/g, (_m, file: string) => {
+    const base = file.replace(/\.(tsx|ts)$/, "");
+    const kebab = base
+      .replace(/([a-z])([A-Z])/g, "$1-$2")
+      .replace(/_/g, "-")
+      .toLowerCase();
+    if (base === "createIcon") {
+      return `from "${components}/icons/create-icon"`;
+    }
+    return `from "${components}/icons/${kebab}"`;
+  });
 
   for (const [folder, importPath] of Object.entries(COMPONENT_IMPORT_MAP)) {
     const re = new RegExp(
@@ -212,17 +210,14 @@ export function transformFileContent(
   }
 
   // Generic sibling: ../Foo/Foo → map if known
-  out = out.replace(
-    /from\s+["']\.\.\/([A-Za-z]+)\/\1["']/g,
-    (_match, name: string) => {
-      const mapped = COMPONENT_IMPORT_MAP[name];
-      if (mapped) {
-        return `from "${components}/${mapped}"`;
-      }
-      const kebab = name.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-      return `from "${components}/${kebab}/${kebab}"`;
-    },
-  );
+  out = out.replace(/from\s+["']\.\.\/([A-Za-z]+)\/\1["']/g, (_match, name: string) => {
+    const mapped = COMPONENT_IMPORT_MAP[name];
+    if (mapped) {
+      return `from "${components}/${mapped}"`;
+    }
+    const kebab = name.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    return `from "${components}/${kebab}/${kebab}"`;
+  });
 
   // Rewrite same-directory relative imports when install basenames differ
   if (ctx.siblingRenames) {

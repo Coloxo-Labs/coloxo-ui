@@ -6,9 +6,7 @@
   "description": "Checkbox input with indeterminate state.",
   "status": "stable",
   "version": "1.0.0",
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true
@@ -21,15 +19,8 @@
           "target": "checkbox.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-checkbox"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "registryDependencies": ["utils", "form-control", "form-field", "icons"]
     },
     "coloxo-css": {
       "files": [
@@ -46,17 +37,8 @@
           "target": "checkbox/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-checkbox"
-      ],
-      "registryDependencies": [
-        "utils",
-        "form-control",
-        "form-field",
-        "styles",
-        "theme",
-        "icons"
-      ]
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "registryDependencies": ["utils", "form-control", "form-field", "styles", "theme", "icons"]
     }
   }
 }

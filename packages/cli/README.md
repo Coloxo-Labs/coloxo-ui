@@ -6,7 +6,7 @@
 
 **Premium Coloxo UI — copy components into your project and own every line.**
 
-The Coloxo CLI installs React components from the public registry the way shadcn does: source files land in *your* repo so you can edit freely. Pair it with [`@coloxo/ui`](https://www.npmjs.com/package/@coloxo/ui) or use copy-source alone.
+The Coloxo CLI installs React components from the public registry the way shadcn does: source files land in _your_ repo so you can edit freely. Pair it with [`@coloxo/ui`](https://www.npmjs.com/package/@coloxo/ui) or use copy-source alone.
 
 [Docs](https://ui.coloxolabs.com/docs/getting-started) · [Components](https://ui.coloxolabs.com/components) · [GitHub](https://github.com/Coloxo-Labs/coloxo-ui)
 
@@ -34,20 +34,20 @@ npx coloxo list
 
 ## Styles
 
-| Style | What you get |
-|---|---|
-| `coloxo-css` | CSS Modules + `--cx-*` tokens. No Tailwind config required. |
-| `tailwind` | Self-contained TSX with utilities inlined. Ideal if you already use Tailwind. |
+| Style        | What you get                                                                  |
+| ------------ | ----------------------------------------------------------------------------- |
+| `coloxo-css` | CSS Modules + `--cx-*` tokens. No Tailwind config required.                   |
+| `tailwind`   | Self-contained TSX with utilities inlined. Ideal if you already use Tailwind. |
 
 Same component API in both modes. Of **92** registry entries, **54** ship both styles.
 
 ## Commands
 
-| Command | Description |
-|---|---|
-| `coloxo init` | Create `coloxo.json` and install foundation (styles, utils, theme) |
-| `coloxo add <slug…>` | Copy components (and dependencies) into your project |
-| `coloxo list` | Show available registry components |
+| Command              | Description                                                        |
+| -------------------- | ------------------------------------------------------------------ |
+| `coloxo init`        | Create `coloxo.json` and install foundation (styles, utils, theme) |
+| `coloxo add <slug…>` | Copy components (and dependencies) into your project               |
+| `coloxo list`        | Show available registry components                                 |
 
 ### Useful flags
 

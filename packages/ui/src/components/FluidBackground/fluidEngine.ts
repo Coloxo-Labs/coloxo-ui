@@ -65,9 +65,7 @@ function smoothstep(t: number): number {
 }
 
 function sanitizeColors(colors: string[] | undefined): string[] {
-  const list = (colors ?? [])
-    .map((c) => (typeof c === "string" ? c.trim() : ""))
-    .filter(Boolean);
+  const list = (colors ?? []).map((c) => (typeof c === "string" ? c.trim() : "")).filter(Boolean);
   return list.length > 0 ? list : DEFAULT_COLORS;
 }
 
@@ -403,8 +401,7 @@ export class FluidEngine {
     if (this.canInject()) this.advanceHead(now, dt);
     this.drawFrame(now);
 
-    const settling =
-      this.hasHead && Math.hypot(this.tx - this.hx, this.ty - this.hy) > SETTLE_EPS;
+    const settling = this.hasHead && Math.hypot(this.tx - this.hx, this.ty - this.hy) > SETTLE_EPS;
 
     if (this.points.length > 0 || settling) {
       this.rafId = requestAnimationFrame(this.tick);
@@ -589,10 +586,7 @@ export class FluidEngine {
         const c = colorAtProgress(this.palette, u * 0.72 + drift * 0.28);
         g.addColorStop(u, rgbCss(c, fade * baseAlpha));
         const tipSpeed = smoothstep((sSpeed[idx]! / MAX_SPEED - 0.15) / 0.6);
-        h.addColorStop(
-          u,
-          rgbCss(lerpRgb(c, HIGHLIGHT_RGB, 0.7), fade * tipSpeed * 0.6 * u),
-        );
+        h.addColorStop(u, rgbCss(lerpRgb(c, HIGHLIGHT_RGB, 0.7), fade * tipSpeed * 0.6 * u));
       }
       body = g;
       core = h;

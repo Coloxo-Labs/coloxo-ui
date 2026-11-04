@@ -22,7 +22,15 @@ export type OrbitEngineOptions = {
 };
 
 type Rgb = FallbackRgb;
-type Geo = { cx: number; cy: number; unit: number; aspect: number; tilt: number; cos: number; sin: number };
+type Geo = {
+  cx: number;
+  cy: number;
+  unit: number;
+  aspect: number;
+  tilt: number;
+  cos: number;
+  sin: number;
+};
 type Pt = { x: number; y: number; s: number };
 type Ring = { radius: number; bright: boolean; gold: boolean };
 type Half = "back" | "front";
@@ -48,17 +56,75 @@ const EXTRA_RINGS = [0.6, 0.78]; // decorative inner rings
 const BASE_INC = 0.64;
 
 const QUALITY_DPR: Record<OrbitEngineOptions["quality"], number> = { low: 1, medium: 1.5, high: 2 };
-const SPARKLE_COUNT: Record<OrbitEngineOptions["quality"], number> = { low: 18, medium: 32, high: 48 };
+const SPARKLE_COUNT: Record<OrbitEngineOptions["quality"], number> = {
+  low: 18,
+  medium: 32,
+  high: 48,
+};
 
 /** Palette matched to the reference: magenta, amber, glassy blues and violets.
  *  Phases are evenly spaced around the ring so the composition isn’t one-sided. */
 export const DEFAULT_PLANETS: OrbitingPlanetConfig[] = [
-  { id: "p1", size: 0.07, color: "#B8489F", orbitRadius: 1.05, orbitSpeed: 0.34, inclination: BASE_INC, phase: 0, glow: 0.3 },
-  { id: "p2", size: 0.055, color: "#7FB6EE", orbitRadius: 1.35, orbitSpeed: 0.28, inclination: BASE_INC, phase: Math.PI / 3, glow: 0.25 },
-  { id: "p3", size: 0.08, color: "#D98B6F", orbitRadius: 1.58, orbitSpeed: 0.22, inclination: BASE_INC, phase: (2 * Math.PI) / 3, glow: 0.3 },
-  { id: "p4", size: 0.065, color: "#8FC2F2", orbitRadius: 1.82, orbitSpeed: 0.18, inclination: BASE_INC, phase: Math.PI, glow: 0.28 },
-  { id: "p5", size: 0.075, color: "#C0479A", orbitRadius: 2.0, orbitSpeed: 0.14, inclination: BASE_INC, phase: (4 * Math.PI) / 3, glow: 0.32 },
-  { id: "p6", size: 0.05, color: "#E49A6A", orbitRadius: 2.15, orbitSpeed: 0.11, inclination: BASE_INC, phase: (5 * Math.PI) / 3, glow: 0.28 },
+  {
+    id: "p1",
+    size: 0.07,
+    color: "#B8489F",
+    orbitRadius: 1.05,
+    orbitSpeed: 0.34,
+    inclination: BASE_INC,
+    phase: 0,
+    glow: 0.3,
+  },
+  {
+    id: "p2",
+    size: 0.055,
+    color: "#7FB6EE",
+    orbitRadius: 1.35,
+    orbitSpeed: 0.28,
+    inclination: BASE_INC,
+    phase: Math.PI / 3,
+    glow: 0.25,
+  },
+  {
+    id: "p3",
+    size: 0.08,
+    color: "#D98B6F",
+    orbitRadius: 1.58,
+    orbitSpeed: 0.22,
+    inclination: BASE_INC,
+    phase: (2 * Math.PI) / 3,
+    glow: 0.3,
+  },
+  {
+    id: "p4",
+    size: 0.065,
+    color: "#8FC2F2",
+    orbitRadius: 1.82,
+    orbitSpeed: 0.18,
+    inclination: BASE_INC,
+    phase: Math.PI,
+    glow: 0.28,
+  },
+  {
+    id: "p5",
+    size: 0.075,
+    color: "#C0479A",
+    orbitRadius: 2.0,
+    orbitSpeed: 0.14,
+    inclination: BASE_INC,
+    phase: (4 * Math.PI) / 3,
+    glow: 0.32,
+  },
+  {
+    id: "p6",
+    size: 0.05,
+    color: "#E49A6A",
+    orbitRadius: 2.15,
+    orbitSpeed: 0.11,
+    inclination: BASE_INC,
+    phase: (5 * Math.PI) / 3,
+    glow: 0.28,
+  },
 ];
 
 export function clamp01(n: number): number {
@@ -102,7 +168,9 @@ export function parseColor(input: string | undefined, fallback: string): Rgb {
   return parseColor(fallback, DEFAULT_CENTRAL);
 }
 
-export function normalizePlanets(planets: OrbitingPlanetConfig[] | undefined): OrbitingPlanetConfig[] {
+export function normalizePlanets(
+  planets: OrbitingPlanetConfig[] | undefined,
+): OrbitingPlanetConfig[] {
   const src = planets && planets.length > 0 ? planets.slice(0, MAX_PLANETS) : DEFAULT_PLANETS;
   return src.map((p, i) => ({
     id: typeof p.id === "string" && p.id.trim() ? p.id.trim() : `planet-${i}`,
@@ -250,7 +318,8 @@ export class OrbitingPlanetsEngine {
     const prev = this.opts;
     const next = this.normalize({ ...this.opts, ...partial });
     const rebuild =
-      next.quality !== prev.quality || JSON.stringify(next.planets) !== JSON.stringify(prev.planets);
+      next.quality !== prev.quality ||
+      JSON.stringify(next.planets) !== JSON.stringify(prev.planets);
     this.opts = next;
     this.syncReducedMotion();
     if (rebuild) this.rebuildScene();
@@ -310,12 +379,48 @@ export class OrbitingPlanetsEngine {
     // Deterministic flares (cyan + gold blobs riding the rings)
     const n = this.rings.length || 1;
     this.flareSeeds = [
-      { radius: this.rings[Math.min(2, n - 1)]?.radius ?? 1, phase: 0.4, speed: 0.16, gold: true, size: 0.2 },
-      { radius: this.rings[Math.min(4, n - 1)]?.radius ?? 1, phase: 2.2, speed: 0.13, gold: false, size: 0.22 },
-      { radius: this.rings[Math.min(5, n - 1)]?.radius ?? 1, phase: 3.6, speed: 0.11, gold: false, size: 0.16 },
-      { radius: this.rings[Math.min(7, n - 1)]?.radius ?? 1, phase: 5.0, speed: 0.09, gold: true, size: 0.24 },
-      { radius: this.rings[Math.min(1, n - 1)]?.radius ?? 1, phase: 1.1, speed: 0.19, gold: false, size: 0.12 },
-      { radius: this.rings[Math.min(3, n - 1)]?.radius ?? 1, phase: 4.3, speed: 0.15, gold: true, size: 0.14 },
+      {
+        radius: this.rings[Math.min(2, n - 1)]?.radius ?? 1,
+        phase: 0.4,
+        speed: 0.16,
+        gold: true,
+        size: 0.2,
+      },
+      {
+        radius: this.rings[Math.min(4, n - 1)]?.radius ?? 1,
+        phase: 2.2,
+        speed: 0.13,
+        gold: false,
+        size: 0.22,
+      },
+      {
+        radius: this.rings[Math.min(5, n - 1)]?.radius ?? 1,
+        phase: 3.6,
+        speed: 0.11,
+        gold: false,
+        size: 0.16,
+      },
+      {
+        radius: this.rings[Math.min(7, n - 1)]?.radius ?? 1,
+        phase: 5.0,
+        speed: 0.09,
+        gold: true,
+        size: 0.24,
+      },
+      {
+        radius: this.rings[Math.min(1, n - 1)]?.radius ?? 1,
+        phase: 1.1,
+        speed: 0.19,
+        gold: false,
+        size: 0.12,
+      },
+      {
+        radius: this.rings[Math.min(3, n - 1)]?.radius ?? 1,
+        phase: 4.3,
+        speed: 0.15,
+        gold: true,
+        size: 0.14,
+      },
     ];
 
     // Sparkles ride exactly on ring lines
@@ -376,7 +481,13 @@ export class OrbitingPlanetsEngine {
     const orbit = parseColor(this.opts.orbitColor, DEFAULT_ORBIT);
     const bg = parseColor(this.opts.backgroundColor, DEFAULT_BG);
     const planets = this.opts.planets.map((p) => parseColor(p.color, "#7FB6EE"));
-    this.fallbackEl.style.backgroundImage = staticOrbitCss(central, planets, orbit, bg, this.opts.transparent);
+    this.fallbackEl.style.backgroundImage = staticOrbitCss(
+      central,
+      planets,
+      orbit,
+      bg,
+      this.opts.transparent,
+    );
   }
 
   private resize() {
@@ -613,7 +724,10 @@ export class OrbitingPlanetsEngine {
       ctx.beginPath();
       ctx.ellipse(0, 0, rx, ry, 0, 0, TAU);
       ctx.lineWidth = ring.bright ? 1.8 : 1;
-      ctx.strokeStyle = rgba(lighten(orbit, ring.bright ? 0.25 : 0), op * (ring.bright ? 1.1 : 0.55));
+      ctx.strokeStyle = rgba(
+        lighten(orbit, ring.bright ? 0.25 : 0),
+        op * (ring.bright ? 1.1 : 0.55),
+      );
       ctx.stroke();
 
       if (ring.gold) {
@@ -680,7 +794,7 @@ export class OrbitingPlanetsEngine {
       // soft halo
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
-            const halo = ctx.createRadialGradient(pt.x, pt.y, r * 0.4, pt.x, pt.y, r * 3.6);
+      const halo = ctx.createRadialGradient(pt.x, pt.y, r * 0.4, pt.x, pt.y, r * 3.6);
       halo.addColorStop(0, rgba(c, 0.7 * (p.glow ?? 0.35) * glowI));
       halo.addColorStop(1, rgba(c, 0));
       ctx.fillStyle = halo;
@@ -758,7 +872,14 @@ export class OrbitingPlanetsEngine {
     ctx.beginPath();
     ctx.arc(x, y, R, 0, TAU);
     ctx.clip();
-    const hi = ctx.createRadialGradient(x - R * 0.15, y - R * 0.55, 0, x - R * 0.15, y - R * 0.55, R * 0.65);
+    const hi = ctx.createRadialGradient(
+      x - R * 0.15,
+      y - R * 0.55,
+      0,
+      x - R * 0.15,
+      y - R * 0.55,
+      R * 0.65,
+    );
     hi.addColorStop(0, rgba({ r: 255, g: 240, b: 170 }, 0.6 * light));
     hi.addColorStop(1, rgba({ r: 255, g: 240, b: 170 }, 0));
     ctx.fillStyle = hi;
@@ -785,13 +906,13 @@ export class OrbitingPlanetsEngine {
     const ctx = this.ctx!;
     const g = this.geo;
     const pt = this.pt;
-        const glow = this.glowAmt;
+    const glow = this.glowAmt;
     const cyan = lighten(parseColor(this.opts.orbitColor, DEFAULT_ORBIT), 0.35);
 
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
     for (const f of this.flareSeeds) {
-            const theta = orbitTheta(f.phase, 1, f.speed, f.radius, this.opts.speed, time);
+      const theta = orbitTheta(f.phase, 1, f.speed, f.radius, this.opts.speed, time);
       project(g, f.radius, theta, pt);
       if ((half === "front") !== pt.s > 0) continue;
 
@@ -825,13 +946,13 @@ export class OrbitingPlanetsEngine {
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
     for (const s of this.sparkleSeeds) {
-            const theta = orbitTheta(s.phase, 1, 0.25, s.radius, this.opts.speed, time);
+      const theta = orbitTheta(s.phase, 1, 0.25, s.radius, this.opts.speed, time);
       project(g, s.radius, theta, pt);
       const tw = 0.55 + 0.45 * Math.sin(time * 2.2 + s.seed * 40);
       const col = SPARKLE_COLORS[s.kind]!;
       const r = 1 + s.seed * 1.4;
 
-            ctx.fillStyle = rgba(col, 0.35 * tw * Math.min(1.3, this.glowAmt));
+      ctx.fillStyle = rgba(col, 0.35 * tw * Math.min(1.3, this.glowAmt));
       ctx.beginPath();
       ctx.arc(pt.x, pt.y, r * 4.5, 0, TAU);
       ctx.fill();

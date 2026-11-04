@@ -1,6 +1,2 @@
 export { FluidBackground } from "./FluidBackground";
-export type {
-  FluidBackgroundProps,
-  FluidBackgroundQuality,
-  FluidBackgroundTrigger,
-} from "./types";
+export type { FluidBackgroundProps, FluidBackgroundQuality, FluidBackgroundTrigger } from "./types";

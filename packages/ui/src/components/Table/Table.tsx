@@ -210,12 +210,18 @@ export function Table<T>({
           ) : table.getRowModel().rows.length === 0 ? (
             <tr>
               <td className={styles.empty} colSpan={columnDefs.length}>
-                {empty ?? <EmptyState title="No data" description="There are no rows to display." />}
+                {empty ?? (
+                  <EmptyState title="No data" description="There are no rows to display." />
+                )}
               </td>
             </tr>
           ) : (
             table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className={styles.tr} data-selected={row.getIsSelected() || undefined}>
+              <tr
+                key={row.id}
+                className={styles.tr}
+                data-selected={row.getIsSelected() || undefined}
+              >
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className={styles.td}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

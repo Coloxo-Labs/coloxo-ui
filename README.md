@@ -53,20 +53,20 @@ Choose **Coloxo CSS** or **Tailwind** at init. Same API. Your files.
 
 ## Highlights
 
-| | |
-|---|---|
-| **Accessible** | Keyboard-first patterns, focus-visible, ARIA where it matters |
-| **Token-driven** | `--cx-*` variables for color, type, space, radius, motion |
-| **Dual style** | CSS Modules *or* Tailwind — pick once, stay consistent |
-| **Typed** | Full TypeScript surfaces, no `any` in the public API |
-| **Composable** | Forms, feedback, data, charts, navigation, visuals |
+|                  |                                                               |
+| ---------------- | ------------------------------------------------------------- |
+| **Accessible**   | Keyboard-first patterns, focus-visible, ARIA where it matters |
+| **Token-driven** | `--cx-*` variables for color, type, space, radius, motion     |
+| **Dual style**   | CSS Modules _or_ Tailwind — pick once, stay consistent        |
+| **Typed**        | Full TypeScript surfaces, no `any` in the public API          |
+| **Composable**   | Forms, feedback, data, charts, navigation, visuals            |
 
 ## Dual styles
 
-| Style | Best when | Output |
-|---|---|---|
-| `coloxo-css` | You want tokens & isolation | CSS Modules + `--cx-*` |
-| `tailwind` | You already run Tailwind | Flat TSX with utilities |
+| Style        | Best when                   | Output                  |
+| ------------ | --------------------------- | ----------------------- |
+| `coloxo-css` | You want tokens & isolation | CSS Modules + `--cx-*`  |
+| `tailwind`   | You already run Tailwind    | Flat TSX with utilities |
 
 ```bash
 npx coloxo init --style coloxo-css
@@ -77,11 +77,11 @@ npx coloxo init --style tailwind
 
 ## Packages
 
-| Package | What it is |
-|---|---|
-| [`@coloxo/ui`](./packages/ui) | React component library (npm) |
-| [`coloxo`](./packages/cli) | Copy-source CLI (`init` / `add` / `list`) |
-| [`registry/`](./registry) | Free install manifests & Tailwind style sources |
+| Package                       | What it is                                      |
+| ----------------------------- | ----------------------------------------------- |
+| [`@coloxo/ui`](./packages/ui) | React component library (npm)                   |
+| [`coloxo`](./packages/cli)    | Copy-source CLI (`init` / `add` / `list`)       |
+| [`registry/`](./registry)     | Free install manifests & Tailwind style sources |
 
 Full prop reference: [COMPONENTS.md](./COMPONENTS.md).
 
@@ -90,10 +90,10 @@ Full prop reference: [COMPONENTS.md](./COMPONENTS.md).
 We welcome issues and PRs. Start with [CONTRIBUTING.md](./CONTRIBUTING.md) and the issue templates under **New issue**.
 
 ```bash
-pnpm install
-pnpm build
-pnpm test
-pnpm registry:validate
+npm install
+npm run build
+npm test
+npm run registry:validate
 ```
 
 ## License

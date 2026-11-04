@@ -8,9 +8,7 @@ describe("Pagination", () => {
   it("changes page", async () => {
     const user = userEvent.setup();
     const onPageChange = vi.fn();
-    renderWithTheme(
-      <Pagination page={1} pageSize={10} total={40} onPageChange={onPageChange} />,
-    );
+    renderWithTheme(<Pagination page={1} pageSize={10} total={40} onPageChange={onPageChange} />);
     await user.click(screen.getByRole("button", { name: "Next page" }));
     expect(onPageChange).toHaveBeenCalledWith(2);
   });
@@ -35,7 +33,13 @@ describe("Pagination", () => {
 
   it("has no axe violations", async () => {
     const { container } = renderWithTheme(
-      <Pagination page={2} pageSize={10} total={100} onPageChange={() => {}} onPageSizeChange={() => {}} />,
+      <Pagination
+        page={2}
+        pageSize={10}
+        total={100}
+        onPageChange={() => {}}
+        onPageSizeChange={() => {}}
+      />,
     );
     await expectNoA11yViolations(container);
   });

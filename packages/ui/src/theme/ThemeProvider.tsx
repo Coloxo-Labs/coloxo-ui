@@ -62,9 +62,7 @@ function resolveTokenKey(key: string): string {
     (prefix) =>
       normalized === prefix.replace(/-$/, "") ||
       normalized.startsWith(prefix) ||
-      /^(brand|neutral|red|green|yellow|blue|orange|indigo|pink|purple)-\d+$/.test(
-        normalized,
-      ),
+      /^(brand|neutral|red|green|yellow|blue|orange|indigo|pink|purple)-\d+$/.test(normalized),
   );
   if (isPrimitive || /^(brand|neutral|red|green|yellow|blue)-\d+$/.test(normalized)) {
     return `--cx-${normalized}`;

@@ -23,18 +23,23 @@ import { cx, useControllableState, useId } from "@/lib/utils";
  */
 const CX: Record<string, string> = {
   area: "relative h-40 w-full rounded-md",
-  field: "min-w-0 flex-1 rounded-md border border-solid border-cx-primary bg-cx-primary px-2 py-1 text-sm text-cx-primary",
-  format: "rounded-md border border-solid border-cx-primary bg-cx-primary px-2 py-1 text-xs font-medium text-cx-secondary",
+  field:
+    "min-w-0 flex-1 rounded-md border border-solid border-cx-primary bg-cx-primary px-2 py-1 text-sm text-cx-primary",
+  format:
+    "rounded-md border border-solid border-cx-primary bg-cx-primary px-2 py-1 text-xs font-medium text-cx-secondary",
   invalid: "border-cx-error",
-  panel: "z-50 flex w-72 flex-col gap-3 rounded-lg border border-solid border-cx-secondary bg-cx-primary p-3 shadow-lg",
-  preview: "relative h-8 w-8 shrink-0 overflow-hidden rounded-md border border-solid border-cx-secondary",
+  panel:
+    "z-50 flex w-72 flex-col gap-3 rounded-lg border border-solid border-cx-secondary bg-cx-primary p-3 shadow-lg",
+  preview:
+    "relative h-8 w-8 shrink-0 overflow-hidden rounded-md border border-solid border-cx-secondary",
   row: "flex items-center gap-2",
   slider: "flex w-full flex-col gap-1",
   standalone: "flex w-full min-w-48 items-center gap-2",
   swatch: "h-6 w-6 rounded-md border border-solid border-cx-secondary",
   thumb: "h-4 w-4 rounded-full border-2 border-white shadow",
   track: "relative h-3 w-full rounded-full",
-  trigger: "inline-flex w-full items-center gap-2 rounded-md border border-solid border-cx-primary bg-cx-primary text-left text-cx-primary shadow-sm outline-none focus-visible:border-cx-brand disabled:cursor-not-allowed disabled:opacity-50",
+  trigger:
+    "inline-flex w-full items-center gap-2 rounded-md border border-solid border-cx-primary bg-cx-primary text-left text-cx-primary shadow-sm outline-none focus-visible:border-cx-brand disabled:cursor-not-allowed disabled:opacity-50",
   value: "min-w-0 flex-1 truncate font-mono text-sm",
 };
 
@@ -171,9 +176,7 @@ export function updateStop(
 export function addStop(value: GradientValue, color = "#ffffff"): GradientValue {
   const sorted = sortStops(value.stops);
   const mid =
-    sorted.length >= 2
-      ? (sorted[0]!.position + sorted[sorted.length - 1]!.position) / 2
-      : 50;
+    sorted.length >= 2 ? (sorted[0]!.position + sorted[sorted.length - 1]!.position) / 2 : 50;
   return {
     ...value,
     stops: [...value.stops, { id: createStopId(), color, position: Math.round(mid) }],
@@ -666,7 +669,10 @@ export function GradientPanel({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="h-10 rounded-md border border-solid border-cx-secondary" style={{ background: gradientToCss(value) }} />
+      <div
+        className="h-10 rounded-md border border-solid border-cx-secondary"
+        style={{ background: gradientToCss(value) }}
+      />
       <div className={CX.row}>
         <select
           className={CX.format}
@@ -688,7 +694,12 @@ export function GradientPanel({
             onChange={(event) => onChange({ ...value, angle: Number(event.target.value) })}
           />
         ) : null}
-        <button type="button" className={CX.format} aria-label="Add stop" onClick={() => onChange(addStop(value))}>
+        <button
+          type="button"
+          className={CX.format}
+          aria-label="Add stop"
+          onClick={() => onChange(addStop(value))}
+        >
           <Icon size="sm">
             <PlusIcon />
           </Icon>
@@ -741,7 +752,9 @@ export function GradientPanel({
           color={activeColor}
           format={format}
           onFormatChange={onFormatChange}
-          onColor={(next) => onChange(updateStop(value, active.id, { color: serializeColor(next) }))}
+          onColor={(next) =>
+            onChange(updateStop(value, active.id, { color: serializeColor(next) }))
+          }
           showEyeDropper={showEyeDropper}
         />
       </AriaColorPicker>
@@ -831,7 +844,10 @@ export function GradientPicker({
       aria-haspopup="dialog"
       aria-expanded={inline ? undefined : open}
     >
-      <span className="h-6 w-6 rounded-md border border-solid border-cx-secondary" style={{ background: gradientToCss(gradient) }} />
+      <span
+        className="h-6 w-6 rounded-md border border-solid border-cx-secondary"
+        style={{ background: gradientToCss(gradient) }}
+      />
       <span className={CX.value}>{gradient.type}</span>
       {inline ? null : (
         <Icon size="sm">

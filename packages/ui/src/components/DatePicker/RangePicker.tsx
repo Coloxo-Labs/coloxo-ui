@@ -16,7 +16,12 @@ import {
 } from "../_internal/controlSize";
 import { CalendarPanel } from "./CalendarPanel";
 import { ClearControl } from "./ClearControl";
-import { PickerFieldShell, usePickerAria, usePickerFieldIds, usePickerOpen } from "../_internal/picker";
+import {
+  PickerFieldShell,
+  usePickerAria,
+  usePickerFieldIds,
+  usePickerOpen,
+} from "../_internal/picker";
 import {
   formatPickerDisplay,
   getDefaultFormat,

@@ -7,9 +7,7 @@ import { renderWithTheme, expectNoA11yViolations } from "../../test/utils";
 
 describe("Textarea", () => {
   it("shows character count for defaultValue", () => {
-    renderWithTheme(
-      <Textarea label="Notes" maxLength={20} showCount defaultValue="Hello" />,
-    );
+    renderWithTheme(<Textarea label="Notes" maxLength={20} showCount defaultValue="Hello" />);
     expect(screen.getByText("5/20")).toBeInTheDocument();
   });
 
@@ -53,7 +51,9 @@ describe("Textarea", () => {
   });
 
   it("has no axe violations", async () => {
-    const { container } = renderWithTheme(<Textarea label="Notes" description="Optional details" />);
+    const { container } = renderWithTheme(
+      <Textarea label="Notes" description="Optional details" />,
+    );
     await expectNoA11yViolations(container);
   });
 });

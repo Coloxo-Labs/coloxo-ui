@@ -26,7 +26,8 @@ const CX = {
   initials_sm: "text-xl",
   initials_md: "text-4xl",
   initials_lg: "text-5xl",
-  status: "absolute z-[2] box-content rounded-full border-2 border-solid border-[var(--cx-color-bg-primary)]",
+  status:
+    "absolute z-[2] box-content rounded-full border-2 border-solid border-[var(--cx-color-bg-primary)]",
   status_sm: "right-0.5 bottom-0.5 h-3 w-3",
   status_md: "right-1 bottom-1 h-4 w-4",
   status_lg: "right-2 bottom-2 h-5 w-5",
@@ -134,27 +135,37 @@ export function AvatarProfilePhoto({
       return <span className={cx(CX.badge, sizes.badge)}>{badge}</span>;
     }
     if (status) {
-      return <span className={cx(CX.status, sizes.status, statusClass[status])} aria-label={status} />;
+      return (
+        <span className={cx(CX.status, sizes.status, statusClass[status])} aria-label={status} />
+      );
     }
     return null;
   })();
 
   return (
-    <span className={cx(CX.root, sizes.root, !canShowImage && sizes.placeholder, className)} {...rest}>
+    <span
+      className={cx(CX.root, sizes.root, !canShowImage && sizes.placeholder, className)}
+      {...rest}
+    >
       {canShowImage ? (
         <span className={cx(CX.photo, sizes.photo)}>
-          <img className={CX.image} src={src ?? undefined} alt={alt} onError={() => setFailed(true)} />
+          <img
+            className={CX.image}
+            src={src ?? undefined}
+            alt={alt}
+            onError={() => setFailed(true)}
+          />
         </span>
       ) : (
         <span className={cx(CX.fallback, sizes.photo)}>
           {label ? (
             <span className={cx(CX.initials, sizes.initials)}>{label}</span>
           ) : (
-            placeholder ?? (
+            (placeholder ?? (
               <Icon size={size === "sm" ? "lg" : "xl"}>
                 <UserIcon />
               </Icon>
-            )
+            ))
           )}
         </span>
       )}

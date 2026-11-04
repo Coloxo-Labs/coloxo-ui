@@ -24,8 +24,7 @@ const CX: Record<string, string> = {
   md: "min-h-10 px-3 text-sm leading-5",
   outline:
     "text-cx-secondary bg-cx-primary border-cx-primary shadow-xs hover:enabled:data-[state=off]:bg-cx-primary-hover hover:enabled:data-[state=off]:text-cx-secondary-hover data-[state=on]:text-cx-brand-secondary data-[state=on]:bg-cx-brand-soft data-[state=on]:border-cx-brand data-[state=on]:hover:enabled:bg-cx-brand-secondary",
-  root:
-    "appearance-none inline-flex items-center justify-center m-0 gap-1.5 border border-solid rounded-lg font-sans font-semibold whitespace-nowrap cursor-pointer select-none transition-colors duration-100 ease-linear focus:outline-none focus-visible:outline focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:text-cx-disabled disabled:bg-cx-disabled disabled:border-cx-disabled",
+  root: "appearance-none inline-flex items-center justify-center m-0 gap-1.5 border border-solid rounded-lg font-sans font-semibold whitespace-nowrap cursor-pointer select-none transition-colors duration-100 ease-linear focus:outline-none focus-visible:outline focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:text-cx-disabled disabled:bg-cx-disabled disabled:border-cx-disabled",
   sm: "min-h-9 px-2.5 text-sm leading-5",
 };
 

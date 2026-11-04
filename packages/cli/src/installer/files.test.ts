@@ -52,7 +52,10 @@ async function seed() {
   await fs.writeFile(path.join(dir, "src/css/button.module.css"), ".a{}\n");
 }
 
-async function install(style: "tailwind" | "coloxo-css", conflict = { overwrite: false, yes: true }) {
+async function install(
+  style: "tailwind" | "coloxo-css",
+  conflict = { overwrite: false, yes: true },
+) {
   const config = { ...defaultConfig(), style };
   return installRegistryItems({
     cwd: dir,

@@ -18,12 +18,8 @@
           "target": "divider.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-separator"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -40,14 +36,8 @@
           "target": "divider/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-separator"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

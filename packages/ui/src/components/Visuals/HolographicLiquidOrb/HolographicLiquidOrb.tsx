@@ -28,7 +28,16 @@ export function HolographicLiquidOrb({
   style,
 }: HolographicLiquidOrbProps) {
   const options = useMemo(
-    () => orbOptions({ iridescence, distortion, rotationSpeed, interactionStrength, scale, quality, paused }),
+    () =>
+      orbOptions({
+        iridescence,
+        distortion,
+        rotationSpeed,
+        interactionStrength,
+        scale,
+        quality,
+        paused,
+      }),
     [iridescence, distortion, rotationSpeed, interactionStrength, scale, quality, paused],
   );
 

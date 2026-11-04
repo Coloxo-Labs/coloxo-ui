@@ -14,7 +14,8 @@ const CX: Record<string, string> = {
   description: "m-0 text-sm leading-5 text-cx-tertiary",
   label: "text-sm font-medium leading-5 text-cx-secondary cursor-pointer",
   root: "inline-flex items-start gap-2 font-sans",
-  switch: "w-11 h-6 mt-0.5 shrink-0 p-0 border border-solid rounded-full bg-cx-quaternary relative cursor-pointer transition-colors hover:disabled:bg-cx-tertiary focus:outline-none focus-visible:outline disabled:bg-cx-disabled disabled:cursor-not-allowed",
+  switch:
+    "w-11 h-6 mt-0.5 shrink-0 p-0 border border-solid rounded-full bg-cx-quaternary relative cursor-pointer transition-colors hover:disabled:bg-cx-tertiary focus:outline-none focus-visible:outline disabled:bg-cx-disabled disabled:cursor-not-allowed",
   thumb: "block w-5 h-5 bg-cx-primary rounded-full shadow transition-transform",
 };
 

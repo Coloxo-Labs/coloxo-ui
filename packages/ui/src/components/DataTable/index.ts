@@ -42,4 +42,8 @@ export {
   upsertQueryFilter,
 } from "./filters";
 
-export { parseDataTableQuery, serializeDataTableQuery, serializeDataTableQueryToURLSearchParams } from "./url";
+export {
+  parseDataTableQuery,
+  serializeDataTableQuery,
+  serializeDataTableQueryToURLSearchParams,
+} from "./url";

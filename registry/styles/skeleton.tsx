@@ -25,11 +25,7 @@ export function Skeleton({
   style,
   ...rest
 }: SkeletonProps) {
-  const base = cx(
-    "animate-pulse bg-slate-200 dark:bg-slate-800",
-    VARIANTS[variant],
-    className,
-  );
+  const base = cx("animate-pulse bg-slate-200 dark:bg-slate-800", VARIANTS[variant], className);
 
   if (variant === "text" && lines > 1) {
     return (

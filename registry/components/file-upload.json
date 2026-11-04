@@ -15,13 +15,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "icons",
-        "form-field",
-        "icon",
-        "featured-icon"
-      ]
+      "registryDependencies": ["utils", "icons", "form-field", "icon", "featured-icon"]
     },
     "coloxo-css": {
       "files": [
@@ -66,9 +60,7 @@
       ]
     }
   },
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true

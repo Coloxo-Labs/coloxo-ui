@@ -59,8 +59,7 @@ export function updateStop(
         ? {
             ...stop,
             ...patch,
-            position:
-              patch.position != null ? clamp(patch.position, 0, 100) : stop.position,
+            position: patch.position != null ? clamp(patch.position, 0, 100) : stop.position,
           }
         : stop,
     ),
@@ -70,15 +69,10 @@ export function updateStop(
 export function addStop(value: GradientValue, color = "#ffffff"): GradientValue {
   const sorted = sortStops(value.stops);
   const mid =
-    sorted.length >= 2
-      ? (sorted[0]!.position + sorted[sorted.length - 1]!.position) / 2
-      : 50;
+    sorted.length >= 2 ? (sorted[0]!.position + sorted[sorted.length - 1]!.position) / 2 : 50;
   return {
     ...value,
-    stops: [
-      ...value.stops,
-      { id: createStopId(), color, position: Math.round(mid) },
-    ],
+    stops: [...value.stops, { id: createStopId(), color, position: Math.round(mid) }],
   };
 }
 

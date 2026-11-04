@@ -6,15 +6,33 @@ import { cx } from "../../utils/cx";
 import { useControllableState } from "../../utils/useControllableState";
 import styles from "./InputOTP.module.css";
 
-type WithControlSize<T> = T extends unknown ? Omit<T, "size"> & {
-  size?: "sm" | "md" | "lg";
-} : never;
+type WithControlSize<T> = T extends unknown
+  ? Omit<T, "size"> & {
+      size?: "sm" | "md" | "lg";
+    }
+  : never;
 export type InputOTPProps = WithControlSize<ComponentPropsWithoutRef<typeof OTPInput>>;
 
 /** A single accessible input with visual slots for one-time verification codes. */
 export const InputOTP = forwardRef<HTMLInputElement, InputOTPProps>(
-  ({ className, containerClassName, size = "md", pattern = REGEXP_ONLY_DIGITS, value, defaultValue, onChange, ...props }, ref) => {
-    const [code, setCode] = useControllableState<string>({ value, defaultValue: String(defaultValue ?? ""), onChange });
+  (
+    {
+      className,
+      containerClassName,
+      size = "md",
+      pattern = REGEXP_ONLY_DIGITS,
+      value,
+      defaultValue,
+      onChange,
+      ...props
+    },
+    ref,
+  ) => {
+    const [code, setCode] = useControllableState<string>({
+      value,
+      defaultValue: String(defaultValue ?? ""),
+      onChange,
+    });
     return (
       <OTPInput
         ref={ref}

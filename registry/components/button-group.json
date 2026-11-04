@@ -19,10 +19,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "button"
-      ]
+      "registryDependencies": ["utils", "button"]
     },
     "coloxo-css": {
       "files": [
@@ -40,12 +37,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils",
-        "button",
-        "styles",
-        "theme"
-      ]
+      "registryDependencies": ["utils", "button", "styles", "theme"]
     }
   }
 }

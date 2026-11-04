@@ -18,13 +18,8 @@
           "target": "toggle.tsx"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "@radix-ui/react-toggle-group"
-      ],
-      "registryDependencies": [
-        "utils"
-      ]
+      "dependencies": ["@radix-ui/react-toggle", "@radix-ui/react-toggle-group"],
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [
@@ -45,15 +40,8 @@
           "target": "toggle/index.ts"
         }
       ],
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "@radix-ui/react-toggle-group"
-      ],
-      "registryDependencies": [
-        "utils",
-        "styles",
-        "theme"
-      ]
+      "dependencies": ["@radix-ui/react-toggle", "@radix-ui/react-toggle-group"],
+      "registryDependencies": ["utils", "styles", "theme"]
     }
   }
 }

@@ -104,9 +104,15 @@ describe("documented component slugs", () => {
         const text = await fs.readFile(path.join(ui, file), "utf8");
         expect(text, file).not.toMatch(/\.module\.css/);
       }
-      expect(await fs.readFile(path.join(ui, "input-group.tsx"), "utf8")).toContain('from "./input"');
-      expect(await fs.readFile(path.join(ui, "avatar-label-group.tsx"), "utf8")).toContain('from "./avatar"');
-      expect(await fs.readFile(path.join(ui, "avatar-profile-photo.tsx"), "utf8")).toContain('from "./avatar"');
+      expect(await fs.readFile(path.join(ui, "input-group.tsx"), "utf8")).toContain(
+        'from "./input"',
+      );
+      expect(await fs.readFile(path.join(ui, "avatar-label-group.tsx"), "utf8")).toContain(
+        'from "./avatar"',
+      );
+      expect(await fs.readFile(path.join(ui, "avatar-profile-photo.tsx"), "utf8")).toContain(
+        'from "./avatar"',
+      );
     } finally {
       await fs.rm(dir, { recursive: true, force: true });
     }

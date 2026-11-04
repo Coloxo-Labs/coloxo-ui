@@ -22,11 +22,13 @@ const CX = {
   addon: "relative z-[1] flex shrink-0 items-stretch",
   leading: "border-r border-solid border-cx-primary focus-within:border-cx-brand",
   trailing: "border-l border-solid border-cx-primary focus-within:border-cx-brand",
-  invalidEdge: "border-[var(--cx-color-border-error-subtle)] focus-within:border-[var(--cx-color-border-error)]",
+  invalidEdge:
+    "border-[var(--cx-color-border-error-subtle)] focus-within:border-[var(--cx-color-border-error)]",
   slot: "relative z-[1] flex min-w-0 flex-1 [&_input]:shadow-none [&_input]:focus-visible:ring-0",
   onlyLeading: "[&_input]:rounded-r-lg",
   onlyTrailing: "[&_input]:rounded-l-lg",
-  prefix: "inline-flex items-center gap-1 whitespace-nowrap bg-transparent px-3 py-2 text-[inherit] leading-[inherit] text-cx-tertiary shadow-none",
+  prefix:
+    "inline-flex items-center gap-1 whitespace-nowrap bg-transparent px-3 py-2 text-[inherit] leading-[inherit] text-cx-tertiary shadow-none",
   prefixLeading: "rounded-l-lg",
   prefixTrailing: "rounded-r-lg",
   prefixDisabled: "cursor-not-allowed opacity-50",
@@ -84,12 +86,7 @@ export function InputGroup({
   const field = (
     <div
       id={groupId}
-      className={cx(
-        CX.root,
-        CX[size],
-        isInvalid && CX.invalid,
-        className,
-      )}
+      className={cx(CX.root, CX[size], isInvalid && CX.invalid, className)}
       data-input-size={size}
       data-invalid={isInvalid || undefined}
       aria-describedby={describedBy}
@@ -100,7 +97,13 @@ export function InputGroup({
           {leadingAddon}
         </div>
       ) : null}
-      <div className={cx(CX.slot, hasLeading && !hasTrailing && CX.onlyLeading, hasTrailing && !hasLeading && CX.onlyTrailing)}>
+      <div
+        className={cx(
+          CX.slot,
+          hasLeading && !hasTrailing && CX.onlyLeading,
+          hasTrailing && !hasLeading && CX.onlyTrailing,
+        )}
+      >
         {enhanced}
       </div>
       {trailingAddon ? (

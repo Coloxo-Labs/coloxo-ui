@@ -61,10 +61,7 @@ export async function writeConfig(cwd: string, config: ColoxoConfig): Promise<vo
   await fs.writeFile(file, data, "utf8");
 }
 
-export async function mergeInstalled(
-  cwd: string,
-  slugs: string[],
-): Promise<ColoxoConfig> {
+export async function mergeInstalled(cwd: string, slugs: string[]): Promise<ColoxoConfig> {
   const existing = (await readConfig(cwd)) ?? defaultConfig();
   const installed = new Set(existing.installed);
   for (const s of slugs) installed.add(s);

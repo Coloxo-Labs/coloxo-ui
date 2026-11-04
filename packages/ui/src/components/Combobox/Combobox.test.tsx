@@ -14,7 +14,9 @@ describe("Combobox", () => {
   it("filters suggestions and selects with the keyboard", async () => {
     const user = userEvent.setup();
     const onValueChange = vi.fn();
-    renderWithTheme(<Combobox label="Department" options={options} onValueChange={onValueChange} />);
+    renderWithTheme(
+      <Combobox label="Department" options={options} onValueChange={onValueChange} />,
+    );
     await user.type(screen.getByRole("combobox"), "Eng");
     expect(await screen.findByRole("option", { name: "Engineering" })).toBeInTheDocument();
     expect(screen.queryByRole("option", { name: "Finance" })).not.toBeInTheDocument();
@@ -26,7 +28,14 @@ describe("Combobox", () => {
   it("clears an uncontrolled selection", async () => {
     const user = userEvent.setup();
     const onValueChange = vi.fn();
-    renderWithTheme(<Combobox label="Department" options={options} defaultValue="eng" onValueChange={onValueChange} />);
+    renderWithTheme(
+      <Combobox
+        label="Department"
+        options={options}
+        defaultValue="eng"
+        onValueChange={onValueChange}
+      />,
+    );
     await user.click(screen.getByRole("button", { name: "Clear selection" }));
     expect(screen.getByRole("combobox")).toHaveValue("");
     expect(onValueChange).toHaveBeenLastCalledWith(null);

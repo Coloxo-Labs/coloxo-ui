@@ -65,10 +65,7 @@ export function FileListItem({
 
   if (progressVariant === "fill") {
     return (
-      <li
-        className={cx(styles.itemFill, failed && styles.failed, className)}
-        {...rest}
-      >
+      <li className={cx(styles.itemFill, failed && styles.failed, className)} {...rest}>
         {!failed ? (
           <div
             className={cx(styles.fillLayer, isComplete && styles.fillDone)}
@@ -146,9 +143,7 @@ export function FileListItem({
                     <Icon size="sm" className={styles.successIcon}>
                       <CircleCheckIcon />
                     </Icon>
-                    <span className={styles.successText}>
-                      {statusLabel ?? "Complete"}
-                    </span>
+                    <span className={styles.successText}>{statusLabel ?? "Complete"}</span>
                   </>
                 ) : null}
                 {isUploading ? (
@@ -156,9 +151,7 @@ export function FileListItem({
                     <Icon size="sm" className={styles.mutedIcon}>
                       <UploadIcon />
                     </Icon>
-                    <span className={styles.uploadingText}>
-                      {statusLabel ?? "Uploading..."}
-                    </span>
+                    <span className={styles.uploadingText}>{statusLabel ?? "Uploading..."}</span>
                   </>
                 ) : null}
                 {failed ? (

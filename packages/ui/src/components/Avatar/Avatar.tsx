@@ -52,10 +52,7 @@ function initialsFrom(value: string): string {
   return `${parts[0]?.[0] ?? ""}${parts[1]?.[0] ?? ""}`.toUpperCase();
 }
 
-function renderPlaceholderIcon(
-  icon: AvatarProps["placeholderIcon"],
-  size: AvatarSize,
-): ReactNode {
+function renderPlaceholderIcon(icon: AvatarProps["placeholderIcon"], size: AvatarSize): ReactNode {
   if (!icon) return null;
   const iconSize =
     size === "xs" ? "sm" : size === "sm" || size === "md" ? "md" : size === "lg" ? "lg" : "xl";
@@ -93,20 +90,21 @@ export function Avatar({
   const canShowImage = Boolean(src) && !failed;
   const label = initials ? initialsFrom(initials) : "";
   const sizeClass = size === "2xl" ? styles.size2xl : styles[size];
-  const placeholderNode =
-    renderPlaceholderIcon(placeholderIcon, size) ??
-    placeholder ??
-    (
-      <Icon size={size === "xs" || size === "sm" ? "sm" : size === "md" ? "md" : "lg"}>
-        <UserIcon />
-      </Icon>
-    );
+  const placeholderNode = renderPlaceholderIcon(placeholderIcon, size) ?? placeholder ?? (
+    <Icon size={size === "xs" || size === "sm" ? "sm" : size === "md" ? "md" : "lg"}>
+      <UserIcon />
+    </Icon>
+  );
 
   const badgeContent = (() => {
     if (status) {
       return (
         <span
-          className={cx(styles.status, styles[`status_${size}` as keyof typeof styles], styles[status])}
+          className={cx(
+            styles.status,
+            styles[`status_${size}` as keyof typeof styles],
+            styles[status],
+          )}
           aria-label={status}
         />
       );
@@ -129,7 +127,11 @@ export function Avatar({
       );
     }
     if (badge) {
-      return <span className={cx(styles.badge, styles[`badge_${size}` as keyof typeof styles])}>{badge}</span>;
+      return (
+        <span className={cx(styles.badge, styles[`badge_${size}` as keyof typeof styles])}>
+          {badge}
+        </span>
+      );
     }
     return null;
   })();

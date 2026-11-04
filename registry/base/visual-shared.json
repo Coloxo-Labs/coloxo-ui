@@ -92,7 +92,5 @@
     }
   ],
   "dependencies": [],
-  "registryDependencies": [
-    "visual-runtime"
-  ]
+  "registryDependencies": ["visual-runtime"]
 }

@@ -17,9 +17,7 @@
     "tooltip",
     "icons"
   ],
-  "providers": [
-    "theme"
-  ],
+  "providers": ["theme"],
   "accessibility": {
     "keyboard": true,
     "aria": true,
@@ -37,9 +35,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "utils"
-      ]
+      "registryDependencies": ["utils"]
     },
     "coloxo-css": {
       "files": [

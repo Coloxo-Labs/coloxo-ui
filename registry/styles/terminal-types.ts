@@ -1,11 +1,4 @@
-export type TerminalShell =
-  | "bash"
-  | "zsh"
-  | "powershell"
-  | "cmd"
-  | "fish"
-  | "sh"
-  | "terminal";
+export type TerminalShell = "bash" | "zsh" | "powershell" | "cmd" | "fish" | "sh" | "terminal";
 
 export type TerminalStatus = "default" | "success" | "error" | "warning" | "info";
 

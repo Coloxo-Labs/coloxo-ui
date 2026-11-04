@@ -37,7 +37,9 @@ async function loadAll(): Promise<RegistryItem[]> {
     const dir = path.join(REGISTRY_DIR, sub);
     if (!(await exists(dir))) continue;
     for (const name of (await readdir(dir)).filter((n) => n.endsWith(".json"))) {
-      items.push(RegistryItemSchema.parse(JSON.parse(await readFile(path.join(dir, name), "utf8"))));
+      items.push(
+        RegistryItemSchema.parse(JSON.parse(await readFile(path.join(dir, name), "utf8"))),
+      );
     }
   }
   return items;
@@ -124,7 +126,10 @@ async function main() {
   }
 
   if (errors.length) {
-    console.error(`validate-registry FAILED (${errors.length} issues):\n` + errors.map((e) => `  - ${e}`).join("\n"));
+    console.error(
+      `validate-registry FAILED (${errors.length} issues):\n` +
+        errors.map((e) => `  - ${e}`).join("\n"),
+    );
     process.exit(1);
   }
 

@@ -7,9 +7,7 @@ export function staticOrbitCss(
   background: FallbackRgb,
   transparent: boolean,
 ): string {
-  const bg = transparent
-    ? "transparent"
-    : `rgb(${background.r},${background.g},${background.b})`;
+  const bg = transparent ? "transparent" : `rgb(${background.r},${background.g},${background.b})`;
   const layers: string[] = [];
 
   // Soft core halo

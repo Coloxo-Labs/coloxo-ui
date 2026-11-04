@@ -29,10 +29,7 @@
     }
   ],
   "dependencies": [],
-  "registryDependencies": [
-    "visual-runtime",
-    "visual-shared"
-  ],
+  "registryDependencies": ["visual-runtime", "visual-shared"],
   "accessibility": {
     "aria": true,
     "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."

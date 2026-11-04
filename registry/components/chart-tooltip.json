@@ -37,9 +37,7 @@
         }
       ],
       "dependencies": [],
-      "registryDependencies": [
-        "styles"
-      ]
+      "registryDependencies": ["styles"]
     }
   }
 }

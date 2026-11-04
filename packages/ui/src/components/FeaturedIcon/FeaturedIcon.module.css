@@ -6,10 +6,22 @@
   position: relative;
 }
 
-.sm { width: 2rem; height: 2rem; }
-.md { width: 2.5rem; height: 2.5rem; }
-.lg { width: 3rem; height: 3rem; }
-.xl { width: 3.5rem; height: 3.5rem; }
+.sm {
+  width: 2rem;
+  height: 2rem;
+}
+.md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.lg {
+  width: 3rem;
+  height: 3rem;
+}
+.xl {
+  width: 3.5rem;
+  height: 3.5rem;
+}
 
 .lightCircle {
   border-radius: var(--cx-radius-full);
@@ -31,7 +43,9 @@
 .modernNeue {
   background: var(--cx-color-bg-primary);
   border-radius: var(--cx-radius-xl);
-  box-shadow: var(--cx-shadow-lg), 0 0 0 1px rgb(var(--cx-alpha-black) / 0.06) inset;
+  box-shadow:
+    var(--cx-shadow-lg),
+    0 0 0 1px rgb(var(--cx-alpha-black) / 0.06) inset;
   color: var(--cx-color-fg-secondary);
 }
 
@@ -107,6 +121,12 @@
 }
 
 .modern.sm,
-.modern.md { border-radius: var(--cx-radius-lg); }
-.modern.lg { border-radius: 0.625rem; }
-.modern.xl { border-radius: var(--cx-radius-xl); }
+.modern.md {
+  border-radius: var(--cx-radius-lg);
+}
+.modern.lg {
+  border-radius: 0.625rem;
+}
+.modern.xl {
+  border-radius: var(--cx-radius-xl);
+}
