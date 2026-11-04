@@ -1,0 +1,31 @@
+{
+  "name": "Interactive Ripple Field",
+  "slug": "interactive-ripple-field",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Liquid surface with expanding pointer ripples.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/InteractiveRippleField/InteractiveRippleField.tsx",
+      "target": "interactive-ripple-field/interactive-ripple-field.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/InteractiveRippleField/index.ts",
+      "target": "interactive-ripple-field/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<InteractiveRippleField />"
+  }
+}

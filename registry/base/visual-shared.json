@@ -1,0 +1,98 @@
+{
+  "name": "Visual Shared",
+  "slug": "visual-shared",
+  "type": "registry:lib",
+  "description": "Shared shader sources, canvas engines, and helpers used by Coloxo visual effects.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/CanvasVisual.tsx",
+      "target": "visual-shared/CanvasVisual.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/EnergyVortexEngine.ts",
+      "target": "visual-shared/EnergyVortexEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/GlslVisual.tsx",
+      "target": "visual-shared/GlslVisual.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/GyroscopicCoreEngine.ts",
+      "target": "visual-shared/GyroscopicCoreEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/ObjectGalleryEngine.ts",
+      "target": "visual-shared/ObjectGalleryEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/ParametricSculptureEngine.ts",
+      "target": "visual-shared/ParametricSculptureEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/ParticleFieldEngine.ts",
+      "target": "visual-shared/ParticleFieldEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/ParticleTypographyEngine.ts",
+      "target": "visual-shared/ParticleTypographyEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/RibbonFieldEngine.ts",
+      "target": "visual-shared/RibbonFieldEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/SelfDrawingGeometryEngine.ts",
+      "target": "visual-shared/SelfDrawingGeometryEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/SoftBodyEngine.ts",
+      "target": "visual-shared/SoftBodyEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/SpatialGlassLayersEngine.ts",
+      "target": "visual-shared/SpatialGlassLayersEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/SpringTrailEngine.ts",
+      "target": "visual-shared/SpringTrailEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/facets.ts",
+      "target": "visual-shared/facets.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/particles.ts",
+      "target": "visual-shared/particles.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/projection.ts",
+      "target": "visual-shared/projection.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/shaders/atmosphereShaders.ts",
+      "target": "visual-shared/shaders/atmosphereShaders.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/shaders/fieldShaders.ts",
+      "target": "visual-shared/shaders/fieldShaders.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/shaders/materialShaders.ts",
+      "target": "visual-shared/shaders/materialShaders.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/shaders/scienceShaders.ts",
+      "target": "visual-shared/shaders/scienceShaders.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/_shared/types.ts",
+      "target": "visual-shared/types.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime"
+  ]
+}

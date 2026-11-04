@@ -20,6 +20,12 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "p
   size?: InputSize;
   icon?: ReactNode | ComponentType<SVGProps<SVGSVGElement>>;
   suffix?: ReactNode;
+  /** Inline leading text inside the field (e.g. https://). */
+  leadingText?: string;
+  /** Drop the field ring so an InputGroup can draw one shared border. */
+  groupFlat?: boolean;
+  groupFlatLeading?: boolean;
+  groupFlatTrailing?: boolean;
 };
 
 const SIZES: Record<InputSize, string> = {
@@ -45,6 +51,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     size = "md",
     icon,
     suffix,
+    leadingText,
+    groupFlat,
+    groupFlatLeading,
+    groupFlatTrailing,
     className,
     id,
     disabled,
@@ -80,7 +90,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         </label>
       ) : null}
 
-      <div className="relative flex items-center">
+      <div className="relative flex w-full items-center">
+        {leadingText ? (
+          <span className="shrink-0 whitespace-nowrap pl-3 pr-1.5 text-cx-tertiary">{leadingText}</span>
+        ) : null}
         {hasIcon ? (
           <span
             aria-hidden="true"
@@ -97,15 +110,22 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           aria-invalid={error ? true : undefined}
           aria-describedby={help ? `${inputId}-help` : undefined}
           className={cx(
-            "w-full rounded-lg border bg-white text-slate-900 placeholder:text-slate-400",
-            "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0",
-            "disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400",
-            SIZES[size],
+            "w-full bg-white text-slate-900 placeholder:text-slate-400",
+            "transition-colors focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400",
+            groupFlat
+              ? "rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0"
+              : "rounded-lg border focus-visible:ring-2 focus-visible:ring-offset-0",
+            !groupFlat && SIZES[size],
+            groupFlat && "min-h-full px-3",
+            groupFlatLeading && "rounded-l-none",
+            groupFlatTrailing && "rounded-r-none",
+            leadingText && "pl-0",
             hasIcon && ICON_PADDING[size],
             suffix && "pr-12",
-            error
-              ? "border-red-500 focus-visible:ring-red-500"
-              : "border-slate-300 focus-visible:border-blue-600 focus-visible:ring-blue-600",
+            !groupFlat &&
+              (error
+                ? "border-red-500 focus-visible:ring-red-500"
+                : "border-slate-300 focus-visible:border-blue-600 focus-visible:ring-blue-600"),
             className,
           )}
           {...rest}

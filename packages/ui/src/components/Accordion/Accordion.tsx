@@ -5,7 +5,7 @@ import {
   DisclosureGroup, Disclosure, Heading, Button, DisclosurePanel,
   type DisclosureGroupProps, type DisclosureProps, type DisclosurePanelProps,
 } from "react-aria-components";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "../../icons";
 import { cx } from "../../utils/cx";
 import styles from "./Accordion.module.css";
 
@@ -33,7 +33,7 @@ export function AccordionTrigger({ children, className, headingLevel = 3 }: Acco
   return <Heading level={headingLevel} className={styles.heading}>
     <Button slot="trigger" className={cx(styles.trigger, className)}>
       <span>{children}</span>
-      <ChevronDown size={20} strokeWidth={2} aria-hidden="true" className={styles.chevron} />
+      <ChevronDownIcon size={20} className={styles.chevron} />
     </Button>
   </Heading>;
 }

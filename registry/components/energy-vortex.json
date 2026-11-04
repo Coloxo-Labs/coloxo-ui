@@ -1,0 +1,31 @@
+{
+  "name": "Energy Vortex",
+  "slug": "energy-vortex",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Differential-rotation spiral with a hot core.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/EnergyVortex/EnergyVortex.tsx",
+      "target": "energy-vortex/energy-vortex.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/EnergyVortex/index.ts",
+      "target": "energy-vortex/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<EnergyVortex />"
+  }
+}

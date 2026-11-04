@@ -1,0 +1,31 @@
+{
+  "name": "Generative Ribbon Field",
+  "slug": "generative-ribbon-field",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Braided ribbons that bend toward the pointer.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/GenerativeRibbonField/GenerativeRibbonField.tsx",
+      "target": "generative-ribbon-field/generative-ribbon-field.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/GenerativeRibbonField/index.ts",
+      "target": "generative-ribbon-field/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<GenerativeRibbonField />"
+  }
+}

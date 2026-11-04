@@ -1,0 +1,31 @@
+{
+  "name": "Interactive Field Distortion",
+  "slug": "interactive-field-distortion",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Pointer-driven distortion field on a flowing surface.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/InteractiveFieldDistortion/InteractiveFieldDistortion.tsx",
+      "target": "interactive-field-distortion/interactive-field-distortion.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/InteractiveFieldDistortion/index.ts",
+      "target": "interactive-field-distortion/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<InteractiveFieldDistortion />"
+  }
+}

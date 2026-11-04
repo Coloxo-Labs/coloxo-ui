@@ -1,0 +1,31 @@
+{
+  "name": "Kinetic Grid Warp",
+  "slug": "kinetic-grid-warp",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Perspective grid warped by waves and pointer gravity.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/KineticGridWarp/KineticGridWarp.tsx",
+      "target": "kinetic-grid-warp/kinetic-grid-warp.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/KineticGridWarp/index.ts",
+      "target": "kinetic-grid-warp/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<KineticGridWarp />"
+  }
+}

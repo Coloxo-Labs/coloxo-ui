@@ -1,0 +1,31 @@
+{
+  "name": "Spring Motion Trails",
+  "slug": "spring-motion-trails",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Pointer trail driven by damped spring physics.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/SpringMotionTrails/SpringMotionTrails.tsx",
+      "target": "spring-motion-trails/spring-motion-trails.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/SpringMotionTrails/index.ts",
+      "target": "spring-motion-trails/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<SpringMotionTrails />"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Spatial Glitch Distortion",
+  "slug": "spatial-glitch-distortion",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Datamosh tearing driven by scan, burst, and pointer.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialGlitchDistortion/SpatialGlitchDistortion.tsx",
+      "target": "spatial-glitch-distortion/spatial-glitch-distortion.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialGlitchDistortion/index.ts",
+      "target": "spatial-glitch-distortion/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<SpatialGlitchDistortion />"
+  }
+}

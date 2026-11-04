@@ -1,0 +1,55 @@
+{
+  "name": "AvatarLabelGroup",
+  "slug": "avatar-label-group",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Avatar with a title and subtitle, such as a name and email.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/avatar-label-group.tsx",
+          "target": "avatar-label-group.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+          "target": "avatar/avatar.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+          "target": "avatar/avatar.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.tsx",
+          "target": "avatar/avatar-label-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.module.css",
+          "target": "avatar/avatar-label-group.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar"
+      ]
+    }
+  },
+  "accessibility": {
+    "aria": true,
+    "notes": "Figure and figcaption structure. The avatar image still needs alt text."
+  },
+  "docs": {
+    "usage": "<AvatarLabelGroup size=\"md\" initials=\"OR\" title=\"Olivia Rhye\" subtitle=\"olivia@untitledui.com\" />"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Chromatic Aberration Text",
+  "slug": "chromatic-aberration-text",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Colour-separated glyph with breathing fringing.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/ChromaticAberrationText/ChromaticAberrationText.tsx",
+      "target": "chromatic-aberration-text/chromatic-aberration-text.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/ChromaticAberrationText/index.ts",
+      "target": "chromatic-aberration-text/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<ChromaticAberrationText />"
+  }
+}

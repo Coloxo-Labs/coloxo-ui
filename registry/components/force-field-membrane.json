@@ -1,0 +1,31 @@
+{
+  "name": "Force Field Membrane",
+  "slug": "force-field-membrane",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Energy barrier that ripples where the pointer presses.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/ForceFieldMembrane/ForceFieldMembrane.tsx",
+      "target": "force-field-membrane/force-field-membrane.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/ForceFieldMembrane/index.ts",
+      "target": "force-field-membrane/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<ForceFieldMembrane />"
+  }
+}

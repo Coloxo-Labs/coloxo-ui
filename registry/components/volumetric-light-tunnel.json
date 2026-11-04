@@ -1,0 +1,31 @@
+{
+  "name": "Volumetric Light Tunnel",
+  "slug": "volumetric-light-tunnel",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Infinite corridor of light with volumetric haze.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/VolumetricLightTunnel/VolumetricLightTunnel.tsx",
+      "target": "volumetric-light-tunnel/volumetric-light-tunnel.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/VolumetricLightTunnel/index.ts",
+      "target": "volumetric-light-tunnel/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<VolumetricLightTunnel />"
+  }
+}

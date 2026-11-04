@@ -1,0 +1,50 @@
+{
+  "name": "Visual Runtime",
+  "slug": "visual-runtime",
+  "type": "registry:lib",
+  "description": "Shared canvas and WebGL surface used by Coloxo visual effects: engine loop, GLSL helpers, and the DOM shell.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/_internal/visuals/GlslSurface.ts",
+      "target": "visual-runtime/GlslSurface.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/VisualSurface.tsx",
+      "target": "visual-runtime/VisualSurface.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/canvasEngine.ts",
+      "target": "visual-runtime/canvasEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/color.ts",
+      "target": "visual-runtime/color.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/glsl.ts",
+      "target": "visual-runtime/glsl.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/shaderEngine.ts",
+      "target": "visual-runtime/shaderEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/useVisualEngine.ts",
+      "target": "visual-runtime/useVisualEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/visualEngine.ts",
+      "target": "visual-runtime/visualEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/_internal/visuals/visualSurface.module.css",
+      "target": "visual-runtime/visualSurface.module.css"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ]
+}

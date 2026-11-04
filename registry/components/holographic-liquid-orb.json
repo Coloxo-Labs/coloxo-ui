@@ -1,0 +1,43 @@
+{
+  "name": "Holographic Liquid Orb",
+  "slug": "holographic-liquid-orb",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Iridescent oil-film sphere with cursor-reactive refraction.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.module.css",
+      "target": "holographic-liquid-orb/holographic-liquid-orb.module.css"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.tsx",
+      "target": "holographic-liquid-orb/holographic-liquid-orb.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/index.ts",
+      "target": "holographic-liquid-orb/index.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/orbEngine.ts",
+      "target": "holographic-liquid-orb/orbEngine.ts"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/types.ts",
+      "target": "holographic-liquid-orb/types.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<HolographicLiquidOrb />"
+  }
+}

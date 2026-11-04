@@ -18,7 +18,8 @@
     "lint": "pnpm -r lint",
     "clean": "pnpm -r clean",
     "registry:build": "tsx scripts/build-registry.ts",
-    "registry:validate": "tsx scripts/validate-registry.ts"
+    "registry:validate": "tsx scripts/validate-registry.ts",
+    "styles:build": "node scripts/sync-styles.mjs"
   },
   "devDependencies": {
     "tsx": "^4.19.3",

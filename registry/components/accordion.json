@@ -1,0 +1,62 @@
+{
+  "name": "Accordion",
+  "slug": "accordion",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Expandable sections for FAQs and grouped content, with single or multiple open panels.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/accordion.tsx",
+          "target": "accordion.tsx"
+        }
+      ],
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Accordion/Accordion.tsx",
+          "target": "accordion/accordion.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Accordion/Accordion.module.css",
+          "target": "accordion/accordion.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Accordion/index.ts",
+          "target": "accordion/index.ts"
+        }
+      ],
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icons",
+        "styles",
+        "theme"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Heading buttons expose expanded state and control their panels. Enter and Space toggle sections."
+  },
+  "docs": {
+    "usage": "<Accordion><AccordionItem id=\"faq\"><AccordionTrigger>Is it accessible?</AccordionTrigger><AccordionContent>Yes.</AccordionContent></AccordionItem></Accordion>"
+  }
+}

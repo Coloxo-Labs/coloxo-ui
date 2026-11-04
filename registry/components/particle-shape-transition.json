@@ -1,0 +1,31 @@
+{
+  "name": "Particle Shape Transition",
+  "slug": "particle-shape-transition",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Particles morphing between sampled arrangements.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/ParticleShapeTransition/ParticleShapeTransition.tsx",
+      "target": "particle-shape-transition/particle-shape-transition.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/ParticleShapeTransition/index.ts",
+      "target": "particle-shape-transition/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<ParticleShapeTransition />"
+  }
+}

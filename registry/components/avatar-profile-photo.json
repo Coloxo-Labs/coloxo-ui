@@ -1,0 +1,57 @@
+{
+  "name": "AvatarProfilePhoto",
+  "slug": "avatar-profile-photo",
+  "type": "registry:ui",
+  "category": "Data Display",
+  "description": "Large profile photo with a padded ring for settings and profile headers.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/avatar-profile-photo.tsx",
+          "target": "avatar-profile-photo.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar",
+        "utils",
+        "icon",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+          "target": "avatar/avatar.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+          "target": "avatar/avatar.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.tsx",
+          "target": "avatar/avatar-profile-photo.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.module.css",
+          "target": "avatar/avatar-profile-photo.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar"
+      ]
+    }
+  },
+  "accessibility": {
+    "aria": true,
+    "notes": "Provide alt text for the profile image."
+  },
+  "docs": {
+    "usage": "<AvatarProfilePhoto size=\"md\" src=\"…\" alt=\"Olivia\" verified />"
+  }
+}

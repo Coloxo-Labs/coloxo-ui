@@ -11,6 +11,16 @@
       "status": "stable",
       "version": "1.0.0",
       "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/button-variants.ts",
+              "target": "button-variants.ts"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": []
+        },
         "coloxo-css": {
           "files": [
             {
@@ -565,6 +575,19 @@
       "status": "stable",
       "version": "1.0.0",
       "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/picker-field.tsx",
+              "target": "picker-field.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "utils",
+            "form-field"
+          ]
+        },
         "coloxo-css": {
           "files": [
             {
@@ -773,6 +796,218 @@
       "registryDependencies": []
     },
     {
+      "name": "Visual Runtime",
+      "slug": "visual-runtime",
+      "type": "registry:lib",
+      "description": "Shared canvas and WebGL surface used by Coloxo visual effects: engine loop, GLSL helpers, and the DOM shell.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/_internal/visuals/GlslSurface.ts",
+          "target": "visual-runtime/GlslSurface.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/VisualSurface.tsx",
+          "target": "visual-runtime/VisualSurface.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/canvasEngine.ts",
+          "target": "visual-runtime/canvasEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/color.ts",
+          "target": "visual-runtime/color.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/glsl.ts",
+          "target": "visual-runtime/glsl.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/shaderEngine.ts",
+          "target": "visual-runtime/shaderEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/useVisualEngine.ts",
+          "target": "visual-runtime/useVisualEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/visualEngine.ts",
+          "target": "visual-runtime/visualEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/_internal/visuals/visualSurface.module.css",
+          "target": "visual-runtime/visualSurface.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "Visual Shared",
+      "slug": "visual-shared",
+      "type": "registry:lib",
+      "description": "Shared shader sources, canvas engines, and helpers used by Coloxo visual effects.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/CanvasVisual.tsx",
+          "target": "visual-shared/CanvasVisual.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/EnergyVortexEngine.ts",
+          "target": "visual-shared/EnergyVortexEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/GlslVisual.tsx",
+          "target": "visual-shared/GlslVisual.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/GyroscopicCoreEngine.ts",
+          "target": "visual-shared/GyroscopicCoreEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/ObjectGalleryEngine.ts",
+          "target": "visual-shared/ObjectGalleryEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/ParametricSculptureEngine.ts",
+          "target": "visual-shared/ParametricSculptureEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/ParticleFieldEngine.ts",
+          "target": "visual-shared/ParticleFieldEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/ParticleTypographyEngine.ts",
+          "target": "visual-shared/ParticleTypographyEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/RibbonFieldEngine.ts",
+          "target": "visual-shared/RibbonFieldEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/SelfDrawingGeometryEngine.ts",
+          "target": "visual-shared/SelfDrawingGeometryEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/SoftBodyEngine.ts",
+          "target": "visual-shared/SoftBodyEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/SpatialGlassLayersEngine.ts",
+          "target": "visual-shared/SpatialGlassLayersEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/SpringTrailEngine.ts",
+          "target": "visual-shared/SpringTrailEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/facets.ts",
+          "target": "visual-shared/facets.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/particles.ts",
+          "target": "visual-shared/particles.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/projection.ts",
+          "target": "visual-shared/projection.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/shaders/atmosphereShaders.ts",
+          "target": "visual-shared/shaders/atmosphereShaders.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/shaders/fieldShaders.ts",
+          "target": "visual-shared/shaders/fieldShaders.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/shaders/materialShaders.ts",
+          "target": "visual-shared/shaders/materialShaders.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/shaders/scienceShaders.ts",
+          "target": "visual-shared/shaders/scienceShaders.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/_shared/types.ts",
+          "target": "visual-shared/types.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime"
+      ]
+    },
+    {
+      "name": "Accordion",
+      "slug": "accordion",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Expandable sections for FAQs and grouped content, with single or multiple open panels.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/accordion.tsx",
+              "target": "accordion.tsx"
+            }
+          ],
+          "dependencies": [
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Accordion/Accordion.tsx",
+              "target": "accordion/accordion.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Accordion/Accordion.module.css",
+              "target": "accordion/accordion.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Accordion/index.ts",
+              "target": "accordion/index.ts"
+            }
+          ],
+          "dependencies": [
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icons",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Heading buttons expose expanded state and control their panels. Enter and Space toggle sections."
+      },
+      "docs": {
+        "usage": "<Accordion><AccordionItem id=\"faq\"><AccordionTrigger>Is it accessible?</AccordionTrigger><AccordionContent>Yes.</AccordionContent></AccordionItem></Accordion>"
+      }
+    },
+    {
       "name": "Alert",
       "slug": "alert",
       "type": "registry:ui",
@@ -836,6 +1071,37 @@
       }
     },
     {
+      "name": "Aurora Mesh Gradient",
+      "slug": "aurora-mesh-gradient",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Multi-blob mesh gradient with grain and pointer drift.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/AuroraMeshGradient/AuroraMeshGradient.tsx",
+          "target": "aurora-mesh-gradient/aurora-mesh-gradient.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/AuroraMeshGradient/index.ts",
+          "target": "aurora-mesh-gradient/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<AuroraMeshGradient />"
+      }
+    },
+    {
       "name": "AvatarGroup",
       "slug": "avatar-group",
       "type": "registry:ui",
@@ -886,6 +1152,122 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "AvatarLabelGroup",
+      "slug": "avatar-label-group",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Avatar with a title and subtitle, such as a name and email.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/avatar-label-group.tsx",
+              "target": "avatar-label-group.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "avatar",
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+              "target": "avatar/avatar.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+              "target": "avatar/avatar.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.tsx",
+              "target": "avatar/avatar-label-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarLabelGroup.module.css",
+              "target": "avatar/avatar-label-group.module.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "avatar"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "aria": true,
+        "notes": "Figure and figcaption structure. The avatar image still needs alt text."
+      },
+      "docs": {
+        "usage": "<AvatarLabelGroup size=\"md\" initials=\"OR\" title=\"Olivia Rhye\" subtitle=\"olivia@untitledui.com\" />"
+      }
+    },
+    {
+      "name": "AvatarProfilePhoto",
+      "slug": "avatar-profile-photo",
+      "type": "registry:ui",
+      "category": "Data Display",
+      "description": "Large profile photo with a padded ring for settings and profile headers.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/avatar-profile-photo.tsx",
+              "target": "avatar-profile-photo.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "avatar",
+            "utils",
+            "icon",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.tsx",
+              "target": "avatar/avatar.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/Avatar.module.css",
+              "target": "avatar/avatar.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.tsx",
+              "target": "avatar/avatar-profile-photo.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Avatar/AvatarProfilePhoto.module.css",
+              "target": "avatar/avatar-profile-photo.module.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "avatar"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "accessibility": {
+        "aria": true,
+        "notes": "Provide alt text for the profile image."
+      },
+      "docs": {
+        "usage": "<AvatarProfilePhoto size=\"md\" src=\"…\" alt=\"Olivia\" verified />"
       }
     },
     {
@@ -1079,6 +1461,37 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Bioluminescent Particles",
+      "slug": "bioluminescent-particles",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Glowing organisms drifting through dark water.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/BioluminescentParticles/BioluminescentParticles.tsx",
+          "target": "bioluminescent-particles/bioluminescent-particles.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/BioluminescentParticles/index.ts",
+          "target": "bioluminescent-particles/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<BioluminescentParticles />"
       }
     },
     {
@@ -1413,6 +1826,37 @@
       }
     },
     {
+      "name": "Chromatic Aberration Text",
+      "slug": "chromatic-aberration-text",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Colour-separated glyph with breathing fringing.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ChromaticAberrationText/ChromaticAberrationText.tsx",
+          "target": "chromatic-aberration-text/chromatic-aberration-text.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ChromaticAberrationText/index.ts",
+          "target": "chromatic-aberration-text/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ChromaticAberrationText />"
+      }
+    },
+    {
       "name": "CodeBlock",
       "slug": "code-block",
       "type": "registry:ui",
@@ -1675,6 +2119,73 @@
       }
     },
     {
+      "name": "Combobox",
+      "slug": "combobox",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Searchable options with suggestions. Type to filter, then select a result.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/combobox.tsx",
+              "target": "combobox.tsx"
+            }
+          ],
+          "dependencies": [
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "icons"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Combobox/Combobox.tsx",
+              "target": "combobox/combobox.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Combobox/Combobox.module.css",
+              "target": "combobox/combobox.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Combobox/index.ts",
+              "target": "combobox/index.ts"
+            }
+          ],
+          "dependencies": [
+            "react-aria-components"
+          ],
+          "registryDependencies": [
+            "utils",
+            "icon",
+            "icons",
+            "form-control",
+            "styles",
+            "theme"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Keyboard navigation, disabled options, and announcements come from React Aria."
+      },
+      "docs": {
+        "usage": "<Combobox label=\"Department\" options={[{ value: \"eng\", label: \"Engineering\" }]} />"
+      }
+    },
+    {
       "name": "DataTable",
       "slug": "data-table",
       "type": "registry:ui",
@@ -1878,6 +2389,68 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Dimensional Portal",
+      "slug": "dimensional-portal",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Concentric rings with particles spiralling inward.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/DimensionalPortal/DimensionalPortal.tsx",
+          "target": "dimensional-portal/dimensional-portal.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/DimensionalPortal/index.ts",
+          "target": "dimensional-portal/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<DimensionalPortal />"
+      }
+    },
+    {
+      "name": "Dimensional Rift Scanner",
+      "slug": "dimensional-rift-scanner",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Scanline sweep revealing a corrupted surface.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/DimensionalRiftScanner/DimensionalRiftScanner.tsx",
+          "target": "dimensional-rift-scanner/dimensional-rift-scanner.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/DimensionalRiftScanner/index.ts",
+          "target": "dimensional-rift-scanner/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<DimensionalRiftScanner />"
       }
     },
     {
@@ -2166,6 +2739,37 @@
       }
     },
     {
+      "name": "Energy Vortex",
+      "slug": "energy-vortex",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Differential-rotation spiral with a hot core.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/EnergyVortex/EnergyVortex.tsx",
+          "target": "energy-vortex/energy-vortex.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/EnergyVortex/index.ts",
+          "target": "energy-vortex/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<EnergyVortex />"
+      }
+    },
+    {
       "name": "FeaturedIcon",
       "slug": "featured-icon",
       "type": "registry:ui",
@@ -2345,6 +2949,130 @@
       }
     },
     {
+      "name": "Force Field Membrane",
+      "slug": "force-field-membrane",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Energy barrier that ripples where the pointer presses.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ForceFieldMembrane/ForceFieldMembrane.tsx",
+          "target": "force-field-membrane/force-field-membrane.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ForceFieldMembrane/index.ts",
+          "target": "force-field-membrane/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ForceFieldMembrane />"
+      }
+    },
+    {
+      "name": "Generative Ribbon Field",
+      "slug": "generative-ribbon-field",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Braided ribbons that bend toward the pointer.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/GenerativeRibbonField/GenerativeRibbonField.tsx",
+          "target": "generative-ribbon-field/generative-ribbon-field.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/GenerativeRibbonField/index.ts",
+          "target": "generative-ribbon-field/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<GenerativeRibbonField />"
+      }
+    },
+    {
+      "name": "Gravitational Lens",
+      "slug": "gravitational-lens",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Spacetime well that bends the field behind it.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/GravitationalLens/GravitationalLens.tsx",
+          "target": "gravitational-lens/gravitational-lens.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/GravitationalLens/index.ts",
+          "target": "gravitational-lens/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<GravitationalLens />"
+      }
+    },
+    {
+      "name": "Gyroscopic Core",
+      "slug": "gyroscopic-core",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Nested 3D rings with depth-sorted occlusion.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/GyroscopicCore/GyroscopicCore.tsx",
+          "target": "gyroscopic-core/gyroscopic-core.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/GyroscopicCore/index.ts",
+          "target": "gyroscopic-core/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<GyroscopicCore />"
+      }
+    },
+    {
       "name": "Heading",
       "slug": "heading",
       "type": "registry:ui",
@@ -2393,6 +3121,49 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Holographic Liquid Orb",
+      "slug": "holographic-liquid-orb",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Iridescent oil-film sphere with cursor-reactive refraction.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.module.css",
+          "target": "holographic-liquid-orb/holographic-liquid-orb.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.tsx",
+          "target": "holographic-liquid-orb/holographic-liquid-orb.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/index.ts",
+          "target": "holographic-liquid-orb/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/orbEngine.ts",
+          "target": "holographic-liquid-orb/orbEngine.ts"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/types.ts",
+          "target": "holographic-liquid-orb/types.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<HolographicLiquidOrb />"
       }
     },
     {
@@ -2458,6 +3229,68 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "InputGroup",
+      "slug": "input-group",
+      "type": "registry:ui",
+      "category": "Forms",
+      "description": "Joins leading and trailing addons to an Input with a shared ring.",
+      "status": "stable",
+      "version": "1.0.0",
+      "styles": {
+        "tailwind": {
+          "files": [
+            {
+              "path": "registry/styles/input-group.tsx",
+              "target": "input-group.tsx"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "input",
+            "form-field",
+            "utils"
+          ]
+        },
+        "coloxo-css": {
+          "files": [
+            {
+              "path": "packages/ui/src/components/Input/Input.tsx",
+              "target": "input/input.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Input/Input.module.css",
+              "target": "input/input.module.css"
+            },
+            {
+              "path": "packages/ui/src/components/Input/InputGroup.tsx",
+              "target": "input/input-group.tsx"
+            },
+            {
+              "path": "packages/ui/src/components/Input/InputGroup.module.css",
+              "target": "input/input-group.module.css"
+            }
+          ],
+          "dependencies": [],
+          "registryDependencies": [
+            "input"
+          ]
+        }
+      },
+      "dependencies": [],
+      "registryDependencies": [],
+      "providers": [
+        "theme"
+      ],
+      "accessibility": {
+        "keyboard": true,
+        "aria": true,
+        "notes": "Same field labelling as Input. Addon content exposes its own accessible names."
+      },
+      "docs": {
+        "usage": "<InputGroup label=\"Phone\" leadingAddon={<InputPrefix>US</InputPrefix>}><Input type=\"tel\" /></InputGroup>"
       }
     },
     {
@@ -2603,6 +3436,68 @@
       }
     },
     {
+      "name": "Interactive Field Distortion",
+      "slug": "interactive-field-distortion",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Pointer-driven distortion field on a flowing surface.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/InteractiveFieldDistortion/InteractiveFieldDistortion.tsx",
+          "target": "interactive-field-distortion/interactive-field-distortion.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/InteractiveFieldDistortion/index.ts",
+          "target": "interactive-field-distortion/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<InteractiveFieldDistortion />"
+      }
+    },
+    {
+      "name": "Interactive Ripple Field",
+      "slug": "interactive-ripple-field",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Liquid surface with expanding pointer ripples.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/InteractiveRippleField/InteractiveRippleField.tsx",
+          "target": "interactive-ripple-field/interactive-ripple-field.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/InteractiveRippleField/index.ts",
+          "target": "interactive-ripple-field/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<InteractiveRippleField />"
+      }
+    },
+    {
       "name": "Kbd",
       "slug": "kbd",
       "type": "registry:ui",
@@ -2651,6 +3546,130 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Kinetic Grid Warp",
+      "slug": "kinetic-grid-warp",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Perspective grid warped by waves and pointer gravity.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/KineticGridWarp/KineticGridWarp.tsx",
+          "target": "kinetic-grid-warp/kinetic-grid-warp.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/KineticGridWarp/index.ts",
+          "target": "kinetic-grid-warp/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<KineticGridWarp />"
+      }
+    },
+    {
+      "name": "Liquid Metal Morph",
+      "slug": "liquid-metal-morph",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Chrome surface morphing between geometric forms.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/LiquidMetalMorph/LiquidMetalMorph.tsx",
+          "target": "liquid-metal-morph/liquid-metal-morph.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/LiquidMetalMorph/index.ts",
+          "target": "liquid-metal-morph/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<LiquidMetalMorph />"
+      }
+    },
+    {
+      "name": "Living Wireframe Terrain",
+      "slug": "living-wireframe-terrain",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Endless procedural terrain rendered as a wireframe.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/LivingWireframeTerrain/LivingWireframeTerrain.tsx",
+          "target": "living-wireframe-terrain/living-wireframe-terrain.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/LivingWireframeTerrain/index.ts",
+          "target": "living-wireframe-terrain/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<LivingWireframeTerrain />"
+      }
+    },
+    {
+      "name": "Magnetic Field Visualizer",
+      "slug": "magnetic-field-visualizer",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Dipole field lines with polarity and density controls.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/MagneticFieldVisualizer/MagneticFieldVisualizer.tsx",
+          "target": "magnetic-field-visualizer/magnetic-field-visualizer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/MagneticFieldVisualizer/index.ts",
+          "target": "magnetic-field-visualizer/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<MagneticFieldVisualizer />"
       }
     },
     {
@@ -2938,6 +3957,130 @@
       }
     },
     {
+      "name": "Parametric Sculpture",
+      "slug": "parametric-sculpture",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Depth-sorted wireframe of a parametric surface.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ParametricSculpture/ParametricSculpture.tsx",
+          "target": "parametric-sculpture/parametric-sculpture.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ParametricSculpture/index.ts",
+          "target": "parametric-sculpture/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ParametricSculpture />"
+      }
+    },
+    {
+      "name": "Particle Disintegration",
+      "slug": "particle-disintegration",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "A body that scatters and reforms under spring physics.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleDisintegration/ParticleDisintegration.tsx",
+          "target": "particle-disintegration/particle-disintegration.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleDisintegration/index.ts",
+          "target": "particle-disintegration/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ParticleDisintegration />"
+      }
+    },
+    {
+      "name": "Particle Shape Transition",
+      "slug": "particle-shape-transition",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Particles morphing between sampled arrangements.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleShapeTransition/ParticleShapeTransition.tsx",
+          "target": "particle-shape-transition/particle-shape-transition.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleShapeTransition/index.ts",
+          "target": "particle-shape-transition/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ParticleShapeTransition />"
+      }
+    },
+    {
+      "name": "Particle Typography",
+      "slug": "particle-typography",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Live text assembled from particles at runtime.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleTypography/ParticleTypography.tsx",
+          "target": "particle-typography/particle-typography.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/ParticleTypography/index.ts",
+          "target": "particle-typography/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<ParticleTypography />"
+      }
+    },
+    {
       "name": "Pie Chart",
       "slug": "pie-chart",
       "type": "registry:ui",
@@ -3103,6 +4246,68 @@
       }
     },
     {
+      "name": "Refraction Lens",
+      "slug": "refraction-lens",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Glass lens with chromatic edge dispersion.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/RefractionLens/RefractionLens.tsx",
+          "target": "refraction-lens/refraction-lens.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/RefractionLens/index.ts",
+          "target": "refraction-lens/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<RefractionLens />"
+      }
+    },
+    {
+      "name": "Refractive Glass Cube",
+      "slug": "refractive-glass-cube",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Frosted glass volume with refracted backdrop.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/RefractiveGlassCube/RefractiveGlassCube.tsx",
+          "target": "refractive-glass-cube/refractive-glass-cube.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/RefractiveGlassCube/index.ts",
+          "target": "refractive-glass-cube/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<RefractiveGlassCube />"
+      }
+    },
+    {
       "name": "Select",
       "slug": "select",
       "type": "registry:ui",
@@ -3168,6 +4373,37 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Self-Drawing Geometry",
+      "slug": "self-drawing-geometry",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Shapes that draw along their own arc length.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SelfDrawingGeometry/SelfDrawingGeometry.tsx",
+          "target": "self-drawing-geometry/self-drawing-geometry.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SelfDrawingGeometry/index.ts",
+          "target": "self-drawing-geometry/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SelfDrawingGeometry />"
       }
     },
     {
@@ -3285,6 +4521,161 @@
       },
       "docs": {
         "usage": "<Slider defaultValue={[50]} aria-label=\"Volume\" />"
+      }
+    },
+    {
+      "name": "Soft Body Physics",
+      "slug": "soft-body-physics",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Verlet cloth membrane you can push and drag.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SoftBodyPhysicsPlayground/SoftBodyPhysicsPlayground.tsx",
+          "target": "soft-body-physics/soft-body-physics.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SoftBodyPhysicsPlayground/index.ts",
+          "target": "soft-body-physics/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SoftBodyPhysicsPlayground />"
+      }
+    },
+    {
+      "name": "Spatial Glass Layers",
+      "slug": "spatial-glass-layers",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Translucent panes separated by parallax depth.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialGlassLayers/SpatialGlassLayers.tsx",
+          "target": "spatial-glass-layers/spatial-glass-layers.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialGlassLayers/index.ts",
+          "target": "spatial-glass-layers/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SpatialGlassLayers />"
+      }
+    },
+    {
+      "name": "Spatial Glitch Distortion",
+      "slug": "spatial-glitch-distortion",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Datamosh tearing driven by scan, burst, and pointer.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialGlitchDistortion/SpatialGlitchDistortion.tsx",
+          "target": "spatial-glitch-distortion/spatial-glitch-distortion.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialGlitchDistortion/index.ts",
+          "target": "spatial-glitch-distortion/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SpatialGlitchDistortion />"
+      }
+    },
+    {
+      "name": "Spatial Object Gallery",
+      "slug": "spatial-object-gallery",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Orbiting 3D primitives with pointer focus.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialObjectGallery/SpatialObjectGallery.tsx",
+          "target": "spatial-object-gallery/spatial-object-gallery.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SpatialObjectGallery/index.ts",
+          "target": "spatial-object-gallery/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SpatialObjectGallery />"
+      }
+    },
+    {
+      "name": "Spring Motion Trails",
+      "slug": "spring-motion-trails",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Pointer trail driven by damped spring physics.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/SpringMotionTrails/SpringMotionTrails.tsx",
+          "target": "spring-motion-trails/spring-motion-trails.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/SpringMotionTrails/index.ts",
+          "target": "spring-motion-trails/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<SpringMotionTrails />"
       }
     },
     {
@@ -3814,6 +5205,37 @@
       "accessibility": {
         "keyboard": true,
         "aria": true
+      }
+    },
+    {
+      "name": "Volumetric Light Tunnel",
+      "slug": "volumetric-light-tunnel",
+      "type": "registry:ui",
+      "category": "General",
+      "description": "Infinite corridor of light with volumetric haze.",
+      "status": "stable",
+      "version": "1.0.0",
+      "files": [
+        {
+          "path": "packages/ui/src/components/Visuals/VolumetricLightTunnel/VolumetricLightTunnel.tsx",
+          "target": "volumetric-light-tunnel/volumetric-light-tunnel.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Visuals/VolumetricLightTunnel/index.ts",
+          "target": "volumetric-light-tunnel/index.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "visual-runtime",
+        "visual-shared"
+      ],
+      "accessibility": {
+        "aria": true,
+        "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+      },
+      "docs": {
+        "usage": "<VolumetricLightTunnel />"
       }
     },
     {

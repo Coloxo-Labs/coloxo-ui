@@ -43,7 +43,6 @@ export default defineConfig({
         "react/jsx-runtime",
         "react/jsx-dev-runtime",
         "clsx",
-        "lucide-react",
         "date-fns",
         "react-day-picker",
         /^@radix-ui\//,

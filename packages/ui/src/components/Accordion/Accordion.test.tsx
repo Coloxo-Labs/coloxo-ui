@@ -56,9 +56,9 @@ describe("Accordion", () => {
     expect(screen.getByRole("button", { name: "First section" })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("has accessible expanded panels and a Lucide indicator", async () => {
+  it("has accessible expanded panels and a hidden chevron", async () => {
     const { container } = renderWithTheme(<Accordion defaultExpandedKeys={["first"]}><Items /></Accordion>);
-    expect(container.querySelector("svg.lucide-chevron-down")).toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByRole("button", { name: "First section" }).querySelector("svg")).toHaveAttribute("aria-hidden", "true");
     await expectNoA11yViolations(container);
   });
 });

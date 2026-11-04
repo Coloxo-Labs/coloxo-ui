@@ -1,0 +1,31 @@
+{
+  "name": "Refraction Lens",
+  "slug": "refraction-lens",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Glass lens with chromatic edge dispersion.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/RefractionLens/RefractionLens.tsx",
+      "target": "refraction-lens/refraction-lens.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/RefractionLens/index.ts",
+      "target": "refraction-lens/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<RefractionLens />"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Spatial Glass Layers",
+  "slug": "spatial-glass-layers",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Translucent panes separated by parallax depth.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialGlassLayers/SpatialGlassLayers.tsx",
+      "target": "spatial-glass-layers/spatial-glass-layers.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialGlassLayers/index.ts",
+      "target": "spatial-glass-layers/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<SpatialGlassLayers />"
+  }
+}

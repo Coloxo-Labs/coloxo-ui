@@ -1,0 +1,31 @@
+{
+  "name": "Spatial Object Gallery",
+  "slug": "spatial-object-gallery",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Orbiting 3D primitives with pointer focus.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialObjectGallery/SpatialObjectGallery.tsx",
+      "target": "spatial-object-gallery/spatial-object-gallery.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/SpatialObjectGallery/index.ts",
+      "target": "spatial-object-gallery/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<SpatialObjectGallery />"
+  }
+}

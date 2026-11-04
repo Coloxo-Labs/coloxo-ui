@@ -6,6 +6,16 @@
   "status": "stable",
   "version": "1.0.0",
   "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/button-variants.ts",
+          "target": "button-variants.ts"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
     "coloxo-css": {
       "files": [
         {

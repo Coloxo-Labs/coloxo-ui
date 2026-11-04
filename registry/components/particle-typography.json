@@ -1,0 +1,31 @@
+{
+  "name": "Particle Typography",
+  "slug": "particle-typography",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Live text assembled from particles at runtime.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/ParticleTypography/ParticleTypography.tsx",
+      "target": "particle-typography/particle-typography.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/ParticleTypography/index.ts",
+      "target": "particle-typography/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<ParticleTypography />"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Combobox",
+  "slug": "combobox",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Searchable options with suggestions. Type to filter, then select a result.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/combobox.tsx",
+          "target": "combobox.tsx"
+        }
+      ],
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "icons"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Combobox/Combobox.tsx",
+          "target": "combobox/combobox.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Combobox/Combobox.module.css",
+          "target": "combobox/combobox.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Combobox/index.ts",
+          "target": "combobox/index.ts"
+        }
+      ],
+      "dependencies": [
+        "react-aria-components"
+      ],
+      "registryDependencies": [
+        "utils",
+        "icon",
+        "icons",
+        "form-control",
+        "styles",
+        "theme"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Keyboard navigation, disabled options, and announcements come from React Aria."
+  },
+  "docs": {
+    "usage": "<Combobox label=\"Department\" options={[{ value: \"eng\", label: \"Engineering\" }]} />"
+  }
+}

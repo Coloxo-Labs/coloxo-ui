@@ -1,0 +1,31 @@
+{
+  "name": "Magnetic Field Visualizer",
+  "slug": "magnetic-field-visualizer",
+  "type": "registry:ui",
+  "category": "General",
+  "description": "Dipole field lines with polarity and density controls.",
+  "status": "stable",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "packages/ui/src/components/Visuals/MagneticFieldVisualizer/MagneticFieldVisualizer.tsx",
+      "target": "magnetic-field-visualizer/magnetic-field-visualizer.tsx"
+    },
+    {
+      "path": "packages/ui/src/components/Visuals/MagneticFieldVisualizer/index.ts",
+      "target": "magnetic-field-visualizer/index.ts"
+    }
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "visual-runtime",
+    "visual-shared"
+  ],
+  "accessibility": {
+    "aria": true,
+    "notes": "Canvas is aria-hidden so the effect stays out of the reading order. Children remain in the DOM. Respects prefers-reduced-motion when enabled."
+  },
+  "docs": {
+    "usage": "<MagneticFieldVisualizer />"
+  }
+}

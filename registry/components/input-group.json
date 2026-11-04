@@ -1,0 +1,60 @@
+{
+  "name": "InputGroup",
+  "slug": "input-group",
+  "type": "registry:ui",
+  "category": "Forms",
+  "description": "Joins leading and trailing addons to an Input with a shared ring.",
+  "status": "stable",
+  "version": "1.0.0",
+  "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/input-group.tsx",
+          "target": "input-group.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "form-field",
+        "utils"
+      ]
+    },
+    "coloxo-css": {
+      "files": [
+        {
+          "path": "packages/ui/src/components/Input/Input.tsx",
+          "target": "input/input.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Input/Input.module.css",
+          "target": "input/input.module.css"
+        },
+        {
+          "path": "packages/ui/src/components/Input/InputGroup.tsx",
+          "target": "input/input-group.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/Input/InputGroup.module.css",
+          "target": "input/input-group.module.css"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ]
+    }
+  },
+  "providers": [
+    "theme"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "aria": true,
+    "notes": "Same field labelling as Input. Addon content exposes its own accessible names."
+  },
+  "docs": {
+    "usage": "<InputGroup label=\"Phone\" leadingAddon={<InputPrefix>US</InputPrefix>}><Input type=\"tel\" /></InputGroup>"
+  }
+}

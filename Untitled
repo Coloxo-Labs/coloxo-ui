@@ -1,0 +1,6 @@
+The docs say npx coloxo add ${visual.slug} for every visual, but the registry only has 4 visual components.
+
+The other 30 shader visuals are documented as registry entries but missing from registry.json.
+
+
+fix this to add all the 30 visuals to the registry and verify that. after fixing all the issues, update the version to v1.0.4

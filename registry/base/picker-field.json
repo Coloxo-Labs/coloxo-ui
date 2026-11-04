@@ -6,6 +6,16 @@
   "status": "stable",
   "version": "1.0.0",
   "styles": {
+    "tailwind": {
+      "files": [
+        {
+          "path": "registry/styles/picker-field.tsx",
+          "target": "picker-field.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": ["utils", "form-field"]
+    },
     "coloxo-css": {
       "files": [
         {
