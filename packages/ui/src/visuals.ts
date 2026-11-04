@@ -1,8 +1,8 @@
 "use client";
 
 /**
- * Docs / playground / CLI-registry visuals — not part of the public npm barrel.
- * Import from `@/lib/coloxo-visuals` in the playground, or copy via the CLI.
+ * Optional visual entry. Import from `@coloxo/ui/visuals`, or copy a single
+ * effect with the CLI. These are not part of the main `@coloxo/ui` barrel.
  */
 
 export { FluidBackground } from "./components/FluidBackground";

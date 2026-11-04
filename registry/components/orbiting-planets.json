@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Luminous ice-cyan orbital system on native WebGL — soft bloom halos, additive orbit ribbons, pastel spheres with depth occlusion. Transparent by default; static CSS fallback when WebGL is unavailable. No Three.js.",
   "status": "stable",
-  "version": "1.1.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.tsx",

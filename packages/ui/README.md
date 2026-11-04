@@ -43,6 +43,14 @@ export function App({ children }: { children: React.ReactNode }) {
 }
 ```
 
+Shader and canvas visuals are optional:
+
+```tsx
+import { WaveBackground, AuroraMeshGradient } from "@coloxo/ui/visuals";
+```
+
+Or copy one effect with `npx coloxo add <slug>`.
+
 Works with Next.js, Vite, Remix, and other React apps.
 
 ## Quick start

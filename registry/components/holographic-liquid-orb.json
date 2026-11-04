@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Iridescent oil-film sphere with cursor-reactive refraction.",
   "status": "stable",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.module.css",

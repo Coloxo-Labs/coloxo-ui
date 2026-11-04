@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Interactive 3D-looking wave surface on native WebGL — GPU-displaced mesh with pointer ripples, Canvas 2D / static fallbacks, no Three.js. Fills any container and stays behind children; transparent by default so the parent owns the background.",
   "status": "stable",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/WaveBackground/WaveBackground.tsx",

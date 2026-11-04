@@ -1,7 +1,7 @@
 {
   "name": "coloxo-ui",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Premium Coloxo UI — React component library, CLI, and open registry",
   "packageManager": "npm@11.19.0",
   "workspaces": [

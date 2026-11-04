@@ -1077,7 +1077,7 @@
       "category": "General",
       "description": "Multi-blob mesh gradient with grain and pointer drift.",
       "status": "stable",
-      "version": "1.0.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/Visuals/AuroraMeshGradient/AuroraMeshGradient.tsx",
@@ -2907,7 +2907,7 @@
       "category": "General",
       "description": "Lightweight pointer-driven iridescent liquid-ink trails using native Canvas 2D — fills any container, stays behind children, transparent by default so the parent owns the background, stops rendering when idle.",
       "status": "stable",
-      "version": "1.0.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/FluidBackground/FluidBackground.tsx",
@@ -3130,7 +3130,7 @@
       "category": "General",
       "description": "Iridescent oil-film sphere with cursor-reactive refraction.",
       "status": "stable",
-      "version": "1.0.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/Visuals/HolographicLiquidOrb/HolographicLiquidOrb.module.css",
@@ -3810,7 +3810,7 @@
       "category": "General",
       "description": "Luminous ice-cyan orbital system on native WebGL — soft bloom halos, additive orbit ribbons, pastel spheres with depth occlusion. Transparent by default; static CSS fallback when WebGL is unavailable. No Three.js.",
       "status": "stable",
-      "version": "1.1.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/OrbitingPlanets/OrbitingPlanets.tsx",
@@ -5245,7 +5245,7 @@
       "category": "General",
       "description": "Premium GPU spiral particles with soft persistence trails on native WebGL — fills any container, stays behind children, transparent by default. Canvas 2D fallback when WebGL is unavailable. No Three.js or particle libraries.",
       "status": "stable",
-      "version": "1.0.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/Vortex/Vortex.tsx",
@@ -5305,7 +5305,7 @@
       "category": "General",
       "description": "Interactive 3D-looking wave surface on native WebGL — GPU-displaced mesh with pointer ripples, Canvas 2D / static fallbacks, no Three.js. Fills any container and stays behind children; transparent by default so the parent owns the background.",
       "status": "stable",
-      "version": "1.0.0",
+      "version": "1.0.5",
       "files": [
         {
           "path": "packages/ui/src/components/WaveBackground/WaveBackground.tsx",

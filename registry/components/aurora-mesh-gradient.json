@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Multi-blob mesh gradient with grain and pointer drift.",
   "status": "stable",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/Visuals/AuroraMeshGradient/AuroraMeshGradient.tsx",

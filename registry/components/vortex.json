@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Premium GPU spiral particles with soft persistence trails on native WebGL — fills any container, stays behind children, transparent by default. Canvas 2D fallback when WebGL is unavailable. No Three.js or particle libraries.",
   "status": "stable",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/Vortex/Vortex.tsx",

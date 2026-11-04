@@ -5,7 +5,7 @@
   "category": "General",
   "description": "Lightweight pointer-driven iridescent liquid-ink trails using native Canvas 2D — fills any container, stays behind children, transparent by default so the parent owns the background, stops rendering when idle.",
   "status": "stable",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "files": [
     {
       "path": "packages/ui/src/components/FluidBackground/FluidBackground.tsx",

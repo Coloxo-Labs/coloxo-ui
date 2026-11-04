@@ -8,19 +8,7 @@ export default defineConfig({
     react(),
     dts({
       include: ["src"],
-      exclude: [
-        "src/**/*.test.ts",
-        "src/**/*.test.tsx",
-        "src/test/**",
-        // Docs/CLI visuals stay in source; keep them out of the published types.
-        "src/visuals.ts",
-        "src/components/Visuals/**",
-        "src/components/FluidBackground/**",
-        "src/components/Vortex/**",
-        "src/components/WaveBackground/**",
-        "src/components/OrbitingPlanets/**",
-        "src/components/_internal/visuals/**",
-      ],
+      exclude: ["src/**/*.test.ts", "src/**/*.test.tsx", "src/test/**"],
       insertTypesEntry: true,
     }),
   ],
@@ -31,10 +19,13 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
+      entry: {
+        index: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
+        visuals: fileURLToPath(new URL("./src/visuals.ts", import.meta.url)),
+      },
       name: "ColoxoUI",
       formats: ["es"],
-      fileName: () => "index.js",
+      fileName: (_format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
       external: [

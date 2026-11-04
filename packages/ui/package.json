@@ -1,6 +1,6 @@
 {
   "name": "@coloxo/ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Premium React interfaces — accessible components, design tokens, CSS Modules",
   "author": "Coloxo Labs",
   "license": "MIT",
@@ -16,6 +16,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./visuals": {
+      "types": "./dist/visuals.d.ts",
+      "import": "./dist/visuals.js",
+      "default": "./dist/visuals.js"
     },
     "./styles.css": "./dist/styles.css",
     "./tokens.css": "./src/styles/tokens.css",
