@@ -19,7 +19,7 @@ const program = new Command();
 program
   .name("coloxo")
   .description("Premium Coloxo UI CLI — copy components from the registry into your project")
-  .version("1.0.5");
+  .version("1.0.6");
 
 program
   .command("init")

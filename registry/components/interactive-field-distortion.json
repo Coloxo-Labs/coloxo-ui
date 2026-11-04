@@ -16,7 +16,7 @@
       "target": "interactive-field-distortion/index.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["visual-runtime", "visual-shared"],
   "accessibility": {
     "aria": true,

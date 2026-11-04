@@ -16,7 +16,7 @@
       "target": "kinetic-grid-warp/index.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["visual-runtime", "visual-shared"],
   "accessibility": {
     "aria": true,

@@ -28,7 +28,7 @@
       "target": "holographic-liquid-orb/types.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["visual-runtime", "visual-shared"],
   "accessibility": {
     "aria": true,

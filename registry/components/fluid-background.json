@@ -28,7 +28,7 @@
       "target": "fluid-background/index.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["utils", "styles", "theme"],
   "providers": ["theme"],
   "accessibility": {

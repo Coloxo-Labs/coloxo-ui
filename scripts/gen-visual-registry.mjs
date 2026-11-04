@@ -63,7 +63,7 @@ await writeFile(
     status: "stable",
     version: "1.0.0",
     files: runtimeFiles,
-    dependencies: [],
+    dependencies: ["@coloxo/ui"],
     registryDependencies: ["utils"],
   }),
 );
@@ -84,7 +84,7 @@ await writeFile(
     status: "stable",
     version: "1.0.0",
     files: sharedFiles,
-    dependencies: [],
+    dependencies: ["@coloxo/ui"],
     registryDependencies: ["visual-runtime"],
   }),
 );
@@ -116,7 +116,7 @@ for (const doc of docs) {
       status: "stable",
       version: "1.0.0",
       files,
-      dependencies: [],
+      dependencies: ["@coloxo/ui"],
       registryDependencies: ["visual-runtime", "visual-shared"],
       accessibility: {
         aria: true,

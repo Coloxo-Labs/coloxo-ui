@@ -91,6 +91,6 @@
       "target": "visual-shared/types.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["visual-runtime"]
 }

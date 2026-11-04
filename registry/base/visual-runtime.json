@@ -43,6 +43,6 @@
       "target": "visual-runtime/visualSurface.module.css"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["utils"]
 }

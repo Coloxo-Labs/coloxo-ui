@@ -1,6 +1,6 @@
 {
   "name": "@coloxo/cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Premium Coloxo UI CLI — copy components into your project (CSS Modules or Tailwind)",
   "type": "module",
   "bin": {

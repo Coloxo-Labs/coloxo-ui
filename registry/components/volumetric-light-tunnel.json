@@ -16,7 +16,7 @@
       "target": "volumetric-light-tunnel/index.ts"
     }
   ],
-  "dependencies": [],
+  "dependencies": ["@coloxo/ui"],
   "registryDependencies": ["visual-runtime", "visual-shared"],
   "accessibility": {
     "aria": true,

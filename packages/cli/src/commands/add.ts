@@ -8,6 +8,7 @@ import { resolveRegistryItems } from "../registry/resolver.js";
 import { installRegistryItems } from "../installer/files.js";
 import { installNpmDependencies } from "../installer/dependencies.js";
 import type { StyleMode } from "../registry/schema.js";
+import { COLOXO_CSS_PACKAGE } from "../registry/style-resolve.js";
 
 export type AddOptions = {
   cwd: string;
@@ -72,6 +73,13 @@ export async function runAdd(options: AddOptions): Promise<void> {
   }
   if (npmDeps.length > 0) {
     p.log.step(`npm dependencies: ${npmDeps.join(", ")}`);
+  }
+  if (npmDeps.includes(COLOXO_CSS_PACKAGE)) {
+    p.log.message(
+      pc.dim(
+        `Coloxo CSS styles were added to package.json via ${COLOXO_CSS_PACKAGE}. Import "@coloxo/ui/styles.css" once at the app root.`,
+      ),
+    );
   }
 
   const addedTheme = items.some((i) => i.slug === "theme" || i.providers?.includes("theme"));

@@ -840,7 +840,9 @@
           "target": "visual-runtime/visualSurface.module.css"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -938,7 +940,9 @@
           "target": "visual-shared/types.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime"
       ]
@@ -1088,7 +1092,9 @@
           "target": "aurora-mesh-gradient/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -1481,7 +1487,9 @@
           "target": "bioluminescent-particles/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -1843,7 +1851,9 @@
           "target": "chromatic-aberration-text/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -2409,7 +2419,9 @@
           "target": "dimensional-portal/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -2440,7 +2452,9 @@
           "target": "dimensional-rift-scanner/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -2756,7 +2770,9 @@
           "target": "energy-vortex/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -2930,7 +2946,9 @@
           "target": "fluid-background/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "utils",
         "styles",
@@ -2966,7 +2984,9 @@
           "target": "force-field-membrane/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -2997,7 +3017,9 @@
           "target": "generative-ribbon-field/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3028,7 +3050,9 @@
           "target": "gravitational-lens/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3059,7 +3083,9 @@
           "target": "gyroscopic-core/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3153,7 +3179,9 @@
           "target": "holographic-liquid-orb/types.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3453,7 +3481,9 @@
           "target": "interactive-field-distortion/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3484,7 +3514,9 @@
           "target": "interactive-ripple-field/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3566,7 +3598,9 @@
           "target": "kinetic-grid-warp/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3597,7 +3631,9 @@
           "target": "liquid-metal-morph/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3628,7 +3664,9 @@
           "target": "living-wireframe-terrain/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3659,7 +3697,9 @@
           "target": "magnetic-field-visualizer/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -3885,7 +3925,9 @@
           "target": "orbiting-planets/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "utils",
         "styles",
@@ -3974,7 +4016,9 @@
           "target": "parametric-sculpture/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4005,7 +4049,9 @@
           "target": "particle-disintegration/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4036,7 +4082,9 @@
           "target": "particle-shape-transition/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4067,7 +4115,9 @@
           "target": "particle-typography/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4263,7 +4313,9 @@
           "target": "refraction-lens/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4294,7 +4346,9 @@
           "target": "refractive-glass-cube/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4393,7 +4447,9 @@
           "target": "self-drawing-geometry/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4541,7 +4597,9 @@
           "target": "soft-body-physics/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4572,7 +4630,9 @@
           "target": "spatial-glass-layers/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4603,7 +4663,9 @@
           "target": "spatial-glitch-distortion/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4634,7 +4696,9 @@
           "target": "spatial-object-gallery/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -4665,7 +4729,9 @@
           "target": "spring-motion-trails/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -5225,7 +5291,9 @@
           "target": "volumetric-light-tunnel/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "visual-runtime",
         "visual-shared"
@@ -5280,7 +5348,9 @@
           "target": "vortex/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "utils",
         "styles",
@@ -5340,7 +5410,9 @@
           "target": "wave-background/index.ts"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        "@coloxo/ui"
+      ],
       "registryDependencies": [
         "utils",
         "styles",

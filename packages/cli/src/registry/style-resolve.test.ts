@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
 import type { RegistryItem } from "./schema.js";
 import { allFiles, styleShapeErrors } from "./manifest-files.js";
-import { availableStyles, LEGACY_STYLE, resolveForStyle } from "./style-resolve.js";
+import {
+  availableStyles,
+  COLOXO_CSS_PACKAGE,
+  isColoxoCssVisual,
+  LEGACY_STYLE,
+  resolveForStyle,
+} from "./style-resolve.js";
 
 const tailwindItem: RegistryItem = {
   name: "Button",
@@ -63,6 +69,30 @@ describe("resolveForStyle", () => {
     expect(availableStyles(legacyItem)).toEqual([LEGACY_STYLE]);
     expect(resolveForStyle(legacyItem, "coloxo-css").files).toHaveLength(1);
     expect(() => resolveForStyle(legacyItem, "tailwind")).toThrow(/not available/);
+  });
+
+  it("installs a Coloxo CSS visual into a Tailwind project and depends on the CSS package", () => {
+    const vortex: RegistryItem = {
+      name: "Vortex",
+      slug: "vortex",
+      type: "registry:ui",
+      description: "vortex",
+      files: [
+        { path: "src/Vortex.tsx", target: "vortex/vortex.tsx" },
+        { path: "src/Vortex.module.css", target: "vortex/vortex.module.css" },
+      ],
+      dependencies: [],
+      registryDependencies: ["utils", "styles", "theme"],
+    };
+    expect(isColoxoCssVisual(vortex)).toBe(true);
+    const resolved = resolveForStyle(vortex, "tailwind");
+    expect(resolved.files.map((file) => file.target)).toEqual([
+      "vortex/vortex.tsx",
+      "vortex/vortex.module.css",
+    ]);
+    expect(resolved.dependencies).toEqual([COLOXO_CSS_PACKAGE]);
+    expect(resolved.registryDependencies).toEqual(["utils", "styles", "theme"]);
+    expect(resolveForStyle(vortex, "coloxo-css").dependencies).toEqual([COLOXO_CSS_PACKAGE]);
   });
 });
 
