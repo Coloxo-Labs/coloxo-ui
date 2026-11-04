@@ -32,6 +32,13 @@ npx coloxo add select modal data-table
 npx coloxo list
 ```
 
+Visuals are optional and are not part of `init`. Add one slug at a time. The same command works when `coloxo.json` says `tailwind` or `coloxo-css`, because visuals ship as Coloxo CSS. The add also writes `@coloxo/ui` into `package.json` so the stylesheet is installed in `node_modules`.
+
+```bash
+npx coloxo add vortex
+npx coloxo add aurora-mesh-gradient
+```
+
 ## Styles
 
 | Style        | What you get                                                                  |

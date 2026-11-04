@@ -43,13 +43,20 @@ export function App({ children }: { children: React.ReactNode }) {
 }
 ```
 
-Shader and canvas visuals are optional:
+Shader and canvas visuals are optional in v1.0.6. Import them from the package:
 
 ```tsx
 import { WaveBackground, AuroraMeshGradient } from "@coloxo/ui/visuals";
+import "@coloxo/ui/styles.css";
 ```
 
-Or copy one effect with `npx coloxo add <slug>`.
+Or copy one effect. This works in a Tailwind project and in a Coloxo CSS project. `coloxo init` does not install visuals.
+
+```bash
+npx coloxo add vortex
+```
+
+That copies the effect into your project and adds `@coloxo/ui` to `package.json`.
 
 Works with Next.js, Vite, Remix, and other React apps.
 

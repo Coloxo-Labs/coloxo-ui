@@ -51,6 +51,12 @@ npx coloxo add button
 
 Choose **Coloxo CSS** or **Tailwind** at init. Same API. Your files.
 
+Visuals stay optional. Add one when you want it. v1.0.6 installs that Coloxo CSS effect in either style and adds `@coloxo/ui` to `package.json`.
+
+```bash
+npx coloxo add vortex
+```
+
 ## Highlights
 
 |                  |                                                               |
